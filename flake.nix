@@ -42,6 +42,24 @@
           impermanence.nixosModules.impermanence
         ];
       };
+      lemurpro = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs outputs; };
+        # > Our main nixos configuration file <
+        modules = [
+          ./hosts/lemurpro/configuration.nix
+#          sops-nix.nixosModules.sops
+          impermanence.nixosModules.impermanence
+        ];
+      };
+      xps13 = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs outputs; };
+        # > Our main nixos configuration file <
+        modules = [
+          ./hosts/xps13/configuration.nix
+#          sops-nix.nixosModules.sops
+          impermanence.nixosModules.impermanence
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -54,6 +72,70 @@
         # > Our main home-manager configuration file <
         modules = [
           ./hosts/leanangle/users/gmdegoug-home.nix
+        ];
+      };
+      "gmdegoug@lemurpro" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = { inherit inputs outputs; };
+        # > Our main home-manager configuration file <
+        modules = [
+          ./hosts/lemurpro/users/gmdegoug-home.nix
+        ];
+      };
+      "gmdegoug@xps13" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = { inherit inputs outputs; };
+        # > Our main home-manager configuration file <
+        modules = [
+          ./hosts/xps13/users/gmdegoug-home.nix
+        ];
+      };
+      "pdegough@leanangle" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = { inherit inputs outputs; };
+        # > Our main home-manager configuration file <
+        modules = [
+          ./hosts/leanangle/users/pdegough-home.nix
+        ];
+      };
+      "pdegough@lemurpro" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = { inherit inputs outputs; };
+        # > Our main home-manager configuration file <
+        modules = [
+          ./hosts/lemurpro/users/pdegough-home.nix
+        ];
+      };
+      "pdegough@xps13" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = { inherit inputs outputs; };
+        # > Our main home-manager configuration file <
+        modules = [
+          ./hosts/xps13/users/pdegough-home.nix
+        ];
+      };
+      "root@leanangle" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = { inherit inputs outputs; };
+        # > Our main home-manager configuration file <
+        modules = [
+          ./hosts/leanangle/users/root-home.nix
+        ];
+      };
+      "root@lemurpro" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = { inherit inputs outputs; };
+        # > Our main home-manager configuration file <
+        modules = [
+          ./hosts/lemurpro/users/root-home.nix
+        ];
+      };
+      "root@xps13" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = { inherit inputs outputs; };
+        # > Our main home-manager configuration file <
+        modules = [
+          ./hosts/xps13/users/root-home.nix
         ];
       };
     };
