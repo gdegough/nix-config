@@ -11,10 +11,10 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
-  sops = {
-    gnupg = {
-      home = "~/.gnupg";
-      sshKeyPaths = [ ];
-    };
-  };
+#  sops = {
+#    gnupg = {
+#      home = "~/.gnupg";
+#      sshKeyPaths = [ ];
+#    };
+#  };
 }
