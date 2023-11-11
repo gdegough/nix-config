@@ -19,7 +19,7 @@ in
   users.mutableUsers = false;
   users.users.root = {
     shell = pkgs.zsh;
-    hashedPasswordFile = config.sops.secrets.user-passwords.path;
+    passwordFile = config.sops.secrets.user-passwords.path;
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCmhJIl7WJNvnigGjC6rSXxeaTQxy7OSRzSKbaWIUpEYgZE5BJ+vlVOgp8ZxP4D9ruZp2RSmbKJs6Ih68GaQiccof42VVYM2QF4MtieXISjn2+dvvwLcRerkXmN4tA/8JMHX56lMVwF2NvaTs41NZSeWcnlhuQ8iRQJiHCuj18ikiG2ob1Qo1iHu6pSI2twQlONmgbOB5ZmHONq1mCBWPvNUdo50oRdcx0h3EjiKXJyTgDfR5bhidfzVr/5e9fLCiHg+wIQuzJlRRbge9ywpyZhv1szUz1TlSjd4QMUj4MGCu2R1GCspYdfY56PMoQatQRdOVOxiV2fXOd4I7U8pB0rUdd4n3Z20hmmOYCirfFn3ZZwMjWF6gDHg50KuGuwUycIcpFCC6y2Vr24MzRlbtsqzzyaQA2czhtZzQMN68nPUmGNB1WYvHmt/k5R2rMvdRf0TOg8TciSkWCt/bFixOpVB5pxoKgHgqDHi/eMsksbsYEkAyStARVX5No0y3kjrqBurV7BM3BnhyfefofpHSIVFwIFlZD/LTJ1eQKNyIVDFDH/2DkuMrS4fEbFXuQ4T+mLzD1KLLU8Xg/whonKAJ7O6UliMHLBp+vqfm1hT24z4LPgy9b5oyFeSofMYDZfHn5DF9nCgX/QttyYQ281Xm0vF/dX6umcHKA7HkoFCzeFIQ== root"
     ];
@@ -40,7 +40,7 @@ in
       "shared-files" 
     ];
     shell = pkgs.zsh;
-    hashedPasswordFile = config.sops.secrets.user-passwords.path;
+    passwordFile = config.sops.secrets.user-passwords.path;
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCmhJIl7WJNvnigGjC6rSXxeaTQxy7OSRzSKbaWIUpEYgZE5BJ+vlVOgp8ZxP4D9ruZp2RSmbKJs6Ih68GaQiccof42VVYM2QF4MtieXISjn2+dvvwLcRerkXmN4tA/8JMHX56lMVwF2NvaTs41NZSeWcnlhuQ8iRQJiHCuj18ikiG2ob1Qo1iHu6pSI2twQlONmgbOB5ZmHONq1mCBWPvNUdo50oRdcx0h3EjiKXJyTgDfR5bhidfzVr/5e9fLCiHg+wIQuzJlRRbge9ywpyZhv1szUz1TlSjd4QMUj4MGCu2R1GCspYdfY56PMoQatQRdOVOxiV2fXOd4I7U8pB0rUdd4n3Z20hmmOYCirfFn3ZZwMjWF6gDHg50KuGuwUycIcpFCC6y2Vr24MzRlbtsqzzyaQA2czhtZzQMN68nPUmGNB1WYvHmt/k5R2rMvdRf0TOg8TciSkWCt/bFixOpVB5pxoKgHgqDHi/eMsksbsYEkAyStARVX5No0y3kjrqBurV7BM3BnhyfefofpHSIVFwIFlZD/LTJ1eQKNyIVDFDH/2DkuMrS4fEbFXuQ4T+mLzD1KLLU8Xg/whonKAJ7O6UliMHLBp+vqfm1hT24z4LPgy9b5oyFeSofMYDZfHn5DF9nCgX/QttyYQ281Xm0vF/dX6umcHKA7HkoFCzeFIQ== gmdegoug"
     ];
@@ -66,6 +66,6 @@ in
       "pipewire" 
       "shared-files" 
     ];
-    hashedPasswordFile = config.sops.secrets.user-passwords.path;
+    passwordFile = config.sops.secrets.user-passwords.path;
   };
 }
