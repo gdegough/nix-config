@@ -27,7 +27,6 @@
     ./plex.nix
     ./postfix.nix
     ./samba.nix
-    ./sops.nix
     ./sway.nix
     ./users.nix
     ./vm-host.nix

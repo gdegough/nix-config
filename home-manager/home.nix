@@ -44,7 +44,6 @@
     ./readline-config.nix
     ./rofi-config.nix
     ./secure-messaging.nix
-    ./sops.nix
     ./sway-config.nix
     ./systemd-environment-config.nix
     ./tmux-package-and-config.nix
