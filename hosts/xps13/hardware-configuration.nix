@@ -36,12 +36,6 @@
       options = [ "subvol=@nixos@networkmanager-config" "relatime" "discard=async" "compress=zstd:1" ];
     };
 
-  fileSystems."/etc/nixos" =
-    { device = "/dev/disk/by-uuid/8ace9522-90db-4291-a879-027b559cada6";
-      fsType = "btrfs";
-      options = [ "subvol=@nixos@nixos-config" "relatime" "discard=async" "compress=zstd:1" ];
-    };
-
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/8ace9522-90db-4291-a879-027b559cada6";
       fsType = "btrfs";

@@ -37,12 +37,6 @@
       neededForBoot = true;
     };
 
-  fileSystems."/etc/nixos" =
-    { device = "/dev/disk/by-uuid/abea99fa-060c-40e0-90fd-445b805e418e";
-      fsType = "btrfs";
-      options = [ "subvol=@nixos@nixos-config" "relatime" "discard=async" "compress=zstd:1" ];
-    };
-
   fileSystems."/etc/NetworkManager" =
     { device = "/dev/disk/by-uuid/abea99fa-060c-40e0-90fd-445b805e418e";
       fsType = "btrfs";
