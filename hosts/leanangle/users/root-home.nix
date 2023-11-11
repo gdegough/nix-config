@@ -24,7 +24,7 @@
     ../../../home-manager/htmltidy-config.nix
     ../../../home-manager/mutt-package-and-config.nix
     ../../../home-manager/readline-config.nix
-    ../../../home-manager/systemd-environment-config.nix
+    ../../../home-manager/${config.networking.hostName}/systemd-environment-config.nix
     ../../../home-manager/tmux-package-and-config.nix
     ../../../home-manager/zsh-config.nix
   ];
