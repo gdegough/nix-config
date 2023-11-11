@@ -142,7 +142,6 @@
       set mbox="=/.maildir/"
       set record="=sent/"
       set postponed="=drafts/"
-      alternates (gmdegoug|gdegough)([-+.a-zA-Z0-9]*)?@(localhost|gmail\.com)
       set editor="vim -f -c 'set tw=72 et ft=mail fo=tr'"
       set mime_forward="ask-yes"
       set header="yes"

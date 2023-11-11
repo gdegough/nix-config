@@ -125,10 +125,6 @@ with lib.hm.gvariant;
       initial-size = mkTuple [ 890 550 ];
     };
 
-    "org/gnome/portal/filechooser/org/frescobaldi/Frescobaldi" = {
-      last-folder-path = "/home/gmdegoug/MEGA/Documents/music_notation/LY_Songs_PPT";
-    };
-
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [ 
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" 
