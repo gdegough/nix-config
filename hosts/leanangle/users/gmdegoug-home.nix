@@ -24,7 +24,7 @@
     ../../../home-manager/bitwarden.nix
     ../../../home-manager/browsers.nix
     ../../../home-manager/coding-utilities.nix
-    ../../../home-manager/${config.networking.hostName}/conky-package-and-config.nix
+    ../../../home-manager/leanangle/conky-package-and-config.nix
     ../../../home-manager/dircolors-config.nix
     ../../../home-manager/editors.nix
     ../../../home-manager/fonts.nix
@@ -44,8 +44,8 @@
     ../../../home-manager/readline-config.nix
     ../../../home-manager/rofi-config.nix
     ../../../home-manager/secure-messaging.nix
-    ../../../home-manager/${config.networking.hostName}/sway-config.nix
-    ../../../home-manager/${config.networking.hostName}/systemd-environment-config.nix
+    ../../../home-manager/leanangle/sway-config.nix
+    ../../../home-manager/leanangle/systemd-environment-config.nix
     ../../../home-manager/tmux-package-and-config.nix
     ../../../home-manager/waybar-config.nix
     ../../../home-manager/wofi-config.nix
@@ -78,7 +78,7 @@
 
   home = {
     username = "gmdegoug";
-    homeDirectory = "/home/gmdegoug";
+    homeDirectory = "/home/${config.home.username}";
   };
 
   services.gpg-agent = {

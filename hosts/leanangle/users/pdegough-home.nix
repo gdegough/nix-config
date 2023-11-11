@@ -32,9 +32,9 @@
     ../../../home-manager/readline-config.nix
     ../../../home-manager/rofi-config.nix
     ../../../home-manager/secure-messaging.nix
-    ../../../home-manager/${config.networking.hostName}/sway-config.nix
-    ../../../home-manager/${config.networking.hostName}/systemd-environment-config.nix
-    ../../../home-manager/${config.networking.hostName}/waybar-config.nix
+    ../../../home-manager/leanangle/sway-config.nix
+    ../../../home-manager/leanangle/systemd-environment-config.nix
+    ../../../home-manager/waybar-config.nix
     ../../../home-manager/wofi-config.nix
     ../../../home-manager/x-config.nix
     ../../../home-manager/xsettingsd-config.nix
@@ -65,7 +65,7 @@
 
   home = {
     username = "pdegough";
-    homeDirectory = "/home/pdegough";
+    homeDirectory = "/home/${config.home.username}";
   };
 
   services.gpg-agent = {

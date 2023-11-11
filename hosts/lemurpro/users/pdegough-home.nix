@@ -32,8 +32,8 @@
     ../../../home-manager/readline-config.nix
     ../../../home-manager/rofi-config.nix
     ../../../home-manager/secure-messaging.nix
-    ../../../home-manager/sway-config.nix
-    ../../../home-manager/systemd-environment-config.nix
+    ../../../home-manager/lemurpro/sway-config.nix
+    ../../../home-manager/lemurpro/systemd-environment-config.nix
     ../../../home-manager/waybar-config.nix
     ../../../home-manager/wofi-config.nix
     ../../../home-manager/x-config.nix
@@ -65,7 +65,7 @@
 
   home = {
     username = "pdegough";
-    homeDirectory = "/home/pdegough";
+    homeDirectory = "/home/${config.home.username}";
   };
 
   services.gpg-agent = {
