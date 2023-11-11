@@ -14,10 +14,10 @@ in
   users.mutableUsers = false;
 
   # root
-  sops.secrets.root-password = {
-    sopsFile = ./secrets.yaml;
-    neededForUsers = true;
-  };
+#  sops.secrets.root-password = {
+#    sopsFile = ./secrets.yaml;
+#    neededForUsers = true;
+#  };
   users.users.root = {
     shell = pkgs.zsh;
     passwordFile = "/persist/passwords/root";
@@ -28,10 +28,10 @@ in
   };
 
   # gmdegoug
-  sops.secrets.gmdegoug-password = {
-    sopsFile = ./secrets.yaml;
-    neededForUsers = true;
-  };
+#  sops.secrets.gmdegoug-password = {
+#    sopsFile = ./secrets.yaml;
+#    neededForUsers = true;
+#  };
   users.users.gmdegoug = {
     isNormalUser = true;
     uid = 1000;
@@ -66,10 +66,10 @@ in
   ];
 
   # pdegough
-  sops.secrets.pdegough-password = {
-    sopsFile = ./secrets.yaml;
-    neededForUsers = true;
-  };
+#  sops.secrets.pdegough-password = {
+#    sopsFile = ./secrets.yaml;
+#    neededForUsers = true;
+#  };
   users.users.pdegough = {
     isNormalUser = true;
     uid = 1003;

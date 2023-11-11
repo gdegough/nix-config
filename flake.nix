@@ -11,7 +11,7 @@
 
     # Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
-    sops-nix.url = "github:mic92/sops-nix";
+#    sops-nix.url = "github:mic92/sops-nix";
     impermanence.url = "github:nix-community/impermanence";
 
     # Shameless plug: looking for a way to nixify your themes and make
@@ -23,7 +23,7 @@
     self,
     nixpkgs,
     home-manager,
-    sops-nix,
+#    sops-nix,
     impermanence,
     ...
   } @ inputs: let
@@ -38,7 +38,7 @@
         # > Our main nixos configuration file <
         modules = [
           ./hosts/leanangle/configuration.nix
-          sops-nix.nixosModules.sops
+#          sops-nix.nixosModules.sops
           impermanence.nixosModules.impermanence
         ];
       };
