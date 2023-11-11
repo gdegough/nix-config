@@ -3,5 +3,5 @@ keys:
     - &gmdegoug 710EA5CE54009BDC0A8DB1D626A55B13A1C183C0
 
 creation_rules:
-  - path_regex: nixos/secrets.ya?ml$
+  - path_regex: secrets\.(ya?ml|json|env|ini)$
     pgp: *gmdegoug

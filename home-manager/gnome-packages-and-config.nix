@@ -5,7 +5,7 @@
   , pkgs
   , ...
 }:
-#with lib.hm.gvariant;
+with lib.hm.gvariant;
 {
   home.pointerCursor = {
     name = "Adwaita";
