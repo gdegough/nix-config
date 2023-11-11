@@ -11,12 +11,12 @@
     inputs.sops-nix.homeManagerModules.sops
   ];
 
-  sops = {
-    gnupg = {
-      home = "~/.gnupg";
-      sshKeyPaths = [ ];
-    };
-  };
+#  sops = {
+#    gnupg = {
+#      home = "~/.gnupg";
+#      sshKeyPaths = [ ];
+#    };
+#  };
 
   home.packages = with pkgs; [
     sops
