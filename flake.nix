@@ -37,7 +37,7 @@
         specialArgs = { inherit inputs outputs; };
         # > Our main nixos configuration file <
         modules = [
-          ./nixos/configuration.nix
+          ./hosts/leanangle/configuration.nix
           sops-nix.nixosModules.sops
           impermanence.nixosModules.impermanence
         ];
@@ -53,7 +53,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./home-manager/home.nix
+          ./hosts/leanangle/users/gmdegoug-home.nix
         ];
       };
     };

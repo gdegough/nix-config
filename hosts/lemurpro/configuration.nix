@@ -20,17 +20,14 @@
 
     # You can also split up your configuration and import pieces of it here:
     ./gnome.nix
-    ./locale.nix
     ./networking.nix
-    ./opengl.nix
-    ./pipewire.nix
-    ./plex.nix
-    ./postfix.nix
-    ./samba.nix
-    ./sway.nix
-    ./users.nix
-    ./vm-host.nix
-    ./zsh.nix
+    ../../nixos/users.nix
+    ../../nixos/global/locale.nix
+    ../../nixos/global/opengl.nix
+    ../../nixos/global/pipewire.nix
+    ../../nixos/global/postfix.nix
+    ../../nixos/global/sway.nix
+    ../../nixos/global/zsh.nix
   ];
 
   nixpkgs = {
@@ -84,19 +81,14 @@
     memoryPercent = 25;
   };
 
-  services.power-profiles-daemon.enable = true;
+  services.power-profiles-daemon.enable = false; # conflicts with system76-power service
   services.printing.enable = true; # Enable CUPS to print documents.
 
-  # Disable sleep and hibernation. This system should be always on.
-  systemd.targets = {
-    sleep.enable = false;
-    suspend.enable = false;
-    hibernate.enable = false;
-    hybrid-sleep.enable = false;
-  };
-  
   # Polkit is used for controlling system-wide privileges
   security.polkit.enable = true;
+
+  # System76
+  hardware.system76.enableAll = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -108,11 +100,10 @@
     gptfdisk
     lm_sensors
     mailutils
-    php
-    postgresql
     python3
     sops
     sysstat
+    system76-firmware
     system76-keyboard-configurator
     terminus_font
     unzip
