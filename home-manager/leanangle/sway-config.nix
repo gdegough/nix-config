@@ -233,7 +233,7 @@
       exec_always --no-startup-id {
       #    systemctl --user import-environment
           systemctl --user start xsettingsd
-          configure-gtk
+      #    configure-gtk
       #    gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
       #    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
       #    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
