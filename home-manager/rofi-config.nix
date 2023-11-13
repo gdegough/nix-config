@@ -183,35 +183,36 @@
        * Copyright: Rasmus Steinke
        ******************************************************************************/
       * {
-          selected-normal-foreground:  rgba ( 34, 34, 34, 100 % );
+          transparent-background:      rgba ( 0, 0, 0, 0 % );
           foreground:                  rgba ( 204, 204, 204, 100 % );
-          normal-foreground:           @foreground;
-          alternate-normal-background: rgba ( 48, 48, 48, 100 % );
-          red:                         rgba ( 220, 50, 47, 100 % );
-          selected-urgent-foreground:  rgba ( 137, 6, 97, 100 % );
-          blue:                        rgba ( 38, 139, 210, 100 % );
-          urgent-foreground:           rgba ( 218, 66, 129, 100 % );
-          alternate-urgent-background: rgba ( 0, 54, 67, 100 % );
-          active-foreground:           rgba ( 0, 142, 212, 100 % );
-          lightbg:                     rgba ( 238, 232, 213, 100 % );
-          selected-active-foreground:  rgba ( 102, 198, 255, 100 % );
-          alternate-active-background: rgba ( 0, 54, 67, 100 % );
           background:                  rgba ( 48, 48, 48, 100 % );
-          alternate-normal-foreground: @foreground;
+
+          normal-foreground:           @foreground;
           normal-background:           rgba ( 34, 34, 34, 100 % );
-          lightfg:                     rgba ( 88, 104, 117, 100 % );
+          active-foreground:           rgba ( 0, 142, 212, 100 % );
+          active-background:           rgba ( 0, 43, 55, 100 % );
+          urgent-foreground:           rgba ( 218, 66, 129, 100 % );
+          urgent-background:           rgba ( 0, 43, 55, 100 % );
+
+          selected-normal-foreground:  rgba ( 34, 34, 34, 100 % );
           selected-normal-background:  rgba ( 144, 207, 176, 100 % );
+          selected-active-foreground:  rgba ( 102, 198, 255, 100 % );
+          selected-active-background:  rgba ( 0, 142, 212, 100 % );
+          selected-urgent-foreground:  rgba ( 137, 6, 97, 100 % );
+          selected-urgent-background:  rgba ( 0, 142, 212, 100 % );
+
+          alternate-normal-foreground: @foreground;
+          alternate-normal-background: rgba ( 48, 48, 48, 100 % );
+          alternate-active-foreground: @active-foreground;
+          alternate-active-background: rgba ( 0, 54, 67, 100 % );
+          alternate-urgent-foreground: @urgent-foreground;
+          alternate-urgent-background: rgba ( 0, 54, 67, 100 % );
+
+          separatorcolor:              rgba ( 255, 215, 161, 100 % );
+
           border-color:                @foreground;
           spacing:                     2;
-          separatorcolor:              rgba ( 255, 215, 161, 100 % );
-          bordercolor:                 @separatorcolor;
-          urgent-background:           rgba ( 0, 43, 55, 100 % );
-          selected-urgent-background:  rgba ( 0, 142, 212, 100 % );
-          alternate-urgent-foreground: @urgent-foreground;
           background-color:            rgba ( 0, 0, 0, 0 % );
-          alternate-active-foreground: @active-foreground;
-          active-background:           rgba ( 0, 43, 55, 100 % );
-          selected-active-background:  rgba ( 0, 142, 212, 100 % );
       }
       window {
           background-color: @background;
