@@ -12,7 +12,7 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     enableVteIntegration = true;
-    syntaxHighlighting.enable = true;
+    enableSyntaxHighlighting = true;
     initExtraFirst = ''
       # read in OS info
       ID=""
