@@ -4,7 +4,7 @@
   lib,
   pkgs,
   modulesPath,
-  ...,
+  ...
 }:
 {
   # Set your time zone.

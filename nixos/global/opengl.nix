@@ -4,7 +4,7 @@
   lib,
   pkgs,
   modulesPath,
-  ...,
+  ...
 }: 
 {
   # for accelerated video playback

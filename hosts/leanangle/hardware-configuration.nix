@@ -7,7 +7,7 @@
   lib,
   pkgs,
   modulesPath,
-  ...,
+  ...
 }:
 {
   imports = [ 

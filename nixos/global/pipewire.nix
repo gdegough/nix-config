@@ -4,7 +4,7 @@
   lib,
   pkgs,
   modulesPath,
-  ...,
+  ...
 }:
 {
   # Enable sound with pipewire.
