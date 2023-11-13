@@ -5,7 +5,7 @@
   lib,
   config,
   pkgs,
-  ...,
+  ...
 }:
 #with lib.hm.gvariant;
 {

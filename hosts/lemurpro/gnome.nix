@@ -4,7 +4,7 @@
   lib,
   pkgs,
   modulesPath,
-  ...,
+  ...
 }:
 {
   # Enable the X11 windowing system.

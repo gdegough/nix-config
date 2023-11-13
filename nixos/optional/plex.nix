@@ -4,7 +4,7 @@
   lib,
   pkgs,
   modulesPath,
-  ...,
+  ...
 }:
 {
   # List packages installed in system profile. To search, run:
