@@ -1,10 +1,10 @@
 { 
-  inputs
-  , config
-  , lib
-  , pkgs
-  , modulesPath
-  , ...
+  inputs,
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...,
 }:
 {
   # Enable the X11 windowing system.

@@ -1,10 +1,10 @@
 {
-  inputs
-  , config
-  , lib
-  , pkgs
-  , modulesPath
-  , ...
+  inputs,
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...,
 }: 
 let 
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;

@@ -2,12 +2,12 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 { 
-  inputs
-  , config
-  , lib
-  , pkgs
-  , modulesPath
-  , ... 
+  inputs,
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...,
 }:
 {
   imports = [ 

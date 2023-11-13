@@ -1,10 +1,10 @@
 { 
-  inputs
-  , config
-  , lib
-  , pkgs
-  , modulesPath
-  , ...
+  inputs,
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...,
 }:
 {
   # Set your time zone.

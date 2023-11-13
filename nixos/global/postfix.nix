@@ -1,10 +1,10 @@
 { 
-  inputs
-  , config
-  , lib
-  , pkgs
-  , modulesPath
-  , ...
+  inputs,
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...,
 }:
 let
   myNetwork01 = "10.1.0.0/22";

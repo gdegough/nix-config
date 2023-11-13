@@ -1,10 +1,10 @@
 {
-  inputs
-  , config
-  , lib
-  , pkgs
-  , modulesPath
-  , ...
+  inputs,
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...,
 }: 
 let
   # bash script to let dbus know about important env variables and

@@ -1,10 +1,10 @@
 { 
-  inputs
-  , config
-  , lib
-  , pkgs
-  , modulesPath
-  , ...
+  inputs,
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...,
 }:
 let
   myInterfaces = "lo wlo1 enp5s0";

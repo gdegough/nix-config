@@ -1,9 +1,9 @@
 {
-  inputs
-  , lib
-  , config
-  , pkgs
-  , ...
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...,
 }:
 #with lib.hm.gvariant;
 {
