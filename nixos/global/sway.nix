@@ -74,7 +74,9 @@ in
     dex
     feh
     foot
+    glib
     grim
+    mako
     pasystray
     pavucontrol
     playerctl
@@ -84,14 +86,19 @@ in
     swayidle
     swaylock
     waybar
+    wayland
+    wdisplays
     wev
     wl-clipboard
     wofi
+    xdg-utils
     xsettingsd
   ];
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    # gtk portal needed to make gtk apps happy
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
   # enable sway window manager
   programs.sway = {

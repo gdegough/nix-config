@@ -213,9 +213,11 @@
       # See FS#63021
       # Adapted from xorg's 50-systemd-user.sh, which achieves a similar goal.
 
-      exec --no-startup-id systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK QT_QPA_PLATFORMTHEME 
-      exec --no-startup-id hash dbus-update-activation-environment 2>/dev/null && \
-        dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK QT_QPA_PLATFORMTHEME
+      #exec --no-startup-id systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK QT_QPA_PLATFORMTHEME 
+      #exec --no-startup-id hash dbus-update-activation-environment 2>/dev/null && \
+      #  dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK QT_QPA_PLATFORMTHEME
+
+      exec --no-startup-id dbus-sway-environment
     '';
     ".config/sway/config.d/client-window-colors.conf".text = ''
       # Client window highlight colors
@@ -231,6 +233,7 @@
       exec_always --no-startup-id {
       #    systemctl --user import-environment
           systemctl --user start xsettingsd
+          configure-gtk
       #    gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
       #    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
       #    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
