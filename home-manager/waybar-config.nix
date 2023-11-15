@@ -105,7 +105,7 @@
               "tooltip": false,
       //      "device": "acpi_video1",
               "format": "<span font='icon'>{icon}</span> {percent}%",
-              "format-icons": ["", ""]
+              "format-icons": ["", ""]
           },
           "battery": {
               "tooltip": true,
