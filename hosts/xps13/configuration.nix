@@ -91,6 +91,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     bc
+    brightnessctl
     btrbk
     efibootmgr
     gnupg
