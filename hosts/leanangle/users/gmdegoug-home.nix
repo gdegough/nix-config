@@ -40,6 +40,7 @@
     ../../../home-manager/multimedia.nix
     ../../../home-manager/music-composition.nix
     ../../../home-manager/mutt-package-and-config.nix
+    ../../../home-manager/nvim
     ../../../home-manager/office.nix
     ../../../home-manager/readline-config.nix
     ../../../home-manager/rofi-config.nix
