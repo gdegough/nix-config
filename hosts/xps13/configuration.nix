@@ -94,6 +94,7 @@
     brightnessctl
     btrbk
     efibootmgr
+    exfatprogs
     gnupg
     gptfdisk
     lm_sensors

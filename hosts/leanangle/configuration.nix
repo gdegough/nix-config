@@ -104,6 +104,7 @@
     bc
     btrbk
     efibootmgr
+    exfatprogs
     gnupg
     gptfdisk
     lm_sensors
