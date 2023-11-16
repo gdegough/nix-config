@@ -167,7 +167,7 @@
               "tooltip": false,
               "max-length": 15,
               "restart-interval": 10,
-              "exec": "exec $HOME/.config/waybar/scripts/pw-volume-monitor.sh"
+              "exec": "exec bash $HOME/.config/waybar/scripts/pw-volume-monitor.bash"
           },
           "custom/mediaplayer": {
               "tooltip": false,
