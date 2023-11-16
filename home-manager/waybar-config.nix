@@ -644,7 +644,7 @@
       snore()
       {
           local IFS
-          [[ -n "${_snore_fd:-}" ]] || { exec {_snore_fd}<> <(:) && read -r -t 0 -u $_snore_fd; } 2>/dev/null
+          [[ -n "''${_snore_fd:-}" ]] || { exec {_snore_fd}<> <(:) && read -r -t 0 -u $_snore_fd; } 2>/dev/null
           read ''${1:+-t "$1"} -u $_snore_fd || :
       }
 
