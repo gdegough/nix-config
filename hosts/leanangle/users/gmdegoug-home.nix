@@ -12,8 +12,8 @@
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
-    inputs.nix-colors.homeManagerModule
-    inputs.nixvim.homeManagerModules.nixvim
+    #inputs.nix-colors.homeManagerModule
+    #inputs.nixvim.homeManagerModules.nixvim
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
@@ -41,7 +41,6 @@
     ../../../home-manager/multimedia.nix
     ../../../home-manager/music-composition.nix
     ../../../home-manager/mutt-package-and-config.nix
-    ../../../home-manager/nvim
     ../../../home-manager/office.nix
     ../../../home-manager/readline-config.nix
     ../../../home-manager/rofi-config.nix
@@ -103,7 +102,6 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
-  config.modules.editors.nvim.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
