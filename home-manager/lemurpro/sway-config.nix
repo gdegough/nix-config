@@ -287,8 +287,8 @@
       # Backlight
       # PLEASE NOTE: Light has a small issue with SUID, you should install the version
       # that allows the user to run it without SUID
-      bindsym XF86MonBrightnessDown exec --no-startup-id /bin/sh -c "sudo brightnessctl -q set 2%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )"
-      bindsym XF86MonBrightnessUp exec --no-startup-id /bin/sh -c "sudo brightnessctl -q set +2% && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )"
+      bindsym XF86MonBrightnessDown exec --no-startup-id /bin/sh -c "brightnessctl -q set 2%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )"
+      bindsym XF86MonBrightnessUp exec --no-startup-id /bin/sh -c "brightnessctl -q set +2% && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )"
 
       # Screenshot
       #bindsym $mod+S exec --no-startup-id grimshot save screen $HOME/Pictures/$(date '+%Y-%m-%d-%T')-screenshot.png
