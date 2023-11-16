@@ -600,8 +600,8 @@
           printf "$player_status"
       fi
     '';
-    ".config/waybar/scripts/pw-volume-monitor.sh".executable = true;
-    ".config/waybar/scripts/pw-volume-monitor.sh".text = ''
+    ".config/waybar/scripts/pw-volume-monitor.bash".executable = true;
+    ".config/waybar/scripts/pw-volume-monitor.bash".text = ''
       #!bash
 
       #
