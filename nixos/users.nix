@@ -19,7 +19,7 @@ in
 #    neededForUsers = true;
 #  };
   users.users.root = {
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     hashedPasswordFile = "/persist/passwords/root";
 #    hashedPasswordFile = config.sops.secrets.root-password.path;
     openssh.authorizedKeys.keys = [
@@ -47,7 +47,7 @@ in
       "pipewire" 
       "shared-files" 
     ];
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     hashedPasswordFile = "/persist/passwords/gmdegoug";
 #    hashedPasswordFile = config.sops.secrets.gmdegoug-password.path;
     openssh.authorizedKeys.keys = [
@@ -81,6 +81,7 @@ in
       "pipewire" 
       "shared-files" 
     ];
+    shell = pkgs.bash;
     hashedPasswordFile = "/persist/passwords/pdegough";
 #    hashedPasswordFile = config.sops.secrets.pdegough-password.path;
   };
