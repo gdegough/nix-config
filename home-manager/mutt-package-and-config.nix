@@ -1298,7 +1298,7 @@
       #folder-hook gmail/important    "color status        J_black         J_yellow        "
       '';
     ".mutt/mutt-colors-solarized-master/mutt-compile-colors.sh".text = ''
-      #!/bin/sh
+      #!env sh
       # ---------------------------------------------------------------------
       # SOLARIZED color values
       # ---------------------------------------------------------------------

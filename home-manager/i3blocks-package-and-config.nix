@@ -1969,7 +1969,7 @@
     '';
     ".local/libexec/i3blocks/disk_usage".executable = true;
     ".local/libexec/i3blocks/disk_usage".text = ''
-      #!python
+      #!env python
       # -*- coding: utf-8 -*-
 
       # MIT License
@@ -2610,7 +2610,7 @@
     '';
     ".local/libexec/i3blocks/kbdd_layout".executable = true;
     ".local/libexec/i3blocks/kbdd_layout".text = ''
-      #!bash
+      #!env bash
       #
       # kbdd_layout is a script that parse layout with kbdd in real time
       # Copyright (C) 2016,2019 Anton Karmanov <bergentroll@insiberia.net>
@@ -2875,7 +2875,7 @@
     '';
     ".local/libexec/i3blocks/load-status".executable = true;
     ".local/libexec/i3blocks/load-status".text = ''
-      #!bash
+      #!env bash
 
       # Change this according to your devices
       loadavg_1min=$(cat /proc/loadavg | awk -F ' ' '{print $1}')
@@ -3056,7 +3056,7 @@
     '';
     ".local/libexec/i3blocks/mediaplayer-status".executable = true;
     ".local/libexec/i3blocks/mediaplayer-status".text = ''
-      #!bash
+      #!env bash
       #
       ## Change this according to your devices
 
@@ -3162,7 +3162,7 @@
     '';
     ".local/libexec/i3blocks/memory-status".executable = true;
     ".local/libexec/i3blocks/memory-status".text = ''
-      #!bash
+      #!env bash
 
       # Change this according to your devices
 
@@ -3499,7 +3499,7 @@
     '';
     ".local/libexec/i3blocks/miccontrol".executable = true;
     ".local/libexec/i3blocks/miccontrol".text = ''
-      #!bash
+      #!env bash
       #
       # Copyright © 2020 Filip Paskali
       #
@@ -4469,7 +4469,7 @@
     '';
     ".local/libexec/i3blocks/os-type".executable = true;
     ".local/libexec/i3blocks/os-type".text = ''
-      #!bash
+      #!env bash
 
       kernel_version=$(uname -a | cut -d ' ' -f 3)
 
@@ -4484,7 +4484,7 @@
     '';
     ".local/libexec/i3blocks/purpleair".executable = true;
     ".local/libexec/i3blocks/purpleair".text = ''
-      #!perl
+      #!env perl
       # For temperature: subtract 8 from the F value for the actual temperature
 
       # Get PurpleAir sensor ID
@@ -4737,7 +4737,7 @@
     '';
     ".local/libexec/i3blocks/pw-volume-monitor".executable = true;
     ".local/libexec/i3blocks/pw-volume-monitor".text = ''
-      #!bash
+      #!env bash
 
       #
       # A script to display the pipewire/wireplumber volume in Waybar
@@ -5369,7 +5369,7 @@
     '';
     ".local/libexec/i3blocks/speedtest".executable = true;
     ".local/libexec/i3blocks/speedtest".text = ''
-      #!sh
+      #!env bash
 
       # Copyright (C) 2018 Nikolas De Giorgis <nikolas.degiorgis@gmail.com>
 
@@ -5537,7 +5537,7 @@
     '';
     ".local/libexec/i3blocks/systemctl".executable = true;
     ".local/libexec/i3blocks/systemctl".text = ''
-      #!bash
+      #!env bash
 
       # The service we want to check or toggle (according to systemctl)
       SERVICE=$BLOCK_INSTANCE
@@ -5895,7 +5895,7 @@
     '';
     ".local/libexec/i3blocks/temperature-status".executable = true;
     ".local/libexec/i3blocks/temperature-status".text = ''
-      #!bash
+      #!env bash
 
       # Change this according to your devices
 
@@ -6185,7 +6185,7 @@
     '';
     ".local/libexec/i3blocks/toggle".executable = true;
     ".local/libexec/i3blocks/toggle".text = ''
-      #!bash
+      #!env bash
 
       if [[ -z ''${COMMAND_ON} || -z ''${COMMAND_OFF} || -z ''${COMMAND_STATUS} ]]; then
         echo "All of COMMAND_ON, COMMAND_OFF, and COMMAND_STATUS are required" >&2
@@ -6686,7 +6686,7 @@
     '';
     ".local/libexec/i3blocks/volume-pipewire".executable = true;
     ".local/libexec/i3blocks/volume-pipewire".text = ''
-      #!bash
+      #!env bash
       # Displays the default device, volume, and mute status for i3blocks
 
       set -a

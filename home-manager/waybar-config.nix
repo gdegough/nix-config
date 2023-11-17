@@ -602,7 +602,7 @@
     '';
     ".config/waybar/scripts/pw-volume-monitor.bash".executable = true;
     ".config/waybar/scripts/pw-volume-monitor.bash".text = ''
-      #!bash
+      #!env bash
 
       #
       # A script to display the pipewire/wireplumber volume in Waybar
