@@ -719,7 +719,7 @@
                   # [3] = the MUTED part when found 
                   #            
                   if [[ -n "''${BASH_REMATCH[3]}" ]] ; then
-                      OUT+="''${ICON[0]} (MUTE)"
+                      OUT+="''${ICON[0]}(MUTE)"
                   else
                       # Numbers starting with 0 are interpeted in octal.
                       # That can be prevented by specifying a decimal base as in 10#033
@@ -727,13 +727,13 @@
                       #         terminate (because of 'set -e') when the value is 0
                       volume=$(( 10#''${BASH_REMATCH[1]}''${BASH_REMATCH[2]} ))
                       if [[ $volume -gt 50 ]]; then
-                          OUT+="''${ICON[3]} ($volume%%)"
+                          OUT+="''${ICON[3]}($volume%%)"
                       elif [[ $volume -gt 25 ]]; then
-                          OUT+="''${ICON[2]} ($volume%%)"
+                          OUT+="''${ICON[2]}($volume%%)"
                       elif [[ $volume -gt 0 ]]; then
-                          OUT+="''${ICON[1]} ($volume%%)"
+                          OUT+="''${ICON[1]}($volume%%)"
                       else
-                          OUT+="''${ICON[1]} (---)"
+                          OUT+="''${ICON[1]}(---)"
                       fi
                   fi
               else
