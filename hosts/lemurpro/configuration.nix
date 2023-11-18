@@ -115,7 +115,22 @@
   # to put bash-completion files in path
   environment.pathsToLink = [ "/share/bash-completion" ];
 
-  # This setups a SSH server. Very important if you're setting up a headless system.
+# This is using a rec (recursive) expression to set and access XDG_BIN_HOME within the expression
+  # For more on rec expressions see https://nix.dev/tutorials/first-steps/nix-language#recursive-attribute-set-rec
+  environment.sessionVariables = rec {
+    XDG_CACHE_HOME  = "$HOME/.cache";
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME   = "$HOME/.local/share";
+    XDG_STATE_HOME  = "$HOME/.local/state";
+
+    # Not officially in the specification
+    XDG_BIN_HOME    = "$HOME/.local/bin";
+    PATH = [ 
+      "${XDG_BIN_HOME}"
+    ];
+  };
+
+# This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
     enable = true;
