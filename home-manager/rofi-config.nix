@@ -10,11 +10,11 @@
   home.file = {
     ".config/rofi/config.rasi".text = ''
       configuration {
-          modi: "window,drun,ssh,combi";
+          modi: "combi,window,ssh,drun,run";
           font: "IBM Plex Mono Text 10";
           show-icons: true;
           icon-theme: "Adwaita";
-          combi-modi: "window,drun,ssh";
+          combi-modi: "window,ssh,drun,run";
         timeout {
             action: "kb-cancel";
             delay:  0;
