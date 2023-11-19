@@ -34,7 +34,7 @@
       set $mod Mod4
 
       # Preferred font for universal usage
-      set $font "pango:IBM Plex Mono Text 10"
+      set $font "pango:IBM Plex Mono Text 11"
 
       # Preferred font
       font $font

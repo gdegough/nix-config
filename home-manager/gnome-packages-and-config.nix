@@ -47,7 +47,7 @@ with lib.hm.gvariant;
       font-name = "IBM Plex Sans 11";
       gtk-enable-primary-paste = false;
       gtk-theme = "Adwaita-dark";
-      monospace-font-name = "IBM Plex Mono weight=450 10";
+      monospace-font-name = "IBM Plex Mono weight=450 11";
     };
 
     "org/gnome/desktop/media-handling" = {

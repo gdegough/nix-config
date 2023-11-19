@@ -227,8 +227,8 @@
       ! XTerm
       XTerm*termName:           xterm-256color
       XTerm*VT100.geometry:     132x43
-      XTerm*faceName:           Fira Mono
-      XTerm*faceSize:           10
+      XTerm*faceName:           IBM Plex Mono Text
+      XTerm*faceSize:           11
       XTerm*dynamicColors:      true
       XTerm*utf8:               2
       XTerm*eightBitInput:      true
@@ -249,8 +249,8 @@
       ! UXTerm
       UXTerm*termName:           xterm-256color
       UXTerm*VT100.geometry:     132x43
-      UXTerm*faceName:           Fira Mono
-      UXTerm*faceSize:           10
+      UXTerm*faceName:           IBM Plex Mono Text
+      UXTerm*faceSize:           11
       UXTerm*dynamicColors:      true
       UXTerm*utf8:               2
       UXTerm*eightBitInput:      true
@@ -272,8 +272,8 @@
       Zutty.altScroll:           true
       Zutty.autoCopy:            false
       Zutty.boldColors:          false
-      Zutty.font:                FiraMono
-      Zutty.fontsize:            12
+      Zutty.font:                IBMPlexMonoText
+      Zutty.fontsize:            11
       Zutty.geometry:            132x43
       Zutty.login:               false
       Zutty.rv:                  false
@@ -281,9 +281,6 @@
       Zutty.showWraps:           true
       Zutty.altSendsEscape:      false
       !Zutty.border:              2
-      !Zutty.dwfont:              18x18ja
-      !Zutty.fontpath:            /usr/share/fonts
-      !Zutty.shell:               /bin/bash
     '';
   };
 }

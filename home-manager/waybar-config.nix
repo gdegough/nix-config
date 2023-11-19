@@ -754,7 +754,7 @@
           border:                 none;
           border-radius:          0;
           font-family:            "IBM Plex Mono Text";
-          font-size:              12px;
+          font-size:              14px;
           box-shadow:             none;
           text-shadow:            none;
           transition-duration:    0s;

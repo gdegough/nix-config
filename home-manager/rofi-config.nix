@@ -10,7 +10,7 @@
   home.file = {
     ".config/rofi/config.rasi".text = ''
       configuration {
-          font: "IBM Plex Mono Text 10";
+          font: "IBM Plex Mono Text 11";
           modi: "combi,window,ssh,drun,run";
           combi-modi: "window,ssh,drun,run";
           show-icons: true;
@@ -355,7 +355,7 @@
           normal-foreground:           var(foreground);
           alternate-urgent-foreground: var(red);
           selected-normal-background:  var(lightbg);
-          font:                        "DejaVu Sans 12";
+          /*font:                        "DejaVu Sans 12";*/
           blackText:			 rgba(0, 0, 0, 100 %);
       }
       window {
@@ -377,7 +377,7 @@
           border-color: var(separatorcolor);
           border:       2px dash 0px 0px ;
           width:        30%;
-          font:         "monospace bold 10";
+          /*font:         "monospace bold 10";*/
       }
       textbox {
           text-color: var(foreground);
@@ -505,7 +505,7 @@
           active:      #005F87;
           transparent: #000000aa;
           spacing: 0em;
-          font: "Iosevka Term Regular 14";
+          /*font: "Iosevka Term Regular 14";*/
           padding: 0px;
           background-color: @white;
           line-style: "none";
@@ -656,7 +656,7 @@
           display-ssh: "~#";
           show-icons: true;
           sidebar-mode: false;
-          font: "Source Code Pro 15";
+          /*font: "Source Code Pro 15";*/
       }
 
       * {
@@ -808,7 +808,7 @@
          blackselect:      #303030;
          darkgray:         #848484;
          scrollbarcolor:   #505050;
-         font: "DejaVu Sans Mono Regular 14";
+         /*font: "DejaVu Sans Mono Regular 14";*/
          background-color: @blackdarkest;
       }
 
@@ -970,7 +970,7 @@
           spacing: 0;
           background-color: transparent;
 
-          font: "Roboto Mono 13";
+          /*font: "Roboto Mono 13";*/
       }
 
       window {
@@ -1078,7 +1078,7 @@
       // ================================================ */
 
       * {
-          font: "Ubuntu Mono Reguler 11";
+          /*font: "Ubuntu Mono Reguler 11";*/
           foreground: #f8f8f2;
           background-color: #282a36;
           active-background: #b00000;
@@ -1227,7 +1227,7 @@
         spacing: 0;
         background-color: transparent;
 
-        font: "Knack Nerd Font 14";
+        /*font: "Knack Nerd Font 14";*/
         text-color: @text;
       }
 
@@ -1483,7 +1483,7 @@
           alternate-active-foreground: @active-foreground;
           active-background:           rgba ( 245, 245, 245, 100 % );
           selected-active-background:  #2B591C;
-          font: "Bitstream Vera Sans 8";
+          /*font: "Bitstream Vera Sans 8";*/
           monospace: "Bitstream Vera Sans Mono 8";
       }
 
@@ -1552,7 +1552,7 @@
 
       #textbox {
           text-color: @foreground;
-          font: @monospace;
+          /*font: @monospace;*/
       }
       #listview {
           fixed-height: 0;
@@ -1566,7 +1566,7 @@
       #element {
           border:  0;
           padding: 3px ;
-          font: @monospace;
+          /*font: @monospace;*/
       }
       #element.normal.normal {
           background-color: @normal-background;
@@ -1683,7 +1683,7 @@
         border-color: #00000066;
         transparent: #00000000;
         text-color: @base-color;
-        font: "Times New Roman 20";
+        /*font: "Times New Roman 20";*/
       }
       #window {
         anchor: south;
