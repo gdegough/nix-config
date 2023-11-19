@@ -90,7 +90,7 @@ in
     wdisplays
     wev
     wl-clipboard
-    wofi
+#    wofi
     xdg-utils
     xsettingsd
   ];

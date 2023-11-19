@@ -50,11 +50,7 @@
       set $rofi_cmd rofi -terminal '$term'
       # Shows a combined list of the applications with desktop files and
       # executables from PATH.
-      # TODO: add window with the next release of rofi-wayland
-      set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-      #set $menu wofi --show run -Iib -l 5 -W 500 -x -10 -y -51
-      #set $menu rofi -terminal foot -theme ~/.config/sway/rofi/flat-orange.rasi -show run
-      #set $menu wofi --show drun,run
+      set $menu $rofi_cmd -show combi -modes "combi#window#ssh#drun#run" -combi-modes "window#ssh#drun#run"
 
       # Your preferred browser (firefox, vivaldi-stable, qutebrowser)
       set $browser firefox
