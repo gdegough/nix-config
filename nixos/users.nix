@@ -22,9 +22,6 @@ in
     shell = pkgs.zsh;
     hashedPasswordFile = "/persist/passwords/root";
 #    hashedPasswordFile = config.sops.secrets.root-password.path;
-    openssh.authorizedKeys.keys = [
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCmhJIl7WJNvnigGjC6rSXxeaTQxy7OSRzSKbaWIUpEYgZE5BJ+vlVOgp8ZxP4D9ruZp2RSmbKJs6Ih68GaQiccof42VVYM2QF4MtieXISjn2+dvvwLcRerkXmN4tA/8JMHX56lMVwF2NvaTs41NZSeWcnlhuQ8iRQJiHCuj18ikiG2ob1Qo1iHu6pSI2twQlONmgbOB5ZmHONq1mCBWPvNUdo50oRdcx0h3EjiKXJyTgDfR5bhidfzVr/5e9fLCiHg+wIQuzJlRRbge9ywpyZhv1szUz1TlSjd4QMUj4MGCu2R1GCspYdfY56PMoQatQRdOVOxiV2fXOd4I7U8pB0rUdd4n3Z20hmmOYCirfFn3ZZwMjWF6gDHg50KuGuwUycIcpFCC6y2Vr24MzRlbtsqzzyaQA2czhtZzQMN68nPUmGNB1WYvHmt/k5R2rMvdRf0TOg8TciSkWCt/bFixOpVB5pxoKgHgqDHi/eMsksbsYEkAyStARVX5No0y3kjrqBurV7BM3BnhyfefofpHSIVFwIFlZD/LTJ1eQKNyIVDFDH/2DkuMrS4fEbFXuQ4T+mLzD1KLLU8Xg/whonKAJ7O6UliMHLBp+vqfm1hT24z4LPgy9b5oyFeSofMYDZfHn5DF9nCgX/QttyYQ281Xm0vF/dX6umcHKA7HkoFCzeFIQ== root"
-    ];
   };
 
   # gmdegoug
@@ -51,7 +48,7 @@ in
     hashedPasswordFile = "/persist/passwords/gmdegoug";
 #    hashedPasswordFile = config.sops.secrets.gmdegoug-password.path;
     openssh.authorizedKeys.keys = [
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCmhJIl7WJNvnigGjC6rSXxeaTQxy7OSRzSKbaWIUpEYgZE5BJ+vlVOgp8ZxP4D9ruZp2RSmbKJs6Ih68GaQiccof42VVYM2QF4MtieXISjn2+dvvwLcRerkXmN4tA/8JMHX56lMVwF2NvaTs41NZSeWcnlhuQ8iRQJiHCuj18ikiG2ob1Qo1iHu6pSI2twQlONmgbOB5ZmHONq1mCBWPvNUdo50oRdcx0h3EjiKXJyTgDfR5bhidfzVr/5e9fLCiHg+wIQuzJlRRbge9ywpyZhv1szUz1TlSjd4QMUj4MGCu2R1GCspYdfY56PMoQatQRdOVOxiV2fXOd4I7U8pB0rUdd4n3Z20hmmOYCirfFn3ZZwMjWF6gDHg50KuGuwUycIcpFCC6y2Vr24MzRlbtsqzzyaQA2czhtZzQMN68nPUmGNB1WYvHmt/k5R2rMvdRf0TOg8TciSkWCt/bFixOpVB5pxoKgHgqDHi/eMsksbsYEkAyStARVX5No0y3kjrqBurV7BM3BnhyfefofpHSIVFwIFlZD/LTJ1eQKNyIVDFDH/2DkuMrS4fEbFXuQ4T+mLzD1KLLU8Xg/whonKAJ7O6UliMHLBp+vqfm1hT24z4LPgy9b5oyFeSofMYDZfHn5DF9nCgX/QttyYQ281Xm0vF/dX6umcHKA7HkoFCzeFIQ== gmdegoug"
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCep44EPJn1kgwz3ldF3UYgSVfTXxDl//XYiQVV2ZCQfmlNY2QKST15GhogZ8woVzd5Mzg9WhnoMCqmXQbUkGY6JvYuH6qBpVBEg8G7GrD2IyoABjCz7nw4HNQ1kL4o7K8Vf8nUkZQK2Yj+3lD9eq/f49SqSKwzs2iTqSARXlmlRAkXZUUEnjCf9/xxUodODX5xEKAh2M8QU7LsV6MlY1KOX7xMg74ravFqsTLSZLZBcYWwtE3flEU4v2qhz24SlaN+7XZDE4SH98w1pA50vw36ExeoNb4WirFjixXWDY/pjneyNMt5ASBkV6/CnVYEaL93/4Zu9CFPfY3g0IduSeh7 gmdegoug"
     ];
   };
   # Allow certain privileged users to use sudo without password
