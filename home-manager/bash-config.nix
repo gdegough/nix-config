@@ -53,9 +53,7 @@
               # else
               #    start_agent;
               # fi
-              ps -ef | grep gpg-agent > /dev/null || { start_agent; }
-              readonly SSH_AGENT_STARTED=true
-              export SSH_AGENT_STARTED
+              start_agent && { readonly SSH_AGENT_STARTED=true; export SSH_AGENT_STARTED }
           fi
       fi
 
@@ -231,9 +229,7 @@
               # else
               #    start_agent;
               # fi
-              ps -ef | grep gpg-agent > /dev/null || { start_agent; }
-              readonly SSH_AGENT_STARTED=true
-              export SSH_AGENT_STARTED
+              start_agent && { readonly SSH_AGENT_STARTED=true; export SSH_AGENT_STARTED }
           fi
       fi
 
