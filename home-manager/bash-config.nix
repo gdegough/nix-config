@@ -29,33 +29,10 @@
       fi
 
       #
-      # Start ssh agent, but only if not in chroot, and avoid restarting
+      # Start ssh agent
       #
-      # if [ -z "$SSH_AGENT_STARTED" ]; then
-          # SSH_ENV="$HOME/.ssh/environment"
-      #    start_agent() {
-          #    echo "Initialising new SSH agent..."
-          #    ssh-agent | sed 's/^echo/#echo/' > ''${SSH_ENV}
-          #    echo succeeded
-          #    chmod 600 ''${SSH_ENV}
-          #    source ''${SSH_ENV} > /dev/null
-          #    ssh-add;
-              export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-              gpgconf --launch gpg-agent
-      #    }
-          # Start ssh-agent if not in chroot
-      #    if [ "$(awk '$5=="/" {print $1}' </proc/1/mountinfo)" = "$(awk '$5=="/" {print $1}' </proc/''$''$/mountinfo)" ]; then
-              # Source SSH settings, if applicable
-              # if [ -f ''${SSH_ENV} ]; then
-              #     source ''${SSH_ENV} > /dev/null
-              #     ps $SSH_AGENT_PID doesn't work under cywgin
-              #     ps -ef | grep $SSH_AGENT_PID | grep ssh-agent$ > /dev/null || { start_agent; }
-              # else
-              #    start_agent;
-              # fi
-      #        start_agent && { readonly SSH_AGENT_STARTED=true; export SSH_AGENT_STARTED; }
-      #    fi
-      # fi
+      export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+      gpgconf --launch gpg-agent
 
       # Determine if session is over SSH (used in the prompts below)
       over_ssh() {
@@ -205,33 +182,10 @@
       fi
 
       #
-      # Start ssh agent, but only if not in chroot, and avoid restarting
+      # Start ssh agent
       #
-      # if [ -z "$SSH_AGENT_STARTED" ]; then
-          # SSH_ENV="$HOME/.ssh/environment"
-          # start_agent() {
-          #    echo "Initialising new SSH agent..."
-          #    ssh-agent | sed 's/^echo/#echo/' > ''${SSH_ENV}
-          #    echo succeeded
-          #    chmod 600 ''${SSH_ENV}
-          #    source ''${SSH_ENV} > /dev/null
-          #    ssh-add;
-              export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-              gpgconf --launch gpg-agent
-          # }
-          # Start ssh-agent if not in chroot
-          # if [ "$(awk '$5=="/" {print $1}' </proc/1/mountinfo)" = "$(awk '$5=="/" {print $1}' </proc/''$''$/mountinfo)" ]; then
-              # Source SSH settings, if applicable
-              # if [ -f ''${SSH_ENV} ]; then
-              #     source ''${SSH_ENV} > /dev/null
-              #     ps $SSH_AGENT_PID doesn't work under cywgin
-              #     ps -ef | grep $SSH_AGENT_PID | grep ssh-agent$ > /dev/null || { start_agent; }
-              # else
-              #    start_agent;
-              # fi
-          #    start_agent && { readonly SSH_AGENT_STARTED=true; export SSH_AGENT_STARTED; }
-          # fi
-      # fi
+      export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+      gpgconf --launch gpg-agent
 
       # set PATH so it includes user's private bin if it exists
       if [ -d $HOME/.local/bin ] ; then
