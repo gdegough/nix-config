@@ -246,7 +246,6 @@
           PATH="$HOME/.local/bin:$PATH"
       fi
       export PATH
-
       #
       # Start ssh agent, but only if not in chroot, and avoid restarting
       #
@@ -277,7 +276,6 @@
               export SSH_AGENT_STARTED
           fi
       fi
-
       # set rust environment
       [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env" || true
     '';
