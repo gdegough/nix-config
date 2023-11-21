@@ -12,6 +12,9 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     enableVteIntegration = true;
+    # 23.05 stable
+    #enableSyntaxHighlighting = true;
+    # Unstable
     syntaxHighlighting.enable = true;
     initExtraFirst = ''
       # read in OS info

@@ -20,8 +20,10 @@ in
 #  };
   users.users.root = {
     shell = pkgs.zsh;
+    # 23.05 stable
+    #passwordFile = "/persist/passwords/root";
+    # unstable
     hashedPasswordFile = "/persist/passwords/root";
-#    hashedPasswordFile = config.sops.secrets.root-password.path;
   };
 
   # gmdegoug
@@ -45,8 +47,10 @@ in
       "shared-files" 
     ];
     shell = pkgs.zsh;
+    # 23.05 stable
+    #passwordFile = "/persist/passwords/gmdegoug";
+    # unstable
     hashedPasswordFile = "/persist/passwords/gmdegoug";
-#    hashedPasswordFile = config.sops.secrets.gmdegoug-password.path;
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCep44EPJn1kgwz3ldF3UYgSVfTXxDl//XYiQVV2ZCQfmlNY2QKST15GhogZ8woVzd5Mzg9WhnoMCqmXQbUkGY6JvYuH6qBpVBEg8G7GrD2IyoABjCz7nw4HNQ1kL4o7K8Vf8nUkZQK2Yj+3lD9eq/f49SqSKwzs2iTqSARXlmlRAkXZUUEnjCf9/xxUodODX5xEKAh2M8QU7LsV6MlY1KOX7xMg74ravFqsTLSZLZBcYWwtE3flEU4v2qhz24SlaN+7XZDE4SH98w1pA50vw36ExeoNb4WirFjixXWDY/pjneyNMt5ASBkV6/CnVYEaL93/4Zu9CFPfY3g0IduSeh7 gmdegoug"
     ];
@@ -79,7 +83,9 @@ in
       "shared-files" 
     ];
     shell = pkgs.bash;
-    hashedPasswordFile = "/persist/passwords/pdegough";
-#    hashedPasswordFile = config.sops.secrets.pdegough-password.path;
+    # 23.05 stable
+    #passwordFile = "/persist/passwords/pdegough";
+    # unstable
+    hashedPasswordFile = "/persist/passwords/pdegough"; # hashedPasswordFile is used in unstable
   };
 }
