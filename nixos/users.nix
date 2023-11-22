@@ -82,7 +82,7 @@ in
       "pipewire" 
       "shared-files" 
     ];
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     # 23.05 stable
     #passwordFile = "/persist/passwords/pdegough";
     # unstable
