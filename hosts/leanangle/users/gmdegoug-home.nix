@@ -42,6 +42,7 @@
     ../../../home-manager/music-composition.nix
     ../../../home-manager/mutt-package-and-config.nix
     ../../../home-manager/office.nix
+    ../../../home-manager/qalculate-gtk.nix
     ../../../home-manager/readline-config.nix
     ../../../home-manager/rofi-config.nix
     ../../../home-manager/secure-messaging.nix
