@@ -22,6 +22,7 @@ with lib.hm.gvariant;
   home.packages = with pkgs; [
     dconf2nix
     gcolor3
+    chrome-gnome-shell
     gnome-browser-connector
     gnome.dconf-editor
     gnome.gnome-tweaks
