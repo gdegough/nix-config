@@ -249,6 +249,7 @@
       create-input-file = "sed ':a;N;$!ba;s/\\n/ /g'";
       sudo = "sudo ";
       vim = "vim ";
+      power-profile = "sudo system76-power charge-thresholds --profile balanced && sudo system76-power profile battery && sudo brightnessctl set 50%";
     };
   };
 }

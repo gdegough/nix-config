@@ -30,7 +30,6 @@ with lib.hm.gvariant;
     gnomeExtensions.dash-to-dock
     gnomeExtensions.internet-radio
     gnomeExtensions.lock-keys
-    qalculate-gtk
   ];
   dconf.settings = {
     "org/gnome/desktop/calendar" = {
