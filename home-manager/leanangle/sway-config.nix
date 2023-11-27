@@ -259,7 +259,7 @@
       #
       # Screen capture
       #
-      set $screenshot 1 selection, 2 focused window, 3 all outputs, 4 pixel color, 5 selection (clipboard), 6 focused window (clipboard), 7 all outputs (clipboard), 8 pixel color (clipboard)
+      set $screenshot 1 select, 2 window, 3 all, 4 pixel color, 5 select (clipboard), 6 window (clipboard), 7 all (clipboard), 8 pixel color (clipboard)
       mode "$screenshot" {
           bindsym 1 exec 'grim -g "$(slurp)" $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
           bindsym 2 exec 'grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
@@ -275,7 +275,7 @@
           bindsym Escape mode "default"
           bindsym $mod+Print mode "default"
       }
-      bindsym $mod+Print mode "$screenshot"
+      bindsym Print mode "$screenshot"
     '';
     ".config/sway/config.d/outputs.conf".text = ''
       # SwayWM outputs configuration. For detailed information type "man sway"

@@ -10,27 +10,13 @@
   home.file = {
     ".config/sway/config".text = ''
       # SwayWM global configuration. For detailed information type "man sway"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
-      ###############################################################################
-      # TODO:
-      #   + Sway:
-      #      - Autoassign workspaces to certain applications
-      #
-      ###############################################################################
-
-      #########################
-      # Run services
-      #########################
-      #exec mako
-      #exec waybar
 
       #########################
       # Main definitions
       #########################
       output eDP-1 resolution 1920x1080 scale 1 position 0,0
 
-      # Logo key. Use Mod1 for Alt.
+      # Super key. Use Mod1 for Alt.
       set $mod Mod4
 
       # Preferred font for universal usage
@@ -48,11 +34,11 @@
       # on the original workspace that the command was run on.
       # Recommends: rofi-wayland
       set $rofi_cmd rofi -terminal '$term'
-      # Shows a combined list of the applications with desktop files and
-      # executables from PATH.
+      # Shows a combined list of open windows, ssh targets from ~/.ssh/config, 
+      # applications with desktop files, and executables from PATH.
       set $menu $rofi_cmd -show combi -modes "combi#window#ssh#drun#run" -combi-modes "window#ssh#drun#run"
 
-      # Your preferred browser (firefox, vivaldi-stable, qutebrowser)
+      # Your preferred browser
       set $browser firefox
 
       # Default wallpaper
@@ -61,12 +47,12 @@
       # Default lockscreen background
       set $lockscreenbg $HOME/.config/sway/lockscreen
 
-      # Remove all borders from applications
+      # Application window borders
       #default_border none
       #default_border normal
       default_border pixel 2
 
-      # Stablish gaps between windows and from the screen edge
+      # Gaps between windows and from the screen edge
       #gaps inner 5
       #gaps outer 1
 
@@ -206,12 +192,6 @@
     '';
     ".config/sway/config.d/10-systemd-user.conf".text = ''
       # sway does not set DISPLAY/WAYLAND_DISPLAY in the systemd user environment
-      # See FS#63021
-      # Adapted from xorg's 50-systemd-user.sh, which achieves a similar goal.
-
-      #exec --no-startup-id systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK QT_QPA_PLATFORMTHEME 
-      #exec --no-startup-id hash dbus-update-activation-environment 2>/dev/null && \
-      #  dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK QT_QPA_PLATFORMTHEME
 
       exec --no-startup-id dbus-sway-environment
     '';
@@ -227,22 +207,15 @@
     ".config/sway/config.d/gnome-settings.conf".text = ''
       # import gnome settings and gnome authentication
       exec_always --no-startup-id {
-      #    systemctl --user import-environment
           systemctl --user start xsettingsd
-      #    configure-gtk
-      #    gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
-      #    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-      #    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
-      #    gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
-      #    test -e $SWAYSOCK.wob || mkfifo $SWAYSOCK.wob
-      #    tail -f $SWAYSOCK.wob | wob --background-color '#FF002B36' --border-color '#FF92A2A2' --bar-color '#FF92A2A2'
-      #    tail -f $SWAYSOCK.wob | wob --background-color '#FF232121' --border-color '#FF93EAEA' --bar-color '#FF93EAEA'
+          # test -e $SWAYSOCK.wob || mkfifo $SWAYSOCK.wob
+          # tail -f $SWAYSOCK.wob | wob --background-color '#FF002B36' --border-color '#FF92A2A2' --bar-color '#FF92A2A2'
+          # tail -f $SWAYSOCK.wob | wob --background-color '#FF232121' --border-color '#FF93EAEA' --bar-color '#FF93EAEA'
       }
     '';
     ".config/sway/config.d/inputs.conf".text = ''
       # SwayWM input configuration. For detailed information type "man sway-input"
       # For a list of devices run: swaymsg -t get_inputs
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 
       # Provide all keyboards connected the following configuration
       input type:keyboard {
@@ -268,7 +241,6 @@
     '';
     ".config/sway/config.d/multimedia.conf".text = ''
       # SwayWM multimedia keys configuration. For detailed information type "man sway"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 
       # Audio
       bindsym --locked XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 2.5%+
@@ -280,20 +252,34 @@
       bindsym XF86AudioNext exec --no-startup-id playerctl next
       bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
-      # Backlight
-      # PLEASE NOTE: Light has a small issue with SUID, you should install the version
-      # that allows the user to run it without SUID
+      # Backlight - you should install a display backlight app that allows the user to run without SUID
       bindsym XF86MonBrightnessDown exec --no-startup-id /bin/sh -c "brightnessctl -q set 2%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )"
       bindsym XF86MonBrightnessUp exec --no-startup-id /bin/sh -c "brightnessctl -q set +2% && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )"
 
-      # Screenshot
-      #bindsym $mod+S exec --no-startup-id grimshot save screen $HOME/Pictures/$(date '+%Y-%m-%d-%T')-screenshot.png
-      #bindsym $mod+Shift+S exec --no-startup-id grimshot save area $HOME/Pictures/$(date '+%Y-%m-%d-%T')-screenshot.png
+      #
+      # Screen capture
+      #
+      set $screenshot 1 select, 2 window, 3 all, 4 pixel color, 5 select (clipboard), 6 window (clipboard), 7 all (clipboard), 8 pixel color (clipboard)
+      mode "$screenshot" {
+          bindsym 1 exec 'grim -g "$(slurp)" $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
+          bindsym 2 exec 'grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
+          bindsym 3 exec 'grim $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
+          bindsym 4 exec 'grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:-', mode "default"
+          bindsym 5 exec 'grim -g "$(slurp)" - | wl-copy', mode "default"
+          bindsym 6 exec 'grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy', mode "default"
+          bindsym 7 exec 'grim - | wl-copy', mode "default"
+          bindsym 8 exec 'grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | wl-copy', mode "default"
+
+      # back to normal: Enter or Escape
+          bindsym Return mode "default"
+          bindsym Escape mode "default"
+          bindsym $mod+Print mode "default"
+      }
+      bindsym Print mode "$screenshot"
     '';
     ".config/sway/config.d/outputs.conf".text = ''
       # SwayWM outputs configuration. For detailed information type "man sway"
       # For a list of devices run: swaymsg -t get_outputs
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 
       # Default wallpaper
       output * bg $wallpaper fill
@@ -308,10 +294,8 @@
     '';
     ".config/sway/config.d/scratchpad.conf".text = ''
       # SwayWM scratchpad configuration. For detailed information type "man sway"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 
       # Scratchpad:
-
       # Sway has a "scratchpad", which is a bag of holding for windows.
       # You can send windows there and get them back later.
 
@@ -325,13 +309,11 @@
       # Password manager
       for_window [class="Bitwarden"] move window to scratchpad
       bindsym $mod+z [class="Bitwarden"] scratchpad show, move position center, resize set 900 600
-      #exec --no-startup-id "/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=bitwarden --file-forwarding com.bitwarden.desktop"
       exec --no-startup-id bitwarden
 
-      # Sonic effects
+      # Audio effects
       for_window [app_id="com.github.wwmm.easyeffects"] move window to scratchpad
       bindsym $mod+backslash [app_id="com.github.wwmm.easyeffects"] scratchpad show, move position center, resize set 1280 800
-      #exec --no-startup-id "/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=easyeffects com.github.wwmm.easyeffects"
       exec --no-startup-id easyeffects
 
       # Calculator
@@ -347,7 +329,6 @@
       # Plexamp
       for_window [class="Plexamp"] move window to scratchpad
       bindsym $mod+p [class="Plexamp"] scratchpad show, move position center, resize set 250 500
-      #exec --no-startup-id "/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=startplexamp com.plexamp.Plexamp"
       exec --no-startup-id plexamp
 
       # MIDI Synthesizer
@@ -355,12 +336,11 @@
       bindsym $mod+m [class="Qsynth"] scratchpad show, move position center, resize set 825 210
 
       # JACK Control
-      for_window [class="QjackCtl"] move window to scratchpad
-      bindsym $mod+i [class="QjackCtl"] scratchpad show, move position center, resize set 480 110
+      for_window [app_id="org.pipewire.Helvum"] move window to scratchpad
+      bindsym $mod+i [app_id="org.pipewire.Helvum"] scratchpad show, move position center, resize set 1280 800
     '';
     ".config/sway/config.d/screenlock_powersave.conf".text = ''
       # SwayWM idle/lock configuration. For detailed information type "man sway-idle"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 
       # Example configuration:
       #
@@ -375,16 +355,11 @@
     '';
     ".config/sway/config.d/statusbar.conf".text = ''
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 
-      # The old sway bar configuration is kept for archiving purposes, it works
-      # fine, so if you want, you can activate it and comment the 'waybar' line on
-      # the main configuration.
       include $HOME/.config/sway/barscheme.conf
     '';
     ".config/sway/config.d/workspaces.conf".text = ''
       # SwayWM workspaces configuration. For detailed information type "man sway"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
 
       ### Moving containers
       #
@@ -645,40 +620,6 @@
       # https://wiki.archlinux.org/index.php/XDG_Autostart
       exec --no-startup-id dex --autostart --environment sway
     '';
-    ".config/sway/custom.d/daskeyboard4.conf".text = ''
-      # SwayWM input configuration for the DasKeyboard 4 Ultimate.
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
-      # Play-Pause, Next and Previous buttons
-      bindcode 171 exec playerctl next
-      bindcode 172 exec playerctl play-pause
-      bindcode 173 exec playerctl previous
-
-      # Mute, Decrease Volume, Increase Volume
-      bindcode 121 exec pactl set-sink-mute `pactl list sinks short | grep RUNNING | awk '{print $1}' | head -n 1` toggle
-      bindcode 122 exec pactl set-sink-volume `pactl list sinks short | grep RUNNING | awk '{print $1}'| head -n 1` -2%
-      bindcode 123 exec pactl set-sink-volume `pactl list sinks short | grep RUNNING | awk '{print $1}'| head -n 1` +2%
-
-      # The suspend key should work correctly with no need to bind it.
-    '';
-    ".config/sway/custom.d/mxmaster3.conf".text = ''
-      # SwayWM input configuration for the Logitech MX Master 3.
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
-      # Remember, --whole-window is required to work
-      bindcode --whole-window 275 workspace prev_on_output
-      bindcode --whole-window 276 workspace next_on_output
-    '';
-    ".config/sway/custom.d/sony_wh700.conf".text = ''
-      # SwayWM input configuration for the Sony WH700 Headset.
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
-      # Please note that these are standard XF86Audio controls
-      # they should work by default but for some reason I had to
-      # rebind them.
-      bindcode 208 exec playerctl play
-      bindcode 209 exec playerctl pause
-    '';
     ".config/sway/colorschemes.d/client_window_colorscheme-kali-dark.conf".text = ''
       # Kali Dark colors
       # class                 border  bground text    indicator child_border
@@ -709,11 +650,6 @@
     '';
     ".config/sway/barschemes.d/kali-dark_barscheme.conf".text = ''
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
-      # The old sway bar configuration is kept for archiving purposes, it works
-      # fine, so if you want, you can activate it and comment the 'waybar' line on
-      # the main configuration.
 
       bar {
           position top
@@ -721,11 +657,11 @@
           height 28
 
           colors {
-      # Kali Dark Theme
+              # Kali Dark Theme
               background #171421
               statusline #E6E6E6
               separator  #696969
-      #       <colorclass>        <border>    <background>    <text>
+              # <colorclass>      <border>    <background>    <text>
               focused_workspace   #367bf0     #367bf0         #1f2229
               active_workspace    #5ebdab     #367bf0         #1f2229
               inactive_workspace  #171421     #171421         #8a8a8a
@@ -733,16 +669,11 @@
               binding_mode        #000000     #dc322f         #FFFFFF
           }
           status_command SCRIPT_DIR=$HOME/.local/libexec/i3blocks i3blocks -c $HOME/.config/i3blocks/config
-      #    status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
+          # status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
       }
     '';
     ".config/sway/barschemes.d/pop_OS-dark_barscheme.conf".text = ''
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
-      # The old sway bar configuration is kept for archiving purposes, it works
-      # fine, so if you want, you can activate it and comment the 'waybar' line on
-      # the main configuration.
 
       bar {
           position top
@@ -750,11 +681,11 @@
           height 28
 
           colors {
-      # Pop!_OS Dark Theme
+              # Pop!_OS Dark Theme
               background #363636
               statusline #cccccc
               separator  #666666
-      #       <colorclass>        <border>    <background>    <text>
+              # <colorclass>      <border>    <background>    <text>
               focused_workspace   #222222     #FFD7A1         #222222
               active_workspace    #FFD7A1     #222222         #FFD7A1
               inactive_workspace  #FFD7A1     #222222         #FFD7A1
@@ -762,16 +693,11 @@
               binding_mode        #000000     #dc322f         #FFFFFF
           }
           status_command SCRIPT_DIR=$HOME/.local/libexec/i3blocks i3blocks -c $HOME/.config/i3blocks/config
-      #    status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
+          # status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
       }
     '';
     ".config/sway/barschemes.d/solarized_barscheme.conf".text = ''
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
-      # The old sway bar configuration is kept for archiving purposes, it works
-      # fine, so if you want, you can activate it and comment the 'waybar' line on
-      # the main configuration.
 
       bar {
           position top
@@ -779,11 +705,11 @@
           height 28
 
           colors {
-      # Solarized Dark Theme
+              # Solarized Dark Theme
               background #1f2229
               statusline #fdf6e3
               separator  #93a1a1
-      #       <colorclass>        <border>    <background>    <text>
+              # <colorclass>      <border>    <background>    <text>
               focused_workspace   #000000     #657b83         #fdf6e3
               active_workspace    #002b36     #93a1a1         #93a1a1
               inactive_workspace  #073642     #002b36         #657b83
@@ -791,16 +717,11 @@
               binding_mode        #000000     #dc322f         #FFFFFF
           }
           status_command SCRIPT_DIR=$HOME/.local/libexec/i3blocks i3blocks -c $HOME/.config/i3blocks/config
-      #    status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
+          # status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
       }
     '';
     ".config/sway/barschemes.d/standard_barscheme.conf".text = ''
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
-      # The old sway bar configuration is kept for archiving purposes, it works
-      # fine, so if you want, you can activate it and comment the 'waybar' line on
-      # the main configuration.
 
       bar {
           position top
@@ -808,11 +729,11 @@
           height 28
 
           colors {
-      # Default Theme
+              # Default Theme
               background #171421
               statusline #E6E6E6
               separator  #696969
-      #       <colorclass>        <border>    <background>    <text>
+              # <colorclass>      <border>    <background>    <text>
               focused_workspace   #83CAFA     #51A2DA         #FFFFFF
               active_workspace    #3C6EB4     #294172         #FFFFFF
               inactive_workspace  #8C8C8C     #4C4C4C         #888888
@@ -820,16 +741,11 @@
               binding_mode        #000000     #dc322f         #FFFFFF
           }
           status_command SCRIPT_DIR=$HOME/.local/libexec/i3blocks i3blocks -c $HOME/.config/i3blocks/config
-      #    status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
+          # status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
       }
     '';
     ".config/sway/barschemes.d/waybar_barscheme.conf".text = ''
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
-      # Author: Oscar Carballal Prego <oscar.carballal@protonmail.com>
-
-      # The old sway bar configuration is kept for archiving purposes, it works
-      # fine, so if you want, you can activate it and comment the 'waybar' line on
-      # the main configuration.
 
       bar {
           position top
