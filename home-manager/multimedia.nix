@@ -24,6 +24,7 @@
     quodlibet-full
     rhythmbox
     soundfont-fluid
+    tidal-hifi
     vlc
     vmpk
   ];

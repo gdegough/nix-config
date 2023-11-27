@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     dia
     gimp-with-plugins
+    imagemagick
     inkscape
   ];
 }
