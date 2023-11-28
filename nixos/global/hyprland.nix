@@ -6,6 +6,11 @@
   ...
 }: 
 {
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    kitty
+  ];
   # enable sway window manager
   programs.hyprland = {
     enable = true;
