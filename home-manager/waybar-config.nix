@@ -8,7 +8,205 @@
 #with lib.hm.gvariant;
 {
   home.file = {
-    ".config/waybar/config".text = ''
+    ".config/waybar/hyprland_config".text = ''
+      {
+          "layer": "bottom", // Waybar at top layer
+          "position": "top", // Waybar position (top|bottom|left|right)
+          "height": 30, // Waybar height (to be removed for auto height)
+          "spacing": 3, // Space between modules
+          // Choose the order of the modules
+          "modules-left": [
+              "hyprland/workspaces", 
+              "hyprland/submap" 
+          ],
+          "modules-center": [
+              "custom/mediaplayer"
+          ],
+          "modules-right": [
+              "tray",
+              "idle_inhibitor",
+              "custom/pipewire",
+              "network", 
+              "memory", 
+              "cpu", 
+              "temperature", 
+              "backlight", 
+              "battery",
+      //        "custom/battery_time",
+      //        "battery#bat2",
+              "clock",
+              "custom/quit"
+          ],
+          // Modules configuration
+          "hyprland/submap": {
+              "format": " {} "
+          },
+          "hyprland/window": {
+              "tooltip": true,
+              "max-length": 80
+          },
+          "hyprland/workspaces": {
+              "tooltip": true,
+              "all-outputs": true,
+              "disable-scroll": false,
+              "format": "{name} <span font='icon'>{icon}</span>",
+              "format-icons": {
+                  "urgent": "",
+                  "focused": "",
+                  "default": ""
+              }
+          },
+          "idle_inhibitor": {
+              "tooltip": false,
+              "format": "<span font='icon'>{icon}</span> ",
+              "format-icons": {
+                  "activated": "",
+                  "deactivated": ""
+              } 
+          },
+          "tray": {
+              "tooltip": false,
+              "spacing": 5
+          },
+          "clock": {
+              "tooltip": true,
+      //        "timezone": "America/Kentucky/Monticello",
+              "tooltip-format": "<tt><big>{:%Y %B}</big>\n<small>{calendar}</small></tt>",
+              "format-alt": "{:%Y-%m-%d}"
+          },
+          "clock#date": {
+              "tooltip": false,
+              "format": "{:%a %d %b w:%V}"
+          },
+          "cpu": {
+              "tooltip": true,
+              "format": "<span font='icon'></span> {usage}%"
+          },
+          "memory": {
+              "tooltip": true,
+              "format": "<span font='icon'></span> {}%"
+          },
+          "temperature": {
+              "tooltip": false,
+              "thermal-zone": 0,
+              "critical-threshold": 100,
+              "interval": 2,
+      //        "format-critical": "<span font='icon'>{icon}</span> {temperatureC}°C",
+              "format": "<span font='icon'>{icon}</span> {temperatureC}°C",
+              "format-icons": [
+                  "", // Icon: temperature-empty
+                  "", // Icon: temperature-quarter
+                  "", // Icon: temperature-half
+                  "", // Icon: temperature-three-quarters
+                  ""  // Icon: temperature-full
+              ]
+          },
+          "backlight": {
+              "tooltip": false,
+      //      "device": "acpi_video1",
+              "format": "<span font='icon'>{icon}</span> {percent}%",
+              "format-icons": ["", ""]
+          },
+          "battery": {
+              "tooltip": true,
+              "states": {
+                  "good": 95,
+                  "warning": 30,
+                  "critical": 15
+              },
+              "bat":"BAT0",
+              "format": "<span font='icon'>{icon}</span> {capacity}%",
+      //        "format-charging": "<span font='icon'> </span>{capacity}%",
+      //        "format-plugged": "<span font='icon'></span> {capacity}%",
+      //        "format-discharging": "<span font='icon'></span> {capacity}%",
+              "format-alt": "<span font='icon'>{icon}</span> {time}",
+              "format-icons": ["", "", "", "", ""]
+          },
+          "custom/battery_time": {
+              "format": "  {}",
+              "exec": "acpi -b | cut -d ',' -f3 | awk '{print $1}' | cut -d ':' -f1,2",
+              "interval": 30
+          },
+          "battery#bat2": {
+              "bat": "BAT2"
+          },
+          "network": {
+              "tooltip": true,
+              "format-wifi": "<span font='icon'></span> {essid} ({signalStrength}%)",
+              "format-ethernet": "<span font='icon'></span> {ifname}: {ipaddr}/{cidr}",
+              "format-linked": "<span font='icon'></span> {ifname} (No IP)",
+              "format-disconnected": "<span font='icon'>⚠</span> Disconnected",
+              "tooltip-format": "{ifname}"
+          },
+          "custom/keyboard": {
+              "format": " {}",
+              "interval": 1,
+              "exec": "$HOME/.config/waybar/scripts/get_kbdlayout.sh"
+          },
+          "pulseaudio": {
+              "tooltip": true,
+              // "scroll-step": 1, // %, can be a float
+              "format": "{volume}% <span font='icon'>{icon}</span> {format_source}",
+              "format-bluetooth": "{volume}% <span font='icon'>{icon}</span> {format_source}",
+              "format-bluetooth-muted": "<span font='icon'> {icon}</span> {format_source}",
+              "format-muted": "<span font='icon'></span> {format_source}",
+              "format-source": "{volume}% <span font='icon'></span>",
+              "format-source-muted": "<span font='icon'></span>",
+              "format-icons": {
+                  "headphone": "",
+                  "hands-free": "",
+                  "headset": "",
+                  "phone": "",
+                  "portable": "",
+                  "car": "",
+                  "default": ["", "", ""]
+              },
+              "on-click": "pavucontrol"
+          },
+          "custom/pipewire": {
+              "tooltip": false,
+              "max-length": 15,
+              "restart-interval": 10,
+              "exec": "exec bash $HOME/.config/waybar/scripts/pw-volume-monitor.bash"
+          },
+          "custom/mediaplayer": {
+              "tooltip": false,
+              "format": "<span font='icon'>{icon}</span> {}",
+              "return-type": "json",
+              "max-length": 64,
+      //        "interval": 1,
+              "format-icons": {
+                  "spotify": "",
+                  "default": "🎜"
+              },
+              "escape": true,
+              "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}} ({{duration(position)}}/{{duration(mpris:length)}})\", \"tooltip\": \"{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"
+          },
+          "mpris": {
+              "player": "tidal-hifi",
+              "interval": 1,
+              "format": "<span font='icon'>{player_icon}</span> <span font='icon'>{status_icon}</span> {dynamic}", 
+              "status-icons": {
+                  "playing": "",
+                  "paused": "",
+                  "stopped": ""
+              },
+              "player-icons": {
+                  "spotify": "",
+                  "default": "🎜"
+              }
+          },
+          "custom/quit": {
+              "tooltip": false,
+              "format": "<span font='icon'>{icon}</span>",
+              "format-icons": {
+                  "default": ""
+              },
+              "on-click": "hyprctl dispatch exit"
+          }
+      }
+    '';
+    ".config/waybar/sway_config".text = ''
       {
           "layer": "bottom", // Waybar at top layer
           "position": "top", // Waybar position (top|bottom|left|right)
@@ -195,10 +393,6 @@
                   "spotify": "",
                   "default": "🎜"
               }
-          },
-          "custom/layout": {
-              "tooltip": false,
-              "exec": "swaymsg -mrt subscribe '[\"input\"]' | jq -r --unbuffered \"select(.change == \\\"xkb_layout\\\") | .input | select(.type == \\\"keyboard\\\") | .xkb_active_layout_name | .[0:2]\""
           },
           "custom/quit": {
               "tooltip": false,
