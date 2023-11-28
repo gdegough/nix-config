@@ -48,11 +48,11 @@
           "hyprland/workspaces": {
               "tooltip": true,
               "all-outputs": true,
-              "disable-scroll": false,
+              "sort-by": "number",
               "format": "{name} <span font='icon'>{icon}</span>",
               "format-icons": {
                   "urgent": "",
-                  "focused": "",
+                  "active": "",
                   "default": ""
               }
           },
