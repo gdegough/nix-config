@@ -22,6 +22,7 @@
     ./gnome.nix
     ./networking.nix
     ../../nixos/users.nix
+    ../../nixos/global/hyprland.nix
     ../../nixos/global/locale.nix
     ../../nixos/global/opengl.nix
     ../../nixos/global/pipewire.nix
