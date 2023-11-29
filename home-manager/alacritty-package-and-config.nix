@@ -54,7 +54,7 @@
           family: IBM Plex Mono
           style: Bold Italic
         # Point size
-        size: 10
+        size: 11
       # If `true`, bold text is drawn using the bright color variants.
       #draw_bold_text_with_bright_colors: true
       mouse:
