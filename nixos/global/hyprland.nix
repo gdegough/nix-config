@@ -66,6 +66,7 @@ in
     wdisplays
     wev
     wl-clipboard
+    xdg-desktop-portal-hyprland
     xdg-utils
     xsettingsd
   ];
@@ -73,6 +74,5 @@ in
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
   };
 }
