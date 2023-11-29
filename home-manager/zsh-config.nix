@@ -13,9 +13,9 @@
     enableCompletion = true;
     enableVteIntegration = true;
     # 23.05 stable
-    enableSyntaxHighlighting = true;
+    #enableSyntaxHighlighting = true;
     # Unstable
-    #syntaxHighlighting.enable = true;
+    syntaxHighlighting.enable = true;
     initExtraFirst = ''
       # read in OS info
       ID=""
