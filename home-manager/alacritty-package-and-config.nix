@@ -26,7 +26,7 @@
         dynamic_padding: true
         dynamic_title: true
         decorations: full
-        opacity: 1.0
+        opacity: 0.90
       scrolling:
         history: 10000
       # Scrolling distance multiplier.
