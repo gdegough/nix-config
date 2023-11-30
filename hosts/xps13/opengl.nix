@@ -19,6 +19,6 @@
     ];
   };
   environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "i965":
-  }
+    LIBVA_DRIVER_NAME = "i965";
+  };
 }
