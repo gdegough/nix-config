@@ -10,7 +10,7 @@
   home.file = {
     ".config/waybar/hyprland_config".text = ''
       {
-          "layer": "bottom", // Waybar at top layer
+          "layer": "top", // Waybar at top layer
           "position": "top", // Waybar position (top|bottom|left|right)
           "height": 30, // Waybar height (to be removed for auto height)
           "spacing": 3, // Space between modules
@@ -208,7 +208,7 @@
     '';
     ".config/waybar/sway_config".text = ''
       {
-          "layer": "bottom", // Waybar at top layer
+          "layer": "top", // Waybar at top layer
           "position": "top", // Waybar position (top|bottom|left|right)
           "height": 30, // Waybar height (to be removed for auto height)
           "spacing": 3, // Space between modules
