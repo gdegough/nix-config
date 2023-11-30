@@ -12,7 +12,8 @@
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModule
+    #inputs.nix-colors.homeManagerModule
+    #inputs.nixvim.homeManagerModules.nixvim
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
@@ -29,6 +30,7 @@
     ../../../home-manager/multimedia.nix
     ../../../home-manager/mutt-package-and-config.nix
     ../../../home-manager/office.nix
+    ../../../home-manager/qalculate-gtk.nix
     ../../../home-manager/readline-config.nix
     ../../../home-manager/rofi-config.nix
     ../../../home-manager/secure-messaging.nix
