@@ -137,7 +137,6 @@
     PATH = [ 
       "${XDG_BIN_HOME}"
     ];
-    EDITOR = "vim";
   };
 
   # This sets up an SSH server. Very important if you're setting up a headless system.

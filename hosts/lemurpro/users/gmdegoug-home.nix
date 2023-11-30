@@ -82,6 +82,20 @@
     homeDirectory = "/home/${config.home.username}";
   };
 
+  home.sessionVariables = {
+      COUNTRY = "US";
+      EDITOR = "vim";
+      EXINIT = "se sm smd scr=1 ai ruler redraw sw=4 filec=\t";
+      MAIL = "$HOME/.maildir";
+      MAILPATH = "$HOME/.maildir";
+      MERGE = "vimdiff";
+      PAGER = "less";
+      PROMPT_DIRTRIM = 3;
+      QT_QPA_PLATFORMTHEME = "gnome";
+      SYSTEMD_EDITOR = "vim";
+      XCURSOR_THEME = "Adwaita";
+  };
+
   services.gpg-agent = {
     enable = true;
     defaultCacheTtl = 1800;

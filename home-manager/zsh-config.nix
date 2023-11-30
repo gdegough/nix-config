@@ -257,30 +257,6 @@
       # set rust environment
       [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env" || true
     '';
-    profileExtra = ''
-      export COUNTRY="US"
-      export EDITOR=vim
-      export EXINIT="se sm smd scr=1 ai ruler redraw sw=4 filec=\t"
-      #
-      # uncomment next two (2) lines to use makemkv libraries for aac and bluray
-      #
-      export LIBAACS_PATH=libmmbd
-      export LIBBDPLUS_PATH=libmmbd
-      export LIBVA_DRIVER_NAME=iHD
-      export MAIL=$HOME/.maildir
-      export MAILPATH=$HOME/.maildir
-      export MERGE=vimdiff
-      export PAGER=less
-      export PROMPT_DIRTRIM=3
-      export QT_QPA_PLATFORMTHEME="gnome"
-      export SYSTEMD_EDITOR=vim
-      #
-      # uncomment next line for HiDPI mouse cursor
-      #
-      #export XCURSOR_SIZE=48
-      export XCURSOR_THEME="Adwaita"
-      export XDG_CONFIG_HOME=$HOME/.config
-    '';
     logoutExtra = ''
       # when leaving the console clear the screen to increase privacy
       if [ "$SHLVL" = 1 ]; then
