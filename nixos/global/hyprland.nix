@@ -17,9 +17,9 @@ let
     executable = true;
 
     text = ''
-      systemctl --user import-environment DISPLAY WAYLAND_DISPLAY QT_QPA_PLATFORMTHEME
-      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY QT_QPA_PLATFORMTHEME XDG_CURRENT_DESKTOP=hyprland
-      #dbus-update-activation-environment --systemd --all 
+      systemctl --user import-environment DISPLAY EDITOR QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY
+      #dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY QT_QPA_PLATFORMTHEME XDG_CURRENT_DESKTOP=hyprland
+      dbus-update-activation-environment --systemd --all 
       systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-hyprland
       systemctl --user start pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-hyprland
     '';
