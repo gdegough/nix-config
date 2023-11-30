@@ -36,5 +36,4 @@
       syntax enable
     '';
   };
-  home.sessionVariables.EDITOR = "vim";
 }
