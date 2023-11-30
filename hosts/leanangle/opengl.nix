@@ -3,11 +3,9 @@
   config,
   lib,
   pkgs,
-  modulesPath,
   ...
 }: 
 {
-  # for accelerated video playback
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
@@ -20,4 +18,7 @@
       libvdpau-va-gl
     ];
   };
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD":
+  }
 }

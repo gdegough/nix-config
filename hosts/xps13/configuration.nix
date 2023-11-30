@@ -21,10 +21,10 @@
     # You can also split up your configuration and import pieces of it here:
     ./gnome.nix
     ./networking.nix
+    ./opengl.nix
     ../../nixos/users.nix
     ../../nixos/global/hyprland.nix
     ../../nixos/global/locale.nix
-    ../../nixos/global/opengl.nix
     ../../nixos/global/pipewire.nix
     ../../nixos/global/postfix.nix
     ../../nixos/global/sway.nix
