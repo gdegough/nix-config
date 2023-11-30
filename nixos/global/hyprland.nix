@@ -40,6 +40,14 @@ in
           TimeoutStopSec = 10;
       };
     };
+    user.services.xsettingsd = {
+      description = "XSETTINGS-protocol daemon";
+      partOf = [ "graphical-session.target" ];
+      serviceConfig = {
+          ExecStart = "${pkgs.xsettingsd}/bin/xsettingsd";
+          Slice = "session.slice";
+      };
+    };
   };
   security = {
     pam.services.swaylock = {};
