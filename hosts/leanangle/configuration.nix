@@ -37,9 +37,9 @@
     ../../nixos/optional/samba.nix
     ../../nixos/optional/vm-host.nix
     # users
-    ../../users/root.nix
-    ../../users/gmdegoug.nix
-    ../../users/pdegough.nix
+    ../../users/root/root.nix
+    ../../users/gmdegoug/gmdegoug.nix
+    ../../users/pdegough/pdegough.nix
   ];
 
   nixpkgs = {
