@@ -33,7 +33,6 @@
     ../../nixos/global/sway.nix
     ../../nixos/global/gnome.nix
     # users
-    ../../nixos/users
     ../../nixos/users/root.nix
     ../../nixos/users/gmdegoug.nix
     ../../nixos/users/pdegough.nix
@@ -148,6 +147,9 @@
     # Use keys only. Remove if you want to SSH using password (not recommended)
     settings.PasswordAuthentication = false;
   };
+
+  # users are defined in configuration
+  users.mutableUsers = false;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
