@@ -71,7 +71,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./hosts/leanangle/users/gmdegoug-home.nix
+          ./users/gmdegoug/leanangle/home.nix
         ];
       };
       "gmdegoug@lemurpro" = home-manager.lib.homeManagerConfiguration {
@@ -79,7 +79,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./hosts/lemurpro/users/gmdegoug-home.nix
+          ./users/gmdegoug/lemurpro/home.nix
         ];
       };
       "gmdegoug@xps13" = home-manager.lib.homeManagerConfiguration {
@@ -87,7 +87,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./hosts/xps13/users/gmdegoug-home.nix
+          ./users/gmdegoug/xps13/home.nix
         ];
       };
       "pdegough@leanangle" = home-manager.lib.homeManagerConfiguration {
@@ -95,7 +95,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./hosts/leanangle/users/pdegough-home.nix
+          ./users/pdegough/leanangle/home.nix
         ];
       };
       "pdegough@lemurpro" = home-manager.lib.homeManagerConfiguration {
@@ -103,7 +103,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./hosts/lemurpro/users/pdegough-home.nix
+          ./users/pdegough/lemurpro/home.nix
         ];
       };
       "pdegough@xps13" = home-manager.lib.homeManagerConfiguration {
@@ -111,7 +111,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./hosts/xps13/users/pdegough-home.nix
+          ./users/pdegough/xps13/home.nix
         ];
       };
       "root@leanangle" = home-manager.lib.homeManagerConfiguration {
@@ -119,7 +119,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./hosts/leanangle/users/root-home.nix
+          ./users/root/leanangle/home.nix
         ];
       };
       "root@lemurpro" = home-manager.lib.homeManagerConfiguration {
@@ -127,7 +127,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./hosts/lemurpro/users/root-home.nix
+          ./users/root/lemurpro/home.nix
         ];
       };
       "root@xps13" = home-manager.lib.homeManagerConfiguration {
@@ -135,7 +135,7 @@
         extraSpecialArgs = { inherit inputs outputs; };
         # > Our main home-manager configuration file <
         modules = [
-          ./hosts/xps13/users/root-home.nix
+          ./users/root/xps13/home.nix
         ];
       };
     };

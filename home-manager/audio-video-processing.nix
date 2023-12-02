@@ -9,6 +9,7 @@
 {
   imports = [
     ./abcde-package-and-config.nix
+    ./makemkv-package-and-config.nix
   ];
   home.packages = with pkgs; [
     ardour
@@ -17,7 +18,6 @@
     dvdbackup
     fdk-aac-encoder
     lame
-    makemkv
     mkvtoolnix
     obs-studio
     picard

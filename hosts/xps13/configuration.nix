@@ -13,22 +13,30 @@
   imports = [
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    # other host-specific hardware
+    ./networking.nix
+    ./opengl.nix
+    ./gdm-monitors.nix
 
     # If you want to use modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
 
-    # You can also split up your configuration and import pieces of it here:
-    ./gnome.nix
-    ./networking.nix
-    ./opengl.nix
-    ../../nixos/users.nix
-    ../../nixos/global/hyprland.nix
+    # environmental specifics
     ../../nixos/global/locale.nix
     ../../nixos/global/pipewire.nix
     ../../nixos/global/postfix.nix
-    ../../nixos/global/sway.nix
+    # shells
     ../../nixos/global/zsh.nix
+    # window managers
+    ../../nixos/global/hyprland.nix
+    ../../nixos/global/sway.nix
+    ../../nixos/global/gnome.nix
+    # users
+    ../../nixos/users
+    ../../nixos/users/root.nix
+    ../../nixos/users/gmdegoug.nix
+    ../../nixos/users/pdegough.nix
   ];
 
   nixpkgs = {
@@ -126,7 +134,7 @@
     ];
   };
 
-  # This setups a SSH server. Very important if you're setting up a headless system.
+  # This sets up an SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
     enable = true;
@@ -137,5 +145,5 @@
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }

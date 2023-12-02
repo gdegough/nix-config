@@ -13,6 +13,20 @@
   home.packages = with pkgs; [
     powerline
   ];
+  home.sessionVariables = {
+      EDITOR = "vim";
+      EXINIT = "se sm smd scr=1 ai ruler redraw sw=4 filec=\t";
+      MERGE = "vimdiff";
+      SYSTEMD_EDITOR = "vim";
+  };
+  home.file = {
+    ".config/environment.d/50-vim.conf".text = ''
+      EDITOR=vim
+      EXINIT="se sm smd scr=1 ai ruler redraw sw=4 filec=\t"
+      MERGE=vimdiff
+      SYSTEMD_EDITOR=vim
+    '';
+  };
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [ vim-airline vim-airline-themes vim-colors-solarized ];
