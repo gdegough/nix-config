@@ -33,9 +33,9 @@
     ../../nixos/global/sway.nix
     ../../nixos/global/gnome.nix
     # users
-    ../../nixos/users/root.nix
-    ../../nixos/users/gmdegoug.nix
-    ../../nixos/users/pdegough.nix
+    ../../users/root.nix
+    ../../users/gmdegoug.nix
+    ../../users/pdegough.nix
   ];
 
   nixpkgs = {
