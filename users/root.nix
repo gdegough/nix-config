@@ -17,7 +17,8 @@ in
   #   sopsFile = ./secrets.yaml;
   #   neededForUsers = true;
   # };
-  users.users.${userName} = {
+  users.users = {
+    name = "${userName}";
     shell = pkgs.zsh;
     hashedPasswordFile = "/persist/passwords/${userName}";
   };

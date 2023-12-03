@@ -19,9 +19,10 @@ in
   #   sopsFile = ./secrets.yaml;
   #   neededForUsers = true;
   # };
-  users.users.${userName} = {
+  users.users = {
+    name = "${userName}";
     isNormalUser = true;
-    uid = ${userID};
+    uid = "${userID}";
     description = "${userDescription}";
     extraGroups = [ 
       "audio"
