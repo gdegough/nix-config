@@ -9,20 +9,18 @@ let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
   userName = "gmdegoug";
   userDescription = "Gregory M. DeGough";
-  userID = 1000;
 in
 {
-  home-manager.users.${userName} = import ../hosts/${config.networking.hostName}/hm/${userName}-home.nix;
+#  home-manager.users.${userName} = import ../hosts/${config.networking.hostName}/hm/${userName}-home.nix;
 
   users.mutableUsers = false;
-  # sops.secrets.${userName}-password = {
+  # sops.secrets."${userName}"-password = {
   #   sopsFile = ./secrets.yaml;
   #   neededForUsers = true;
   # };
-  users.users = {
-    name = "${userName}";
+  users.users."${userName}" = {
     isNormalUser = true;
-    uid = "${userID}";
+    uid = 1000;
     description = "${userDescription}";
     extraGroups = [ 
       "audio"

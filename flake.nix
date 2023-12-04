@@ -34,7 +34,8 @@
   } @ inputs: 
   let
     inherit (self) outputs;
-  in {
+  in 
+  {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
