@@ -38,6 +38,7 @@
     ../../../home-manager/graphic-art.nix
     ../../../home-manager/htmltidy-config.nix
     ../../../home-manager/i3blocks-package-and-config.nix
+    ../../../home-manager/java-webstart.nix
     ../../../home-manager/megasync-package-and-config.nix
     ../../../home-manager/multimedia.nix
     ../../../home-manager/music-composition.nix
