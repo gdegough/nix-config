@@ -25,8 +25,8 @@
       font $font
 
       # Your preferred terminal emulator
-      set $term foot --config=$HOME/.config/foot/foot.ini
-      #set $term alacritty --config-file $HOME/.config/alacritty/alacritty.yml
+      #set $term foot --config=$HOME/.config/foot/foot.ini
+      set $term alacritty --config-file $HOME/.config/alacritty/alacritty.yml
 
       # Your preferred application launcher
       # Note: pass the final command to swaymsg so that the resulting window can be opened
