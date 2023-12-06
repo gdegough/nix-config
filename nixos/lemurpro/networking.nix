@@ -31,9 +31,9 @@
     dnssec = "true";
     domains = [ "~." ];
     fallbackDns = [ "1.0.0.1" "1.1.1.1" ];
-    extraConfig = ''
-      DNSOverTLS=yes
-    '';
+    # extraConfig = ''
+    #   DNSOverTLS=yes
+    # '';
   };
 
   # for l2tp VPN
@@ -45,7 +45,7 @@
 
   # mDNS
   services.avahi.enable = true;
-  # services.avahi.nssmdns4 = true;
+  # services.avahi.nssmdns = true;
   services.avahi.nssmdns4 = true;
 
   # List packages installed in system profile. To search, run:
