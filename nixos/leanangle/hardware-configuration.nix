@@ -8,7 +8,7 @@
 }:
 {
   imports = [ 
-    (inputs.modulesPath + "/installer/scan/not-detected.nix")
+    (modulesPath + "/installer/scan/not-detected.nix")
     inputs.impermanence.nixosModules.impermanence
   ];
 
