@@ -13,7 +13,7 @@
     # (the default) this is the recommended approach. When using systemd-networkd it's
     # still possible to use this option, but it's recommended to use it in conjunction
     # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-    useDHCP = true;
+    useDHCP = lib.mkForce true;
     # interfaces.wlp0s20f3.useDHCP = true;
     hostName = "lemurpro";
     domain = "natcky.rr.com";
