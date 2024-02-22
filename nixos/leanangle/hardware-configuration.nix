@@ -4,13 +4,11 @@
   lib,
   config,
   pkgs,
-  modulesPath,
-  impermanence,
   ...
 }:
 {
   imports = [ 
-    (modulesPath + "/installer/scan/not-detected.nix")
+    (inputs.modulesPath + "/installer/scan/not-detected.nix")
     inputs.impermanence.nixosModules.impermanence
   ];
 
