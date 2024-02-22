@@ -11,7 +11,7 @@
 {
   imports = [ 
     (modulesPath + "/installer/scan/not-detected.nix")
-    impermanence.nixosModules.impermanence
+    inputs.impermanence.nixosModules.impermanence
   ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" "bcachefs" ];
