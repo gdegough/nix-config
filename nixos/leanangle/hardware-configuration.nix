@@ -19,87 +19,87 @@
   boot.supportedFilesystems = [ "bcachefs" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "tmpfs";
-      fsType = "tmpfs";
-      neededForBoot = true;
-    };
+  fileSystems."/" = { 
+    device = "tmpfs";
+    fsType = "tmpfs";
+    neededForBoot = true;
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3B78-F514";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = { 
+    device = "/dev/disk/by-uuid/3B78-F514";
+    fsType = "vfat";
+  };
 
-  fileSystems."/nixos" =
-    { device = "UUID=72016c29-8452-4aff-92c7-a95c53185932";
-      fsType = "bcachefs";
-      options = [ "acl" "compression=zstd:3" ];
-      neededForBoot = true;
-    };
+  fileSystems."/nixos" = { 
+    device = "/dev/nvme0n1p2";
+    fsType = "bcachefs";
+    options = [ "acl" "compression=zstd:3" ];
+    neededForBoot = true;
+  };
 
-  fileSystems."/root" =
-    { device = "/nixos/root";
-      fsType = "none";
-      options = [ "bind" ];
-      neededForBoot = true;
-    };
+  fileSystems."/root" = { 
+    device = "/nixos/root";
+    fsType = "none";
+    options = [ "bind" ];
+    neededForBoot = true;
+  };
 
-  fileSystems."/home" =
-    { device = "UUID=a034d767-296b-4631-8eb6-aa1881baa082";
-      fsType = "bcachefs";
-      options = [ "acl" "compression=zstd:3" ];
-      neededForBoot = true;
-    };
+  fileSystems."/home" = { 
+    device = "/dev/nvme2n1p2";
+    fsType = "bcachefs";
+    options = [ "acl" "compression=zstd:3" ];
+    neededForBoot = true;
+  };
 
-  fileSystems."/persist" =
-    { device = "/nixos/persist";
-      fsType = "none";
-      options = [ "bind" ];
-      neededForBoot = true;
-    };
+  fileSystems."/persist" = { 
+    device = "/nixos/persist";
+    fsType = "none";
+    options = [ "bind" ];
+    neededForBoot = true;
+  };
 
-  fileSystems."/nix" =
-    { device = "/nixos/nix";
-      fsType = "none";
-      options = [ "bind" ];
-      neededForBoot = true;
-    };
+  fileSystems."/nix" = { 
+    device = "/nixos/nix";
+    fsType = "none";
+    options = [ "bind" ];
+    neededForBoot = true;
+  };
 
-  fileSystems."/etc/NetworkManager" =
-    { device = "/nixos/networkmanager-config";
-      fsType = "none";
-      options = [ "bind" ];
-    };
+  fileSystems."/etc/NetworkManager" = { 
+    device = "/nixos/networkmanager-config";
+    fsType = "none";
+    options = [ "bind" ];
+  };
 
-  fileSystems."/mnt/backup/128Gext" =
-    { device = "/dev/disk/by-uuid/82a75835-a541-4976-bc10-d643a69169b6";
-      fsType = "btrfs";
-      options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
-    };
+  fileSystems."/mnt/backup/128Gext" = { 
+    device = "/dev/disk/by-uuid/82a75835-a541-4976-bc10-d643a69169b6";
+    fsType = "btrfs";
+    options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
+  };
 
-  fileSystems."/mnt/backup/256Gext" =
-    { device = "/dev/disk/by-uuid/7dcad2e8-e127-4a55-9a41-f73c46239e9b";
-      fsType = "btrfs";
-      options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
-    };
+  fileSystems."/mnt/backup/256Gext" = { 
+    device = "/dev/disk/by-uuid/7dcad2e8-e127-4a55-9a41-f73c46239e9b";
+    fsType = "btrfs";
+    options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
+  };
 
-  fileSystems."/mnt/backup/internal" =
-    { device = "/dev/disk/by-uuid/3d9a2509-dbd0-44d9-83e2-52fbdff26a7f";
-      fsType = "bcachefs";
-      options = [ "acl" "compression=zstd:10" ];
-    };
+  fileSystems."/mnt/backup/internal" = { 
+    device = "/dev/nvme1n1";
+    fsType = "bcachefs";
+    options = [ "acl" "compression=zstd:10" ];
+  };
 
-  fileSystems."/var/lib/plex" =
-    { device = "/dev/disk/by-uuid/ec66d794-06ed-44e7-838b-e0c65c9a725f";
-      fsType = "bcachefs";
-      options = [ "acl" "compression=zstd:10" ];
-    };
+  fileSystems."/var/lib/plex" = { 
+    device = "/dev/nvme0n1p5";
+    fsType = "bcachefs";
+    options = [ "acl" "compression=zstd:10" ];
+  };
 
-  fileSystems."/srv" =
-    { device = "/dev/disk/by-uuid/5c46fec0-dd3b-409c-95fb-cff9ec5302dc";
-      fsType = "bcachefs";
-      options = [ "noauto" "acl" "compression=zstd:10" ];
-    };
+  fileSystems."/srv" = { 
+    device = "/dev/sda:/dev/sdc";
+    fsType = "bcachefs";
+    options = [ "noauto" "acl" "compression=zstd:10" ];
+  };
 
   swapDevices = [ ];
 
