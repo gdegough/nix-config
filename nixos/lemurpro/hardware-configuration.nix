@@ -33,7 +33,7 @@
   fileSystems."/nixos" = { 
     device = "/dev/nvme0n1p2";
     fsType = "bcachefs";
-    options = [ "acl" "compression=zstd:3" ];
+    options = [ "compression=zstd:3" ];
     neededForBoot = true;
   };
 
@@ -47,7 +47,7 @@
   fileSystems."/home" = { 
     device = "/dev/nvme1n1";
     fsType = "bcachefs";
-    options = [ "acl" "compression=zstd:3" ];
+    options = [ "compression=zstd:3" ];
     neededForBoot = true;
   };
 
