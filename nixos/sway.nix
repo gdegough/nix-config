@@ -208,8 +208,8 @@ in
     pkgs.swayidle
     pkgs.swaylock
     volume-helper-sway
-    pkgs.waybar
-    pkgs.unstable.wayland
+    pkgs.unstable.waybar
+    pkgs.wayland
     pkgs.wdisplays
     pkgs.wev
     pkgs.wl-clipboard
