@@ -103,6 +103,7 @@
 
   home.sessionVariables = {
     COUNTRY = "US";
+    GDK_DPI_SCALE = "0.75";
     MAIL = "$HOME/.maildir";
     MAILPATH = "$HOME/.maildir";
     MOZ_USE_XINPUT2 = "1";
