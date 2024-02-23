@@ -13,8 +13,8 @@
       xwayland { force_zero_scaling = true }
 
       # toolkit-specific scale
-      env = GDK_SCALE,1.5
-      env = XCURSOR_SIZE,24
+      #env = GDK_SCALE,1.5
+      @env = XCURSOR_SIZE,24
     '';
   };
 }
