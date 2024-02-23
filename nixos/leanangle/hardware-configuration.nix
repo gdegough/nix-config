@@ -98,7 +98,7 @@
   fileSystems."/srv" = { 
     device = "UUID=5c46fec0-dd3b-409c-95fb-cff9ec5302dc";
     fsType = "bcachefs";
-    options = [ "noauto" "compression=zstd:10" ];
+    options = [ "compression=zstd:10" "noauto" ];
   };
 
   swapDevices = [ ];
