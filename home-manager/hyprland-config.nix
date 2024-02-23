@@ -123,10 +123,10 @@
       }
 
       # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
-      device {
-          name = kensington-expert-mouse
-          sensitivity = -0.5
-      }
+      #device {
+      #    name = kensington-expert-mouse
+      #    sensitivity = -0.5
+      #}
 
       input {
           touchpad {
