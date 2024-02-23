@@ -87,18 +87,21 @@
     device = "UUID=3d9a2509-dbd0-44d9-83e2-52fbdff26a7f";
     fsType = "bcachefs";
     options = [ "compression=zstd:10" ];
+    neededForBoot = true;
   };
 
   fileSystems."/var/lib/plex" = { 
     device = "UUID=ec66d794-06ed-44e7-838b-e0c65c9a725f";
     fsType = "bcachefs";
     options = [ "compression=zstd:10" ];
+    neededForBoot = true;
   };
 
   fileSystems."/srv" = { 
     device = "UUID=5c46fec0-dd3b-409c-95fb-cff9ec5302dc";
     fsType = "bcachefs";
     options = [ "compression=zstd:10" "noauto" ];
+    neededForBoot = true;
   };
 
   swapDevices = [ ];
