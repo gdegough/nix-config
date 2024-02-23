@@ -148,6 +148,7 @@
     pkgs.gptfdisk
     pkgs.home-manager
     pkgs.lm_sensors
+    pkgs.lynx
     pkgs.mailutils
     pkgs.openrgb-with-all-plugins
     pkgs.php

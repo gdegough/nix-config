@@ -129,6 +129,7 @@
     pkgs.home-manager
     pkgs.light
     pkgs.lm_sensors
+    pkgs.lynx
     pkgs.mailutils
     pkgs.python3
     pkgs.sops
