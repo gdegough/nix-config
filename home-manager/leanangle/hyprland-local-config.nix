@@ -16,7 +16,6 @@
 
       # toolkit-specific scale
       env = GDK_SCALE,2
-      env = GDK_DPI_SCALE,0.5
       env = XCURSOR_SIZE,24
     '';
   };
