@@ -16,7 +16,8 @@
       Categories=Network;System;
       Comment[en_US]=Easy automated syncing between your computers and your MEGA cloud drive.
       Comment=Easy automated syncing between your computers and your MEGA cloud drive.
-      Exec=megasync --nogfx
+      Exec=sh -c "sleep 30;exec megasync --nogfx"
+      #Exec=megasync --nogfx
       GenericName[en_US]=File Synchronizer
       GenericName=File Synchronizer
       Icon=mega

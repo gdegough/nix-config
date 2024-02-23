@@ -10,10 +10,13 @@
       monitor = HDMI-A-1, 3840x2160@59.997Hz, 0x0, 1.5
 
       # unscale XWayland
-      xwayland { force_zero_scaling = true }
+      xwayland { 
+        force_zero_scaling = true 
+      }
 
       # toolkit-specific scale
-      env = GDK_SCALE,1.5
+      env = GDK_SCALE,2
+      env = GDK_DPI_SCALE,0.5
       env = XCURSOR_SIZE,24
     '';
   };
