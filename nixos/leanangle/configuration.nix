@@ -131,7 +131,7 @@
     description = "Mount srv partition";
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = ''${pkgs.bcachefs-tools}/bin/mount.bcachefs UUID=5c46fec0-dd3b-409c-95fb-cff9ec5302dc -o compression=zstd:10,acl /srv'';
+      ExecStart = ''${pkgs.bcachefs-tools}/bin/mount.bcachefs UUID=5c46fec0-dd3b-409c-95fb-cff9ec5302dc -o compression=zstd:10 /srv'';
     };
   };
   # Polkit is used for controlling system-wide privileges
