@@ -23,6 +23,12 @@
       #exec "flatpak run --branch=stable --arch=x86_64 --command=bitwarden --file-forwarding com.bitwarden.desktop"
       exec bitwarden
 
+      # tidal-hifi
+      #for_window [class="tidal-hifi"] move window to scratchpad
+      #bindsym $mod+p [class="tidal-hifi"] scratchpad show, move position center, resize set 1280 800
+      #exec "flatpak run --branch=stable --arch=x86_64 --command=com.mastermindzh.tidal-hifi com.mastermindzh.tidal-hifi"
+      #exec tidal-hifi
+
       # Plexamp
       for_window [class="Plexamp"] move window to scratchpad
       bindsym $mod+p [class="Plexamp"] scratchpad show, move position center, resize set 250 500
