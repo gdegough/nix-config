@@ -26,12 +26,12 @@
   };
 
   fileSystems."/boot" = { 
-    device = "/dev/disk/by-uuid/3B78-F514";
+    device = "UUID=3B78-F514";
     fsType = "vfat";
   };
 
   fileSystems."/nixos" = { 
-    device = "/dev/nvme0n1p2";
+    device = "UUID=72016c29-8452-4aff-92c7-a95c53185932";
     fsType = "bcachefs";
     options = [ "compression=zstd:3" ];
     neededForBoot = true;
@@ -45,7 +45,7 @@
   };
 
   fileSystems."/home" = { 
-    device = "/dev/nvme2n1p2";
+    device = "UUID=a034d767-296b-4631-8eb6-aa1881baa082";
     fsType = "bcachefs";
     options = [ "compression=zstd:3" ];
     neededForBoot = true;
@@ -84,19 +84,19 @@
   };
 
   fileSystems."/mnt/backup/internal" = { 
-    device = "/dev/nvme1n1";
+    device = "UUID=3d9a2509-dbd0-44d9-83e2-52fbdff26a7f";
     fsType = "bcachefs";
     options = [ "compression=zstd:10" ];
   };
 
   fileSystems."/var/lib/plex" = { 
-    device = "/dev/nvme0n1p5";
+    device = "UUID=ec66d794-06ed-44e7-838b-e0c65c9a725f";
     fsType = "bcachefs";
     options = [ "compression=zstd:10" ];
   };
 
   fileSystems."/srv" = { 
-    device = "/dev/sda:/dev/sdc";
+    device = "UUID=5c46fec0-dd3b-409c-95fb-cff9ec5302dc";
     fsType = "bcachefs";
     options = [ "noauto" "compression=zstd:10" ];
   };
