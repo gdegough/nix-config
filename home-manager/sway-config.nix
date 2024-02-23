@@ -468,7 +468,7 @@
       for_window [class="Bitwarden"] move window to scratchpad
       bindsym $mod+z [class="Bitwarden"] scratchpad show, move position center, resize set 900 600
       #exec "flatpak run --branch=stable --arch=x86_64 --command=bitwarden --file-forwarding com.bitwarden.desktop"
-      exec bitwarden
+      exec "GDK_DPI_SCALE=0.6 bitwarden"
 
       # Audio effects
       for_window [app_id="com.github.wwmm.easyeffects"] move window to scratchpad
@@ -491,7 +491,7 @@
       for_window [class="Plexamp"] move window to scratchpad
       bindsym $mod+p [class="Plexamp"] scratchpad show, move position center, resize set 250 500
       #exec "flatpak run --branch=stable --arch=x86_64 --command=startplexamp com.plexamp.Plexamp"
-      exec plexamp
+      exec "GDK_DPI_SCALE=0.6 plexamp"
     '';
     ".config/sway/config.d/50-rules-browser.conf".text = ''
       # apply mark for Xwayland and wayland native browser windows
