@@ -209,7 +209,7 @@ in
     pkgs.swaylock
     volume-helper-sway
     pkgs.waybar
-    pkgs.wayland
+    pkgs.unstable.wayland
     pkgs.wdisplays
     pkgs.wev
     pkgs.wl-clipboard

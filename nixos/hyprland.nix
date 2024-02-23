@@ -165,7 +165,7 @@ in
     pkgs.swayidle
     pkgs.swaylock
     volume-helper-hyprland
-    pkgs.waybar
+    pkgs.unstable.waybar
     pkgs.wayland
     pkgs.wdisplays
     pkgs.wev
