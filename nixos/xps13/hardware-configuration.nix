@@ -33,7 +33,7 @@
   fileSystems."/nixos" = { 
     device = "UUID=<UUID partition # here>";
     fsType = "bcachefs";
-    options = [ "acl" "compression=zstd:3" ];
+    options = [ "compression=zstd:3" ];
     neededForBoot = true;
   };
 
@@ -47,7 +47,7 @@
   fileSystems."/home" = { 
     device = "UUID=<UUID partition # here>";
     fsType = "bcachefs";
-    options = [ "acl" "compression=zstd:3" ];
+    options = [ "compression=zstd:3" ];
     neededForBoot = true;
   };
 

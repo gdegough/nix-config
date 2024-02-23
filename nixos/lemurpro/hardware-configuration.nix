@@ -31,7 +31,7 @@
   };
 
   fileSystems."/nixos" = { 
-    device = "/dev/nvme0n1p2";
+    device = "UUID=12c5fe46-4602-4fc4-a78e-a174f34ddad0";
     fsType = "bcachefs";
     options = [ "compression=zstd:3" ];
     neededForBoot = true;
@@ -45,7 +45,7 @@
   };
 
   fileSystems."/home" = { 
-    device = "/dev/nvme1n1";
+    device = "UUID=3af72f05-409e-449f-a214-8fda4afbed83";
     fsType = "bcachefs";
     options = [ "compression=zstd:3" ];
     neededForBoot = true;
@@ -72,13 +72,13 @@
   };
 
   fileSystems."/mnt/backup/128Gext" = { 
-    device = "/dev/disk/by-uuid/82a75835-a541-4976-bc10-d643a69169b6";
+    device = "UUID=82a75835-a541-4976-bc10-d643a69169b6";
     fsType = "btrfs";
     options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
   };
 
   fileSystems."/mnt/backup/256Gext" = { 
-    device = "/dev/disk/by-uuid/7dcad2e8-e127-4a55-9a41-f73c46239e9b";
+    device = "UUID=7dcad2e8-e127-4a55-9a41-f73c46239e9b";
     fsType = "btrfs";
     options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
   };
