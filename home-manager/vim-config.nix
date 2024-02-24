@@ -37,7 +37,7 @@
       tabstop = 4;
     };
     extraConfig = ''
-      # colorscheme solarized
+      " colorscheme solarized
       filetype plugin indent on
       let g:tex_flavor = 'latex'
       set autoindent 
