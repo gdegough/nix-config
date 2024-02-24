@@ -9,6 +9,6 @@
   # home.packages = with pkgs; [ steam ];
   home.packages = [
     pkgs.unstable.frescobaldi
-    pkgs.lilypond
+    pkgs.unstable.lilypond
   ];
 }
