@@ -65,12 +65,6 @@
     neededForBoot = true;
   };
 
-  fileSystems."/etc/NetworkManager" = { 
-    device = "/nixos/networkmanager-config";
-    fsType = "none";
-    options = [ "bind" ];
-  };
-
   fileSystems."/mnt/backup/128Gext" = { 
     device = "/dev/disk/by-uuid/82a75835-a541-4976-bc10-d643a69169b6";
     fsType = "btrfs";
@@ -99,14 +93,18 @@
     directories = [
       "/etc/ssh"
       "/var/log"
+      "/var/lib/AccountsService"
+      "/var/lib/bluetooth"
       "/var/lib/cups"
       "/var/lib/fprint"
+      "/var/lib/nixos"
       "/var/db/sudo/lectured"
+      "/etc/NetworkManager/system-connections"
+      { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
     ];
     files = [
       "/etc/machine-id"
-      "/etc/nix/id_rsa"
-      "/var/lib/logrotate.status"
+      # "/var/lib/logrotate.status"
     ];
   };
 }
