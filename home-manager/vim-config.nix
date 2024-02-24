@@ -31,7 +31,6 @@
     enable = true;
     plugins = with pkgs.vimPlugins; [ vim-airline vim-airline-themes vim-colors-solarized ];
     settings = {
-      background = "dark";
       expandtab = true;
       shiftwidth = 4; 
       tabstop = 4;
