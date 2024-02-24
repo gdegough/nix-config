@@ -11,7 +11,7 @@
     enable = true;
     desktopManager.gnome.enable = true; # GNOME
     displayManager.gdm.enable = true; # GDM
-    displayManager.defaultSession = "gnome"; # Make gnome the default session
+    # displayManager.defaultSession = "gnome"; # Make gnome the default session
     # adds these schemas for dconf and gsettings
     desktopManager.gnome.sessionPath = [ 
       pkgs.gnome.gnome-settings-daemon
