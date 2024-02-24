@@ -31,13 +31,12 @@
     enable = true;
     plugins = with pkgs.vimPlugins; [ vim-airline vim-airline-themes vim-colors-solarized ];
     settings = {
-      # background = "dark";
+      background = "dark";
       expandtab = true;
       shiftwidth = 4; 
       tabstop = 4;
     };
     extraConfig = ''
-      " colorscheme solarized
       filetype plugin indent on
       let g:tex_flavor = 'latex'
       set autoindent 
