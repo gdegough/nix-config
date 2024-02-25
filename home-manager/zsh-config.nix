@@ -98,16 +98,16 @@
           #[ "$EUID" -eq 0 ] && prompt_symbol=💀
           case "$PROMPT_ALTERNATIVE" in
               twoline)
-                  PROMPT=$'%F{green}┌──''${ID:+($ID)─}''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.yellow)}%n'$prompt_symbol$'%m%b%F{green})-''${prompt_is_ssh}[%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{green}]\n└─ %B%(#.\#.$)%b%F{reset} '
+                  PROMPT=$'%F{green}┌──''${ID:+($ID)─}''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.yellow)}%n'$prompt_symbol$'%m%b%F{green})-''${prompt_is_ssh}[%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{green}]\n└─ %B%(#.#.$)%b%F{reset} '
                   # Right-side prompt with exit codes and background processes
                   #RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
                   ;;
               oneline)
-                  PROMPT=$''\'''${ID:+($ID) }''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.yellow)}%n@%m%b''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.\#.$) '
+                  PROMPT=$''\'''${ID:+($ID) }''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.yellow)}%n@%m%b''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.#.$) '
                   RPROMPT=
                   ;;
               backtrack)
-                  PROMPT=$''\'''${ID:+($ID) }''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{red}%n@%m%bi''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.\#.$) '
+                  PROMPT=$''\'''${ID:+($ID) }''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{red}%n@%m%bi''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.#.$) '
                   RPROMPT=
                   ;;
           esac
@@ -163,7 +163,7 @@
           ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
           ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
       else
-          PROMPT="''${ID:+($ID) }%n@%m''${prompt_is_ssh}:%~%(#.\#.$) "
+          PROMPT="''${ID:+($ID) }%n@%m''${prompt_is_ssh}:%~%(#.#.$) "
       fi
       unset color_prompt force_color_prompt
       toggle_oneline_prompt(){

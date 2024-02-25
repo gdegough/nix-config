@@ -85,10 +85,12 @@
           prompt_color=''${green}
           info_color=''${yellow}
           prompt_symbol='@'
+          prompt_hash='$'
           if [ $EUID -eq 0 ]; then # Change prompt colors for root user
               info_color=''${red}
               # Skull emoji for root terminal
               #prompt_symbol=💀
+              prompt_hash='#'
           fi
           case $PROMPT_ALTERNATIVE in
               twoline)
@@ -96,21 +98,21 @@
                   if over_ssh; then
                       PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
                   fi
-                  PS1+="''${prompt_color}[''${white}\w''${prompt_color}]\n''${prompt_color}└─''${info_color} \$''${reset} "
+                  PS1+="''${prompt_color}[''${white}\w''${prompt_color}]\n''${prompt_color}└─''${info_color} ''${prompt_hash}''${reset} "
                   ;;
               oneline)
                   PS1="''${prompt_color}''${ID:+(''${ID}) }''${chroot_prompt:+(''${chroot_prompt}) }''${info_color}\u''${prompt_symbol}\h"
                   if over_ssh; then
                       PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
                   fi
-                  PS1+="''${prompt_color}:''${white} \w''${info_color} \$''${reset} "
+                  PS1+="''${prompt_color}:''${white} \w''${info_color} ''${prompt_hash}''${reset} "
                   ;;
               backtrack)
                   PS1="''${prompt_color}''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }''${chroot_prompt:+(''${chroot_prompt})}''${info_color}\u''${prompt_symbol}\h"
                   if over_ssh; then
                       PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
                   fi
-                  PS1+="''${prompt_color}:''${white}\w''${info_color}\$''${reset} "
+                  PS1+="''${prompt_color}:''${white}\w''${info_color}''${prompt_hash}''${reset} "
                   ;;
           esac
           unset prompt_color info_color black red green yellow blue magenta cyan white reset prompt_symbol
@@ -119,7 +121,7 @@
           if over_ssh; then
               PS1+="[SSH]"
           fi
-          PS1+=": \w \\$ "
+          PS1+=": \w ''${prompt_hash} "
       fi
       unset use_color force_color_prompt
 
