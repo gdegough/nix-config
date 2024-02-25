@@ -35,7 +35,7 @@
     ../postfix.nix # MTA
 
     # shells
-    # ../zsh.nix # ZSH
+    ../zsh.nix # ZSH
 
     # window managers and DEs
     ../tiling-wm-support.nix # common tiling WM support

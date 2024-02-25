@@ -22,7 +22,7 @@ in
       "shared-files" 
       "video" 
     ];
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     hashedPasswordFile = "/persist/passwords/pdegough";
   };
 }

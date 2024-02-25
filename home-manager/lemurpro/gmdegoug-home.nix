@@ -64,7 +64,7 @@
     ../tmux-package-and-config.nix
     ../wofi-config.nix
     ../x-config.nix
-    # ../zsh-config.nix
+    ../zsh-config.nix
   ];
 
   nixpkgs = {

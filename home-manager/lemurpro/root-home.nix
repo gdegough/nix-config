@@ -31,7 +31,7 @@
     ../mutt-package-and-config.nix
     ../readline-config.nix
     ../tmux-package-and-config.nix
-    # ../zsh-config.nix
+    ../zsh-config.nix
   ];
 
   nixpkgs = {
