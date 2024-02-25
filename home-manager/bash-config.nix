@@ -34,6 +34,11 @@
       export GPG_TTY
       gpg-connect-agent updatestartuptty /bye > /dev/null
 
+      # set variable identifying the chroot you work in (used in the prompt below)
+      if [ -z "''${chroot_prompt:-}" ] && [ -r /etc/''${type}_chroot ]; then
+          chroot_prompt=$(cat /etc/''${type}_chroot)
+      fi
+
       # Determine if session is over SSH (used in the prompts below)
       over_ssh() {
           if [ -n "''${SSH_CLIENT}" ]; then

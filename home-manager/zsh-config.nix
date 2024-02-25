@@ -52,6 +52,10 @@
       zstyle ':completion:*' use-compctl false
       zstyle ':completion:*' verbose true
       zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+      # set variable identifying the chroot you work in (used in the prompt below)
+      if [ -z "''${chroot_prompt:-}" ] && [ -r /etc/''${type}_chroot ]; then
+          chroot_prompt=$(cat /etc/''${type}_chroot)
+      fi
       # set a fancy prompt (non-color, unless we know we "want" color)
       case "$TERM" in
           xterm-color|*-256color) color_prompt=yes;;
@@ -98,16 +102,16 @@
           #[ "$EUID" -eq 0 ] && prompt_symbol=💀
           case "$PROMPT_ALTERNATIVE" in
               twoline)
-                  PROMPT=$'%F{green}┌──''${ID:+($ID)─}''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.yellow)}%n'$prompt_symbol$'%m%b%F{green})-''${prompt_is_ssh}[%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{green}]\n└─ %B%(#.#.$)%b%F{reset} '
+                  PROMPT=$''\'%F{green}┌──''${ID:+(''${ID})─}''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))─}(%B%F{%(#.red.yellow)}%n''\'''${prompt_symbol}$''\'%m%b%F{green})-''${prompt_is_ssh}[%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{green}]\n└─ %B%(#.#.$)%b%F{reset} ''\'
                   # Right-side prompt with exit codes and background processes
-                  #RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
+                  #RPROMPT=$''\'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)''\'
                   ;;
               oneline)
-                  PROMPT=$''\'''${ID:+($ID) }''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.yellow)}%n@%m%b''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.#.$) '
+                  PROMPT=$''\'''${ID:+(''${ID}) }''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))}%B%F{%(#.red.yellow)}%n@%m%b''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.#.$) ''\'
                   RPROMPT=
                   ;;
               backtrack)
-                  PROMPT=$''\'''${ID:+($ID) }''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{red}%n@%m%bi''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.#.$) '
+                  PROMPT=$''\'''${ID:+(''${ID}) }''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))}%B%F{red}%n@%m%b''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.#.$) ''\'
                   RPROMPT=
                   ;;
           esac
@@ -163,7 +167,7 @@
           ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
           ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
       else
-          PROMPT="''${ID:+($ID) }%n@%m''${prompt_is_ssh}:%~%(#.#.$) "
+          PROMPT=''\'''${ID:+(''${ID}) }%n@%m''${prompt_is_ssh}:%~%(#.#.$) ''\'
       fi
       unset color_prompt force_color_prompt
       toggle_oneline_prompt(){
@@ -180,7 +184,7 @@
       # If this is an xterm set the title to user@host:dir
       case "$TERM" in
           xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
-              TERM_TITLE=$'\e]0;''${ID:+($ID)}''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%n@%m:%~\a'
+              TERM_TITLE=$''\'\e]0;''${ID:+(''${ID})}''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))}%n@%m:%~\a''\'
               ;;
           *)
               ;;
@@ -200,7 +204,7 @@
       # enable color support of ls, less and man, and also add handy aliases
       if [ ! $(eval "$(dircolors -b)") ]; then
           test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-          export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
+          export LS_COLORS="''${LS_COLORS}:ow=30;44:" # fix ls color for folders with 777 permissions
           alias ls='ls --color=auto'
           #alias dir='dir --color=auto'
           #alias vdir='vdir --color=auto'
