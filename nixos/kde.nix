@@ -9,10 +9,14 @@
 {
   services.xserver = {
     enable = true;
-    desktopManager.plasma5.enable = true; # KDE
-    desktopManager.plasma5.useQtScaling = true; # Enable HiDPI scaling in Qt
-    displayManager.sddm.enable = false; # sddm
-    # displayManager.defaultSession = "plasmawayland"; # Make plasma-wayland the default session
+    displayManager = {
+      sddm.enable = false; # sddm
+      # defaultSession = "plasmawayland"; # Make plasma-wayland the default session
+    };
+    desktopManager = {
+      plasma5.enable = true; # KDE
+      plasma5.useQtScaling = true; # Enable HiDPI scaling in Qt
+    };
   };
 
   # make QT apps look similar to GNOME desktop
