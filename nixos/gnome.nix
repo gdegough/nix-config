@@ -9,16 +9,21 @@
 {
   services.xserver = {
     enable = true;
-    desktopManager.gnome.enable = true; # GNOME
-    displayManager.gdm.enable = true; # GDM
-    # displayManager.defaultSession = "gnome"; # Make gnome the default session
-    # adds these schemas for dconf and gsettings
-    desktopManager.gnome.sessionPath = [ 
-      pkgs.gnome.gnome-settings-daemon
-      pkgs.gnome.gnome-tweaks
-      pkgs.gnome.mutter # this is necessary to enable fractional scaling
-      pkgs.gnome.nautilus
-    ];
+    displayManager = {
+      gdm.enable = true; # GDM
+      gdm.autosuspend = false;
+      # defaultSession = "gnome"; # Make gnome the default session
+    };
+    desktopManager = {
+      gnome.enable = true; # enable GNOME
+      # adds these schemas for dconf and gsettings
+      gnome.sessionPath = [ 
+        pkgs.gnome.gnome-settings-daemon
+        pkgs.gnome.gnome-tweaks
+        pkgs.gnome.mutter # this is necessary to control fractional scaling
+        pkgs.gnome.nautilus
+      ];
+    };
   };
 
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 

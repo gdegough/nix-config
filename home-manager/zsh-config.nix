@@ -83,9 +83,9 @@
       if over_ssh ; then
           if [ "$color_prompt" = yes ] ; then
               if [ -z "''${TMUX}" ]; then
-                  prompt_is_ssh='%F{%(#|blue|green)}[%F{red}SSH%F{%(#|blue|green)}]'
+                  prompt_is_ssh='%F{%(#.cyan.green)}[%F{red}SSH%F{%(#.cyan.green)}]'
               else
-                  prompt_is_ssh='%F{%(#|blue|green)}[%F{253}SSH%F{%(#|blue|green)}]'
+                  prompt_is_ssh='%F{%(#.cyan.green)}[%F{253}SSH%F{%(#.cyan.green)}]'
               fi
           else
               prompt_is_ssh='[SSH]'
@@ -98,12 +98,12 @@
           #[ "$EUID" -eq 0 ] && prompt_symbol=💀
           case "$PROMPT_ALTERNATIVE" in
               twoline)
-                  PROMPT=$'%F{%(#.blue.green)}┌──''${ID:+($ID)─}''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n'$prompt_symbol$'%m%b%F{%(#.blue.green)})-''${prompt_is_ssh}[%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
+                  PROMPT=$'%F{%(#.cyan.green)}┌──''${ID:+($ID)─}''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.cyan)}%n'$prompt_symbol$'%m%b%F{%(#.cyan.green)})-''${prompt_is_ssh}[%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.cyan.green)}]\n└─%B%(#.%F{red}#.%F{cyan}$)%b%F{reset} '
                   # Right-side prompt with exit codes and background processes
                   #RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
                   ;;
               oneline)
-                  PROMPT=$''\'''${ID:+($ID) }''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.blue)}%n@%m%b''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.#.$) '
+                  PROMPT=$''\'''${ID:+($ID) }''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.cyan)}%n@%m%b''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.#.$) '
                   RPROMPT=
                   ;;
               backtrack)

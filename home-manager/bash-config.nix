@@ -73,14 +73,20 @@
           # override default virtualenv indicator in prompt
           VIRTUAL_ENV_DISABLE_PROMPT=1
 
-          prompt_color="\[$(tput sgr0; tput setaf 2)\]"
-          info_color="\[$(tput sgr0; tput setaf 4)\]"
-          red="\[$(tput sgr0; tput setaf 1)\]"
-          white="\[$(tput sgr0; tput setaf 7)\]"
           reset="\[$(tput sgr0)\]"
+          black="\[$(tput sgr0; tput setaf 0)\]"
+          red="\[$(tput sgr0; tput setaf 1)\]"
+          green="\[$(tput sgr0; tput setaf 2)\]"
+          yellow="\[$(tput sgr0; tput setaf 3)\]"
+          blue="\[$(tput sgr0; tput setaf 4)\]"
+          magenta="\[$(tput sgr0; tput setaf 5)\]"
+          cyan="\[$(tput sgr0; tput setaf 6)\]"
+          white="\[$(tput sgr0; tput setaf 7)\]"
+          prompt_color=$green
+          info_color=$cyan
           prompt_symbol='@'
           if [ $EUID -eq 0 ]; then # Change prompt colors for root user
-              prompt_color="\[$(tput sgr0; tput setaf 4)\]"
+              prompt_color=$cyan
               info_color=$red
               # Skull emoji for root terminal
               #prompt_symbol=💀
@@ -108,7 +114,7 @@
                   PS1+="$prompt_color:$white\w$info_color\$''$reset "
                   ;;
           esac
-          unset prompt_color info_color red white reset prompt_symbol
+          unset prompt_color info_color black red green yellow blue magenta cyan white reset prompt_symbol
       else
           PS1="''${ID:+($ID) }''${chroot_prompt:+($chroot_prompt) }\u@\h"
           if over_ssh; then
