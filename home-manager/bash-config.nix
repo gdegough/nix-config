@@ -82,52 +82,51 @@
           magenta="\[$(tput sgr0; tput setaf 5)\]"
           cyan="\[$(tput sgr0; tput setaf 6)\]"
           white="\[$(tput sgr0; tput setaf 7)\]"
-          prompt_color=$green
-          info_color=$cyan
+          prompt_color=''${green}
+          info_color=''${yellow}
           prompt_symbol='@'
           if [ $EUID -eq 0 ]; then # Change prompt colors for root user
-              prompt_color=$cyan
-              info_color=$red
+              info_color=''${red}
               # Skull emoji for root terminal
               #prompt_symbol=💀
           fi
           case $PROMPT_ALTERNATIVE in
               twoline)
-                  PS1="$prompt_color┌──''${ID:+($ID)─}''${chroot_prompt:+($chroot_prompt)─}($info_color\u$prompt_symbol\h$prompt_color)─"
+                  PS1="''${prompt_color}┌──''${ID:+(''${ID})─}''${chroot_prompt:+(''${chroot_prompt})─}(''${info_color}\u''${prompt_symbol}\h''${prompt_color})─"
                   if over_ssh; then
-                      PS1+="$prompt_color[''${red}SSH$prompt_color]"
+                      PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
                   fi
-                  PS1+="$prompt_color[$white\w$prompt_color]\n$prompt_color└─$info_color\$''${reset} "
+                  PS1+="''${prompt_color}[''${white}\w''${prompt_color}]\n''${prompt_color}└─''${info_color} \$''${reset} "
                   ;;
               oneline)
-                  PS1="$prompt_color''${ID:+($ID) }''${chroot_prompt:+($chroot_prompt) }$info_color\u$prompt_symbol\h"
+                  PS1="''${prompt_color}''${ID:+(''${ID}) }''${chroot_prompt:+(''${chroot_prompt}) }''${info_color}\u''${prompt_symbol}\h"
                   if over_ssh; then
-                      PS1+="$prompt_color[''${red}SSH$prompt_color]"
+                      PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
                   fi
-                  PS1+="$prompt_color:$white \w $info_color\$''${reset} "
+                  PS1+="''${prompt_color}:''${white} \w''${info_color} \$''${reset} "
                   ;;
               backtrack)
-                  PS1="$prompt_color''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }''${chroot_prompt:+($chroot_prompt)}$info_color\u$prompt_symbol\h"
+                  PS1="''${prompt_color}''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }''${chroot_prompt:+(''${chroot_prompt})}''${info_color}\u''${prompt_symbol}\h"
                   if over_ssh; then
-                      PS1+="$prompt_color[''${red}SSH$prompt_color]"
+                      PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
                   fi
-                  PS1+="$prompt_color:$white\w$info_color\$''$reset "
+                  PS1+="''${prompt_color}:''${white}\w''${info_color}\$''${reset} "
                   ;;
           esac
           unset prompt_color info_color black red green yellow blue magenta cyan white reset prompt_symbol
       else
-          PS1="''${ID:+($ID) }''${chroot_prompt:+($chroot_prompt) }\u@\h"
+          PS1="''${ID:+(''${ID}) }''${chroot_prompt:+(''${chroot_prompt}) }\u@\h"
           if over_ssh; then
               PS1+="[SSH]"
           fi
-          PS1+=": \w \$ "
+          PS1+=": \w \\$ "
       fi
       unset use_color force_color_prompt
 
       # If this is an xterm set the title to user@host:dir
       case "$TERM" in
           xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
-              PS1="\[\e]0;''${ID:+($ID)}''${chroot_prompt:+($chroot_prompt)}\u@\h: \w\a\]$PS1"
+              PS1="\[\e]0;''${ID:+(''${ID})}''${chroot_prompt:+(''${chroot_prompt})}\u@\h: \w\a\]''${PS1}"
               ;;
           *)
               ;;
