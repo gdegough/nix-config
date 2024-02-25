@@ -11,7 +11,7 @@
     enable = true;
     displayManager = {
       gdm.enable = true; # GDM
-      gdm.autosuspend = false;
+      gdm.autoSuspend = false;
       # defaultSession = "gnome"; # Make gnome the default session
     };
     desktopManager = {
