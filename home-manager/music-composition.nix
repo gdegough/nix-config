@@ -8,7 +8,7 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
   home.packages = [
-    pkgs.frescobaldi
+    pkgs.unstable.frescobaldi
     pkgs.unstable.lilypond
   ];
 }
