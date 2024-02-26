@@ -30,8 +30,7 @@
       #
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
       gpgconf --launch gpg-agent
-      GPG_TTY="$(tty)"
-      export GPG_TTY
+      export GPG_TTY="$(tty)"
       gpg-connect-agent updatestartuptty /bye > /dev/null
 
       # set variable identifying the chroot you work in (used in the prompt below)
@@ -196,8 +195,7 @@
       #
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
       gpgconf --launch gpg-agent
-      GPG_TTY="$(tty)"
-      export GPG_TTY
+      export GPG_TTY="$(tty)"
       gpg-connect-agent updatestartuptty /bye > /dev/null
 
       # set PATH so it includes user's private bin if it exists
