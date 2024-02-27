@@ -23,7 +23,6 @@ with lib.hm.gvariant;
     pkgs.gcolor3
     pkgs.chrome-gnome-shell
     pkgs.gnome-browser-connector
-    pkgs.gnome.dconf-editor
     pkgs.gnome.gnome-tweaks
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.caffeine
