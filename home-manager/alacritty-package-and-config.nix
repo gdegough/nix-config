@@ -3132,30 +3132,6 @@
       [colors.primary]
       background = "#171421"
       foreground = "#FFFFFF"
-
-      [schemes.kali.bright]
-      black = "#198388"
-      blue = "#277FFF"
-      cyan = "#05A1F7"
-      green = "#47D4B9"
-      magenta = "#962AC3"
-      red = "#EC0101"
-      white = "#FFFFFF"
-      yellow = "#FF8A18"
-
-      [schemes.kali.normal]
-      black = "#1F2229"
-      blue = "#367BF0"
-      cyan = "#49AEE6"
-      green = "#5EBDAB"
-      magenta = "#9755B3"
-      red = "#D41919"
-      white = "#E6E6E6"
-      yellow = "#FEA44C"
-
-      [schemes.kali.primary]
-      background = "#171421"
-      foreground = "#FFFFFF"
     '';
     ".config/alacritty/colorschemes.d/kali.yml".text = ''
       schemes:
