@@ -47,7 +47,7 @@
   # mDNS
   services.avahi.enable = true;
   # services.avahi.nssmdns4 = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
