@@ -41,7 +41,7 @@
     ../tiling-wm-support.nix # common tiling WM support
     ../hyprland.nix # Hyprland WM
     ../sway.nix # Sway WM
-#    ../kde.nix # KDE desktop environment
+    ../kde.nix # KDE desktop environment
     ../gnome.nix # GNOME desktop environment
 
     # Optional server apps
