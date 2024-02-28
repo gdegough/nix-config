@@ -12,7 +12,7 @@
 
     # Home manager
     #home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager-unstable.url = "github:nix-community/home-manager"; # Unstable
+    home-manager.url = "github:nix-community/home-manager"; # Unstable
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Add any other flake you might need
