@@ -102,7 +102,7 @@
           #[ "$EUID" -eq 0 ] && prompt_symbol=💀
           case "$PROMPT_ALTERNATIVE" in
               twoline)
-                  PROMPT=$''\'%F{green}┌──''${ID:+(''${ID})─}''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))─}(%B%F{%(#.red.yellow)}%n''\'''${prompt_symbol}$''\'%m%b%F{green})-''${prompt_is_ssh}[%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{green}]\n└─ %B%F{%(#.red.yellow)}%(#.#.$)%b%F{reset} ''\'
+                  PROMPT=$''\'%F{green}┌──''${ID:+(''${ID})─}''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))─}(%B%F{%(#.red.yellow)}%n''\'''${prompt_symbol}$''\'%m%b%F{green})-''${prompt_is_ssh}[%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{green}]\n└─%B%F{%(#.red.yellow)}%(#.#.$)%b%F{reset} ''\'
                   # Right-side prompt with exit codes and background processes
                   #RPROMPT=$''\'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)''\'
                   ;;

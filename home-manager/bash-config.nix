@@ -102,7 +102,7 @@
                   if over_ssh; then
                       PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
                   fi
-                  PS1+="''${prompt_color}[''${white}\w''${prompt_color}]\n''${prompt_color}└─ ''${info_color}''${prompt_hash}''${reset} "
+                  PS1+="''${prompt_color}[''${white}\w''${prompt_color}]\n''${prompt_color}└─''${info_color}''${prompt_hash}''${reset} "
                   ;;
               oneline)
                   PS1="''${prompt_color}''${ID:+(''${ID}) }''${chroot_prompt:+(''${chroot_prompt}) }''${info_color}\u''${prompt_symbol}\h"
