@@ -7,7 +7,7 @@
   programs.timidity = {
     enable = true;
     extraConfig = ''
-      soundfont ''${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2
+      soundfont $HOME/.nix-profile/share/soundfonts/FluidR3_GM2-2.sf2
     '';
   };
 }
