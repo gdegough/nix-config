@@ -10,5 +10,6 @@
   home.packages = [
     pkgs.stable.frescobaldi
     pkgs.lilypond
+    pkgs.timidity
   ];
 }
