@@ -9,9 +9,9 @@
 {
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true; # GDM
-    displayManager.gdm.autoSuspend = false; 
-    displayManager.defaultSession = "gnome"; # Make gnome the default session
+    # displayManager.gdm.enable = true; # GDM
+    # displayManager.gdm.autoSuspend = false; 
+    # displayManager.defaultSession = "gnome"; # Make gnome the default session
     desktopManager.gnome.enable = true; # GNOME 
     # adds these schemas for dconf and gsettings
     desktopManager.gnome.sessionPath = [
@@ -25,7 +25,10 @@
   services.gnome.core-developer-tools.enable = true; # install GNOME core dev tools
 
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
-  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
+  # programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
+  # OR
+  # Force git to use terminal to prompt for password
+  programs.ssh.askPassword = "";
 
   # List packages installed in system profile:
   environment.systemPackages = [

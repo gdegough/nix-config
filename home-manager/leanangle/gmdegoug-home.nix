@@ -44,11 +44,11 @@
     ../foot-config.nix
     ../games.nix
     ../git-config.nix
-    ../gnome-multimedia.nix
-    ../gnome-office.nix
-    ../gnome-packages-and-config.nix
-    ../gnome-systemd-environment-config.nix
-    ../gnome-terminal-config.nix
+    # ../gnome-multimedia.nix
+    # ../gnome-office.nix
+    # ../gnome-packages-and-config.nix
+    # ../gnome-systemd-environment-config.nix
+    # ../gnome-terminal-config.nix
     ../graphic-art.nix
     ../htmltidy-config.nix
     ../hyprland-config.nix
@@ -119,7 +119,7 @@
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentryFlavor = "gnome3";
+    pinentryFlavor = "qt";
   };
 
   targets.genericLinux.enable = true;

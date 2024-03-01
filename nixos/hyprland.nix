@@ -159,7 +159,6 @@ in
     pkgs.pasystray
     pkgs.pavucontrol
     pkgs.playerctl
-    pkgs.polkit_gnome
     pkgs.rofi-wayland
     pkgs.slurp
     pkgs.swayidle

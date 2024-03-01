@@ -681,10 +681,12 @@
       # Certain applications may require this to request elevated privileges:
       #   GParted, virt-manager, anything that uses pkexec
       #
-      # Requires: lxqt-policykit or polkit_gnome
+      # Requires: plasma6 or polkit_gnome
 
-      exec systemctl --user start polkit-gnome-authentication-agent-1.service
-      #exec lxqt-policykit-agent
+      # If installed side-by-side with gnome
+      # exec systemctl --user start polkit-gnome-authentication-agent-1.service
+      # If installed side-by-side with plasma desktop
+      exec systemctl --user start plasma-polkit-agent.service
     '';
     ".config/sway/config.d/95-xdg-desktop-autostart.conf".text = ''
       # setup desktop agnostic xdg-desktop-portal to use wlroots and GTK GUIs
