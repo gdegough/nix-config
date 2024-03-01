@@ -10,7 +10,7 @@
   services.xserver = {
     enable = true;
     displayManager.sddm.enable = true;
-    displayManager.defaultSession = "plasmawayland"; # Make plasma-wayland the default session
+    displayManager.defaultSession = "plasma"; # Make plasma-wayland the default session
     desktopManager.plasma6.enable = true; # KDE
     # desktopManager.plasma5.useQtScaling = true; # Enable HiDPI scaling in Qt
   };
