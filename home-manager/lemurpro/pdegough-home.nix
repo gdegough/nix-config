@@ -36,11 +36,11 @@
     ../dunst-config.nix
     ../fonts.nix
     ../foot-config.nix
-    # ../gnome-multimedia.nix
-    # ../gnome-office.nix
-    # ../gnome-packages-and-config.nix
-    # ../gnome-systemd-environment-config.nix
-    # ../gnome-terminal-config.nix
+    ../gnome-multimedia.nix
+    ../gnome-office.nix
+    ../gnome-packages-and-config.nix
+    ../gnome-systemd-environment-config.nix
+    ../gnome-terminal-config.nix
     ../graphic-art.nix
     ../hyprland-config.nix
     ../mutt-package-and-config.nix
@@ -101,7 +101,7 @@
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentryFlavor = "qt";
+    pinentryFlavor = "gnome3";
   };
 
   targets.genericLinux.enable = true;

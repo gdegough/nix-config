@@ -42,7 +42,7 @@
     ../hyprland.nix # Hyprland WM
     ../sway.nix # Sway WM
     ../kde.nix # KDE desktop environment
-    # ../gnome.nix # GNOME desktop environment
+    ../gnome.nix # GNOME desktop environment
 
     # users
     ../root.nix
