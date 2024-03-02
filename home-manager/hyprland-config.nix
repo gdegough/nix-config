@@ -293,7 +293,7 @@
       # Stores only image data
       exec-once = wl-paste --type image --watch cliphist store
       # Bind cliphist to hotkey and display under rofi
-      bind = $mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
+      bind = $mainMod SHIFT, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
       # Screen capture
       bind = , Print, exec, grim -g "$(slurp)" - | wl-copy

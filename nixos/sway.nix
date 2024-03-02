@@ -190,6 +190,7 @@ in
   # $ nix search wget
   environment.systemPackages = [
 #    pkgs.blueman
+    pkgs.cliphist
     dbus-environment-sway
     pkgs.dex
     pkgs.dunst

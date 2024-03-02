@@ -26,18 +26,15 @@
       # Your preferred notification daemon
       set $notification_daemon dunst
       # Your preferred application launcher
+      set $launcher rofi -dmenu
       # Note: pass the final command to swaymsg so that the resulting window can be opened
       # on the original workspace that the command was run on.
       # Recommends: rofi-wayland
-      set $rofi_cmd rofi \
-              -terminal '$term'
+      set $rofi_cmd rofi -terminal '$term'
       # Shows a combined list of the applications with desktop files and
       # executables from PATH.
       # TODO: add window with the next release of rofi-wayland
-      #set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
       set $menu $rofi_cmd -show combi -modes combi#window#ssh#drun#run -combi-modes window#ssh#drun#run
-      #set $menu wofi --show run -Iib -l 5 -W 500 -x -10 -y -51
-      #set $menu wofi --show drun,run
       # Your preferred browser
       set $browser firefox
 
@@ -110,6 +107,9 @@
 
           # Reload the configuration file
           bindsym $mod+Shift+c reload
+
+          # Show cliboard history
+          bindsym $mod+Shift+v exec $clipboard_history
 
           # Exit sway (logs you out of your Wayland session)
           bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -391,6 +391,16 @@
       # Launch notification daemon
 
       exec $notification_daemon
+    '';
+    ".config/sway/config.d/05-saveclipboard.conf".text = ''
+      # Launch cliphist
+
+      # Stores only text data
+      exec wl-paste --type text --watch cliphist store
+      # Stores only image data
+      exec wl-paste --type image --watch cliphist store
+
+      set $clipboard_history cliphist list | $launcher | cliphist decode | wl-copy
     '';
     ".config/sway/config.d/05-systemd-user.conf".text = ''
       # Adapted from xorg's 50-systemd-user.sh, which achieves a similar goal.
