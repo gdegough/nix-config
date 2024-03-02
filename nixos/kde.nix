@@ -19,7 +19,7 @@
   qt = {
     enable = true;
     platformTheme = "gnome";
-    style = "adwaita";
+    style = "adwaita-dark";
   };
 
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
