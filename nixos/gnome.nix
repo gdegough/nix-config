@@ -24,6 +24,13 @@
   services.gnome.games.enable = true; # install GNOME games
   services.gnome.core-developer-tools.enable = true; # install GNOME core dev tools
 
+  # make QT apps look similar to GNOME desktop
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
+
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
   # programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
   # OR

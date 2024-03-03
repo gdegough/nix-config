@@ -15,13 +15,6 @@
     # desktopManager.plasma5.useQtScaling = true; # Enable HiDPI scaling in Qt
   };
 
-  # make QT apps look similar to GNOME desktop
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
-  };
-
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
   # programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.plasma6.ksshaskpass.out}/bin/ksshaskpass";
   # OR
