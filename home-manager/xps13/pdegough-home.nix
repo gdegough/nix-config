@@ -36,6 +36,7 @@
     ../dunst-config.nix
     ../fonts.nix
     ../foot-config.nix
+    ../games.nix
     ../gnome-multimedia.nix
     ../gnome-office.nix
     ../gnome-packages-and-config.nix

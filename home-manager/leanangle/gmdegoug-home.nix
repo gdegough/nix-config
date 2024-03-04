@@ -57,11 +57,13 @@
     ../megasync-package-and-config.nix
     ../music-composition.nix
     ../mutt-package-and-config.nix
+    ../nushell-config.nix
     ../package-management-utilities.nix
     ../qalculate-gtk.nix
     ../readline-config.nix
     ../rofi-config.nix
     ../secure-messaging.nix
+    ../starship-config.nix
     ../sway-config.nix
     ../tmux-package-and-config.nix
     ../wofi-config.nix

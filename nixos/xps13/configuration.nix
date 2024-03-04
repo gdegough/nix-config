@@ -35,6 +35,7 @@
     ../postfix.nix # MTA
 
     # shells
+    ../nushell.nix # nushell
     ../zsh.nix # ZSH
 
     # window managers and DEs
