@@ -7,6 +7,9 @@
   imports = [
     ./starship-config.nix
   ];
+  programs.carapace = {
+    enableNushellIntegration = true;
+  };
   programs.nushell = {
     # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
     # configFile.source = ./.../config.nu;

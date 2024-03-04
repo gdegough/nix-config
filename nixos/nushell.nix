@@ -14,9 +14,5 @@
   programs.nushell = {
     enable = true; # the nu shell
   };
-  programs.carapace = {
-    enable = true;
-    enableNushellIntegration = true;
-  };
   environment.pathsToLink = [ "/share/nushell" ];
 }
