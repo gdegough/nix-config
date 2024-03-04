@@ -32,9 +32,7 @@
     dnssec = "true";
     domains = [ "~." ];
     fallbackDns = [ "1.0.0.1" "1.1.1.1" ];
-    extraConfig = ''
-      DNSOverTLS=yes
-    '';
+    dnsovertls = "true";
   };
 
   # for l2tp VPN
