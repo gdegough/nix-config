@@ -11,7 +11,7 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = "$line_break[($username@$hostname)](yellow bold)[\$ ]$character";
+      format = "$all";
       character = { 
         success_symbol = "[➜](bold green)";
         error_symbol = "[➜](bold red)";
