@@ -4,6 +4,12 @@
   ...
 }:
 {
+  imports = [
+    ./starship-config.nix
+  ];
+  programs.carapace = {
+    enableZshIntegration = true;
+  };
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;

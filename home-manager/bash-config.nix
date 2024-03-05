@@ -4,6 +4,12 @@
   ...
 }:
 {
+  imports = [
+    ./starship-config.nix
+  ];
+  programs.carapace = {
+    enableBashIntegration = true;
+  };
   programs.bash = {
     enable = true;
     enableCompletion = true;
