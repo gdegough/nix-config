@@ -11,6 +11,7 @@
     enableBashIntegration = true;
   };
   programs.carapace = {
+    enable = true;
     enableBashIntegration = true;
   };
   programs.bash = {
