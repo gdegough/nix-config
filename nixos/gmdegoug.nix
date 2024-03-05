@@ -15,6 +15,8 @@ in
     isNormalUser = true;
     uid = 1000;
     description = "Gregory M. DeGough";
+    shell = pkgs.bash;
+    hashedPasswordFile = "/persist/passwords/gmdegoug";
     extraGroups = [ 
       "systemd-journal" 
       "wheel" 
@@ -26,8 +28,6 @@ in
       "shared-files" 
       "video" 
     ];
-    shell = pkgs.zsh;
-    hashedPasswordFile = "/persist/passwords/gmdegoug";
   };
   # Allow certain privileged users to use sudo without password
   security.sudo.extraRules = [

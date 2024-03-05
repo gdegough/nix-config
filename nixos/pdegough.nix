@@ -15,6 +15,8 @@ in
     isNormalUser = true;
     uid = 1003;
     description = "Peggy DeGough";
+    shell = pkgs.zsh;
+    hashedPasswordFile = "/persist/passwords/pdegough";
     extraGroups = [ 
     ] ++ ifTheyExist [
       "audio"
@@ -22,7 +24,5 @@ in
       "shared-files" 
       "video" 
     ];
-    shell = pkgs.zsh;
-    hashedPasswordFile = "/persist/passwords/pdegough";
   };
 }
