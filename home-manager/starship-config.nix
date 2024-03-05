@@ -19,8 +19,14 @@
       username = {
         show_always = true;
       };
-      os = {
+      hostname = {
+        format = "[$ssh_symbol$hostname]($style)";
         style = "bold yellow";
+        trim_at = "";
+        ssh_only = false;
+      };
+      os = {
+        style = "cyan";
         disabled = false;
       };
     };
