@@ -20,7 +20,7 @@
         show_always = true;
       };
       os = {
-        style = 'bold yellow';
+        style = "bold yellow";
         disabled = false;
       };
     };
