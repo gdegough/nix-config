@@ -17,22 +17,22 @@
         error_symbol = "[>](bold red)";
       };
       username = {
-        format = "[─\(](green)[$user]($style)";
+        format = "[─\\(](green)[$user]($style)";
         show_always = true;
       };
       hostname = {
-        format = "[$ssh_symbol$hostname]($style)[\)─](green)";
+        format = "[$ssh_symbol$hostname]($style)[\\)─](green)";
         style = "bold yellow";
         trim_at = "";
         ssh_only = false;
       };
       os = {
-        format = "[─\(](green)[$symbol]($style)[\)─](green)";
+        format = "[─\\(](green)[$symbol]($style)[\\)─](green)";
         style = "bold cyan";
         disabled = false;
       };
       directory = {
-        format = "[─\(](green)[$path]($style)[$read_only]($read_only_style)[\)](green)";
+        format = "[─\\(](green)[$path]($style)[$read_only]($read_only_style)[\\)](green)";
         truncation_symbol = "…/";
       };
     };
