@@ -42,7 +42,7 @@
       #
       # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
       # Requires: desktop-backgrounds-compat, swaybg
-      set $wallpaper $HOME/Pictures/solarizedwallpapers/B-Tree-Solarized.png
+      set $wallpaper $HOME/.config/sway/background
       output * bg $wallpaper fill
       #
       # Example configuration:
