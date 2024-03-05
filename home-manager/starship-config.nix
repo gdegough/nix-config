@@ -17,6 +17,7 @@
         error_symbol = "[➜](bold red)";
       };
       username = {
+        format = "[$user]($style)";
         show_always = true;
       };
       hostname = {
