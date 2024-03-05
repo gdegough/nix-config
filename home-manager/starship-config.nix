@@ -11,28 +11,28 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = "[┌](green)($os)($username)[@](bold yellow)($hostname)($directory)$line_break[└─](green)$character";
+      format = "[┌─](bold green)($os─)([\\(](green)$username)[@](bold yellow)($hostname[\\)─](green))([\\(](green)$directory)$line_break[└─](green)$character";
       character = { 
         success_symbol = "[>](bold green)";
         error_symbol = "[>](bold red)";
       };
       username = {
-        format = "[─\\(](green)[$user]($style)";
+        format = "[$user]($style)";
         show_always = true;
       };
       hostname = {
-        format = "[$ssh_symbol$hostname]($style)[\\)─](green)";
+        format = "[$ssh_symbol$hostname]($style)";
         style = "bold yellow";
         trim_at = "";
         ssh_only = false;
       };
       os = {
-        format = "[─\\(](green)[$symbol]($style)[\\)─](green)";
+        format = "[$symbol]($style)";
         style = "bold cyan";
         disabled = false;
       };
       directory = {
-        format = "[─\\(](green)[$path]($style)[$read_only]($read_only_style)[\\)](green)";
+        format = "[$path]($style)[$read_only]($read_only_style)";
         style = "white";
         truncation_symbol = "…/";
       };
