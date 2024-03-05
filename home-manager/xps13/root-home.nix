@@ -31,7 +31,6 @@
     ../mutt-package-and-config.nix
     ../nushell-config.nix
     ../readline-config.nix
-    ../starship-config.nix
     ../tmux-package-and-config.nix
     ../zsh-config.nix
   ];

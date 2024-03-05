@@ -7,6 +7,9 @@
   imports = [
     ./starship-config.nix
   ];
+  programs.starship = {
+    enableZshIntegration = true;
+  };
   programs.carapace = {
     enableZshIntegration = true;
   };

@@ -7,12 +7,15 @@
   imports = [
     ./starship-config.nix
   ];
+  programs.starship = {
+    enableNushellIntegration = true;
+  };
   programs.carapace = {
     enableNushellIntegration = true;
   };
   programs.nushell = {
     # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
-    # configFile.source = ./.../config.nu;
+    configFile.source = $HOME/.config/nushell/config.nu;
     # for editing directly to config.nu 
     extraConfig = ''
       let carapace_completer = {|spans|

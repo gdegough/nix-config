@@ -26,7 +26,7 @@ in
       "shared-files" 
       "video" 
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
     hashedPasswordFile = "/persist/passwords/gmdegoug";
   };
   # Allow certain privileged users to use sudo without password
