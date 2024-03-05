@@ -14,6 +14,7 @@
     enableNushellIntegration = true;
   };
   programs.nushell = {
+    enable = true;
     # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
     # configFile.source = "\$HOME/.config/nushell/config.nu";
     # for editing directly to config.nu 
