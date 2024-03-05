@@ -15,7 +15,7 @@ in
     isNormalUser = true;
     uid = 1000;
     description = "Gregory M. DeGough";
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
     hashedPasswordFile = "/persist/passwords/gmdegoug";
     extraGroups = [ 
       "systemd-journal" 
