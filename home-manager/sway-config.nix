@@ -112,7 +112,8 @@
           bindsym $mod+Shift+v exec $clipboard_history
 
           # Exit sway (logs you out of your Wayland session)
-          bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+          # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+          bindsym $mod+Shift+e exec exit-prompt-sway
       #
       # Moving around:
       #

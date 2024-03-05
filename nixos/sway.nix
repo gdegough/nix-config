@@ -181,6 +181,25 @@ let
           "''${TEXT}"
     '';
   };
+  # sh script to prompt user before exiting sway
+  exit-prompt-sway = pkgs.writeTextFile {
+    name = "exit-prompt-sway";
+    destination = "/bin/exit-prompt-sway";
+    executable = true;
+
+    text = ''
+      #!/usr/bin/env bash
+
+      a=$(echo "No|Yes" | rofi -i -sep "|" -dmenu -p "Exit Sway? " -l 2 -only-match -location 0 -theme+window+width 10%)
+      case $a in 
+          "Yes")
+              swaymsg exit
+              ;;
+          "No") 
+              ;; 
+      esac
+    '';
+  };
 in
 {
   security = {
@@ -194,6 +213,7 @@ in
     dbus-environment-sway
     pkgs.dex
     pkgs.dunst
+    exit-prompt-sway
     pkgs.feh
     pkgs.foot
     pkgs.glib
