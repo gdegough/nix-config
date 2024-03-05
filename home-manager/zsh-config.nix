@@ -20,11 +20,6 @@
     enableVteIntegration = true;
     syntaxHighlighting.enable = true;
     initExtraFirst = ''
-      # read in OS info
-      ID=""
-      if [ -r /etc/os-release ]; then
-        source /etc/os-release
-      fi
       setopt interactivecomments # allow comments in interactive mode
       setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
       setopt nonomatch           # hide error message if there is no match for the pattern
@@ -61,75 +56,27 @@
       zstyle ':completion:*' use-compctl false
       zstyle ':completion:*' verbose true
       zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-      # set variable identifying the chroot you work in (used in the prompt below)
-      if [ -z "''${chroot_prompt:-}" ] && [ -r /etc/''${type}_chroot ]; then
-          chroot_prompt=$(cat /etc/''${type}_chroot)
-      fi
-      # set a fancy prompt (non-color, unless we know we "want" color)
+      # color terminal?
       case "$TERM" in
-          xterm-color|*-256color) color_prompt=yes;;
+          xterm-color|*-256color) color_term=yes;;
       esac
       # uncomment for a colored prompt, if the terminal has the capability; turned
       # off by default to not distract the user: the focus in a terminal window
       # should be on the output of commands, not on the prompt
-      force_color_prompt=yes
-      if [ -n "$force_color_prompt" ]; then
+      force_color_term=yes
+      if [ -n "$force_color_term" ]; then
           if tput setaf 1 >&/dev/null; then
               # We have color support; assume it's compliant with Ecma-48
               # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
               # a case would tend to support setf rather than setaf.)
-              color_prompt=yes
+              color_term=yes
           else
-              color_prompt=
+              color_term=
           fi
       fi
-      # Determine if session is over SSH (used in the prompts below)
-      over_ssh() {
-          if [ -n "''${SSH_CLIENT}" ]; then
-              return 0
-          else
-              return 1
-          fi
-      }
-      # Fancy prompt.
-      unset prompt_is_ssh
-      if over_ssh ; then
-          if [ "$color_prompt" = yes ] ; then
-              if [ -z "''${TMUX}" ]; then
-                  prompt_is_ssh='%F{green}[%F{red}SSH%F{green}]'
-              else
-                  prompt_is_ssh='%F{green}[%F{253}SSH%F{green}]'
-              fi
-          else
-              prompt_is_ssh='[SSH]'
-          fi
-      fi
-      configure_prompt() {
-          prompt_symbol=@
-          #prompt_symbol=㉿
-          # Skull emoji for root terminal
-          #[ "$EUID" -eq 0 ] && prompt_symbol=💀
-          case "$PROMPT_ALTERNATIVE" in
-              twoline)
-                  PROMPT=$''\'%F{green}┌──''${ID:+(''${ID})─}''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))─}(%B%F{%(#.red.yellow)}%n''\'''${prompt_symbol}$''\'%m%b%F{green})-''${prompt_is_ssh}[%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{green}]\n└─%B%F{%(#.red.yellow)}%(#.#.$)%b%F{reset} ''\'
-                  # Right-side prompt with exit codes and background processes
-                  #RPROMPT=$''\'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)''\'
-                  ;;
-              oneline)
-                  PROMPT=$''\'''${ID:+(''${ID}) }''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))}%B%F{%(#.red.yellow)}%n@%m%b''${prompt_is_ssh}%F{reset}:%B%F{white} %(6~.%-1~/…/%4~.%5~) %b%F{reset}%(#.#.$) ''\'
-                  RPROMPT=
-                  ;;
-              backtrack)
-                  PROMPT=$''\'''${ID:+(''${ID}) }''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))}%B%F{red}%n@%m%b''${prompt_is_ssh}%F{reset}:%B%F{white}%(6~.%-1~/…/%4~.%5~)%b%F{reset}%(#.#.$) ''\'
-                  RPROMPT=
-                  ;;
-          esac
-          unset prompt_symbol
-      }
-      if [ "$color_prompt" = yes ]; then
+      if [ "$color_term" = yes ]; then
           # override default virtualenv indicator in prompt
           VIRTUAL_ENV_DISABLE_PROMPT=1
-          configure_prompt
           typeset -gA ZSH_HIGHLIGHT_STYLES
           ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
           ZSH_HIGHLIGHT_STYLES[default]=none
@@ -175,41 +122,16 @@
           ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
           ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
           ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
-      else
-          PROMPT=''\'''${ID:+(''${ID}) }%n@%m''${prompt_is_ssh}:%~%(#.#.$) ''\'
       fi
-      unset color_prompt force_color_prompt
-      toggle_oneline_prompt(){
-          if [ "$PROMPT_ALTERNATIVE" = "oneline" ]; then
-              PROMPT_ALTERNATIVE=twoline
-          else
-              PROMPT_ALTERNATIVE=oneline
-          fi
-          configure_prompt
-          zle reset-prompt
-      }
-      zle -N toggle_oneline_prompt
-      bindkey '^P' toggle_oneline_prompt
+      unset color_term force_color_term
       # If this is an xterm set the title to user@host:dir
       case "$TERM" in
           xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
-              TERM_TITLE=$''\'\e]0;''${ID:+(''${ID})}''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))}%n@%m:%~\a''\'
+              TERM_TITLE=$''\'\e]0;''${VIRTUAL_ENV:+($(basename ''${VIRTUAL_ENV}))}%n@%m:%~\a''\'
               ;;
           *)
               ;;
       esac
-      precmd() {
-          # Print the previously configured title
-          print -Pnr -- "$TERM_TITLE"
-          # Print a new line before the prompt, but only if it is not the first line
-          if [ "$NEWLINE_BEFORE_PROMPT" = "yes" ]; then
-              if [ -z "$_NEW_LINE_BEFORE_PROMPT" ]; then
-                  _NEW_LINE_BEFORE_PROMPT=1
-              else
-                  print ""
-              fi
-          fi
-      }
       # enable color support of ls, less and man, and also add handy aliases
       if [ ! $(eval "$(dircolors -b)") ]; then
           test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -273,10 +195,6 @@
           clear
       fi
     '';
-    sessionVariables = {
-      PROMPT_ALTERNATIVE = "twoline";
-      NEWLINE_BEFORE_PROMPT = "no";
-    };
     localVariables = {
       WORDCHARS = "\${WORDCHARS//\/}"; # Don't consider certain characters part of the word
       PROMPT_EOL_MARK="";  # hide EOL sign ('%')

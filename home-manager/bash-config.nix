@@ -26,15 +26,6 @@
       source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
       '';
     bashrcExtra = ''
-      #
-      # read in OS info
-      #
-      ID=""
-      if [ -r /etc/os-release ]; then
-        source /etc/os-release
-      fi
-
-      #
       # Start ssh agent
       #
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
@@ -42,112 +33,14 @@
       export GPG_TTY="$(tty)"
       gpg-connect-agent updatestartuptty /bye > /dev/null
 
-      # set variable identifying the chroot you work in (used in the prompt below)
-      if [ -z "''${chroot_prompt:-}" ] && [ -r /etc/''${type}_chroot ]; then
-          chroot_prompt=$(cat /etc/''${type}_chroot)
-      fi
-
-      # Determine if session is over SSH (used in the prompts below)
-      over_ssh() {
-          if [ -n "''${SSH_CLIENT}" ]; then
-              return 0
-          else
-              return 1
-          fi
-      }
-
-      # set a fancy prompt (non-color, unless we know we "want" color)
-      case $TERM in
-          xterm-color|*-256color)
-              use_color=true
-              ;;
-      esac
-
-      # uncomment for a colored prompt, if the terminal has the capability; turned
-      # off by default to not distract the user: the focus in a terminal window
-      # should be on the output of commands, not on the prompt
-      force_color_prompt=yes
-
-      if [ -n "$force_color_prompt" ]; then
-          if tput setaf 1 >&/dev/null; then
-              # We have color support; assume it's compliant with Ecma-48
-              # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-              # a case would tend to support setf rather than setaf.)
-              use_color=true
-          else
-              use_color=false
-          fi
-      fi
-
-      PROMPT_ALTERNATIVE=twoline
-      NEWLINE_BEFORE_PROMPT='no'
-
-      if $use_color; then
-          # override default virtualenv indicator in prompt
-          VIRTUAL_ENV_DISABLE_PROMPT=1
-
-          reset="\[$(tput sgr0)\]"
-          black="\[$(tput sgr0; tput setaf 0)\]"
-          red="\[$(tput sgr0; tput setaf 1)\]"
-          green="\[$(tput sgr0; tput setaf 2)\]"
-          yellow="\[$(tput sgr0; tput setaf 3)\]"
-          blue="\[$(tput sgr0; tput setaf 4)\]"
-          magenta="\[$(tput sgr0; tput setaf 5)\]"
-          cyan="\[$(tput sgr0; tput setaf 6)\]"
-          white="\[$(tput sgr0; tput setaf 7)\]"
-          prompt_color=''${green}
-          info_color=''${yellow}
-          prompt_symbol='@'
-          prompt_hash='$'
-          if [ $EUID -eq 0 ]; then # Change prompt colors for root user
-              info_color=''${red}
-              # Skull emoji for root terminal
-              #prompt_symbol=💀
-              prompt_hash='#'
-          fi
-          case $PROMPT_ALTERNATIVE in
-              twoline)
-                  PS1="''${prompt_color}┌──''${ID:+(''${ID})─}''${chroot_prompt:+(''${chroot_prompt})─}(''${info_color}\u''${prompt_symbol}\h''${prompt_color})─"
-                  if over_ssh; then
-                      PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
-                  fi
-                  PS1+="''${prompt_color}[''${white}\w''${prompt_color}]\n''${prompt_color}└─''${info_color}''${prompt_hash}''${reset} "
-                  ;;
-              oneline)
-                  PS1="''${prompt_color}''${ID:+(''${ID}) }''${chroot_prompt:+(''${chroot_prompt}) }''${info_color}\u''${prompt_symbol}\h"
-                  if over_ssh; then
-                      PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
-                  fi
-                  PS1+="''${prompt_color}:''${white} \w ''${info_color}''${prompt_hash}''${reset} "
-                  ;;
-              backtrack)
-                  PS1="''${prompt_color}''${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV)) }''${chroot_prompt:+(''${chroot_prompt})}''${info_color}\u''${prompt_symbol}\h"
-                  if over_ssh; then
-                      PS1+="''${prompt_color}[''${red}SSH''${prompt_color}]"
-                  fi
-                  PS1+="''${prompt_color}:''${white}\w''${info_color}''${prompt_hash}''${reset} "
-                  ;;
-          esac
-          unset prompt_color info_color black red green yellow blue magenta cyan white reset prompt_symbol
-      else
-          PS1="''${ID:+(''${ID}) }''${chroot_prompt:+(''${chroot_prompt}) }\u@\h"
-          if over_ssh; then
-              PS1+="[SSH]"
-          fi
-          PS1+=": \w ''${prompt_hash} "
-      fi
-      unset use_color force_color_prompt
-
       # If this is an xterm set the title to user@host:dir
       case "$TERM" in
           xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
-              PS1="\[\e]0;''${ID:+(''${ID})}''${chroot_prompt:+(''${chroot_prompt})}\u@\h: \w\a\]''${PS1}"
+              PS1="\[\e]0;\u@\h: \w\a\]''${PS1}"
               ;;
           *)
               ;;
       esac
-
-      [ $NEWLINE_BEFORE_PROMPT = yes ] && PROMPT_COMMAND="PROMPT_COMMAND=echo"
 
       # enable color support of ls, less and man, and also add handy aliases
       if [ ! $(eval "$(dircolors -b)") ]; then
