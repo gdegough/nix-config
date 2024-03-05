@@ -82,7 +82,7 @@
       bright6=73FBF1
       bright7=FEFEF8
     '';
-    ".config/foot/colorschemes.d/ayu_dark".text = ''
+    ".config/foot/colorschemes.d/ayu-dark".text = ''
       # Ayu (dark)
       [colors]
       # Default colors
@@ -109,7 +109,7 @@
       bright6=95E6CB
       bright7=FFFFFF
     '';
-    ".config/foot/colorschemes.d/ayu_mirage".text = ''
+    ".config/foot/colorschemes.d/ayu-mirage".text = ''
       # Ayu Mirage
       [colors]
       # Default colors
@@ -136,7 +136,7 @@
       bright6=95E6CB
       bright7=FFFFFF
     '';
-    ".config/foot/colorschemes.d/base16_default_dark".text = ''
+    ".config/foot/colorschemes.d/base16-default-dark".text = ''
       # Base16 Default (dark)
       [colors]
       # Default colors
@@ -372,7 +372,7 @@
       bright6=9aedfe
       bright7=e6e6e6
     '';
-    ".config/foot/colorschemes.d/gnome_dark".text = ''
+    ".config/foot/colorschemes.d/gnome-dark".text = ''
       # GNOME (dark)
       [colors]
       # Default colors
@@ -399,7 +399,7 @@
       bright6=33c7de
       bright7=ffffff
     '';
-    ".config/foot/colorschemes.d/gnome_light".text = ''
+    ".config/foot/colorschemes.d/gnome-light".text = ''
       # GNOME (light)
       [colors]
       # Default colors
@@ -426,7 +426,7 @@
       bright6=33c7de
       bright7=ffffff
     '';
-    ".config/foot/colorschemes.d/gruvbox_dark".text = ''
+    ".config/foot/colorschemes.d/gruvbox-dark".text = ''
       # Gruvbox (dark)
       [colors]
       # Default colors
@@ -463,7 +463,7 @@
       dim6=427b58
       dim7=928374
     '';
-    ".config/foot/colorschemes.d/gruvbox_light".text = ''
+    ".config/foot/colorschemes.d/gruvbox-light".text = ''
       # Gruvbox (light)
       [colors]
       # Default colors
@@ -544,7 +544,7 @@
       bright6=00ffff
       bright7=FFFFFF
     '';
-    ".config/foot/colorschemes.d/iceberg_dark".text = ''
+    ".config/foot/colorschemes.d/iceberg-dark".text = ''
       # Iceberg (dark)
       [colors]
       # Default colors
@@ -571,7 +571,7 @@
       bright6=95c4ce
       bright7=d2d4de
     '';
-    ".config/foot/colorschemes.d/iceberg_light".text = ''
+    ".config/foot/colorschemes.d/iceberg-light".text = ''
       # Iceberg (light)
       [colors]
       # Default colors
@@ -598,7 +598,7 @@
       bright6=327698
       bright7=262a3f
     '';
-    ".config/foot/colorschemes.d/ir_black".text = ''
+    ".config/foot/colorschemes.d/ir-black".text = ''
       # IR Black
       [colors]
       # Default colors
@@ -625,7 +625,7 @@
       bright6=dfdffe
       bright7=ffffff
     '';
-    ".config/foot/colorschemes.d/iterm_default".text = ''
+    ".config/foot/colorschemes.d/iterm-default".text = ''
       # iTerm (default)
       [colors]
       # Default colors
@@ -814,7 +814,7 @@
       bright6=A1EFE4
       bright7=F9F8F5
     '';
-    ".config/foot/colorschemes.d/monokai_pro".text = ''
+    ".config/foot/colorschemes.d/monokai-pro".text = ''
       # Monokai Pro
       [colors]
       # Default colors
@@ -841,7 +841,7 @@
       bright6=78DCE8
       bright7=FCFCFA
     '';
-    ".config/foot/colorschemes.d/monokai_soda".text = ''
+    ".config/foot/colorschemes.d/monokai-soda".text = ''
       # Monokai Soda
       [colors]
       # Default colors
@@ -868,7 +868,7 @@
       bright6=58d1eb
       bright7=f6f6ef
     '';
-    ".config/foot/colorschemes.d/new_moon".text = ''
+    ".config/foot/colorschemes.d/new-moon".text = ''
       # New Moon
       [colors]
       # Default colors
@@ -922,7 +922,7 @@
       bright6=7fdbca
       bright7=d6deeb
     '';
-    ".config/foot/colorschemes.d/night_owl".text = ''
+    ".config/foot/colorschemes.d/night-owl".text = ''
       # Night Owl
       [colors]
       # Default colors
@@ -1003,7 +1003,7 @@
       bright6=7FC1CA
       bright7=E6EEF3
     '';
-    ".config/foot/colorschemes.d/oceanic_next".text = ''
+    ".config/foot/colorschemes.d/oceanic-next".text = ''
       # Oceanic Next
       [colors]
       # Default colors
@@ -1030,7 +1030,7 @@
       bright6=5fb3b3
       bright7=d8dee9
     '';
-    ".config/foot/colorschemes.d/one_dark".text = ''
+    ".config/foot/colorschemes.d/one-dark".text = ''
       # One (dark)
       [colors]
       # Default colors
@@ -1057,7 +1057,7 @@
       bright6=5fb3b3
       bright7=d8dee9
     '';
-    ".config/foot/colorschemes.d/one_light".text = ''
+    ".config/foot/colorschemes.d/one-light".text = ''
       # One (light)
       [colors]
       # Default colors
@@ -1128,7 +1128,7 @@
       bright6=67d3c2
       bright7=ffffff
     '';
-    ".config/foot/colorschemes.d/pear_dark_blue".text = ''
+    ".config/foot/colorschemes.d/pear-dark-blue".text = ''
       # Pear Dark Blue
       [colors]
       # Default colors
@@ -1155,7 +1155,7 @@
       bright6=12c3e2
       bright7=ffffff
     '';
-    ".config/foot/colorschemes.d/pencil_dark".text = ''
+    ".config/foot/colorschemes.d/pencil-dark".text = ''
       # Pencil (dark)
       [colors]
       # Default Colors
@@ -1182,7 +1182,7 @@
       bright6=4fb8cc
       bright7=f1f1f1
     '';
-    ".config/foot/colorschemes.d/pencil_light".text = ''
+    ".config/foot/colorschemes.d/pencil-light".text = ''
       # Pencil (light)
       [colors]
       # Default Colors
@@ -1209,142 +1209,142 @@
       bright6=4fb8cc
       bright7=f1f1f1
     '';
-    ".config/foot/colorschemes.d/pop_os_dark".text = ''
-      # Pop!_OS (dark)
-      [colors]
-      # Default colors
-      foreground=F2F2F2
-      background=333333
+    ".config/foot/colorschemes.d/pop_os-dark".text = ''
+    # Pop!_OS (dark)
+    [colors]
+    # Default colors
+    foreground=F2F2F2
+    background=333333
 
-      # Normal colors
-      regular0=333333
-      regular1=CC0000
-      regular2=4E9A06
-      regular3=C4A000
-      regular4=3465A4
-      regular5=75507B
-      regular6=06989A
-      regular7=D3D7CF
+    # Normal colors
+    regular0=333333
+    regular1=CC0000
+    regular2=4E9A06
+    regular3=C4A000
+    regular4=3465A4
+    regular5=75507B
+    regular6=06989A
+    regular7=D3D7CF
 
-      # Bright colors
-      bright0=88807C
-      bright1=F15D22
-      bright2=73C48F
-      bright3=FFCE51
-      bright4=48B9C7
-      bright5=AD7FA8
-      bright6=34E2E2
-      bright7=EEEEEC
-    '';
-    ".config/foot/colorschemes.d/seabird".text = ''
-      # Seabird
-      [colors]
-      # Default colors
-      foreground=61707a
-      background=ffffff
+    # Bright colors
+    bright0=88807C
+    bright1=F15D22
+    bright2=73C48F
+    bright3=FFCE51
+    bright4=48B9C7
+    bright5=AD7FA8
+    bright6=34E2E2
+    bright7=EEEEEC
+  '';
+  ".config/foot/colorschemes.d/seabird".text = ''
+    # Seabird
+    [colors]
+    # Default colors
+    foreground=61707a
+    background=ffffff
 
-      # Normal colors
-      regular0=0b141a
-      regular1=ff4053
-      regular2=11ab00
-      regular3=bf8c00
-      regular4=0099ff
-      regular5=9854ff
-      regular6=00a5ab
-      regular7=ffffff
+    # Normal colors
+    regular0=0b141a
+    regular1=ff4053
+    regular2=11ab00
+    regular3=bf8c00
+    regular4=0099ff
+    regular5=9854ff
+    regular6=00a5ab
+    regular7=ffffff
 
-      # Bright colors
-      bright0=0b141a
-      bright1=ff4053
-      bright2=11ab00
-      bright3=bf8c00
-      bright4=0099ff
-      bright5=9854ff
-      bright6=00a5ab
-      bright7=ffffff
-    '';
-    ".config/foot/colorschemes.d/seoul256".text = ''
-      # Seoul256
-      [colors]
-      # Default colors
-      foreground=d0d0d0
-      background=3a3a3a
+    # Bright colors
+    bright0=0b141a
+    bright1=ff4053
+    bright2=11ab00
+    bright3=bf8c00
+    bright4=0099ff
+    bright5=9854ff
+    bright6=00a5ab
+    bright7=ffffff
+  '';
+  ".config/foot/colorschemes.d/seoul256".text = ''
+    # Seoul256
+    [colors]
+    # Default colors
+    foreground=d0d0d0
+    background=3a3a3a
 
-      # Normal colors
-      regular0=4e4e4e
-      regular1=d68787
-      regular2=5f865f
-      regular3=d8af5f
-      regular4=85add4
-      regular5=d7afaf
-      regular6=87afaf
-      regular7=d0d0d0
+    # Normal colors
+    regular0=4e4e4e
+    regular1=d68787
+    regular2=5f865f
+    regular3=d8af5f
+    regular4=85add4
+    regular5=d7afaf
+    regular6=87afaf
+    regular7=d0d0d0
 
-      # Bright colors
-      bright0=626262
-      bright1=d75f87
-      bright2=87af87
-      bright3=ffd787
-      bright4=add4fb
-      bright5=ffafaf
-      bright6=87d7d7
-      bright7=e4e4e4
-    '';
-    ".config/foot/colorschemes.d/snazzy".text = ''
-      # Snazzy
-      [colors]
-      # Default colors
-      foreground=eff0eb
-      background=282a36
+    # Bright colors
+    bright0=626262
+    bright1=d75f87
+    bright2=87af87
+    bright3=ffd787
+    bright4=add4fb
+    bright5=ffafaf
+    bright6=87d7d7
+    bright7=e4e4e4
+  '';
+  ".config/foot/colorschemes.d/snazzy".text = ''
+    # Snazzy
+    [colors]
+    # Default colors
+    foreground=eff0eb
+    background=282a36
 
-      # Normal colors
-      regular0=282a36
-      regular1=ff5c57
-      regular2=5af78e
-      regular3=f3f99d
-      regular4=57c7ff
-      regular5=ff6ac1
-      regular6=9aedfe
-      regular7=f1f1f0
+    # Normal colors
+    regular0=282a36
+    regular1=ff5c57
+    regular2=5af78e
+    regular3=f3f99d
+    regular4=57c7ff
+    regular5=ff6ac1
+    regular6=9aedfe
+    regular7=f1f1f0
 
-      # Bright colors
-      bright0=686868
-      bright1=ff5c57
-      bright2=5af78e
-      bright3=f3f99d
-      bright4=57c7ff
-      bright5=ff6ac1
-      bright6=9aedfe
-      bright7=f1f1f0
-    '';
-    ".config/foot/colorschemes.d/solarized-dark".text = ''
-      # Solarized (dark)
-      [colors]
-      # Default colors
-      background=002b36 # base03
-      foreground=839496 # base0
+    # Bright colors
+    bright0=686868
+    bright1=ff5c57
+    bright2=5af78e
+    bright3=f3f99d
+    bright4=57c7ff
+    bright5=ff6ac1
+    bright6=9aedfe
+    bright7=f1f1f0
+  '';
+  ".config/foot/colorschemes.d/solarized-dark".text = ''
+    # Solarized (dark)
+    [colors]
+    # Default colors
+    background=002b36 # base03
+    foreground=839496 # base0
 
-      # Normal colors
-      regular0=073642 # base02
-      regular1=dc322f # red
-      regular2=859900 # green
-      regular3=b58900 # yellow
-      regular4=268bd2 # blue
-      regular5=d33682 # magenta
-      regular6=2aa198 # cyan
-      regular7=eee8d5 # base2
-          
-      # Bright colors
-      bright0=002b36 # base03
-      bright1=cb4b16 # orange
-      bright2=586e75 # base01
-      bright3=657b83 # base00
-      bright4=839496 # base0
-      bright5=6c71c4 # violet
-      bright6=93a1a1 # base1
-      bright7=fdf6e3 # base3
-    '';
-    ".config/foot/colorschemes.d/solarized_light".text = ''
+    # Normal colors
+    regular0=073642 # base02
+    regular1=dc322f # red
+    regular2=859900 # green
+    regular3=b58900 # yellow
+    regular4=268bd2 # blue
+    regular5=d33682 # magenta
+    regular6=2aa198 # cyan
+    regular7=eee8d5 # base2
+        
+    # Bright colors
+    bright0=002b36 # base03
+    bright1=cb4b16 # orange
+    bright2=586e75 # base01
+    bright3=657b83 # base00
+    bright4=839496 # base0
+    bright5=6c71c4 # violet
+    bright6=93a1a1 # base1
+    bright7=fdf6e3 # base3
+  '';
+  ".config/foot/colorschemes.d/solarized-light".text = ''
       # Solarized (light)
       [colors]
       # Default colors
@@ -1398,7 +1398,7 @@
       bright6=87ceeb
       bright7=c1cdc1
     '';
-    ".config/foot/colorschemes.d/spacemacs_light".text = ''
+    ".config/foot/colorschemes.d/spacemacs-light".text = ''
       # Spacemacs (light)
       [colors]
       # Default colors
@@ -1560,7 +1560,7 @@
       bright6=73cef4
       bright7=feffff
     '';
-    ".config/foot/colorschemes.d/terminal_app".text = ''
+    ".config/foot/colorschemes.d/terminal-app".text = ''
       # Terminal App
       [colors]
       # Default colors
@@ -1587,7 +1587,7 @@
       bright6=00e5e5
       bright7=e5e5e5
     '';
-    ".config/foot/colorschemes.d/terminal_app_basic".text = ''
+    ".config/foot/colorschemes.d/terminal-app-basic".text = ''
       # Terminal App (basic)
       [colors]
       # Default colors
@@ -1614,7 +1614,7 @@
       bright6=00E5E5
       bright7=E5E5E5
     '';
-    ".config/foot/colorschemes.d/tomorrow_night".text = ''
+    ".config/foot/colorschemes.d/tomorrow-night".text = ''
       # Tomorrow Night
       [colors]
       # Default colors
@@ -1641,7 +1641,7 @@
       bright6=54ced6
       bright7=282a2e
     '';
-    ".config/foot/colorschemes.d/tomorrow_night_bright".text = ''
+    ".config/foot/colorschemes.d/tomorrow-night-bright".text = ''
       # Tomorrow Night (bright)
       [colors]
       # Default colors
@@ -1695,7 +1695,7 @@
       bright6=34e2e2
       bright7=eeeeec
     '';
-    ".config/foot/colorschemes.d/vscode_terminal".text = ''
+    ".config/foot/colorschemes.d/vscode-terminal".text = ''
       # VSCode Terminal
       [colors]
       # Default colors
