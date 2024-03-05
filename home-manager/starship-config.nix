@@ -11,7 +11,9 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = "[┌](bold green)([─\\( ](bold green)$os[\\)](bold green))([─\\(](bold green)$username)[@](bold yellow)($hostname[\\)](bold green))([─\\(](bold green)$directory[\\)](bold green))$line_break[└─](bold green)$character";
+      format = "[┌](bold green)([─\\(](bold green)$os[\\)](bold green))" +
+        "([─\\(](bold green)$username)[@](bold yellow)($hostname[\\)](bold green))" +
+        "([─\\(](bold green)$directory[\\)](bold green))$line_break[└─](bold green)$character";
       character = { 
         success_symbol = "[>](bold green)";
         error_symbol = "[>](bold red)";
