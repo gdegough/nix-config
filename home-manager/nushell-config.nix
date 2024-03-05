@@ -15,7 +15,7 @@
   };
   programs.nushell = {
     # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
-    configFile.source = "\$HOME/.config/nushell/config.nu";
+    # configFile.source = "\$HOME/.config/nushell/config.nu";
     # for editing directly to config.nu 
     extraConfig = ''
       let carapace_completer = {|spans|
