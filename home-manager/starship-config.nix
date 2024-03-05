@@ -11,7 +11,7 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = "$all";
+      format = "$all[($username@$hostname)](yellow bold): ";
       character = { 
         success_symbol = "[➜](bold green)";
         error_symbol = "[➜](bold red)";
