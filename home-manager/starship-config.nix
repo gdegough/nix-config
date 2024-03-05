@@ -33,6 +33,7 @@
       };
       directory = {
         format = "[─\\(](green)[$path]($style)[$read_only]($read_only_style)[\\)](green)";
+        style = "white";
         truncation_symbol = "…/";
       };
     };
