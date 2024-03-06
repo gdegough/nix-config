@@ -16,6 +16,7 @@
 
       [colors]
       transparent_background_colors = true
+      draw_bold_text_with_bright_colors = true
 
       [cursor.style]
       blinking = "Always"
@@ -100,12 +101,12 @@
           style: Bold Italic
         # Point size
         size: 11
-      # If `true`, bold text is drawn using the bright color variants.
-      #draw_bold_text_with_bright_colors: true
       mouse:
         hide_when_typing: false
       colors:
         transparent_background_colors: true
+        # If `true`, bold text is drawn using the bright color variants.
+        draw_bold_text_with_bright_colors: true
       # Import color scheme
       import:
         - ~/.config/alacritty/colorscheme.yml
