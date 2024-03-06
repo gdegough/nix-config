@@ -13,6 +13,9 @@
       initial-window-size-chars=132x43
       include=~/.config/foot/colorscheme
 
+      [colors]
+      alpha=0.9
+
       [scrollback]
       lines=10000
 
