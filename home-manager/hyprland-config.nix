@@ -182,7 +182,7 @@
       bind = $mainMod, J, togglesplit, # dwindle
 
       # Binds for special apps
-      bind = $mainMod, Return, exec, alacritty
+      bind = $mainMod, Return, exec, foot
       bind = $mainMod, B, exec, firefox
       bind = $mainMod, Z, exec, [size 900 600;workspace special:magic silent;float;move 10 40] bitwarden
       bind = $mainMod, P, exec, [size 250 500;workspace special:magic silent;float;move 10 100%-510] plexamp
