@@ -13,6 +13,7 @@
     # displayManager.defaultSession = "plasma"; # Make plasma-wayland the default session
     desktopManager.plasma6.enable = true; # KDE
     # desktopManager.plasma5.useQtScaling = true; # Enable HiDPI scaling in Qt
+    libinput.enable = true;
   };
 
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
