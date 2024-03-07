@@ -1322,6 +1322,9 @@
   '';
   ".config/foot/colorschemes.d/solarized-dark".text = ''
     # Solarized (dark)
+    [csd]
+    color=ff002b36
+
     [colors]
     # Default colors
     background=002b36 # base03
