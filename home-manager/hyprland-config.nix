@@ -182,7 +182,7 @@
       bind = $mainMod, J, togglesplit, # dwindle
 
       # Binds for special apps
-      bind = $mainMod, Return, exec, foot
+      bind = $mainMod, Return, exec, footclient
       bind = $mainMod, B, exec, firefox
       bind = $mainMod, Z, exec, [size 900 600;workspace special:magic silent;float;move 10 40] bitwarden
       bind = $mainMod, P, exec, [size 250 500;workspace special:magic silent;float;move 10 100%-510] plexamp
@@ -307,6 +307,9 @@
       # bring in graphics settings
       exec-once = configure-gtk
       exec-once = systemctl --user start xsettingsd.service
+
+      # start foot server
+      exec-once = systemctl --user start foot-server.service
 
       # Screen idle lock
       exec-once = swayidle -w timeout 900 "swaylock -f -i $lockscreenbg" timeout 1200 "hyprctl dispatch dpms off" resume "hyprctl dispatch dpms on" before-sleep "swaylock -f -i $lockscreenbg"
