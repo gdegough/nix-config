@@ -101,7 +101,6 @@
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
-  hardware.video.hidpi.enable = true; # to detect HiDPI screens
   hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
 
   # this folder is where the files will be stored (don't put it in tmpfs)
