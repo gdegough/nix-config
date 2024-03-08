@@ -20,7 +20,6 @@
       pkgs.gnome.mutter # this is necessary to control fractional scaling
       pkgs.gnome.nautilus
     ];
-    libinput.enable = true;
   };
   services.gnome.games.enable = true; # install GNOME games
   services.gnome.core-developer-tools.enable = true; # install GNOME core dev tools
