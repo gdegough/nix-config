@@ -9,10 +9,10 @@
 {
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true; # GDM
-    displayManager.gdm.autoSuspend = false; 
-    displayManager.defaultSession = "gnome"; # Make gnome the default session
     desktopManager.gnome.enable = true; # GNOME 
+    # displayManager.defaultSession = "gnome"; # Make gnome the default session
+    displayManager.gdm.enable = true; # GDM
+    # displayManager.gdm.autoSuspend = false; 
     # adds these schemas for dconf and gsettings
     desktopManager.gnome.sessionPath = [
       pkgs.gnome.gnome-settings-daemon

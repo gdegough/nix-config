@@ -9,9 +9,9 @@
 {
   services.xserver = {
     enable = true;
-    # displayManager.sddm.enable = true;
-    # displayManager.defaultSession = "plasma"; # Make plasma-wayland the default session
     desktopManager.plasma6.enable = true; # KDE
+    # displayManager.defaultSession = "plasma"; # Make plasma-wayland the default session
+    # displayManager.sddm.enable = true;
   };
 
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
