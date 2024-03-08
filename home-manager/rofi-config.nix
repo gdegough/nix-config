@@ -12,6 +12,21 @@
           combi-modi: "window,ssh,drun,run";
           show-icons: true;
           icon-theme: "Adwaita";
+          combi {
+            display-name: "combi: ";
+          }
+          run {
+            display-name: "run: ";
+          }
+          drun {
+            display-name: "drun: ";
+          }
+          ssh {
+            display-name: "ssh: ";
+          }
+          window {
+            display-name: "window: ";
+          }
         timeout {
             action: "kb-cancel";
             delay:  0;
