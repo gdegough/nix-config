@@ -129,7 +129,7 @@ let
     text = ''
       #!/usr/bin/env bash
 
-      a=$(echo "No|Yes" | rofi -i -sep "|" -dmenu -p "Exit Hyprland? " -l 2 -only-match -location 0 -theme+window+width 10%)
+      a=$(echo "No|Yes" | rofi -i -sep "|" -dmenu -p "Exit Hyprland? " -l 2 -location 0 -theme+window+width 10%)
       case $a in 
           "Yes")
               hyprctl dispatch exit 1
