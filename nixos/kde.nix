@@ -9,10 +9,10 @@
 {
   services.xserver = {
     enable = true;
-    desktopManager.plasma6.enable = true; # KDE
     # displayManager.defaultSession = "plasma"; # Make plasma-wayland the default session
     # displayManager.sddm.enable = true;
   };
+  services.desktopManager.plasma6.enable = true; # KDE
 
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
   # programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.plasma6.ksshaskpass.out}/bin/ksshaskpass";
