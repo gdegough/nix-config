@@ -148,6 +148,7 @@
     pkgs.efibootmgr
     pkgs.btrfs-progs
     pkgs.exfatprogs
+    pkgs.git
     pkgs.gnupg
     pkgs.gptfdisk
     pkgs.home-manager
