@@ -13,10 +13,10 @@
     inputs.impermanence.nixosModules.impermanence
   ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" "bcachefs" ];
-  boot.initrd.kernelModules = [ "bcachefs" ];
-  boot.kernelModules = [ "kvm-intel" "sg" "bcachefs" ];
-  boot.supportedFilesystems = [ "bcachefs" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" "sg" ];
+  boot.supportedFilesystems = [ "btrfs" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = { 
@@ -28,12 +28,12 @@
   fileSystems."/boot" = { 
     device = "UUID=3B78-F514";
     fsType = "vfat";
+    options = [ "fmask=0022" "dmask=0022" ];
   };
 
   fileSystems."/nixos" = { 
-    device = "UUID=72016c29-8452-4aff-92c7-a95c53185932";
-    fsType = "bcachefs";
-    options = [ "compression=zstd:3" ];
+    device = "UUID=57253a80-427e-4a23-a89f-81cec9218eba";
+    fsType = "ext4";
     neededForBoot = true;
   };
 
@@ -45,9 +45,8 @@
   };
 
   fileSystems."/home" = { 
-    device = "UUID=a034d767-296b-4631-8eb6-aa1881baa082";
-    fsType = "bcachefs";
-    options = [ "compression=zstd:3" ];
+    device = "UUID=c1a13972-e303-445d-95c9-a94143ef1b26";
+    fsType = "ext4";
     neededForBoot = true;
   };
 
@@ -78,23 +77,8 @@
   };
 
   fileSystems."/mnt/backup/internal" = { 
-    device = "UUID=3d9a2509-dbd0-44d9-83e2-52fbdff26a7f";
-    fsType = "bcachefs";
-    options = [ "compression=zstd:10" ];
-    neededForBoot = true;
-  };
-
-  fileSystems."/var/lib/plex" = { 
-    device = "UUID=ec66d794-06ed-44e7-838b-e0c65c9a725f";
-    fsType = "bcachefs";
-    options = [ "compression=zstd:10" ];
-    neededForBoot = true;
-  };
-
-  fileSystems."/srv" = { 
-    device = "UUID=5c46fec0-dd3b-409c-95fb-cff9ec5302dc";
-    fsType = "bcachefs";
-    options = [ "compression=zstd:10" "noauto" ];
+    device = "UUID=174c69f3-e1cd-4c29-98f1-a18dfd0c6d34";
+    fsType = "ext4";
     neededForBoot = true;
   };
 

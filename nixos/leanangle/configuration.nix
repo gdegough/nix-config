@@ -24,7 +24,7 @@
     # Host-specific configurations
     #
     ./networking.nix
-    ./opengl.nix
+    # ./opengl.nix
     ./gdm-monitors.nix
 
     #
@@ -40,15 +40,15 @@
 
     # window managers and DEs
     ../tiling-wm-support.nix # common tiling WM support
-    ../hyprland.nix # Hyprland WM
+    # ../hyprland.nix # Hyprland WM
     ../sway.nix # Sway WM
     ../kde.nix # KDE desktop environment
     ../gnome.nix # GNOME desktop environment
 
     # Optional server apps
-    ../plex.nix # PLEX multimedia server
-    ../samba.nix # SAMBA file sharing
-    ../static-web-server.nix # static html server
+    # ../plex.nix # PLEX multimedia server
+    # ../samba.nix # SAMBA file sharing
+    # ../static-web-server.nix # static html server
     ../vm-host.nix # virtual machine hosting
 
     # users
@@ -130,22 +130,23 @@
     hybrid-sleep.enable = false;
   };
   
-  systemd.services.mnt-srv = {
-    wantedBy = [ "local-fs.target" ];
-    description = "Mount srv partition";
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = ''${pkgs.bcachefs-tools}/bin/mount.bcachefs UUID=5c46fec0-dd3b-409c-95fb-cff9ec5302dc -o compression=zstd:10 /srv'';
-    };
-  };
+  # systemd.services.mnt-srv = {
+  #   wantedBy = [ "local-fs.target" ];
+  #   description = "Mount srv partition";
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = ''${pkgs.bcachefs-tools}/bin/mount.bcachefs UUID=5c46fec0-dd3b-409c-95fb-cff9ec5302dc -o compression=zstd:10 /srv'';
+  #   };
+  # };
+
   # Polkit is used for controlling system-wide privileges
   security.polkit.enable = true;
 
   # List packages installed in system profile:
   environment.systemPackages = [
     pkgs.bc
-    pkgs.bcachefs-tools
     pkgs.efibootmgr
+    pkgs.btrfs-progs
     pkgs.exfatprogs
     pkgs.gnupg
     pkgs.gptfdisk
@@ -154,8 +155,6 @@
     pkgs.lynx
     pkgs.mailutils
     pkgs.openrgb-with-all-plugins
-    pkgs.php
-    pkgs.postgresql
     pkgs.python3
     pkgs.sops
     pkgs.sysstat
@@ -196,5 +195,5 @@
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }

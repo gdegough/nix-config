@@ -19,37 +19,52 @@
     # You can also split up your configuration and import pieces of it here:
 
     # host-specific configs
-    ./hyprland-local-config.nix
+    # ./conky-package-and-local-config.nix
+    # ./hyprland-local-config.nix
     ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     ./waybar-config.nix
+    # global optional configs
+    # ../audio-video-processing.nix
     # global common configs
+    # ../admin-utilities.nix
     ../alacritty-package-and-config.nix
     ../autostart-config.nix
     ../bash-config.nix 
     ../bitwarden.nix
     ../browsers.nix
+    # ../coding-utilities.nix
     ../common-multimedia.nix
     ../common-office.nix
     ../common-systemd-environment-config.nix
     ../dircolors-config.nix
     ../dunst-config.nix
+    # ../editors.nix
     ../fonts.nix
     ../foot-config.nix
     ../games.nix
+    # ../git-config.nix
     ../gnome-multimedia.nix
     ../gnome-office.nix
     ../gnome-packages-and-config.nix
     ../gnome-systemd-environment-config.nix
     ../gnome-terminal-config.nix
     ../graphic-art.nix
-    ../hyprland-config.nix
+    # ../htmltidy-config.nix
+    # ../hyprland-config.nix
+    # ../i3blocks-package-and-config.nix
+    # ../java.nix
+    # ../megasync-package-and-config.nix
+    # ../music-composition.nix
     ../mutt-package-and-config.nix
+    # ../nushell-config.nix
+    # ../package-management-utilities.nix
     ../qalculate-gtk.nix
     ../readline-config.nix
     ../rofi-config.nix
     ../secure-messaging.nix
     ../sway-config.nix
+    # ../tmux-package-and-config.nix
     ../wofi-config.nix
     ../x-config.nix
     ../zsh-config.nix
@@ -80,6 +95,9 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
+      # permittedInsecurePackages = [
+      #   "freeimage-unstable-2021-11-01"
+      # ];
     };
   };
 
@@ -109,8 +127,6 @@
 
   # Add stuff for your user as you see fit:
   home.packages = [
-    pkgs.neofetch
-    pkgs.ranger
     pkgs.wget
   ];
 
@@ -122,5 +138,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }

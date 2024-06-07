@@ -20,10 +20,12 @@
 
     # host-specific configs
     ./conky-package-and-local-config.nix
-    ./hyprland-local-config.nix
+    # ./hyprland-local-config.nix
     ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     ./waybar-config.nix
+    # global optional configs
+    # ../audio-video-processing.nix
     # global common configs
     ../admin-utilities.nix
     ../alacritty-package-and-config.nix
@@ -49,7 +51,7 @@
     ../gnome-terminal-config.nix
     ../graphic-art.nix
     ../htmltidy-config.nix
-    ../hyprland-config.nix
+    # ../hyprland-config.nix
     ../i3blocks-package-and-config.nix
     ../java.nix
     ../megasync-package-and-config.nix
@@ -93,9 +95,9 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
-      permittedInsecurePackages = [
-        "freeimage-unstable-2021-11-01"
-      ];
+      # permittedInsecurePackages = [
+      #   "freeimage-unstable-2021-11-01"
+      # ];
     };
   };
 
@@ -125,8 +127,6 @@
 
   # Add stuff for your user as you see fit:
   home.packages = [
-    pkgs.neofetch
-    pkgs.ranger
     pkgs.wget
   ];
 
@@ -138,5 +138,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }
