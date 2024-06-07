@@ -179,9 +179,7 @@
       File systems:''${if_mounted /boot}
         efi ''${fs_used /boot}/''${fs_size /boot} ''${fs_bar 6 /boot}$endif''${if_mounted /nixos}
         nixos ''${fs_used /nixos}/''${fs_size /nixos} ''${fs_bar 6 /nixos}$endif''${if_mounted /home}
-        home ''${fs_used /home}/''${fs_size /home} ''${fs_bar 6 /home}$endif''${if_mounted /var/lib/plex}
-        plex ''${fs_used /var/lib/plex}/''${fs_size /var/lib/plex} ''${fs_bar 6 /var/lib/plex}$endif''${if_mounted /srv}
-        srv ''${fs_used /srv}/''${fs_size /srv} ''${fs_bar 6 /srv}$endif''${if_mounted /mnt/backup/internal}
+        home ''${fs_used /home}/''${fs_size /home} ''${fs_bar 6 /home}$endif''${if_mounted /mnt/backup/internal}
         internal ''${fs_used /mnt/backup/internal}/''${fs_size /mnt/backup/internal} ''${fs_bar 6 /mnt/backup/internal}$endif''${if_mounted /mnt/backup/128Gext}
         128Gext ''${fs_used /mnt/backup/128Gext}/''${fs_size /mnt/backup/128Gext} ''${fs_bar 6 /mnt/backup/128Gext}$endif''${if_mounted /mnt/backup/256Gext}
         256Gext ''${fs_used /mnt/backup/256Gext}/''${fs_size /mnt/backup/256Gext} ''${fs_bar 6 /mnt/backup/256Gext}$endif
@@ -189,8 +187,6 @@
             sda: ''${diskio sda} ''${goto 140}''${diskiograph sda 8,0 104E8B ff0000 -t}
             sdb: ''${diskio sdb} ''${goto 140}''${diskiograph sdb 8,0 104E8B ff0000 -t}
             sdc: ''${diskio sdc} ''${goto 140}''${diskiograph sdc 8,0 104E8B ff0000 -t}
-            sdd: ''${diskio sdd} ''${goto 140}''${diskiograph sdd 8,0 104E8B ff0000 -t}
-            sde: ''${diskio sde} ''${goto 140}''${diskiograph sde 8,0 104E8B ff0000 -t}
         nvme0n1: ''${diskio nvme0n1} ''${goto 140}''${diskiograph nvme0n1 8,0 104E8B ff0000 -t}
         nvme1n1: ''${diskio nvme1n1} ''${goto 140}''${diskiograph nvme1n1 8,0 104E8B ff0000 -t}
         nvme2n1: ''${diskio nvme2n1} ''${goto 140}''${diskiograph nvme2n1 8,0 104E8B ff0000 -t}
