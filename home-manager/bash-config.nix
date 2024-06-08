@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    ./starship-config.nix
+    ./starship.nix
   ];
   programs.starship = {
     enableBashIntegration = true;

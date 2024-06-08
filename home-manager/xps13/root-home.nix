@@ -31,6 +31,7 @@
     ../mutt-package-and-config.nix
     ../nushell-config.nix
     ../readline-config.nix
+    ../starship-root-config.nix
     ../tmux-package-and-config.nix
     ../zsh-config.nix
   ];
@@ -82,15 +83,13 @@
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentryFlavor = "curses";
+    pinentryPackage = pkgs.pinentry-curses;
   };
 
   targets.genericLinux.enable = true;
 
   # Add stuff for your user as you see fit:
   home.packages = [
-    pkgs.neofetch
-    pkgs.ranger
     pkgs.wget
   ];
 

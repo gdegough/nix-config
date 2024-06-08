@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    ./starship-config.nix
+    ./starship.nix
   ];
   programs.starship = {
     enableNushellIntegration = true;

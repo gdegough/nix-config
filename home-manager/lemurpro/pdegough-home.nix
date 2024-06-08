@@ -63,6 +63,7 @@
     ../readline-config.nix
     ../rofi-config.nix
     ../secure-messaging.nix
+    ../starship-user-config.nix
     ../sway-config.nix
     # ../tmux-package-and-config.nix
     ../wofi-config.nix
@@ -120,7 +121,7 @@
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentryFlavor = "gnome3";
+    pinentryPackage = pkgs.pinentry-gnome3;
   };
 
   targets.genericLinux.enable = true;

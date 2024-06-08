@@ -4,17 +4,16 @@
   ...
 }:
 {
-  home.packages = [
-    pkgs.starship
+  imports = [
+    ./starship.nix
   ];
   programs.starship = {
-    enable = true;
     settings = {
       add_newline = false;
       format = "┌(─\\($os\\))(─\\($username)->($hostname\\))(─\\($directory\\))$line_break└─$character";
       character = { 
-        success_symbol = "[\\$](bold green)";
-        error_symbol = "[\\$](bold red)";
+        success_symbol = "[#](bold green)";
+        error_symbol = "[#](bold red)";
       };
       username = {
         format = "[$user]($style)";

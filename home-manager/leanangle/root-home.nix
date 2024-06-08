@@ -31,6 +31,7 @@
     ../mutt-package-and-config.nix
     ../nushell-config.nix
     ../readline-config.nix
+    ../starship-root-config.nix
     ../tmux-package-and-config.nix
     ../zsh-config.nix
   ];
@@ -89,8 +90,6 @@
 
   # Add stuff for your user as you see fit:
   home.packages = [
-    pkgs.neofetch
-    pkgs.ranger
     pkgs.wget
   ];
 

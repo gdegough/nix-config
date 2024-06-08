@@ -63,6 +63,7 @@
     ../readline-config.nix
     ../rofi-config.nix
     ../secure-messaging.nix
+    ../starship-user-config.nix
     ../sway-config.nix
     # ../tmux-package-and-config.nix
     ../wofi-config.nix
