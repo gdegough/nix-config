@@ -13,19 +13,19 @@ let
   # for gsettings to work, we need to tell it where the schemas are
   # using the XDG_DATA_DIR environment variable
   # run at the end of sway config
-  # configure-gtk = pkgs.writeTextFile {
-  #   name = "configure-gtk";
-  #   destination = "/bin/configure-gtk";
-  #   executable = true;
-  #   text = let
-  #     schema = pkgs.gsettings-desktop-schemas;
-  #     datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-  #   in ''
-  #     export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-  #     gnome_schema=org.gnome.desktop.interface
-  #     gsettings set $gnome_schema gtk-theme 'Adwaita'
-  #   '';
-  # };
+  configure-gtk = pkgs.writeTextFile {
+    name = "configure-gtk";
+    destination = "/bin/configure-gtk";
+    executable = true;
+    text = let
+      schema = pkgs.gsettings-desktop-schemas;
+      datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+    in ''
+      export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
+      gnome_schema=org.gnome.desktop.interface
+      gsettings set $gnome_schema gtk-theme 'Adwaita'
+    '';
+  };
 in
 {
   # some systemd setup
@@ -43,11 +43,20 @@ in
           TimeoutStopSec = 10;
       };
     };
+    user.services.xsettingsd = {
+      description = "XSETTINGS-protocol daemon";
+      partOf = [ "graphical-session.target" ];
+      serviceConfig = {
+          ExecStart = "${pkgs.xsettingsd}/bin/xsettingsd";
+          Slice = "session.slice";
+      };
+    };
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-    # configure-gtk
+    configure-gtk
     pkgs.polkit_gnome
+    pkgs.xsettingsd
   ];
 }
