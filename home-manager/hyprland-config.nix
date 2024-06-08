@@ -305,7 +305,7 @@
       # exec-once = systemctl --user start plasma-polkit-agent.service
 
       # bring in graphics settings
-      exec-once = configure-gtk
+      # exec-once = configure-gtk
 
       # start foot server
       exec-once = systemctl --user start foot-server.service

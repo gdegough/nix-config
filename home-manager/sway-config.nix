@@ -418,11 +418,11 @@
 
       client.background       #000000
     '';
-    ".config/sway/config.d/10-gtk-settings.conf".text = ''
-      # import gtk settings
-
-      exec configure-gtk
-    '';
+    # ".config/sway/config.d/10-gtk-settings.conf".text = ''
+    #   # import gtk settings
+    # 
+    #   exec configure-gtk
+    # '';
     ".config/sway/config.d/20-inputs.conf".text = ''
       # SwayWM input configuration. For detailed information type "man sway-input"
       # For a list of devices run: swaymsg -t get_inputs
