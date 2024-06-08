@@ -139,7 +139,7 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>t";
-      command = "gnome-terminal";
+      command = "alacritty";
       name = "Launch terminal";
     };
 
