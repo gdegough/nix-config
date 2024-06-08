@@ -43,6 +43,7 @@
     pkgs.adwaita-qt6
     pkgs.adw-gtk3
     pkgs.gnome.networkmanager-l2tp
+    pkgs.pinentry-gnome3
     pkgs.qgnomeplatform
     pkgs.qgnomeplatform-qt6
     pkgs.wev

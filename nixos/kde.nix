@@ -26,6 +26,7 @@
     pkgs.adwaita-qt
     pkgs.adwaita-qt6
     pkgs.adw-gtk3
+    pkgs.pinentry-qt
     pkgs.qgnomeplatform
     pkgs.qgnomeplatform-qt6
     pkgs.wev

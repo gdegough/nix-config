@@ -156,6 +156,7 @@
     pkgs.lynx
     pkgs.mailutils
     pkgs.openrgb-with-all-plugins
+    pkgs.pinentry-curses
     pkgs.python3
     pkgs.sops
     pkgs.sysstat
