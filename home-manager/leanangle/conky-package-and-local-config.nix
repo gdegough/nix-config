@@ -187,6 +187,8 @@
             sda: ''${diskio sda} ''${goto 140}''${diskiograph sda 8,0 104E8B ff0000 -t}
             sdb: ''${diskio sdb} ''${goto 140}''${diskiograph sdb 8,0 104E8B ff0000 -t}
             sdc: ''${diskio sdc} ''${goto 140}''${diskiograph sdc 8,0 104E8B ff0000 -t}
+            sdd: ''${diskio sdd} ''${goto 140}''${diskiograph sdd 8,0 104E8B ff0000 -t}
+            sde: ''${diskio sde} ''${goto 140}''${diskiograph sde 8,0 104E8B ff0000 -t}
         nvme0n1: ''${diskio nvme0n1} ''${goto 140}''${diskiograph nvme0n1 8,0 104E8B ff0000 -t}
         nvme1n1: ''${diskio nvme1n1} ''${goto 140}''${diskiograph nvme1n1 8,0 104E8B ff0000 -t}
         nvme2n1: ''${diskio nvme2n1} ''${goto 140}''${diskiograph nvme2n1 8,0 104E8B ff0000 -t}
