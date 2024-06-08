@@ -65,7 +65,7 @@
       # This will lock your screen after 300 seconds of inactivity, then turn off
       # your displays after another 300 seconds, and turn your screens back on when
       # resumed. It will also lock your screen before your computer goes to sleep.
-      set $lockscreenbg $HOME/Pictures/solarizedwallpapers/solarized-color-dots.svg
+      set $lockscreenbg $HOME/.config/sway/lockscreen
       set $lock_timeout 600
       set $screen_timeout 900
 
