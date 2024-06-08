@@ -54,7 +54,7 @@
     # users
     ../root.nix
     ../gmdegoug.nix
-    # ../pdegough.nix
+    ../pdegough.nix
   ];
 
   nixpkgs = {
