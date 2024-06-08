@@ -30,6 +30,16 @@ with lib.hm.gvariant;
     pkgs.gnomeExtensions.internet-radio
     pkgs.gnomeExtensions.lock-keys
   ];
+  home.file = {
+    ".config/gtk-3.0/settings.ini".text = ''
+        [Settings]
+        gtk-application-prefer-dark-theme=true
+    '';
+    ".config/gtk-4.0/settings.ini".text = ''
+        [Settings]
+        gtk-application-prefer-dark-theme=true
+    '';
+  };
   dconf.settings = {
     "org/gnome/desktop/calendar" = {
       show-weekdate = true;
@@ -38,7 +48,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       color-scheme = "prefer-dark";
-      document-font-name = "IBM Plex Serif 11";
+      cursor-theme = "Adwaita";
+      document-font-name = "IBM Plex Sans 11";
       enable-hot-corners = false;
       font-antialiasing = "grayscale";
       font-hinting = "slight";
@@ -139,7 +150,7 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>t";
-      command = "alacritty";
+      command = "footclient";
       name = "Launch terminal";
     };
 
