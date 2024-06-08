@@ -45,7 +45,7 @@ with lib.hm.gvariant;
       font-name = "IBM Plex Sans 11";
       gtk-enable-primary-paste = false;
       gtk-theme = "Adwaita";
-      monospace-font-name = "IBM Plex Mono weight=450 11";
+      monospace-font-name = "IBM Plex Mono 11";
     };
 
     "org/gnome/desktop/media-handling" = {
@@ -139,7 +139,7 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>t";
-      command = "footclient";
+      command = "gnome-terminal";
       name = "Launch terminal";
     };
 
