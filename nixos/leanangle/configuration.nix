@@ -24,7 +24,7 @@
     # Host-specific configurations
     #
     ./networking.nix
-    # ./opengl.nix
+    ./opengl.nix
     ./gdm-monitors.nix
 
     #
