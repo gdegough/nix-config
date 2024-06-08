@@ -721,10 +721,5 @@
 
       exec xdg-user-dirs-update
     '';
-    ".config/sway/config.d/95-xsettingsd.conf".text = ''
-
-      # import xsettings
-      exec systemctl --user start xsettingsd.service
-    '';
   };
 }

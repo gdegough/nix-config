@@ -23,7 +23,7 @@ let
     in ''
       export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
       gnome_schema=org.gnome.desktop.interface
-      gsettings set $gnome_schema gtk-theme 'Adq-gtk3-dark'
+      gsettings set $gnome_schema gtk-theme 'Adwaita'
     '';
   };
 in
@@ -43,20 +43,11 @@ in
           TimeoutStopSec = 10;
       };
     };
-    user.services.xsettingsd = {
-      description = "XSETTINGS-protocol daemon";
-      partOf = [ "graphical-session.target" ];
-      serviceConfig = {
-          ExecStart = "${pkgs.xsettingsd}/bin/xsettingsd";
-          Slice = "session.slice";
-      };
-    };
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
     configure-gtk
     pkgs.polkit_gnome
-    pkgs.xsettingsd
   ];
 }
