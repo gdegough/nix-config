@@ -48,14 +48,12 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       color-scheme = "prefer-dark";
-      cursor-theme = "Adwaita";
       document-font-name = "IBM Plex Sans 11";
       enable-hot-corners = false;
       font-antialiasing = "grayscale";
       font-hinting = "slight";
       font-name = "IBM Plex Sans 11";
       gtk-enable-primary-paste = false;
-      gtk-theme = "Adwaita";
       monospace-font-name = "IBM Plex Mono 11";
     };
 
