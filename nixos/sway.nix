@@ -19,8 +19,8 @@ let
     executable = true;
 
     text = ''
-      systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
+      systemctl --user import-environment DISPLAY XAUTHORITY WAYLAND_DISPLAY SWAYSOCK
+      dbus-update-activation-environment --systemd DISPLAY XAUTHORITY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
       systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr
       systemctl --user start pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr
     '';
