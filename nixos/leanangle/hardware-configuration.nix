@@ -28,7 +28,7 @@
   fileSystems."/boot" = { 
     device = "UUID=3B78-F514";
     fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
+    options = [ "umask=0077" ];
   };
 
   fileSystems."/nixos" = { 
