@@ -20,8 +20,8 @@
     networkmanager.enable = true;
     nameservers = [ "1.0.0.1" "1.1.1.1" ];
     extraHosts = ''
-      10.4.0.2	leanangle.natcky.rr.com leanangle
-      10.4.0.4	xps13.natcky.rr.com xps13
+      10.4.0.2  leanangle.natcky.rr.com leanangle
+      10.4.0.4  xps13.natcky.rr.com xps13
       10.4.0.6  apex.natcky.rr.com apex
       10.4.0.7  apex-wifi.natcky.rr.com apex
     '';
