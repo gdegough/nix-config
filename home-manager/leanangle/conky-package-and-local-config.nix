@@ -92,7 +92,7 @@
         draw_outline = false,
         draw_shades = false,
         use_xft = true,
-        font = "IBM Plex Mono:Text:size=8",
+        font = "IBM Plex Mono:size=8",
         gap_x = 10,
         gap_y = 30,
         minimum_height = 5,
@@ -119,9 +119,9 @@
 
       conky.text = [[
       ''${font IBM Plex Mono:Medium:size=20}''${time %H:%M}''${font}
-      ''${font IBM Plex Mono:Text:size=10}''${time %A %Y-%m-%d}''${font}
+      ''${font IBM Plex Mono:size=10}''${time %A %Y-%m-%d}''${font}
       $hr
-      ''${font IBM Plex Mono:Medium:size=11}''${texeci 86400 awk -F "=" '/^(NAME=)(.+)/{print $2}' "/etc/os-release" | tr -d '"'}''${font}
+      ''${font IBM Plex Mono:Medium:size=11}''${texeci 86400 awk -F "=" '/^(PRETTY_NAME=)(.+)/{print $2}' "/etc/os-release" | tr -d '"'}''${font}
 
       Kernel: $kernel
       Uptime: $uptime

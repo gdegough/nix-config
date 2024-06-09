@@ -402,7 +402,7 @@
       # Stores only image data
       exec wl-paste --type image --watch cliphist store
 
-      set $clipboard_history cliphist list | $launcher | cliphist decode | wl-copy
+      set $clipboard_history cliphist list | $launcher -p "Clipboard: " | cliphist decode | wl-copy
     '';
     ".config/sway/config.d/05-systemd-user.conf".text = ''
       # Adapted from xorg's 50-systemd-user.sh, which achieves a similar goal.
