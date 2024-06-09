@@ -24,6 +24,7 @@
     ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     ./waybar-config.nix
+    ./xsettingsd-config.nix
     # global optional configs
     # ../audio-video-processing.nix
     # global common configs
