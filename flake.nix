@@ -77,6 +77,13 @@
           ./nixos/xps13/configuration.nix
         ];
       };
+      apex = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/apex/configuration.nix
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -143,6 +150,20 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/xps13/root-home.nix
+        ];
+      };
+      "gmdegoug@apex" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/apex/gmdegoug-home.nix
+        ];
+      };
+      "root@apex" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/apex/root-home.nix
         ];
       };
     };
