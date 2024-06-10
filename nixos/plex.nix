@@ -13,8 +13,8 @@
     pkgs.plex
   ];
   # local groups I use for plex server
-  users.groups.media.gid = 1004;
-  users.groups.shared-files.gid = 1001;
+  users.groups.media.gid = 901;
+  users.groups.shared-files.gid = 902;
 
   # Enable plexmediaserver
   users.users.plex.extraGroups = [ "media" ];
