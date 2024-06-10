@@ -73,25 +73,25 @@
   fileSystems."/srv/public" = { 
     device = "UUID=3c97c3ba-2561-4cbe-bae7-f6eb143c4439";
     fsType = "btrfs";
-    options = [ "subvol=@public" "relatime" "compress=zstd:10" "discard=async" "noauto" ];
+    options = [ "subvol=@public" "relatime" "compress=zstd:10" "discard=async" ];
   };
 
   fileSystems."/srv/samba" = { 
     device = "UUID=3c97c3ba-2561-4cbe-bae7-f6eb143c4439";
     fsType = "btrfs";
-    options = [ "subvol=@samba" "relatime" "compress=zstd:10" "discard=async" "noauto" ];
+    options = [ "subvol=@samba" "relatime" "compress=zstd:10" "discard=async" ];
   };
 
   fileSystems."/srv/sftp" = { 
     device = "UUID=3c97c3ba-2561-4cbe-bae7-f6eb143c4439";
     fsType = "btrfs";
-    options = [ "subvol=@sftp" "relatime" "compress=zstd:10" "discard=async" "noauto" ];
+    options = [ "subvol=@sftp" "relatime" "compress=zstd:10" "discard=async" ];
   };
 
   fileSystems."/srv/www" = { 
     device = "UUID=3c97c3ba-2561-4cbe-bae7-f6eb143c4439";
     fsType = "btrfs";
-    options = [ "subvol=@www" "relatime" "compress=zstd:10" "discard=async" "noauto" ];
+    options = [ "subvol=@www" "relatime" "compress=zstd:10" "discard=async" ];
   };
 
   fileSystems."/mnt/backup/128Gext" = { 
