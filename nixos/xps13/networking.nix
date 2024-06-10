@@ -23,7 +23,7 @@
       10.4.0.2  leanangle.natcky.rr.com leanangle
       10.4.0.3  lemurpro.natcky.rr.com lemurpro
       10.4.0.6  apex.natcky.rr.com apex
-      10.4.0.7  apex-wifi.natcky.rr.com apex
+      10.4.0.7  apex-wifi.natcky.rr.com apex-wifi
     '';
   };
 
