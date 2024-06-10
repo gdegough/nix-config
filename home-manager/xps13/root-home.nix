@@ -18,21 +18,59 @@
 
     # You can also split up your configuration and import pieces of it here:
 
-    # host-specific configs
+    ## host-specific configs
+    # ./conky-package-and-local-config.nix
+    # ./hyprland-local-config.nix
+    # ./sway-local-config.nix
     ./systemd-environment-local-config.nix
-    # global common configs
-    ../admin-utilities.nix
+    # ./waybar-config.nix
+    # ./xsettingsd-config.nix
+    ## global optional configs
+    # ../audio-video-processing.nix
+    ## global common configs
+    # ../admin-utilities-with_gui.nix
+    ../admin-utilities-without_gui.nix
+    # ../alacritty-package-and-config.nix
+    # ../autostart-config.nix
     ../bash-config.nix 
-    ../coding-utilities.nix
-    ../common-systemd-environment-config.nix
+    # ../bitwarden.nix
+    # ../browsers.nix
+    # ../coding-utilities.nix
+    # ../common-multimedia.nix
+    # ../common-office.nix
     ../dircolors-config.nix
-    ../editors.nix
+    # ../dunst-config.nix
+    # ../editors-with_gui.nix
+    ../editors-without_gui.nix
+    # ../fonts.nix
+    # ../foot-config.nix
+    # ../games.nix
+    # ../git-config.nix
+    # ../gnome-multimedia.nix
+    # ../gnome-office.nix
+    # ../gnome-packages-and-config.nix
+    # ../gnome-systemd-environment-config.nix
+    # ../gnome-terminal-config.nix
+    # ../graphic-art.nix
     ../htmltidy-config.nix
+    # ../hyprland-config.nix
+    # ../i3blocks-package-and-config.nix
+    # ../java.nix
+    # ../megasync-package-and-config.nix
+    # ../music-composition.nix
     ../mutt-package-and-config.nix
     ../nushell-config.nix
+    # ../package-management-utilities.nix
+    # ../qalculate-gtk.nix
     ../readline-config.nix
+    # ../rofi-config.nix
+    # ../secure-messaging.nix
     ../starship-root-config.nix
+    # ../sway-config.nix
+    ../systemd-environment-common-config.nix
     ../tmux-package-and-config.nix
+    # ../wofi-config.nix
+    # ../x-config.nix
     ../zsh-config.nix
   ];
 

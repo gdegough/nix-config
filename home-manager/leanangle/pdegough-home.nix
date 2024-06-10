@@ -18,17 +18,18 @@
 
     # You can also split up your configuration and import pieces of it here:
 
-    # host-specific configs
+    ## host-specific configs
     # ./conky-package-and-local-config.nix
     # ./hyprland-local-config.nix
     ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     ./waybar-config.nix
     ./xsettingsd-config.nix
-    # global optional configs
+    ## global optional configs
     # ../audio-video-processing.nix
-    # global common configs
-    # ../admin-utilities.nix
+    ## global common configs
+    # ../admin-utilities-with_gui.nix
+    # ../admin-utilities-without_gui.nix
     ../alacritty-package-and-config.nix
     ../autostart-config.nix
     ../bash-config.nix 
@@ -51,7 +52,6 @@
     ../gnome-systemd-environment-config.nix
     ../gnome-terminal-config.nix
     ../graphic-art.nix
-    # ../gui-admin-utilities.nix
     # ../htmltidy-config.nix
     # ../hyprland-config.nix
     # ../i3blocks-package-and-config.nix
