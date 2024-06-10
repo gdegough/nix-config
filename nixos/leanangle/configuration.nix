@@ -26,6 +26,7 @@
     ./networking.nix
     ./opengl.nix
     ./gdm-monitors.nix
+    # ./samba.nix # SAMBA file sharing
 
     #
     # Global configurations
@@ -47,7 +48,6 @@
 
     # Optional server apps
     # ../plex.nix # PLEX multimedia server
-    # ../samba.nix # SAMBA file sharing
     # ../static-web-server.nix # static html server
     ../vm-host.nix # virtual machine hosting
 
