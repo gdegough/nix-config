@@ -191,8 +191,8 @@
     settings = {
       # Forbid root password login through SSH.
       PermitRootLogin = "prohibit-password";
-      PubKeyAuthentication = "yes";
-      PasswordAuthentication = "yes";
+      PubKeyAuthentication = true;
+      PasswordAuthentication = true;
     };
   };
 
