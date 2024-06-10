@@ -11,7 +11,6 @@
   home.packages = [
     pkgs.font-awesome
     pkgs.ibm-plex
-    pkgs.nerdfonts
     pkgs.noto-fonts
   ];
   home.file = {

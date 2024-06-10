@@ -18,17 +18,18 @@
 
     # You can also split up your configuration and import pieces of it here:
 
-    # host-specific configs
+    ## host-specific configs
     ./conky-package-and-local-config.nix
     # ./hyprland-local-config.nix
     ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     ./waybar-config.nix
     ./xsettingsd-config.nix
-    # global optional configs
+    ## global optional configs
     ../audio-video-processing.nix
-    # global common configs
-    ../admin-utilities.nix
+    ## global common configs
+    ../admin-utilities-with_gui.nix
+    ../admin-utilities-without_gui.nix
     ../alacritty-package-and-config.nix
     ../autostart-config.nix
     ../bash-config.nix 
@@ -37,10 +38,10 @@
     ../coding-utilities.nix
     ../common-multimedia.nix
     ../common-office.nix
-    ../common-systemd-environment-config.nix
     ../dircolors-config.nix
     ../dunst-config.nix
-    ../editors.nix
+    ../editors-with_gui.nix
+    # ../editors-without_gui.nix
     ../fonts.nix
     ../foot-config.nix
     ../games.nix
@@ -66,6 +67,7 @@
     ../secure-messaging.nix
     ../starship-user-config.nix
     ../sway-config.nix
+    ../systemd-environment-common-config.nix
     ../tmux-package-and-config.nix
     ../wofi-config.nix
     ../x-config.nix

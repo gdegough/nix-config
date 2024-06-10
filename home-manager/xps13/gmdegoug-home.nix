@@ -51,6 +51,7 @@
     ../gnome-systemd-environment-config.nix
     ../gnome-terminal-config.nix
     ../graphic-art.nix
+    ../gui-admin-utilities.nix
     ../htmltidy-config.nix
     # ../hyprland-config.nix
     ../i3blocks-package-and-config.nix

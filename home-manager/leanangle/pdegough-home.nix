@@ -37,10 +37,10 @@
     # ../coding-utilities.nix
     ../common-multimedia.nix
     ../common-office.nix
-    ../common-systemd-environment-config.nix
     ../dircolors-config.nix
     ../dunst-config.nix
-    # ../editors.nix
+    # ../editors-with_gui.nix
+    # ../editors-without_gui.nix
     ../fonts.nix
     ../foot-config.nix
     ../games.nix
@@ -51,6 +51,7 @@
     ../gnome-systemd-environment-config.nix
     ../gnome-terminal-config.nix
     ../graphic-art.nix
+    # ../gui-admin-utilities.nix
     # ../htmltidy-config.nix
     # ../hyprland-config.nix
     # ../i3blocks-package-and-config.nix
@@ -66,6 +67,7 @@
     ../secure-messaging.nix
     ../starship-user-config.nix
     ../sway-config.nix
+    ../systemd-environment-common-config.nix
     # ../tmux-package-and-config.nix
     ../wofi-config.nix
     ../x-config.nix

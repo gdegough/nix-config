@@ -14,7 +14,7 @@
   services.static-web-server = {
     enable = true;
     listen = "[::]:80";
-    root = "/srv/www/html";
+    root = "/srv/www/htdocs";
     configuration = {
       general = {
         directory-listing = true;
