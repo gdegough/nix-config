@@ -29,6 +29,7 @@
       networks."GregsWLAN".psk = "ac4942274cae3be82fa8a05e54fa3a710b85204671631d85304051a8ce99ff00";
       extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
     };
+    useNetworkd = true;
     networkmanager.enable = false;
   };
   systemd.network = {
