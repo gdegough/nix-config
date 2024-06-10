@@ -67,43 +67,49 @@
   fileSystems."/var/lib/plex" = { 
     device = "UUID=5f9e8223-1be7-42eb-a42b-51c2376eed16";
     fsType = "ext4";
-    neededForBoot = false;
+    neededForBoot = true;
   };
 
   fileSystems."/srv/public" = { 
     device = "UUID=3c97c3ba-2561-4cbe-bae7-f6eb143c4439";
     fsType = "btrfs";
     options = [ "subvol=@public" "relatime" "compress=zstd:10" "discard=async" ];
+    neededForBoot = true;
   };
 
   fileSystems."/srv/samba" = { 
     device = "UUID=3c97c3ba-2561-4cbe-bae7-f6eb143c4439";
     fsType = "btrfs";
     options = [ "subvol=@samba" "relatime" "compress=zstd:10" "discard=async" ];
+    neededForBoot = true;
   };
 
   fileSystems."/srv/sftp" = { 
     device = "UUID=3c97c3ba-2561-4cbe-bae7-f6eb143c4439";
     fsType = "btrfs";
     options = [ "subvol=@sftp" "relatime" "compress=zstd:10" "discard=async" ];
+    neededForBoot = true;
   };
 
   fileSystems."/srv/www" = { 
     device = "UUID=3c97c3ba-2561-4cbe-bae7-f6eb143c4439";
     fsType = "btrfs";
     options = [ "subvol=@www" "relatime" "compress=zstd:10" "discard=async" ];
+    neededForBoot = true;
   };
 
   fileSystems."/mnt/backup/128Gext" = { 
     device = "/dev/disk/by-uuid/82a75835-a541-4976-bc10-d643a69169b6";
     fsType = "btrfs";
     options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
+    neededForBoot = true;
   };
 
   fileSystems."/mnt/backup/256Gext" = { 
     device = "/dev/disk/by-uuid/7dcad2e8-e127-4a55-9a41-f73c46239e9b";
     fsType = "btrfs";
     options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
+    neededForBoot = true;
   };
 
   swapDevices = [ ];
