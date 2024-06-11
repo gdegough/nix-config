@@ -124,6 +124,7 @@
   # List packages installed in system profile:
   environment.systemPackages = [
     pkgs.bc
+    pkgs.btop
     pkgs.bcachefs-tools
     pkgs.brightnessctl
     pkgs.efibootmgr
