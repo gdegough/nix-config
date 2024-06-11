@@ -11,17 +11,19 @@
     pkgs.powerline
   ];
   home.sessionVariables = {
-      EDITOR = "vim";
-      EXINIT = "se sm smd scr=1 ai ruler redraw sw=4 filec=\t";
-      MERGE = "vimdiff";
-      SYSTEMD_EDITOR = "vim";
+    VISUAL = "vim";
+    EDITOR = "$VISUAL";
+    EXINIT = "se sm smd scr=1 ai ruler redraw sw=4 filec=\t";
+    MERGE = "vimdiff";
+    SYSTEMD_EDITOR = "$VISUAL";
   };
   home.file = {
     ".config/environment.d/50-vim.conf".text = ''
-      EDITOR=vim
+      VISUAL=vim
+      EDITOR=$VISUAL
       EXINIT="se sm smd scr=1 ai ruler redraw sw=4 filec=\t"
       MERGE=vimdiff
-      SYSTEMD_EDITOR=vim
+      SYSTEMD_EDITOR=$VISUAL
     '';
   };
   programs.vim = {
