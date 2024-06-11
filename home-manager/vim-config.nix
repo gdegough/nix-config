@@ -12,18 +12,18 @@
   ];
   home.sessionVariables = {
     VISUAL = "vim";
-    EDITOR = "$VISUAL";
+    EDITOR = "vim";
     EXINIT = "se sm smd scr=1 ai ruler redraw sw=4 filec=\t";
     MERGE = "vimdiff";
-    SYSTEMD_EDITOR = "$VISUAL";
+    SYSTEMD_EDITOR = "vim";
   };
   home.file = {
     ".config/environment.d/50-vim.conf".text = ''
       VISUAL=vim
-      EDITOR=$VISUAL
+      EDITOR=vim
       EXINIT="se sm smd scr=1 ai ruler redraw sw=4 filec=\t"
       MERGE=vimdiff
-      SYSTEMD_EDITOR=$VISUAL
+      SYSTEMD_EDITOR=vim
     '';
   };
   programs.vim = {
