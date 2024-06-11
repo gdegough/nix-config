@@ -8,6 +8,8 @@
     enable = true;
     userName = "gdegough";
     userEmail = "gdegough@gmail.com";
-    coreEditor = "vim";
+    extraConfig = {
+      core = { editor = "vim"; };
+    };
   };
 }
