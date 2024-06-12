@@ -23,7 +23,7 @@
     pkgs.noto-fonts
     pkgs.textfonts
     pkgs.ttf_bitstream_vera
-    pkgs.typodermic-free-fonts
+    # pkgs.typodermic-free-fonts
     pkgs.typodermic-public-domain
     pkgs.vistafonts
   ];
