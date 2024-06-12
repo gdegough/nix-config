@@ -15,7 +15,6 @@
     pkgs.fira-code
     pkgs.fira-code-symbols
     pkgs.font-awesome
-    pkgs.gentium
     pkgs.google-fonts
     pkgs.ibm-plex
     pkgs.intel-one-mono
