@@ -23,6 +23,14 @@
       10.4.0.3  lemurpro.natcky.rr.com lemurpro
       10.4.0.4  xps13.natcky.rr.com xps13
     '';
+    wireless = {
+      enable = true;
+      environmentFile = "/persist/passwords/wireless.env";
+      networks = {
+        GregsWLAN.psk = "@PSK_GREGSWLAN@";
+      };
+      extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
+    };
   };
   systemd.network = {
     enable = true;
