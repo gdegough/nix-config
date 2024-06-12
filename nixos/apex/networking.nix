@@ -29,12 +29,12 @@
     networks."10-enp86s0" = {
       matchConfig.Name = "enp86s0";
       networkConfig.DHCP = "yes";
-      dhcpV4config.RouteMetric = 100;
+      dhcpV4Config.RouteMetric = 100;
     };
     networks."20-wlo1" = {
       matchConfig.Name = "wlo1";
       networkConfig.DHCP = "yes";
-      dhcpV4config.RouteMetric = 200;
+      dhcpV4Config.RouteMetric = 200;
     };
   };
 
