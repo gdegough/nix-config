@@ -9,9 +9,23 @@
     ./extra-fonts.nix
   ];
   home.packages = [
+    pkgs.corefonts
+    pkgs.dejavu_fonts
+    pkgs.fira
+    pkgs.fira-code
+    pkgs.fira-code-symbols
     pkgs.font-awesome
+    pkgs.gentium
+    pkgs.google-fonts
     pkgs.ibm-plex
+    pkgs.intel-one-mono
+    pkgs.liberation_ttf
     pkgs.noto-fonts
+    pkgs.textfonts
+    pkgs.ttf_bitstream_vera
+    pkgs.typodermic-free-fonts
+    pkgs.typodermic-public-domain
+    pkgs.vistafonts
   ];
   home.file = {
     ".config/fontconfig/fonts.conf".text = ''
