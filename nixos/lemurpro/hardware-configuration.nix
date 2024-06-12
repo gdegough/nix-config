@@ -13,10 +13,10 @@
     inputs.impermanence.nixosModules.impermanence
   ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" "bcachefs" ];
-  boot.initrd.kernelModules = [ "bcachefs" ];
-  boot.kernelModules = [ "kvm-intel" "bcachefs" ];
-  boot.supportedFilesystems = [ "bcachefs" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.supportedFilesystems = [ "btrfs" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = { 
@@ -26,14 +26,14 @@
   };
 
   fileSystems."/boot" = { 
-    device = "/dev/disk/by-uuid/0F17-FC90";
+    device = "UUID=D43E-18A2";
     fsType = "vfat";
+    options = [ "umask=0077" ];
   };
 
   fileSystems."/nixos" = { 
-    device = "UUID=12c5fe46-4602-4fc4-a78e-a174f34ddad0";
-    fsType = "bcachefs";
-    options = [ "compression=zstd:3" ];
+    device = "UUID=12b124a3-c743-44cc-989c-8a14de099ae1";
+    fsType = "ext4";
     neededForBoot = true;
   };
 
@@ -45,9 +45,8 @@
   };
 
   fileSystems."/home" = { 
-    device = "UUID=3af72f05-409e-449f-a214-8fda4afbed83";
-    fsType = "bcachefs";
-    options = [ "compression=zstd:3" ];
+    device = "UUID=b5588a24-412c-47de-a6f6-f6205a5b5051";
+    fsType = "ext4";
     neededForBoot = true;
   };
 

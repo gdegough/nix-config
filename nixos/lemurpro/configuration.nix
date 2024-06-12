@@ -40,15 +40,15 @@
 
     # window managers and DEs
     ../tiling-wm-support.nix # common tiling WM support
-    ../hyprland.nix # Hyprland WM
+    # ../hyprland.nix # Hyprland WM
     ../sway.nix # Sway WM
-    ../kde.nix # KDE desktop environment
+    # ../kde.nix # KDE desktop environment
     ../gnome.nix # GNOME desktop environment
 
     # users
     ../root.nix
     ../gmdegoug.nix
-    # ../pdegough.nix
+    ../pdegough.nix
   ];
 
   nixpkgs = {
@@ -125,17 +125,18 @@
   environment.systemPackages = [
     pkgs.bc
     pkgs.btop
-    pkgs.bcachefs-tools
     pkgs.brightnessctl
+    pkgs.btrfs-progs
     pkgs.efibootmgr
     pkgs.exfatprogs
+    pkgs.git
     pkgs.gnupg
     pkgs.gptfdisk
     pkgs.home-manager
-    pkgs.light
     pkgs.lm_sensors
     pkgs.lynx
     pkgs.mailutils
+    pkgs.pinentry-curses
     pkgs.python3
     pkgs.sops
     pkgs.sysstat

@@ -146,8 +146,8 @@
   environment.systemPackages = [
     pkgs.bc
     pkgs.btop
-    pkgs.efibootmgr
     pkgs.btrfs-progs
+    pkgs.efibootmgr
     pkgs.exfatprogs
     pkgs.git
     pkgs.gnupg

@@ -227,7 +227,7 @@
       create-input-file = "sed ':a;N;$!ba;s/\\n/ /g'";
       sudo = "sudo ";
       vim = "vim ";
-      power-profile = "sudo system76-power charge-thresholds --profile balanced && sudo system76-power profile battery && sudo light -S 50";
+      power-profile = "sudo system76-power charge-thresholds --profile balanced && sudo system76-power profile battery && brightnessctl set 50%";
       history = "history 0";
     };
   };
