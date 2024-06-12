@@ -30,11 +30,13 @@
       matchConfig.Name = "enp86s0";
       networkConfig.DHCP = "yes";
       dhcpV4Config.RouteMetric = 100;
+      ipv6AcceptRAConfig.RouteMetric = 100;
     };
     networks."20-wlo1" = {
       matchConfig.Name = "wlo1";
       networkConfig.DHCP = "yes";
-      dhcpV4Config.RouteMetric = 200;
+      dhcpV4Config.RouteMetric = 600;
+      ipv6AcceptRAConfig.RouteMetric = 600;
     };
   };
 
