@@ -14,6 +14,7 @@
     # still possible to use this option, but it's recommended to use it in conjunction
     # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
     useDHCP = false;
+    networkmanager.enable = false;
     hostName = "apex";
     domain = "natcky.rr.com";
     nameservers = [ "1.0.0.1" "1.1.1.1" ];
@@ -22,19 +23,18 @@
       10.4.0.3  lemurpro.natcky.rr.com lemurpro
       10.4.0.4  xps13.natcky.rr.com xps13
     '';
-    # wireless = {
-    #   enable = true;
-    #   networks."GregsWLAN".psk = "ac4942274cae3be82fa8a05e54fa3a710b85204671631d85304051a8ce99ff00";
-    #   extraConfig = "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel";
-    # };
-    # useNetworkd = true;
-    networkmanager.enable = false;
   };
   systemd.network = {
     enable = true;
     networks."10-enp86s0" = {
       matchConfig.Name = "enp86s0";
       networkConfig.DHCP = "yes";
+      dhcpV4config.RouteMetric = "100";
+    };
+    networks."20-wlo1" = {
+      matchConfig.Name = "wlo1";
+      networkConfig.DHCP = "yes";
+      dhcpV4config.RouteMetric = "200";
     };
   };
 
