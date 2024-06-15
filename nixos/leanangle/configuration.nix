@@ -123,12 +123,12 @@
   services.printing.enable = true; # Enable CUPS to print documents.
 
   # Disable sleep and hibernation. This system should be always on.
-  systemd.targets = {
-    sleep.enable = false;
-    suspend.enable = false;
-    hibernate.enable = false;
-    hybrid-sleep.enable = false;
-  };
+  # systemd.targets = {
+  #   sleep.enable = false;
+  #   suspend.enable = false;
+  #   hibernate.enable = false;
+  #   hybrid-sleep.enable = false;
+  # };
   
   # systemd.services.mnt-srv = {
   #   wantedBy = [ "local-fs.target" ];
