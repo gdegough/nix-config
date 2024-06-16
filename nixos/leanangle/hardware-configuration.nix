@@ -98,6 +98,7 @@
       "/var/lib/cups"
       "/var/lib/fprint"
       "/var/lib/nixos"
+      # "/var/lib/samba"
       "/var/db/sudo/lectured"
       "/etc/NetworkManager/system-connections"
       { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }

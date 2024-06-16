@@ -7,7 +7,7 @@
   ...
 }:
 let
-  myInterfaces = "lo enp86s0";
+  myInterfaces = "lo wlo1 enp86s0";
   myNetworks = "10.4. 127.";
   User01 = "gmdegoug";
   User02 = "pdegough";
