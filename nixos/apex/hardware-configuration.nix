@@ -128,6 +128,7 @@
       "/var/lib/cups"
       "/var/lib/fprint"
       "/var/lib/nixos"
+      "/var/lib/samba"
       "/var/db/sudo/lectured"
     ];
     files = [
