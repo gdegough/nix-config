@@ -159,6 +159,13 @@
           ./home-manager/apex/gmdegoug-home.nix
         ];
       };
+      "pdegough@apex" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/apex/pdegough-home.nix
+        ];
+      };
       "root@apex" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
