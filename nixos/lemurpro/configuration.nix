@@ -112,6 +112,7 @@
     memoryPercent = 25;
   };
 
+  services.thermald.enable = true;
   services.power-profiles-daemon.enable = false; # conflicts with system76-power service
   services.printing.enable = true; # Enable CUPS to print documents.
 
