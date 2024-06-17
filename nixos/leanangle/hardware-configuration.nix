@@ -15,7 +15,7 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "sg" ];
+  boot.kernelModules = [ "kvm-intel" "sg" "coretemp" "nct6775" ];
   boot.supportedFilesystems = [ "btrfs" ];
   boot.extraModulePackages = [ ];
 
