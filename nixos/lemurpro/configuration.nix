@@ -103,8 +103,14 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+      consoleMode = "keep";
+    };
+    timeout = 3;
+    efi.canTouchEfiVariables = true;
+  };
 
   # Use ZRAM as swap device
   zramSwap = {
