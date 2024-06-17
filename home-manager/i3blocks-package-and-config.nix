@@ -5897,7 +5897,7 @@
       # Change this according to your devices
 
       # Coretemp
-      cpu_core_temp=$(printf "%.1f\n" $(echo $(cat /sys/class/thermal/thermal_zone0/temp)/1000 | bc -l))
+      cpu_core_temp=$(printf "%.1f\n" $(echo $(cat /sys/class/thermal/thermal_zone1/temp)/1000 | bc -l))
       temp_icon="<span font='icon'>🌡</span>" # thermometer icon
       #temp_icon=$'\U0001F321' # thermometer icon
 
