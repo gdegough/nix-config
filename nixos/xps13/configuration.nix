@@ -40,9 +40,9 @@
 
     # window managers and DEs
     ../tiling-wm-support.nix # common tiling WM support
-    ../hyprland.nix # Hyprland WM
+    # ../hyprland.nix # Hyprland WM
     ../sway.nix # Sway WM
-    ../kde.nix # KDE desktop environment
+    # ../kde.nix # KDE desktop environment
     ../gnome.nix # GNOME desktop environment
 
     # users
@@ -103,8 +103,14 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+      consoleMode = "keep";
+    };
+    timeout = 3;
+    efi.canTouchEfiVariables = true;
+  };
 
   # Use ZRAM as swap device
   zramSwap = {
@@ -112,21 +118,22 @@
     memoryPercent = 10;
   };
 
+  services.thermald.enable = true;
   services.power-profiles-daemon.enable = true;
   services.printing.enable = true; # Enable CUPS to print documents.
 
   # Polkit is used for controlling system-wide privileges
   security.polkit.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile:
   environment.systemPackages = [
     pkgs.bc
     pkgs.btop
-    pkgs.bcachefs-tools
     pkgs.brightnessctl
+    pkgs.btrfs-progs
     pkgs.efibootmgr
     pkgs.exfatprogs
+    pkgs.git
     pkgs.gnupg
     pkgs.gptfdisk
     pkgs.home-manager
@@ -134,6 +141,7 @@
     pkgs.lm_sensors
     pkgs.lynx
     pkgs.mailutils
+    pkgs.pinentry-curses
     pkgs.python3
     pkgs.sops
     pkgs.sysstat

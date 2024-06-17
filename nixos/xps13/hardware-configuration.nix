@@ -13,10 +13,10 @@
     inputs.impermanence.nixosModules.impermanence
   ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "uas" "sd_mod" "bcachefs" ];
-  boot.initrd.kernelModules = [ "bcachefs" ];
-  boot.kernelModules = [ "kvm-intel" "bcachefs" ];
-  boot.supportedFilesystems = [ "bcachefs" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "uas" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.supportedFilesystems = [ "btrfs" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = { 
@@ -32,8 +32,7 @@
 
   fileSystems."/nixos" = { 
     device = "UUID=<UUID partition # here>";
-    fsType = "bcachefs";
-    options = [ "compression=zstd:3" ];
+    fsType = "ext4";
     neededForBoot = true;
   };
 
@@ -46,8 +45,7 @@
 
   fileSystems."/home" = { 
     device = "UUID=<UUID partition # here>";
-    fsType = "bcachefs";
-    options = [ "compression=zstd:3" ];
+    fsType = "ext4";
     neededForBoot = true;
   };
 
@@ -66,13 +64,13 @@
   };
 
   fileSystems."/mnt/backup/128Gext" = { 
-    device = "/dev/disk/by-uuid/82a75835-a541-4976-bc10-d643a69169b6";
+    device = "UUID=82a75835-a541-4976-bc10-d643a69169b6";
     fsType = "btrfs";
     options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
   };
 
   fileSystems."/mnt/backup/256Gext" = { 
-    device = "/dev/disk/by-uuid/7dcad2e8-e127-4a55-9a41-f73c46239e9b";
+    device = "UUID=7dcad2e8-e127-4a55-9a41-f73c46239e9b";
     fsType = "btrfs";
     options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
   };
