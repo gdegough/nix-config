@@ -10,7 +10,6 @@
   services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true; # GNOME 
-    displayManager.defaultSession = "gnome"; # Make gnome the default session
     displayManager.gdm.enable = true; # GDM
     # displayManager.gdm.autoSuspend = false; 
     # adds these schemas for dconf and gsettings
@@ -21,6 +20,7 @@
       pkgs.gnome.nautilus
     ];
   };
+  services.displayManager.defaultSession = "gnome"; # Make gnome the default session
   services.gnome.games.enable = true; # install GNOME games
   services.gnome.core-developer-tools.enable = true; # install GNOME core dev tools
 
