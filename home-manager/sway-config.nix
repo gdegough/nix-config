@@ -698,7 +698,7 @@
       # If installed side-by-side with gnome
       exec systemctl --user start polkit-gnome-authentication-agent-1.service
       # If installed side-by-side with plasma desktop
-      # exec systemctl --user start plasma-polkit-agent.service
+      exec systemctl --user start plasma-polkit-agent.service
     '';
     ".config/sway/config.d/95-xdg-desktop-autostart.conf".text = ''
       # setup desktop agnostic xdg-desktop-portal to use wlroots and GTK GUIs

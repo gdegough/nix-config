@@ -10,7 +10,7 @@
   services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true; # GNOME 
-    # displayManager.defaultSession = "gnome"; # Make gnome the default session
+    displayManager.defaultSession = "gnome"; # Make gnome the default session
     displayManager.gdm.enable = true; # GDM
     # displayManager.gdm.autoSuspend = false; 
     # adds these schemas for dconf and gsettings
