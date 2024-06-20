@@ -71,6 +71,7 @@
     ../tmux-package-and-config.nix
     ../wofi-config.nix
     ../x-config.nix
+    ../yakuake.nix
     ../zsh-config.nix
   ];
 
