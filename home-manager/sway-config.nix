@@ -23,7 +23,7 @@
       # Your preferred terminal emulator
       # Recommends: foot
       set $term footclient
-      exec systemctl --user start foot-server.service
+      exec systemctl --user start foot-server
       # Your preferred notification daemon
       set $notification_daemon dunst
       # Your preferred application launcher
