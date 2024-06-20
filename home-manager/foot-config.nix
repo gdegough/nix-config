@@ -5,6 +5,19 @@
 }:
 {
   home.file = {
+    ".config/autostart/org.codeberg.dnkl.foot-server.desktop".text = ''
+      [Desktop Entry]
+      Type=Application
+      Exec=foot --server
+      Icon=foot
+      Terminal=false
+      Categories=System;TerminalEmulator;
+      Keywords=shell;prompt;command;commandline;
+
+      Name=Foot Server
+      GenericName=Terminal
+      Comment=A wayland native terminal emulator (server)
+    '';
     ".config/foot/foot.ini".text = ''
       [main]
       term=xterm-256color
