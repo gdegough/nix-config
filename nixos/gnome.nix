@@ -7,22 +7,33 @@
   ...
 }:
 {
-  services.xserver = {
-    enable = true;
-    desktopManager.gnome.enable = true; # GNOME 
-    displayManager.gdm.enable = true; # GDM
-    # displayManager.gdm.autoSuspend = false; 
-    # adds these schemas for dconf and gsettings
-    desktopManager.gnome.sessionPath = [
-      pkgs.gnome.gnome-settings-daemon
-      pkgs.gnome.gnome-tweaks
-      pkgs.gnome.mutter # this is necessary to control fractional scaling
-      pkgs.gnome.nautilus
-    ];
+  services = {
+    xserver = {
+      enable = true;
+      displayManager.gdm = { # GDM
+        enable = true;
+        wayland = true;
+        # autoSuspend = false; 
+      };
+      desktopManager.gnome { # GNOME 
+        enable = true;
+        # add these schemas for dconf and gsettings
+        sessionPath = [
+          pkgs.gnome.gnome-settings-daemon
+          pkgs.gnome.gnome-tweaks
+          pkgs.gnome.mutter # this is necessary to control fractional scaling
+          pkgs.gnome.nautilus
+        ];
+      };
+    };
+    displayManager = {
+      defaultSession = "gnome"; # Make gnome the default session;
+    };
+    gnome = {
+      games.enable = true; # install GNOME games 
+      core-developer-tools.enable = true; # install GNOME core dev tools
+    };
   };
-  services.displayManager.defaultSession = "gnome"; # Make gnome the default session
-  services.gnome.games.enable = true; # install GNOME games
-  services.gnome.core-developer-tools.enable = true; # install GNOME core dev tools
 
   # make QT apps look similar to GNOME desktop
   qt = {
