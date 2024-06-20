@@ -15,7 +15,7 @@
         wayland = true;
         # autoSuspend = false; 
       };
-      desktopManager.gnome { # GNOME 
+      desktopManager.gnome = { # GNOME 
         enable = true;
         # add these schemas for dconf and gsettings
         sessionPath = [
