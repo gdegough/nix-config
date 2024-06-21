@@ -5,7 +5,7 @@
 }:
 {
   home.file = {
-    ".config/xsettingsd/xsettingsd.conf".text = ''
+    ".config/xsettingsd/xsettingsd-tiling.conf".text = ''
         Gdk/UnscaledDPI 98304
         Gdk/WindowScalingFactor 1
         Gtk/AutoMnemonics 1

@@ -43,11 +43,11 @@ in
           TimeoutStopSec = 10;
       };
     };
-    user.services.xsettingsd = {
-      description = "XSETTINGS-protocol daemon";
+    user.services.xsettingsd-tiling = {
+      description = "XSETTINGS-protocol daemon for tiling window managers";
       partOf = [ "graphical-session.target" ];
       serviceConfig = {
-          ExecStart = "${pkgs.xsettingsd}/bin/xsettingsd";
+          ExecStart = "${pkgs.xsettingsd}/bin/xsettingsd --config=%h/.config/xsettingsd/xsettingsd-tiling.conf";
           Slice = "session.slice";
       };
     };

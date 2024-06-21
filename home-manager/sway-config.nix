@@ -721,10 +721,10 @@
 
       exec xdg-user-dirs-update
     '';
-     ".config/sway/config.d/95-xsettingsd.conf".text = ''
+     ".config/sway/config.d/95-xsettingsd-tiling.conf".text = ''
 
         # import xsettings
-        exec systemctl --user start xsettingsd.service
+        exec systemctl --user start xsettingsd-tiling.service
     '';
   };
 }
