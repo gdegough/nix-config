@@ -10,20 +10,24 @@
   services = {
     xserver = {
       enable = true;
-      displayManager.gdm = { # GDM
-        enable = true;
-        wayland = true;
-        # autoSuspend = false; 
+      displayManager = {
+        gdm = { # GDM
+          enable = true;
+          wayland = true;
+          # autoSuspend = false; 
+        };
       };
-      desktopManager.gnome = { # GNOME 
-        enable = true;
-        # add these schemas for dconf and gsettings
-        sessionPath = [
-          pkgs.gnome.gnome-settings-daemon
-          pkgs.gnome.gnome-tweaks
-          pkgs.gnome.mutter # this is necessary to control fractional scaling
-          pkgs.gnome.nautilus
-        ];
+      desktopManager = {
+        gnome = { # GNOME 
+          enable = true;
+          # add these schemas for dconf and gsettings
+          sessionPath = [
+            pkgs.gnome.gnome-settings-daemon
+            pkgs.gnome.gnome-tweaks
+            pkgs.gnome.mutter # this is necessary to control fractional scaling
+            pkgs.gnome.nautilus
+          ];
+        };
       };
     };
     displayManager = {
@@ -39,7 +43,7 @@
   qt = {
     enable = true;
     platformTheme = "gnome";
-    style = "adwaita";
+    style = "adwaita-dark";
   };
 
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 

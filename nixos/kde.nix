@@ -11,8 +11,10 @@
     xserver = {
       enable = true;
     };
-    desktopManager.plasma6 = {
-      enable = true; # KDE
+    desktopManager = {
+      plasma6 = {
+        enable = true; # KDE
+      };
     };
     # displayManager = {
     #   sddm = {
@@ -39,5 +41,8 @@
     pkgs.qgnomeplatform
     pkgs.qgnomeplatform-qt6
     pkgs.wev
+  ];
+  environment.plasma6.excludePackages = [
+    pkgs.kdePackages.plasma-browser-integration
   ];
 }
