@@ -11,7 +11,7 @@
         Gtk/ButtonImages 0
         Gtk/CursorThemeName "Adwaita"
         Gtk/CursorThemeSize 24
-        Gtk/DecorationLayout "minimize,maximize,close"
+        Gtk/DecorationLayout "menu:minimize,close"
         Gtk/EnableAnimations 1
         Gtk/FontName "IBM Plex Sans 11"
         Gtk/MenuImages 1
