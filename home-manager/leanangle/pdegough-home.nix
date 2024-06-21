@@ -20,7 +20,7 @@
 
     ## host-specific configs
     # ./conky-package-and-local-config.nix
-    # ./hyprland-local-config.nix
+    ./hyprland-local-config.nix
     ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     ./waybar-config.nix
@@ -53,7 +53,7 @@
     ../gnome-terminal-config.nix
     ../graphic-art.nix
     # ../htmltidy-config.nix
-    # ../hyprland-config.nix
+    ../hyprland-config.nix
     # ../i3blocks-package-and-config.nix
     # ../java.nix
     # ../megasync-package-and-config.nix
