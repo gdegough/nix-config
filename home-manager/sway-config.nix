@@ -22,7 +22,7 @@
       font pango:IBM Plex Mono Text 11
       # Your preferred terminal emulator
       # Recommends: foot
-      exec systemctl --user start foot-server
+      exec systemctl --user start foot-server.service
       set $term footclient
       # Your preferred notification daemon
       set $notification_daemon dunst
