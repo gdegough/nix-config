@@ -306,7 +306,7 @@
 
       # bring in graphics settings
       exec-once = configure-gtk
-      # exec-once = systemctl --user start xsettingsd-tiling.service
+      exec-once = systemctl --user start xsettingsd-tiling.service
 
       # start foot server
       exec-once = systemctl --user start foot-server.service
