@@ -327,7 +327,7 @@
               "spacing": 10
           },
           "clock": {
-              // "timezone": "America/Kentucky/Monticello",
+              "timezone": "America/Kentucky/Monticello",
               "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
               "format-alt": "{:%Y-%m-%d}"
           },
