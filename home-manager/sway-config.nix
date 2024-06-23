@@ -688,8 +688,8 @@
     '';
      ".config/sway/config.d/95-foot-server-autostart.conf".text = ''
 
-        # import xsettings
-        exec systemctl --user start foot-server.service
+        # start foot-server
+        #exec systemctl --user start foot-server.service
     '';
     ".config/sway/config.d/95-policykit-agent-autostart.conf".text = ''
       # Start graphical authentication agent for PolicyKit.
