@@ -22,7 +22,8 @@
       font pango:IBM Plex Mono Text 11
       # Your preferred terminal emulator
       # Recommends: foot
-      set $term footclient
+      exec ${pkgs.foot}/bin/foot --server
+      set $term ${pkgs.foot}/bin/footclient
       # Your preferred notification daemon
       set $notification_daemon dunst
       # Your preferred application launcher
@@ -685,11 +686,6 @@
 
       # Lock the screen
       bindsym $mod+Delete exec "swaylock -f -i $lockscreenbg"
-    '';
-     ".config/sway/config.d/95-foot-server-autostart.conf".text = ''
-
-        # start foot-server
-        exec systemctl --user start ${pkgs.foot}/share/systemd/user/foot-server.service
     '';
     ".config/sway/config.d/95-policykit-agent-autostart.conf".text = ''
       # Start graphical authentication agent for PolicyKit.
