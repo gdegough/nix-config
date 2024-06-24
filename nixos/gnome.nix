@@ -30,9 +30,9 @@
         };
       };
     };
-    displayManager = {
-      defaultSession = "gnome"; # Make gnome the default session;
-    };
+    # displayManager = {
+    #   defaultSession = "gnome"; # Make gnome the default session;
+    # };
     gnome = {
       games.enable = true; # install GNOME games 
       core-developer-tools.enable = true; # install GNOME core dev tools

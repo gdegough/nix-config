@@ -16,13 +16,13 @@
         enable = true; # KDE
       };
     };
-    # displayManager = {
+    displayManager = {
     #   sddm = {
     #     enable = true;
     #     wayland.enable = true;
     #   };
-    #   defaultSession = "plasma"; # Make plasma-wayland the default session
-    # };
+      defaultSession = "plasma"; # Make plasma-wayland the default session
+    };
   };
 
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
