@@ -28,7 +28,12 @@
   };
   programs.vim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [ vim-airline vim-airline-themes vim-colors-solarized ];
+    plugins = with pkgs.vimPlugins; [ 
+      gruvbox 
+      vim-airline 
+      vim-airline-themes 
+      vim-colors-solarized 
+    ];
     settings = {
       expandtab = true;
       shiftwidth = 4; 
@@ -45,7 +50,7 @@
       set softtabstop=4 
       set formatoptions-=t
       syntax enable
-      colorscheme solarized
+      colorscheme gruvbox
     '';
   };
 }

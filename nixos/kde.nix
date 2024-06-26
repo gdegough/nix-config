@@ -37,6 +37,7 @@
     pkgs.adwaita-qt
     pkgs.adwaita-qt6
     pkgs.adw-gtk3
+    pkgs.kde-gruvbox
     pkgs.pinentry-qt
     pkgs.qgnomeplatform
     pkgs.qgnomeplatform-qt6
