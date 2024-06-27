@@ -260,6 +260,30 @@
       #
       include '$(layered-include "/etc/sway/config.d/*.conf" "''${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
     '';
+    ".config/sway/barschemes.d/gruvbox-dark_barscheme.conf".text = ''
+      # SwayWM status bar configuration. For detailed information type "man sway-bar"
+
+      bar {
+          position top
+          font $font
+          height 28
+
+          colors {
+              # gruvbox dark theme
+              background #282828
+              statusline #ebdbb2
+              separator  #8ec07c
+              # <colorclass>      <border>    <background>    <text>
+              focused_workspace   #000000     #fabd2f         #ebdbb2
+              active_workspace    #928374     #8ec07c         #8ec07c
+              inactive_workspace  #282828     #928374         #fabd2f
+              urgent_workspace    #000000     #363636         #FF0000
+              binding_mode        #000000     #dc322f         #FFFFFF
+          }
+          status_command SCRIPT_DIR=$HOME/.local/libexec/i3blocks i3blocks -c $HOME/.config/i3blocks/config
+          # status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
+      }
+    '';
     ".config/sway/barschemes.d/kali-dark_barscheme.conf".text = ''
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
 
@@ -360,6 +384,13 @@
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
 
       exec waybar -c $HOME/.config/waybar/sway_config
+    '';
+    ".config/sway/colorschemes.d/client_window_colorscheme-gruvbox-dark.conf".text = ''
+      # gruvbox-dark colors
+      # class                 border  bground text    indicator child_border
+      client.focused          #fabd2f #fabd2f #ebdbb2 #fb4934   #d79921
+      client.focused_inactive #b8bb26 #b8bb26 #282828 #fb4934   #b8bb26 
+      client.unfocused        #fabd2f #928374 #b8bb26 #fb4934   #222222
     '';
     ".config/sway/colorschemes.d/client_window_colorscheme-kali-dark.conf".text = ''
       # Kali Dark colors
