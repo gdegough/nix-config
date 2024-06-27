@@ -49,8 +49,9 @@
       set smartindent
       set softtabstop=4 
       set formatoptions-=t
-      syntax enable
+      set background=dark
       colorscheme gruvbox
+      syntax enable
     '';
   };
 }
