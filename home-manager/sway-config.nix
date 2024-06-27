@@ -727,7 +727,7 @@
       # Requires: plasma6 or polkit_gnome
 
       # If installed side-by-side with gnome
-      exec systemctl --user start polkit-gnome-authentication-agent-1.service
+      # exec systemctl --user start polkit-gnome-authentication-agent-1.service
       # If installed side-by-side with plasma desktop
       exec systemctl --user start plasma-polkit-agent.service
     '';

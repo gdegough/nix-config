@@ -30,19 +30,19 @@ in
 {
   # some systemd setup
   systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-          Type = "simple";
-          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
-      };
-    };
+    # user.services.polkit-gnome-authentication-agent-1 = {
+    #   description = "polkit-gnome-authentication-agent-1";
+    #   wantedBy = [ "graphical-session.target" ];
+    #   wants = [ "graphical-session.target" ];
+    #   after = [ "graphical-session.target" ];
+    #   serviceConfig = {
+    #       Type = "simple";
+    #       ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+    #       Restart = "on-failure";
+    #       RestartSec = 1;
+    #       TimeoutStopSec = 10;
+    #   };
+    # };
     user.services.xsettingsd-tiling = {
       description = "XSETTINGS-protocol daemon for tiling window managers";
       partOf = [ "graphical-session.target" ];
@@ -56,7 +56,7 @@ in
   # $ nix search wget
   environment.systemPackages = [
     configure-gtk
-    pkgs.polkit_gnome
+    # pkgs.polkit_gnome
     pkgs.xsettingsd
   ];
 }
