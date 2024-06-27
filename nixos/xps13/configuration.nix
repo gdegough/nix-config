@@ -25,7 +25,7 @@
     #
     ./networking.nix
     ./opengl.nix
-    ./gdm-monitors.nix
+    # ./gdm-monitors.nix
 
     #
     # Global configurations
@@ -40,10 +40,10 @@
 
     # window managers and DEs
     ../tiling-wm-support.nix # common tiling WM support
-    ../hyprland.nix # Hyprland WM
+    # ../hyprland.nix # Hyprland WM
     ../sway.nix # Sway WM
     ../kde.nix # KDE desktop environment
-    ../gnome.nix # GNOME desktop environment
+    # ../gnome.nix # GNOME desktop environment
 
     # users
     ../root.nix
