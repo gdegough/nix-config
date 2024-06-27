@@ -20,7 +20,7 @@
 
     ## host-specific configs
     # ./conky-package-and-local-config.nix
-    ./hyprland-local-config.nix
+    # ./hyprland-local-config.nix
     ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     ./waybar-config.nix
@@ -46,11 +46,11 @@
     ../foot-config.nix
     ../games.nix
     # ../git-config.nix
-    ../gnome-multimedia.nix
-    ../gnome-office.nix
-    ../gnome-packages-and-config.nix
-    ../gnome-systemd-environment-config.nix
-    ../gnome-terminal-config.nix
+    # ../gnome-multimedia.nix
+    # ../gnome-office.nix
+    # ../gnome-packages-and-config.nix
+    # ../gnome-systemd-environment-config.nix
+    # ../gnome-terminal-config.nix
     ../graphic-art.nix
     # ../htmltidy-config.nix
     ../hyprland-config.nix
@@ -71,6 +71,7 @@
     # ../tmux-package-and-config.nix
     ../wofi-config.nix
     ../x-config.nix
+    ../yakuake.nix
     ../zsh-config.nix
   ];
 
@@ -117,14 +118,16 @@
     MOZ_USE_XINPUT2 = "1";
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
-    XCURSOR_THEME = "Adwaita";
+    # XCURSOR_THEME = "Adwaita"; # GNOME
+    XCURSOR_THEME = "breeze"; # KDE
   };
 
   services.gpg-agent = {
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry-gnome3;
+    # pinentryPackage = pkgs.pinentry-gnome3; # GNOME
+    pinentryPackage = pkgs.pinentry-qt; # KDE
   };
 
   targets.genericLinux.enable = true;

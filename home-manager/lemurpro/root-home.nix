@@ -114,14 +114,15 @@
     MOZ_USE_XINPUT2 = "1";
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
-    XCURSOR_THEME = "Adwaita";
+    # XCURSOR_THEME = "Adwaita"; # GNOME
+    XCURSOR_THEME = "breeze"; # KDE
   };
 
   services.gpg-agent = {
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentryPackage = pkgs.pinentry-curses; # KDE
   };
 
   targets.genericLinux.enable = true;

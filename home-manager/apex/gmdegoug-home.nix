@@ -71,6 +71,7 @@
     ../tmux-package-and-config.nix
     # ../wofi-config.nix
     # ../x-config.nix
+    # ../yakuake.nix
     ../zsh-config.nix
   ];
 
@@ -117,7 +118,8 @@
     MOZ_USE_XINPUT2 = "1";
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
-    XCURSOR_THEME = "Adwaita";
+    # XCURSOR_THEME = "Adwaita"; # GNOME
+    # XCURSOR_THEME = "breeze"; # KDE
   };
 
   services.gpg-agent = {
