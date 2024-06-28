@@ -24,7 +24,7 @@
       sddm = {
         enable = true;
         wayland.enable = true;
-        theme = "chili";
+        theme = "Chili";
       };
       defaultSession = "plasma"; # Make plasma-wayland the default session
     };
