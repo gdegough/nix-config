@@ -1309,11 +1309,11 @@
       }
 
       window#waybar {
-          background-color: #1f2229;
+          background-color: #282828;
           /* background-color: rgba(43, 48, 59, 0.5); */
           border-bottom: 2px solid #000000;
           /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-          color: #fdf6e3;
+          color: #ebdbb2;
           /* color: #ffffff; */
           transition-property: background-color;
           transition-duration: .5s;
@@ -1334,7 +1334,7 @@
       }
 
       window#waybar.termite {
-          background-color: #3F3F3F;
+          background-color: #282828;
       }
 
       window#waybar.chromium {
@@ -1359,27 +1359,27 @@
       #workspaces button {
           padding: 0 5px;
           background: transparent;
-          color: #93a1a1; 
+          color: #8ec07c; 
           border-bottom: 2px solid transparent;
       }
 
       #workspaces button.focused {
-          color: #b58900;
-          border-bottom: 2px solid #b58900;
+          color: #d79921;
+          border-bottom: 2px solid #d79921;
       }
 
       #workspaces button.visible {
-          color: #b58900;
+          color: #d79921;
       }
 
       #workspaces button.urgent {
-          color: #dc322f;
+          color: #cc241d;
       }
 
       #mode {
           margin:                 0px 5px 3px 5px;
-          color:                  #fdf6e3;
-          background-color:       #dc322f;
+          color:                  #ebdbb2;
+          background-color:       #cc241d;
       }
 
       #clock,
@@ -1549,20 +1549,21 @@
       }
 
       #mpd {
-          background-color: #66cc99;
-          color: #2a5c45;
+          /* background-color: #66cc99; */
+          /* color: #2a5c45; */
+          color: #FFFFFF;
       }
 
       #mpd.disconnected {
-          background-color: #f53c3c;
+          /* background-color: #f53c3c; */
       }
 
       #mpd.stopped {
-          background-color: #90b1b1;
+          /* background-color: #90b1b1; */
       }
 
       #mpd.paused {
-          background-color: #51a37a;
+          /* background-color: #51a37a; */
       }
 
       #language {
@@ -1588,11 +1589,13 @@
       }
 
       #keyboard-state > label.locked {
-          background: rgba(0, 0, 0, 0.2);
+          /* background: rgba(0, 0, 0, 0.2); */
+          background: #FFFFFF;
       }
 
       #scratchpad {
-          background: rgba(0, 0, 0, 0.2);
+          /* background: rgba(0, 0, 0, 0.2); */
+          background: #FFFFFF;
       }
 
       #scratchpad.empty {
