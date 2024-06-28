@@ -979,7 +979,7 @@
 
           /* gruvbox-dark Theme */
           transparent-background: rgba ( 0, 0, 0, 0 % );
-          foreground:                  light1;
+          foreground:                  @light1;
           background:                  rgba ( 40, 40, 40, 90 % );
 
           normal-foreground:           @foreground;
