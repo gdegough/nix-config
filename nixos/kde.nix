@@ -5,8 +5,12 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
+  # You can import other NixOS modules here
+  imports = [
+    ./icon-themes.nix
+  ];
+
   services = {
     xserver = {
       enable = true;
