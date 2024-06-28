@@ -980,21 +980,21 @@
           /* gruvbox-dark Theme */
           transparent-background: rgba ( 0, 0, 0, 0 % );
           foreground:                  @light1;
-          background:                  rgba ( 40, 40, 40, 90 % );
+          background:                  rgba ( 60, 56, 54, 90 % );
 
           normal-foreground:           @foreground;
           normal-background:           @transparent-background;
-          active-foreground:           @neutral-green;
+          active-foreground:           @bright-aqua;
           active-background:           @transparent-background;
-          urgent-foreground:           @neutral-red;
+          urgent-foreground:           @bright-red;
           urgent-background:           @transparent-background;
 
-          selected-normal-foreground:  @neutral-purple;
-          selected-normal-background:  @neutral-green;
+          selected-normal-foreground:  @dark0;
+          selected-normal-background:  @neutral-aqua;
           selected-active-foreground:  @bright-green;
-          selected-active-background:  @neutral-green;
-          selected-urgent-foreground:  @neutral-red;
-          selected-urgent-background:  @neutral-green;
+          selected-active-background:  @neutral-aqua;
+          selected-urgent-foreground:  @bright-red;
+          selected-urgent-background:  @neutral-aqua;
 
           alternate-normal-foreground: @foreground;
           alternate-normal-background: @transparent-background;
