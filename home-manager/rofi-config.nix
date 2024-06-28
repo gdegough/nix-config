@@ -960,22 +960,22 @@
           * NOTE: I am including all of them even though I am using a sub-set. I keep
           * tweaking my theme and having access to all of the colors here is handy. */
 
-          dark0: #282828
-          neutral_red: #cc241d
-          neutral_green: #98971a
-          neutral_yellow: #d79921
-          neutral_blue: #458588
-          neutral_purple: #b16286
-          neutral_aqua: #689d6a
-          light4: #a89984
-          gray_245: #928374
-          bright_red: #fb4934
-          bright_green: #b8bb26
-          bright_yellow: #fabd2f
-          bright_blue: #83a598
-          bright_purple: #d3869b
-          bright_aqua: #8ec07c
-          light1: #ebdbb2
+          dark0: #282828;
+          neutral_red: #cc241d;
+          neutral_green: #98971a;
+          neutral_yellow: #d79921;
+          neutral_blue: #458588;
+          neutral_purple: #b16286;
+          neutral_aqua: #689d6a;
+          light4: #a89984;
+          gray_245: #928374;
+          bright_red: #fb4934;
+          bright_green: #b8bb26;
+          bright_yellow: #fabd2f;
+          bright_blue: #83a598;
+          bright_purple: #d3869b;
+          bright_aqua: #8ec07c;
+          light1: #ebdbb2;
 
           /* gruvbox-dark Theme */
           transparent-background: rgba ( 0, 0, 0, 0 % );
