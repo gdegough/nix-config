@@ -961,20 +961,20 @@
           * tweaking my theme and having access to all of the colors here is handy. */
 
           dark0: #282828;
-          neutral_red: #cc241d;
-          neutral_green: #98971a;
-          neutral_yellow: #d79921;
-          neutral_blue: #458588;
-          neutral_purple: #b16286;
-          neutral_aqua: #689d6a;
+          neutral-red: #cc241d;
+          neutral-green: #98971a;
+          neutral-yellow: #d79921;
+          neutral-blue: #458588;
+          neutral-purple: #b16286;
+          neutral-aqua: #689d6a;
           light4: #a89984;
-          gray_245: #928374;
-          bright_red: #fb4934;
-          bright_green: #b8bb26;
-          bright_yellow: #fabd2f;
-          bright_blue: #83a598;
-          bright_purple: #d3869b;
-          bright_aqua: #8ec07c;
+          gray245: #928374;
+          bright-red: #fb4934;
+          bright-green: #b8bb26;
+          bright-yellow: #fabd2f;
+          bright-blue: #83a598;
+          bright-purple: #d3869b;
+          bright-aqua: #8ec07c;
           light1: #ebdbb2;
 
           /* gruvbox-dark Theme */
@@ -984,16 +984,16 @@
 
           normal-foreground:           @foreground;
           normal-background:           @transparent-background;
-          active-foreground:           @neutral_green;
+          active-foreground:           @neutral-green;
           active-background:           @transparent-background;
-          urgent-foreground:           @neutral_red;
+          urgent-foreground:           @neutral-red;
           urgent-background:           @transparent-background;
 
-          selected-normal-foreground:  @neutral_purple;
+          selected-normal-foreground:  @neutral-purple;
           selected-normal-background:  @dark0;
-          selected-active-foreground:  @neutral_green;
+          selected-active-foreground:  @neutral-green;
           selected-active-background:  @dark0;
-          selected-urgent-foreground:  @neutral_red;
+          selected-urgent-foreground:  @neutral-red;
           selected-urgent-background:  @dark0;
 
           alternate-normal-foreground: @foreground;
@@ -1003,10 +1003,10 @@
           alternate-urgent-foreground: @urgent-foreground;
           alternate-urgent-background: @transparent-background;
 
-          separatorcolor:              @neutral_blue;
+          separatorcolor:              @neutral-blue;
 
           /* Main element styles */
-          border-color:                @neutral_blue;
+          border-color:                @neutral-blue;
           spacing:                     2;
           background-color:            @transparent-background;
       }
