@@ -949,6 +949,168 @@
          background-color:@blackwidget;
       }
     '';
+    ".config/rofi/themes/gruvbox-dark.rasi".text = ''
+      /******************************************************************************
+       * ROFI Color theme
+       * User: gdegough
+       ******************************************************************************/
+
+      * {
+          /**** gruvbox-dark colors ****
+          * NOTE: I am including all of them even though I am using a sub-set. I keep
+          * tweaking my theme and having access to all of the colors here is handy. */
+
+          dark0: #282828
+          neutral_red: #cc241d
+          neutral_green: #98971a
+          neutral_yellow: #d79921
+          neutral_blue: #458588
+          neutral_purple: #b16286
+          neutral_aqua: #689d6a
+          light4: #a89984
+          gray_245: #928374
+          bright_red: #fb4934
+          bright_green: #b8bb26
+          bright_yellow: #fabd2f
+          bright_blue: #83a598
+          bright_purple: #d3869b
+          bright_aqua: #8ec07c
+          light1: #ebdbb2
+
+          /* gruvbox-dark Theme */
+          transparent-background: rgba ( 0, 0, 0, 0 % );
+          foreground:                  light1;
+          background:                  rgba ( 40, 40, 40, 90 % );
+
+          normal-foreground:           @foreground;
+          normal-background:           @transparent-background;
+          active-foreground:           @neutral_green;
+          active-background:           @transparent-background;
+          urgent-foreground:           @neutral_red;
+          urgent-background:           @transparent-background;
+
+          selected-normal-foreground:  @neutral_purple;
+          selected-normal-background:  @dark0;
+          selected-active-foreground:  @neutral_green;
+          selected-active-background:  @dark0;
+          selected-urgent-foreground:  @neutral_red;
+          selected-urgent-background:  @dark0;
+
+          alternate-normal-foreground: @foreground;
+          alternate-normal-background: @transparent-background;
+          alternate-active-foreground: @active-foreground;
+          alternate-active-background: @transparent-background;
+          alternate-urgent-foreground: @urgent-foreground;
+          alternate-urgent-background: @transparent-background;
+
+          separatorcolor:              @neutral_blue;
+
+          /* Main element styles */
+          border-color:                @neutral_blue;
+          spacing:                     2;
+          background-color:            @transparent-background;
+      }
+      window {
+          background-color: @background;
+          border:           1;
+          padding:          20;
+      }
+      mainbox {
+          border:  0;
+          padding: 0;
+      }
+      message {
+          border:       1px dash 0px 0px ;
+          border-color: @separatorcolor;
+          padding:      1px ;
+      }
+      textbox {
+          text-color: @foreground;
+      }
+      listview {
+          fixed-height: 0;
+          border:       1px dash 0px 0px ;
+          border-color: @separatorcolor;
+          spacing:      2px ;
+          scrollbar:    false;
+          padding:      8px 0px 0px 0px;
+      }
+      element {
+          border:  0;
+          padding: 1px 0px 1px 1px;
+      }
+      element-text {
+          background-color: inherit;
+          text-color:       inherit;
+      }
+      element normal.normal {
+          background-color: @normal-background;
+          text-color:       @normal-foreground;
+      }
+      element normal.urgent {
+          background-color: @urgent-background;
+          text-color:       @urgent-foreground;
+      }
+      element normal.active {
+          background-color: @active-background;
+          text-color:       @active-foreground;
+      }
+      element selected.normal {
+          background-color: @selected-normal-background;
+          text-color:       @selected-normal-foreground;
+      }
+      element selected.urgent {
+          background-color: @selected-urgent-background;
+          text-color:       @selected-urgent-foreground;
+      }
+      element selected.active {
+          background-color: @selected-active-background;
+          text-color:       @selected-active-foreground;
+      }
+      element alternate.normal {
+          background-color: @alternate-normal-background;
+          text-color:       @alternate-normal-foreground;
+      }
+      element alternate.urgent {
+          background-color: @alternate-urgent-background;
+          text-color:       @alternate-urgent-foreground;
+      }
+      element alternate.active {
+          background-color: @alternate-active-background;
+          text-color:       @alternate-active-foreground;
+      }
+      scrollbar {
+          width:        4px ;
+          border:       0;
+          handle-width: 8px ;
+          padding:      0;
+      }
+      mode-switcher {
+          border:       2px dash 0px 0px ;
+          border-color: @separatorcolor;
+      }
+      button selected {
+          background-color: @selected-normal-background;
+          text-color:       @selected-normal-foreground;
+      }
+      inputbar {
+          spacing:    0;
+          text-color: @normal-foreground;
+          padding:    1px ;
+      }
+      case-indicator {
+          spacing:    0;
+          text-color: @normal-foreground;
+      }
+      entry {
+          spacing:    0;
+          text-color: @normal-foreground;
+      }
+      prompt {
+          spacing:    0;
+          text-color: @normal-foreground;
+      }
+    '';
     ".config/rofi/themes/material.rasi".text = ''
       /*
        * ROFI color theme
