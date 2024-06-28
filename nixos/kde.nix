@@ -42,6 +42,9 @@
     pkgs.pinentry-qt
     pkgs.qgnomeplatform
     pkgs.qgnomeplatform-qt6
+    pkgs.kdePackages.sddm-kcm
+    pkgs.kdePackages.skanpage
+    pkgs.sddm-chili-theme
     pkgs.wev
   ];
   environment.plasma6.excludePackages = [

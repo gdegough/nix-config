@@ -41,6 +41,7 @@
 
     # window managers and DEs
     ../tiling-wm-support.nix # common tiling WM support
+    ../icon-themes.nix # common icon themes
     # ../hyprland.nix # Hyprland WM
     ../sway.nix # Sway WM
     ../kde.nix # KDE desktop environment
