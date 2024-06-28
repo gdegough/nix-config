@@ -990,11 +990,11 @@
           urgent-background:           @transparent-background;
 
           selected-normal-foreground:  @neutral-purple;
-          selected-normal-background:  @dark0;
-          selected-active-foreground:  @neutral-green;
-          selected-active-background:  @dark0;
+          selected-normal-background:  @neutral-green;
+          selected-active-foreground:  @bright-green;
+          selected-active-background:  @neutral-green;
           selected-urgent-foreground:  @neutral-red;
-          selected-urgent-background:  @dark0;
+          selected-urgent-background:  @neutral-green;
 
           alternate-normal-foreground: @foreground;
           alternate-normal-background: @transparent-background;
