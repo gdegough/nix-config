@@ -23,6 +23,12 @@
     };
   };
 
+  qt = {
+    enable = true;
+    platformTheme = "kde"; # use QT settings from Plasma
+    style = "breeze"; # use the Breeze style
+  };
+
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
   # programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.plasma6.ksshaskpass.out}/bin/ksshaskpass";
   # OR
