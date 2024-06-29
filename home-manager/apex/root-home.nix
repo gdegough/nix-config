@@ -18,13 +18,6 @@
 
     # You can also split up your configuration and import pieces of it here:
 
-    ## host-specific configs
-    # ./conky-package-and-local-config.nix
-    # ./hyprland-local-config.nix
-    # ./sway-local-config.nix
-    ./systemd-environment-local-config.nix
-    # ./waybar-config.nix
-    # ./xsettingsd-tiling-config.nix
     ## global optional configs
     # ../audio-video-processing.nix
     ## global common configs
@@ -71,7 +64,16 @@
     ../tmux-package-and-config.nix
     # ../wofi-config.nix
     # ../x-config.nix
+    # ../yakuake.nix
     ../zsh-config.nix
+    ## host-specific configs
+    # ./bash-local-config.nix
+    # ./conky-package-and-local-config.nix
+    # ./hyprland-local-config.nix
+    # ./sway-local-config.nix
+    ./systemd-environment-local-config.nix
+    # ./waybar-config.nix
+    # ./xsettingsd-tiling-config.nix
   ];
 
   nixpkgs = {
@@ -99,6 +101,9 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
+      # permittedInsecurePackages = [
+      #   "freeimage-unstable-2021-11-01"
+      # ];
     };
   };
 
@@ -115,14 +120,14 @@
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
     # XCURSOR_THEME = "Adwaita"; # GNOME
-    XCURSOR_THEME = "breeze"; # KDE
+    # XCURSOR_THEME = "breeze"; # KDE
   };
 
   services.gpg-agent = {
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentryPackage = pkgs.pinentry-curses; # ncurses
   };
 
   targets.genericLinux.enable = true;

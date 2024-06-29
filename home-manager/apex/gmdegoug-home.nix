@@ -18,13 +18,6 @@
 
     # You can also split up your configuration and import pieces of it here:
 
-    ## host-specific configs
-    # ./conky-package-and-local-config.nix
-    # ./hyprland-local-config.nix
-    # ./sway-local-config.nix
-    ./systemd-environment-local-config.nix
-    # ./waybar-config.nix
-    # ./xsettingsd-tiling-config.nix
     ## global optional configs
     # ../audio-video-processing.nix
     ## global common configs
@@ -73,6 +66,14 @@
     # ../x-config.nix
     # ../yakuake.nix
     ../zsh-config.nix
+    ## host-specific configs
+    # ./bash-local-config.nix
+    # ./conky-package-and-local-config.nix
+    # ./hyprland-local-config.nix
+    # ./sway-local-config.nix
+    ./systemd-environment-local-config.nix
+    # ./waybar-config.nix
+    # ./xsettingsd-tiling-config.nix
   ];
 
   nixpkgs = {
@@ -126,7 +127,7 @@
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentryPackage = pkgs.pinentry-curses; # ncurses
   };
 
   targets.genericLinux.enable = true;

@@ -18,13 +18,6 @@
 
     # You can also split up your configuration and import pieces of it here:
 
-    ## host-specific configs
-    # ./conky-package-and-local-config.nix
-    # ./hyprland-local-config.nix
-    ./sway-local-config.nix
-    ./systemd-environment-local-config.nix
-    ./waybar-config.nix
-    ./xsettingsd-tiling-config.nix
     ## global optional configs
     # ../audio-video-processing.nix
     ## global common configs
@@ -53,7 +46,7 @@
     # ../gnome-terminal-config.nix
     ../graphic-art.nix
     # ../htmltidy-config.nix
-    ../hyprland-config.nix
+    # ../hyprland-config.nix
     # ../i3blocks-package-and-config.nix
     # ../java.nix
     # ../megasync-package-and-config.nix
@@ -73,6 +66,14 @@
     ../x-config.nix
     ../yakuake.nix
     ../zsh-config.nix
+    ## host-specific configs
+    # ./bash-local-config.nix
+    # ./conky-package-and-local-config.nix
+    # ./hyprland-local-config.nix
+    ./sway-local-config.nix
+    ./systemd-environment-local-config.nix
+    ./waybar-config.nix
+    ./xsettingsd-tiling-config.nix
   ];
 
   nixpkgs = {

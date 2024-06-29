@@ -127,7 +127,6 @@
       l = "ls -a1 --group-directories-first";
       ll = "ls -halF --group-directories-first";
       less = "less --RAW-CONTROL-CHARS --chop-long-lines";
-      lo = "gnome-session-quit --no-prompt";
       lscolor-normal = "ln -sf \${HOME}/.config/dircolors/normal.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
       lscolor-normallight = "ln -sf \${HOME}/.config/dircolors/normal-lightbg.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
       lscolor-256dark = "ln -sf \${HOME}/.config/dircolors/solarized/256dark.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
@@ -141,8 +140,6 @@
       create-input-file = "sed ':a;N;$!ba;s/\\n/ /g'";
       sudo = "sudo ";
       vim = "vim ";
-      power-balanced = "sudo system76-power charge-thresholds --profile balanced && sudo system76-power profile balanced && brightnessctl set 50%";
-      power-battery = "sudo system76-power charge-thresholds --profile balanced && sudo system76-power profile battery && brightnessctl set 50%";
     };
   };
 }
