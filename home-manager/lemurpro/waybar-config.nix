@@ -113,7 +113,7 @@
           },
           "temperature": {
               "tooltip": false,
-              "thermal-zone": 1,
+              "thermal-zone": 0,
               // "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
               "critical-threshold": 80,
               // "format-critical": "{temperatureC}°C <span font='icon'>{icon}</span>",
@@ -341,7 +341,7 @@
           },
           "temperature": {
               "tooltip": false,
-              "thermal-zone": 1,
+              "thermal-zone": 0,
               // "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
               "critical-threshold": 80,
               // "format-critical": "{temperatureC}°C <span font='icon'>{icon}</span>",
