@@ -8,24 +8,17 @@
 }: {
   # You can import other NixOS modules here
   imports = [
+    ./displaymanager.nix
     ./icon-themes.nix
   ];
 
   services = {
-    xserver = {
-      enable = true;
-    };
     desktopManager = {
       plasma6 = {
         enable = true; # KDE
       };
     };
     displayManager = {
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-        # theme = "chili";
-      };
       defaultSession = "plasma"; # Make plasma-wayland the default session
     };
   };
@@ -47,9 +40,8 @@
     pkgs.pinentry-qt
     pkgs.qgnomeplatform
     pkgs.qgnomeplatform-qt6
-    pkgs.kdePackages.sddm-kcm
     pkgs.kdePackages.skanpage
-    pkgs.sddm-chili-theme
+    # pkgs.kdePackages.sddm-kcm
     pkgs.wev
   ];
   environment.plasma6.excludePackages = [

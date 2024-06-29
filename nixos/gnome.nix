@@ -8,19 +8,12 @@
 }: {
   # You can import other NixOS modules here
   imports = [
+    ./displaymanager.nix
     ./icon-themes.nix
   ];
 
   services = {
     xserver = {
-      enable = true;
-      displayManager = {
-        gdm = { # GDM
-          enable = true;
-          wayland = true;
-          # autoSuspend = false; 
-        };
-      };
       desktopManager = {
         gnome = { # GNOME 
           enable = true;
@@ -34,8 +27,8 @@
         };
       };
     };
-    # displayManager = {
-    #   defaultSession = "gnome"; # Make gnome the default session;
+    # displayManager = { # if you want GNOME as default session
+    #   defaultSession = "gnome";
     # };
     gnome = {
       games.enable = true; # install GNOME games 
