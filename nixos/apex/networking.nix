@@ -15,6 +15,7 @@
     # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
     useDHCP = false;
     networkmanager.enable = false;
+    networkmanager.wifi.powersave = false;
     hostName = "apex";
     domain = "natcky.rr.com";
     nameservers = [ "1.0.0.1" "1.1.1.1" ];

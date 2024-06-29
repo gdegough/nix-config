@@ -19,6 +19,7 @@
     hostName = "leanangle";
     domain = "natcky.rr.com";
     networkmanager.enable = true;
+    networkmanager.wifi.powersave = false;
     nameservers = [ "1.0.0.1" "1.1.1.1" ];
     extraHosts = ''
       10.4.0.3  lemurpro.natcky.rr.com lemurpro
