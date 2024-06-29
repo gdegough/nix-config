@@ -25,7 +25,7 @@
     #
     ./networking.nix
     ./opengl.nix
-    # ./gdm-monitors.nix
+    ./gdm-monitors.nix
 
     #
     # Global configurations
