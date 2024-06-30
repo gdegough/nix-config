@@ -967,6 +967,7 @@
           neutral-blue: #458588;
           neutral-purple: #b16286;
           neutral-aqua: #689d6a;
+          light3: #bdae93;
           light4: #a89984;
           gray245: #928374;
           bright-red: #fb4934;
@@ -990,11 +991,11 @@
           urgent-background:           @transparent-background;
 
           selected-normal-foreground:  @dark0;
-          selected-normal-background:  @neutral-aqua;
+          selected-normal-background:  @light3;
           selected-active-foreground:  @bright-green;
-          selected-active-background:  @neutral-aqua;
+          selected-active-background:  @light3;
           selected-urgent-foreground:  @bright-red;
-          selected-urgent-background:  @neutral-aqua;
+          selected-urgent-background:  @light3;
 
           alternate-normal-foreground: @foreground;
           alternate-normal-background: @transparent-background;
