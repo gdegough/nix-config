@@ -156,7 +156,7 @@
                   target_host=''${OPTARG} 
                   ;;
               ?) 
-                  die '%s: invalid option -- '\'''%s'\''' "''${0##*/}" "''${OPTARG}" 
+                  die '%s: invalid option -- \''%s\''' "''${0##*/}" "''${OPTARG}" 
                   ;;
           esac
       done
