@@ -23,9 +23,10 @@
     #
     # Host-specific configurations
     #
+    ./admin-scripts.nix
+    ./gdm-monitors.nix
     ./networking.nix
     ./opengl.nix
-    ./gdm-monitors.nix
 
     #
     # Global configurations

@@ -1,11 +1,17 @@
 {
+  inputs,
+  outputs,
+  lib,
   config,
   pkgs,
   ...
-}: {
-  home.file = {
-    ".local/bin/reboot-menu".executable = true;
-    ".local/bin/reboot-menu".text = ''
+}: 
+let
+  reboot-menu = pkgs.writeTextFile {
+    name = "reboot-menu";
+    destination = "/sbin/reboot-menu";
+    executable = true;
+    text = ''
       #!/usr/bin/env bash
 
       # Am I root?
@@ -32,8 +38,12 @@
           ''${sudo_cmd}systemctl reboot --boot-loader-entry=''${menuItem}
       done
     '';
-    ".local/bin/rsync-backup-local".executable = true;
-    ".local/bin/rsync-backup-local".text = ''
+  };
+  rsync-backup-local = pkgs.writeTextFile {
+    name = "rsync-backup-local";
+    destination = "/bin/rsync-backup-local";
+    executable = true;
+    text = ''
       #!/usr/bin/env bash
 
       # External SATA Drive UUID=82a75835-a541-4976-bc10-d643a69169b6
@@ -91,7 +101,7 @@
       echo
 
       #rsync -avxHASLe ssh -X --filter='-x security.selinux' --delete --delete-excluded --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
-      rsync -avxHASLe ssh --delete --delete-excluded --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
+      rsync -avxHASLe ssh --delete --delete-excluded --exclude="- .nix*/" --exclude="- nix*/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
       echo 1 > /proc/sys/vm/drop_caches
       # Uncomment the following if you marked the internal
       # SATA drive "noauto,user" in fstab and only mount it
@@ -105,8 +115,12 @@
           fi
       fi
     '';
-    ".local/bin/rsync-backup-remote".executable = true;
-    ".local/bin/rsync-backup-remote".text = ''
+  };
+  rsync-backup-remote = pkgs.writeTextFile {
+    name = "rsync-backup-remote";
+    destination = "/bin/rsync-backup-remote";
+    executable = true;
+    text = ''
       #!/usr/bin/env bash
 
       shopt -s extglob
@@ -191,7 +205,16 @@
       echo
 
       #rsync -avxHASLe ssh -X --filter='-x security.selinux' --delete --delete-excluded --exclude="- MEGA/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="music-library/" --exclude="- Mega Limited/" ''${src_folders} leanangle:''${target_dir}/$(hostname)-''${ID}
-      rsync -avxHASLe ssh --delete --delete-excluded --exclude="- MEGA/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="music-library/" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_host}:''${target_dir}/$(hostname)-''${ID}
+      rsync -avxHASLe ssh --delete --delete-excluded --exclude="- .nix*/" --exclude="- nix*/" --exclude="- MEGA/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="music-library/" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_host}:''${target_dir}/$(hostname)-''${ID}
     '';
   };
+in
+{
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = [
+    reboot-menu
+    rsync-backup-local
+    rsync-backup-remote
+  ];
 }
