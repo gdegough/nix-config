@@ -9,7 +9,7 @@
 let
   reboot-menu = pkgs.writeTextFile {
     name = "reboot-menu";
-    destination = "/sbin/reboot-menu";
+    destination = "/bin/reboot-menu";
     executable = true;
     text = ''
       #!/usr/bin/env bash
