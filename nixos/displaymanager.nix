@@ -9,7 +9,7 @@
   services = {
     xserver = {
       enable = true;
-      displayManager = { # for GDM
+      displayManager = { ## for GDM
         gdm = {
           enable = true;
           wayland = true;

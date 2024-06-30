@@ -1,5 +1,5 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
+## This is your system's configuration file.
+## Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
   outputs,
@@ -8,82 +8,78 @@
   pkgs,
   ...
 }: {
-  # You can import other NixOS modules here
+  ## You can import other NixOS modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
+    ## If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 
-    # Or modules from other flakes (such as nixos-hardware):
+    ## Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
 
-    # Import your generated (nixos-generate-config) hardware configuration
+    ## Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
 
-    #
-    # Host-specific configurations
-    #
+    ## Host-specific configurations
     ./admin-scripts.nix
     ./gdm-monitors.nix
     ./networking.nix
     ./opengl.nix
 
-    #
-    # Global configurations
-    #
-    ../locale.nix # environment
-    ../pipewire.nix # sound
-    ../postfix.nix # MTA
+    ## Global configurations
+    ../locale.nix ## environment
+    ../pipewire.nix ## sound
+    ../postfix.nix ## MTA
 
-    # shells
-    ../nushell.nix # nushell
-    ../zsh.nix # ZSH
+    ## shells
+    ../nushell.nix ## nushell
+    ../zsh.nix ## ZSH
 
-    # window managers and DEs
-    ../tiling-wm-support.nix # common tiling WM support
-    # ../hyprland.nix # Hyprland WM
-    ../sway.nix # Sway WM
-    ../kde.nix # KDE desktop environment
-    # ../gnome.nix # GNOME desktop environment
+    ## window managers and DEs
+    ../tiling-wm-support.nix ## common tiling WM support
+    # ../hyprland.nix ## Hyprland WM
+    ../sway.nix ## Sway WM
+    ../kde.nix ## KDE desktop environment
+    ../gnome.nix ## GNOME desktop environment
 
-    # users
+    ## users
     ../root.nix
     ../gmdegoug.nix
     ../pdegough.nix
   ];
 
   nixpkgs = {
-    # You can add overlays here
+    ## You can add overlays here
     overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
+      ## Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.stable-packages
       outputs.overlays.unstable-packages
 
-      # You can also add overlays exported from other flakes:
+      ## You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
-      # Or define it inline, for example:
+      ## Or define it inline, for example:
       # (final: prev: {
       #   hi = final.hello.overrideAttrs (oldAttrs: {
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
     ];
-    # Configure your nixpkgs instance
+    ## Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
+      ## Disable if you don't want unfree packages
       allowUnfree = true;
     };
   };
 
-  # This will add each flake input as a registry
-  # To make nix3 commands consistent with your flake
+  ## This will add each flake input as a registry
+  ## To make nix3 commands consistent with your flake
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 
-  # This will additionally add your inputs to the system's legacy channels
-  # Making legacy nix commands consistent as well, awesome!
+  ## This will additionally add your inputs to the system's legacy channels
+  ## Making legacy nix commands consistent as well, awesome!
   nix.nixPath = ["/etc/nix/path"];
   environment.etc =
     lib.mapAttrs'
@@ -94,16 +90,16 @@
     config.nix.registry;
 
   nix.settings = {
-    # Enable flakes and new 'nix' command
+    ## Enable flakes and new 'nix' command
     experimental-features = "nix-command flakes";
-    # Deduplicate and optimize nix store
+    ## Deduplicate and optimize nix store
     auto-optimise-store = true;
   };
 
-  # bring in latest kernels
+  ## bring in latest kernels
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Use the systemd-boot EFI boot loader.
+  ## Use the systemd-boot EFI boot loader.
   boot.loader = {
     systemd-boot = {
       enable = true;
@@ -113,23 +109,23 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # Use ZRAM as swap device
+  ## Use ZRAM as swap device
   zramSwap = {
     enable = true;
     memoryPercent = 25;
   };
 
   services.thermald.enable = true;
-  services.power-profiles-daemon.enable = false; # conflicts with system76-power service
-  services.printing.enable = true; # Enable CUPS to print documents.
+  services.power-profiles-daemon.enable = false; ## conflicts with system76-power service
+  services.printing.enable = true; ## Enable CUPS to print documents.
 
-  # Polkit is used for controlling system-wide privileges
+  ## Polkit is used for controlling system-wide privileges
   security.polkit.enable = true;
 
-  # System76
+  ## System76
   hardware.system76.enableAll = true;
 
-  # List packages installed in system profile:
+  ## List packages installed in system profile:
   environment.systemPackages = [
     pkgs.bc
     pkgs.btop
@@ -146,7 +142,6 @@
     pkgs.mailutils
     pkgs.pinentry-curses
     pkgs.python3
-    pkgs.sops
     pkgs.sysstat
     pkgs.system76-firmware
     pkgs.system76-keyboard-configurator
@@ -155,36 +150,36 @@
     pkgs.zip
   ];
 
-  # to put bash-completion files in path
+  ## to put bash-completion files in path
   environment.pathsToLink = [ "/share/bash-completion" ];
 
-  # This is using a rec (recursive) expression to set and access XDG_BIN_HOME within the expression
-  # For more on rec expressions see https://nix.dev/tutorials/first-steps/nix-language#recursive-attribute-set-rec
+  ## This is using a rec (recursive) expression to set and access XDG_BIN_HOME within the expression
+  ## For more on rec expressions see https://nix.dev/tutorials/first-steps/nix-language#recursive-attribute-set-rec
   environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME   = "$HOME/.local/share";
     XDG_STATE_HOME  = "$HOME/.local/state";
 
-    # Not officially in the specification
+    ## Not officially in the specification
     XDG_BIN_HOME    = "$HOME/.local/bin";
     PATH = [ 
       "${XDG_BIN_HOME}"
     ];
   };
 
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # Feel free to remove if you don't need it.
+  ## This sets up a SSH server. Very important if you're setting up a headless system.
+  ## Feel free to remove if you don't need it.
   services.openssh = {
     enable = true;
     settings = {
-      # Forbid root password login through SSH.
+      ## Forbid root password login through SSH.
       PermitRootLogin = "prohibit-password";
       PubKeyAuthentication = true;
       PasswordAuthentication = true;
     };
   };
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  ## https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
 }

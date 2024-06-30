@@ -46,7 +46,6 @@
     pkgs.qgnomeplatform
     pkgs.qgnomeplatform-qt6
     pkgs.kdePackages.skanpage
-    # pkgs.kdePackages.sddm-kcm
     pkgs.wev
   ];
   environment.plasma6.excludePackages = [

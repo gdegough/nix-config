@@ -18,7 +18,7 @@
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
       # Execute your favorite apps at launch
-      exec-once = waybar --config $HOME/.config/waybar/hyprland_config --style $HOME/.config/waybar/solarized-dark.css
+      exec-once = waybar --config $HOME/.config/waybar/hyprland_config --style $HOME/.config/waybar/style.css
       exec-once = dunst
       exec-once = hyprpaper
       #exec-once = tidal-hifi
@@ -300,7 +300,7 @@
 
       # Authentication agent
       # If installed side-by-side with gnome
-      # exec-once = systemctl --user start polkit-gnome-authentication-agent-1.service
+      exec-once = systemctl --user start polkit-gnome-authentication-agent-1.service
       # If installed side-by-side with plasma desktop
       exec-once = systemctl --user start plasma-polkit-agent.service
 

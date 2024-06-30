@@ -1,5 +1,5 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
+## This is your home-manager configuration file
+## Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
   outputs,
@@ -8,15 +8,15 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
+  ## You can import other home-manager modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/home-manager):
+    ## If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
-    # Or modules exported from other flakes (such as nix-colors):
+    ## Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
-    # You can also split up your configuration and import pieces of it here:
+    ## You can also split up your configuration and import pieces of it here:
 
     ## global optional configs
     # ../audio-video-processing.nix
@@ -67,39 +67,41 @@
     # ../yakuake.nix
     ../zsh-config.nix
     ## host-specific configs
-    # ./bash-local-config.nix
+    ./bash-local-config.nix
     # ./conky-package-and-local-config.nix
     # ./hyprland-local-config.nix
+    ./nushell-local-config.nix
     # ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     # ./waybar-config.nix
     # ./xsettingsd-tiling-config.nix
+    ./zsh-local-config.nix
   ];
 
   nixpkgs = {
-    # You can add overlays here
+    ## You can add overlays here
     overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
+      ## Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.stable-packages
       outputs.overlays.unstable-packages
 
-      # You can also add overlays exported from other flakes:
+      ## You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
-      # Or define it inline, for example:
+      ## Or define it inline, for example:
       # (final: prev: {
       #   hi = final.hello.overrideAttrs (oldAttrs: {
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
     ];
-    # Configure your nixpkgs instance
+    ## Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
+      ## Disable if you don't want unfree packages
       allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      ## Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
       # permittedInsecurePackages = [
       #   "freeimage-unstable-2021-11-01"
@@ -120,7 +122,7 @@
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
     # XCURSOR_THEME = "Adwaita"; # GNOME
-    # XCURSOR_THEME = "breeze"; # KDE
+    # XCURSOR_THEME = "Breeze"; # KDE
   };
 
   services.gpg-agent = {
@@ -132,18 +134,18 @@
 
   targets.genericLinux.enable = true;
 
-  # Add stuff for your user as you see fit:
+  ## Add stuff for your user as you see fit:
   home.packages = [
     pkgs.wget
   ];
 
-  # Enable home-manager and git
+  ## Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  # Nicely reload system units when changing configs
+  ## Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  ## https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";
 }

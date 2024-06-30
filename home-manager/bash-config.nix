@@ -129,10 +129,10 @@
       less = "less --RAW-CONTROL-CHARS --chop-long-lines";
       lscolor-normal = "ln -sf \${HOME}/.config/dircolors/normal.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
       lscolor-normallight = "ln -sf \${HOME}/.config/dircolors/normal-lightbg.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
-      lscolor-256dark = "ln -sf \${HOME}/.config/dircolors/solarized/256dark.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
-      lscolor-dark = "ln -sf \${HOME}/.config/dircolors/solarized/ansi-dark.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
-      lscolor-light = "ln -sf \${HOME}/.config/dircolors/solarized/ansi-light.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
-      lscolor-universal = "ln -sf \${HOME}/.config/dircolors/solarized/ansi-universal.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
+      lscolor-256dark = "ln -sf \${HOME}/.config/dircolors/256dark.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
+      lscolor-dark = "ln -sf \${HOME}/.config/dircolors/ansi-dark.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
+      lscolor-light = "ln -sf \${HOME}/.config/dircolors/ansi-light.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
+      lscolor-universal = "ln -sf \${HOME}/.config/dircolors/ansi-universal.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
       lscolor-manjaro = "ln -sf \${HOME}/.config/dircolors/manjaro.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
       psa = "ps -eo user,group,ppid,pid,%cpu,%mem,vsz,rss,stat,start,time,comm,args";
       drop-caches = "echo 1 | sudo tee /proc/sys/vm/drop_caches";

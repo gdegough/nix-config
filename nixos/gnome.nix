@@ -6,7 +6,7 @@
   pkgs,
   ...
 }: {
-  # You can import other NixOS modules here
+  ## You can import other NixOS modules here
   imports = [
     ./displaymanager.nix
     ./icon-themes.nix
@@ -15,41 +15,41 @@
   services = {
     xserver = {
       desktopManager = {
-        gnome = { # GNOME 
+        gnome = { ## GNOME 
           enable = true;
-          # add these schemas for dconf and gsettings
+          ## add these schemas for dconf and gsettings
           sessionPath = [
             pkgs.gnome.gnome-settings-daemon
             pkgs.gnome.gnome-tweaks
-            pkgs.gnome.mutter # this is necessary to control fractional scaling
+            pkgs.gnome.mutter ## this is necessary to control fractional scaling
             pkgs.gnome.nautilus
           ];
         };
       };
     };
-    # displayManager = { # if you want GNOME as default session
+    # displayManager = { ## if you want GNOME as default session
     #   defaultSession = "gnome";
     # };
     gnome = {
-      games.enable = true; # install GNOME games 
-      core-developer-tools.enable = true; # install GNOME core dev tools
+      games.enable = true; ## install GNOME games 
+      core-developer-tools.enable = true; ## install GNOME core dev tools
     };
   };
 
-  # make QT apps look similar to GNOME desktop
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
-  };
+  ## make QT apps look similar to GNOME desktop
+  # qt = {
+  #   enable = true;
+  #   platformTheme = "gnome";
+  #   style = "adwaita-dark";
+  # };
 
-  # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
+  ## Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
   # programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.seahorse.out}/libexec/seahorse/ssh-askpass";
-  # OR
-  # Force git to use terminal to prompt for password
+  ## OR
+  ## Force git to use terminal to prompt for password
   programs.ssh.askPassword = "";
 
-  # List packages installed in system profile:
+  ## List packages installed in system profile:
   environment.systemPackages = [
     pkgs.adwaita-qt
     pkgs.adwaita-qt6

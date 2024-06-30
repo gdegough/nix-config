@@ -5,7 +5,7 @@
 }:
 {
   home.file = {
-    ".config/dircolors/solarized/256dark.dircolors".text = ''
+    ".config/dircolors/256dark.dircolors".text = ''
       # Dark 256 color solarized theme for the color GNU ls utility.
       # Used and tested with dircolors (GNU coreutils) 8.5
       #
@@ -384,7 +384,7 @@
       .enc                            00;38;5;33
       .sqlite                         00;38;5;33
     '';
-    ".config/dircolors/solarized/ansi-dark.dircolors".text = ''
+    ".config/dircolors/ansi-dark.dircolors".text = ''
       # Exact Solarized Dark color theme for the color GNU ls utility.
       # Designed for dircolors (GNU coreutils) 5.97
       #
@@ -895,7 +895,7 @@
       .enc 			34
       .sqlite 		34
     '';
-    ".config/dircolors/solarized/ansi-light.dircolors".text = ''
+    ".config/dircolors/ansi-light.dircolors".text = ''
       # Exact Solarized Light color theme for the color GNU ls utility.
       # Designed for dircolors (GNU coreutils) 5.97
       #
@@ -1324,7 +1324,7 @@
       .enc 34
       .sqlite 34
     '';
-    ".config/dircolors/solarized/ansi-universal.dircolors".text = ''
+    ".config/dircolors/ansi-universal.dircolors".text = ''
       # Exact Solarized Dark color theme for the color GNU ls utility.
       # Designed for dircolors (GNU coreutils) 5.97
       #
@@ -2478,7 +2478,7 @@
       .spx 00;36
       .xspf 00;36
     '';
-    ".config/dircolors/solarized/README.md".text = ''
+    ".config/dircolors/README.md".text = ''
       <h1>Solarized Color Theme for GNU ls (as setup by GNU dircolors)</h1>
 
       This is a repository of themes for GNU ls (configured via GNU
