@@ -22,13 +22,13 @@
     ".config/foot/foot.ini".text = ''
       [main]
       term=xterm-256color
-      font=IBM Plex Mono:Text:size=11
+      font=IBM Plex Mono:size=11
       dpi-aware=no
       initial-window-size-chars=132x43
       include=~/.config/foot/colorscheme
 
       [colors]
-      alpha=0.9
+      alpha=1.0
 
       [scrollback]
       lines=10000
