@@ -67,6 +67,7 @@
     ../yakuake.nix
     ../zsh-config.nix
     ## host-specific configs
+    ./admin-utilities-without_gui-local.nix
     ./bash-local-config.nix
     ./conky-package-and-local-config.nix
     # ./hyprland-local-config.nix

@@ -67,6 +67,7 @@
     # ../yakuake.nix
     ../zsh-config.nix
     ## host-specific configs
+    ./admin-utilities-without_gui-local.nix
     # ./bash-local-config.nix
     # ./conky-package-and-local-config.nix
     # ./hyprland-local-config.nix
@@ -120,7 +121,7 @@
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
     # XCURSOR_THEME = "Adwaita"; # GNOME
-    XCURSOR_THEME = "breeze"; # KDE
+    # XCURSOR_THEME = "breeze"; # KDE
   };
 
   services.gpg-agent = {
