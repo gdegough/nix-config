@@ -98,8 +98,8 @@ let
       echo "syncing ''${src_folders} -> ''${target_dir}/$(hostname)-''${ID}"
       echo
 
-      #rsync -avxHASLe ssh -X --filter='-x security.selinux' --delete --delete-excluded --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
-      rsync -avxHASLe ssh --delete --delete-excluded --exclude="- .nix*/" --exclude="- nix*/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
+      #rsync -avxHASe ssh -X --filter='-x security.selinux' --delete --delete-excluded --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
+      rsync -avxHASe ssh --delete --delete-excluded --exclude="- .nix*/" --exclude="- nix*/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
       echo 1 > /proc/sys/vm/drop_caches
       # Uncomment the following if you marked the internal
       # SATA drive "noauto,user" in fstab and only mount it
@@ -175,8 +175,8 @@ let
       echo "syncing ''${src_folders} -> ''${target_dir}/$(hostname)-''${ID}"
       echo
 
-      #rsync -avxHASLe ssh -X --filter='-x security.selinux' --delete --delete-excluded --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
-      rsync -avxHASLe ssh --delete --delete-excluded --exclude="- .nix*/" --exclude="- nix*/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
+      #rsync -avxHASe ssh -X --filter='-x security.selinux' --delete --delete-excluded --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
+      rsync -avxHASe ssh --delete --delete-excluded --exclude="- .nix*/" --exclude="- nix*/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_dir}/$(hostname)-''${ID}
       echo 1 > /proc/sys/vm/drop_caches
       # Uncomment the following if you marked the internal
       # SATA drive "noauto,user" in fstab and only mount it
@@ -279,8 +279,8 @@ let
       echo "syncing ''${src_folders} -> ''${target_dir}/$(hostname)-''${ID}"
       echo
 
-      #rsync -avxHASLe ssh -X --filter='-x security.selinux' --delete --delete-excluded --exclude="- MEGA/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="music-library/" --exclude="- Mega Limited/" ''${src_folders} leanangle:''${target_dir}/$(hostname)-''${ID}
-      rsync -avxHASLe ssh --delete --delete-excluded --exclude="- .nix*/" --exclude="- nix*/" --exclude="- MEGA/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="music-library/" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_host}:''${target_dir}/$(hostname)-''${ID}
+      #rsync -avxHASe ssh -X --filter='-x security.selinux' --delete --delete-excluded --exclude="- MEGA/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="music-library/" --exclude="- Mega Limited/" ''${src_folders} leanangle:''${target_dir}/$(hostname)-''${ID}
+      rsync -avxHASe ssh --delete --delete-excluded --exclude="- .nix*/" --exclude="- nix*/" --exclude="- MEGA/" --exclude="- .rustup/" --exclude="- .cargo/" --exclude="- .ccache/" --exclude="- .cache/" --exclude="- Library/Caches/" --exclude="- .local/share/flatpak/" --exclude="- public/" --exclude="- *.qcow2" --exclude="music-library/" --exclude="- Mega Limited/" --exclude="- akonadi/" --exclude="- baloo/" ''${src_folders} ''${target_host}:''${target_dir}/$(hostname)-''${ID}
     '';
   };
   rsync-internal-external = pkgs.writeTextFile {
