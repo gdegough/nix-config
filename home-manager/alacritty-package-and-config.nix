@@ -11,7 +11,55 @@
     pkgs.alacritty
   ];
   home.file = {
-    ".config/alacritty/alacritty.toml".text = ''
+    ".config/alacritty/alacritty-transparent.toml".text = ''
+      import = ["~/.config/alacritty/colorscheme.toml"]
+
+      [colors]
+      transparent_background_colors = true
+      draw_bold_text_with_bright_colors = true
+
+      [cursor.style]
+      blinking = "Always"
+      shape = "Block"
+
+      [env]
+      TERM = "xterm-256color"
+
+      [font]
+      size = 11
+
+      [font.bold]
+      family = "IBM Plex Mono"
+      style = "Bold"
+
+      [font.bold_italic]
+      family = "IBM Plex Mono"
+      style = "Bold Italic"
+
+      [font.italic]
+      family = "IBM Plex Mono"
+      style = "Italic"
+
+      [font.normal]
+      family = "IBM Plex Mono"
+
+      [mouse]
+      hide_when_typing = false
+
+      [scrolling]
+      history = 10000
+
+      [window]
+      decorations = "full"
+      dynamic_padding = true
+      dynamic_title = true
+      opacity = 0.9
+
+      [window.dimensions]
+      columns = 132
+      lines = 43
+    '';
+    ".config/alacritty/alacritty-opaque.toml".text = ''
       import = ["~/.config/alacritty/colorscheme.toml"]
 
       [colors]
@@ -59,7 +107,57 @@
       columns = 132
       lines = 43
     '';
-    ".config/alacritty/alacritty.yml".text = ''
+    ".config/alacritty/alacritty-transparent.yml".text = ''
+      ---
+      env:
+      #    WINIT_X11_SCALE_FACTOR: "1.5"
+          TERM: xterm-256color
+      window:
+        dimensions:
+          columns: 132
+          lines: 43
+        dynamic_padding: true
+        dynamic_title: true
+        decorations: full
+        opacity: 0.9
+      scrolling:
+        history: 10000
+      # Scrolling distance multiplier.
+      #  multiplier: 3
+      cursor:
+        style:
+          shape: Block
+          blinking: Always
+      # Font configuration
+      font:
+        # Normal (roman) font face
+        normal:
+          family: IBM Plex Mono
+        # Bold font face
+        bold:
+          family: IBM Plex Mono
+          style: Bold
+        # Italic font face
+        italic:
+          family: IBM Plex Mono
+          style: Italic
+        # Bold italic font face
+        bold_italic:
+          family: IBM Plex Mono
+          style: Bold Italic
+        # Point size
+        size: 11
+      mouse:
+        hide_when_typing: false
+      colors:
+        transparent_background_colors: true
+        # If `true`, bold text is drawn using the bright color variants.
+        draw_bold_text_with_bright_colors: true
+      # Import color scheme
+      import:
+        - ~/.config/alacritty/colorscheme.yml
+    '';
+    ".config/alacritty/alacritty-opaque.yml".text = ''
       ---
       env:
       #    WINIT_X11_SCALE_FACTOR: "1.5"

@@ -19,7 +19,24 @@
       Comment=A wayland native terminal emulator (server)
       NotShowIn=sway;hyprland;
     '';
-    ".config/foot/foot.ini".text = ''
+    ".config/foot/foot-transparent.ini".text = ''
+      [main]
+      term=xterm-256color
+      font=IBM Plex Mono:size=11
+      dpi-aware=no
+      initial-window-size-chars=132x43
+      include=~/.config/foot/colorscheme
+
+      [colors]
+      alpha=0.9
+
+      [scrollback]
+      lines=10000
+
+      [cursor]
+      blink=yes
+    '';
+    ".config/foot/foot-opaque.ini".text = ''
       [main]
       term=xterm-256color
       font=IBM Plex Mono:size=11

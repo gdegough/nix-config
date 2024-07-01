@@ -13,7 +13,6 @@
 	    scrollOnOutput = false;
       };
       "e70f980a-db25-4d34-b350-ecea2e81710f" = {
-        default = true;
         visibleName = "Solarized (dark)";
 	    cursorShape = "block";
 	    showScrollbar = false;
@@ -70,6 +69,37 @@
             "rgb(192,97,203)" 
             "rgb(51,199,222)" 
             "rgb(255,255,255)" 
+          ];
+	    };
+      };
+      "424d1305-da99-4b8a-973c-1dec6c44cf1e" = {
+        default = true;
+        visibleName = "Gruvbox (dark)";
+	    cursorShape = "block";
+	    showScrollbar = false;
+	    scrollOnOutput = false;
+        audibleBell = false;
+        transparencyPercent = 90;
+        colors = {
+          foregroundColor = "rgb(235,219,178)";
+          backgroundColor = "rgb(40,40,40)";
+          palette = [ 
+            "rgb(40,40,40)" 
+            "rgb(204,36,29)" 
+            "rgb(152,151,26)" 
+            "rgb(215,153,33)" 
+            "rgb(69,133,136)" 
+            "rgb(177,98,134)" 
+            "rgb(104,157,106)" 
+            "rgb(168,153,132)" 
+            "rgb(146,131,116)" 
+            "rgb(251,73,52)" 
+            "rgb(184,187,38)" 
+            "rgb(250,189,47)" 
+            "rgb(131,165,152)" 
+            "rgb(211,134,155)" 
+            "rgb(142,192,124)" 
+            "rgb(235,219,178)" 
           ];
 	    };
       };
