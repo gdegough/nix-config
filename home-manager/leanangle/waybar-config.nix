@@ -100,7 +100,8 @@
           },
           "clock": {
               "timezone": "America/Kentucky/Monticello",
-              "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+          //    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+              "tooltip-format": "<tt>{calendar}</tt>",
               "format-alt": "{:%Y-%m-%d}"
           },
           "cpu": {
@@ -328,7 +329,8 @@
           },
           "clock": {
               "timezone": "America/Kentucky/Monticello",
-              "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+          //    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+              "tooltip-format": "<tt>{calendar}</tt>",
               "format-alt": "{:%Y-%m-%d}"
           },
           "cpu": {
