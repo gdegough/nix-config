@@ -148,7 +148,7 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>t";
-      command = "footclient";
+      command = "gnome-terminal";
       name = "Launch terminal";
     };
 

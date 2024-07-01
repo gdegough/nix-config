@@ -17,7 +17,7 @@
       Name=Foot Server
       GenericName=Terminal
       Comment=A wayland native terminal emulator (server)
-      NotShowIn=sway;hyprland;
+      NotShowIn=sway;hyprland;GNOME;KDE;
     '';
     ".config/foot/foot-transparent.ini".text = ''
       [main]

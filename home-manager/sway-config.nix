@@ -22,8 +22,9 @@
       font pango:IBM Plex Mono Text 11
       # Your preferred terminal emulator
       # Recommends: foot
-      exec ${pkgs.foot}/bin/foot --server
-      set $term ${pkgs.foot}/bin/footclient
+      # exec ${pkgs.foot}/bin/foot --server
+      # set $term ${pkgs.foot}/bin/footclient
+      set $term ${pkgs.alacritty}/bin/alacritty
       # Your preferred notification daemon
       set $notification_daemon dunst
       # Your preferred application launcher
