@@ -11,6 +11,5 @@
     pkgs.kdePackages.kdenlive
     pkgs.krita
     pkgs.kdePackages.k3b
-    pkgs.kdePackages.minuet
   ];
 }
