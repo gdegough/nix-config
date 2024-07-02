@@ -49,6 +49,11 @@
     # ../hyprland-config.nix
     ../i3blocks-package-and-config.nix
     ../java.nix
+    ../kde-admin.nix
+    ../kde-devel.nix
+    ../kde-games.nix
+    ../kde-multimedia.nix
+    ../kde-office.nix
     ../megasync-package-and-config.nix
     ../music-composition.nix
     ../mutt-package-and-config.nix
