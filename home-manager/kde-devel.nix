@@ -7,7 +7,7 @@
   home.packages = [
     # pkgs.kdePackages.kdevelop
     pkgs.kdePackages.kontrast
-    pkgs.kdePackages.okteta
+    pkgs.okteta
     pkgs.kdePackages.umbrello
   ];
 }
