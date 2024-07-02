@@ -5,7 +5,7 @@
 }:
 {
   home.packages = [
-    # pkgs.kdePackages.kdevelop # currently broken
+    # pkgs.kdePackages.kdevelop
     pkgs.kdePackages.kontrast
     pkgs.kdePackages.okteta
     pkgs.kdePackages.umbrello
