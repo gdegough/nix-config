@@ -71,6 +71,7 @@
     # ./conky-package-and-local-config.nix
     # ./hyprland-local-config.nix
     # ./nushell-local-config.nix
+    # ./openrgb-local-config.nix
     # ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     # ./waybar-config.nix
