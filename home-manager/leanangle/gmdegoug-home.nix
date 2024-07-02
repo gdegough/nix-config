@@ -67,6 +67,7 @@
     ../sway-config.nix
     ../systemd-environment-common-config.nix
     ../tmux-package-and-config.nix
+    ../waybar-config.nix
     ../wofi-config.nix
     ../x-config.nix
     ../yakuake.nix
@@ -79,7 +80,7 @@
     ./openrgb-local-config.nix
     ./sway-local-config.nix
     ./systemd-environment-local-config.nix
-    ./waybar-config.nix
+    ./waybar-local-config.nix
     ./xsettingsd-tiling-config.nix
     # ./zsh-local-config.nix
   ];
@@ -127,8 +128,8 @@
     MOZ_USE_XINPUT2 = "1";
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
-    XCURSOR_THEME = "Adwaita"; # GNOME
-    # XCURSOR_THEME = "Breeze"; # KDE
+    # XCURSOR_THEME = "Adwaita"; # GNOME
+    XCURSOR_THEME = "Breeze"; # KDE
   };
 
   services.gpg-agent = {

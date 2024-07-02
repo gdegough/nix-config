@@ -49,6 +49,11 @@
     # ../hyprland-config.nix
     # ../i3blocks-package-and-config.nix
     # ../java.nix
+    # ../kde-admin.nix
+    # ../kde-devel.nix
+    # ../kde-games.nix
+    # ../kde-multimedia.nix
+    # ../kde-office.nix
     # ../megasync-package-and-config.nix
     # ../music-composition.nix
     ../mutt-package-and-config.nix
@@ -71,6 +76,7 @@
     # ./conky-package-and-local-config.nix
     # ./hyprland-local-config.nix
     ./nushell-local-config.nix
+    # ./openrgb-local-config.nix
     # ./sway-local-config.nix
     ./systemd-environment-local-config.nix
     # ./waybar-config.nix
