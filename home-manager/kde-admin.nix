@@ -10,7 +10,7 @@
     pkgs.kdePackages.kget
     pkgs.kdePackages.kgpg
     pkgs.kdePackages.kleopatra
-    pkgs.kdePackages.kompare
+    # pkgs.kdePackages.kompare # currently broken
     pkgs.kdePackages.ktimer
     pkgs.kdePackages.ktorrent
     pkgs.kdePackages.partitionmanager
