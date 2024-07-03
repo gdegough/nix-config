@@ -5,7 +5,7 @@
 }:
 {
   home.packages = [
-    pkgs.kdePackages.kacounts-providers
+    pkgs.kdePackages.kaccounts-providers
     pkgs.kdePackages.kcalc
     pkgs.kdePackages.kdepim-runtime
     pkgs.kdePackages.knotes
