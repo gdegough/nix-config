@@ -6,6 +6,7 @@
 {
   home.packages = [
     pkgs.kdePackages.kcalc
+    pkgs.kdePackages.kdepim-runtime
     pkgs.kdePackages.knotes
     pkgs.kdePackages.kongress
     pkgs.kdePackages.kontact
