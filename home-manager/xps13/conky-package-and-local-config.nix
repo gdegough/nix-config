@@ -37,6 +37,10 @@
     ".config/conky/conky.conf".text = ''
       --[[
       -- Color Definitions 
+      -- gruvbox-white
+          default_color = 'ebdbb2',
+          default_outline_color = 'ebdbb2',
+          default_shade_color = 'ebdbb2',
       -- solarized-white
           default_color = 'eee8d5',
           default_outline_color = 'eee8d5',
@@ -84,15 +88,15 @@
         background = false,
         border_width = 0,
         cpu_avg_samples = 2,
-        default_color = "eee8d5",
-        default_outline_color = "eee8d5",
-        default_shade_color = "eee8d5",
+        default_color = 'ebdbb2',
+        default_outline_color = 'ebdbb2',
+        default_shade_color = 'ebdbb2',
         draw_borders = false,
         draw_graph_borders = false,
         draw_outline = false,
         draw_shades = false,
         use_xft = true,
-        font = "IBM Plex Mono:Text:size=8",
+        font = "IBM Plex Mono:size=8",
         gap_x = 10,
         gap_y = 30,
         minimum_height = 5,
@@ -119,9 +123,9 @@
 
       conky.text = [[
       ''${font IBM Plex Mono:Medium:size=20}''${time %H:%M}''${font}
-      ''${font IBM Plex Mono:Text:size=10}''${time %A %Y-%m-%d}''${font}
+      ''${font IBM Plex Mono:size=10}''${time %A %Y-%m-%d}''${font}
       $hr
-      ''${font IBM Plex Mono:Medium:size=11}''${texeci 86400 awk -F "=" '/^(NAME=)(.+)/{print $2}' "/etc/os-release" | tr -d '"'}''${font}
+      ''${font IBM Plex Mono:Medium:size=11}''${texeci 86400 awk -F "=" '/^(PRETTY_NAME=)(.+)/{print $2}' "/etc/os-release" | tr -d '"'}''${font}
 
       Kernel: $kernel
       Uptime: $uptime

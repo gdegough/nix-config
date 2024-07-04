@@ -37,6 +37,10 @@
     ".config/conky/conky.conf".text = ''
       --[[
       -- Color Definitions 
+      -- gruvbox-white
+          default_color = 'ebdbb2',
+          default_outline_color = 'ebdbb2',
+          default_shade_color = 'ebdbb2',
       -- solarized-white
           default_color = 'eee8d5',
           default_outline_color = 'eee8d5',
@@ -84,9 +88,9 @@
         background = false,
         border_width = 0,
         cpu_avg_samples = 2,
-        default_color = "eee8d5",
-        default_outline_color = "eee8d5",
-        default_shade_color = "eee8d5",
+        default_color = 'ebdbb2',
+        default_outline_color = 'ebdbb2',
+        default_shade_color = 'ebdbb2',
         draw_borders = false,
         draw_graph_borders = false,
         draw_outline = false,
