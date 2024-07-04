@@ -24,7 +24,7 @@
     ./admin-scripts.nix
     ./gdm-monitors.nix
     ./networking.nix
-    ./opengl.nix
+    ./graphics.nix
 
     ## Global configurations
     ../locale.nix ## environment
