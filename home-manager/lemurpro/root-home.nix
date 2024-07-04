@@ -54,6 +54,7 @@
     # ../kde-games.nix
     # ../kde-multimedia.nix
     # ../kde-office.nix
+    # ../kde-utilities.nix
     # ../megasync-package-and-config.nix
     # ../music-composition.nix
     ../mutt-package-and-config.nix
