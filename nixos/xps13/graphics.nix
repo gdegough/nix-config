@@ -10,7 +10,7 @@
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
-  hardware.graphics = {
+  hardware.opengl = {
     enable = true;
     extraPackages = [
       pkgs.intel-media-driver # LIBVA_DRIVER_NAME=iHD
