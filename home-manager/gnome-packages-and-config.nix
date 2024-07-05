@@ -21,9 +21,9 @@ with lib.hm.gvariant;
   home.packages = [
     pkgs.dconf2nix
     pkgs.gcolor3
+    pkgs.gnome-tweaks
     pkgs.chrome-gnome-shell
     pkgs.gnome-browser-connector
-    pkgs.gnome.gnome-tweaks
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.caffeine
     pkgs.gnomeExtensions.dash-to-dock
