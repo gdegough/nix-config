@@ -10,7 +10,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-    pkgs.plex
+    pkgs-unstable.plex
   ];
   # local groups I use for plex server
   users.groups.media.gid = 901;
