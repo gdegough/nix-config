@@ -21,7 +21,7 @@ with lib.hm.gvariant;
   home.packages = [
     pkgs.dconf2nix
     pkgs.gcolor3
-    pkgs.gnome-tweaks
+    pkgs.gnome.gnome-tweaks
     pkgs.chrome-gnome-shell
     pkgs.gnome-browser-connector
     pkgs.gnomeExtensions.appindicator
