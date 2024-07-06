@@ -18,9 +18,9 @@
         enable = true; # KDE
       };
     };
-    displayManager = {
-      defaultSession = "plasma"; # Make plasma-wayland the default session
-    };
+    # displayManager = {
+    #   defaultSession = "plasma"; # Make plasma-wayland the default session
+    # };
   };
 
   qt = {
