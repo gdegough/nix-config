@@ -207,7 +207,7 @@
       import:
         - ~/.config/alacritty/colorscheme.yml
     '';
-    ".config/alacritty/colorschemes.d/afterglow.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/afterglow.toml".text = ''
       # Default colors
       [colors.primary]
       background = '#2c2c2c'
@@ -254,7 +254,7 @@
       cyan    = '#5c8482'
       white   = '#828282'
     '';
-    ".config/alacritty/colorschemes.d/afterglow.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/afterglow.yml".text = ''
     schemes:
       afterglow:  &afterglow
         # Default colors
@@ -301,7 +301,7 @@
           white:   '#828282'
     colors:  *afterglow
     '';
-    ".config/alacritty/colorschemes.d/alabaster-dark.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/alabaster-dark.toml".text = ''
       # Colors (Alabaster Dark)
       # author tonsky
 
@@ -333,7 +333,7 @@
       cyan = '#4ac9e2'
       white = '#FFFFFF'
     '';
-    ".config/alacritty/colorschemes.d/alabaster.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/alabaster.toml".text = ''
       # Colors (Alabaster)
       # author tonsky
 
@@ -365,7 +365,7 @@
       cyan = '#00AACB'
       white = '#FFFFFF'
     '';
-    ".config/alacritty/colorschemes.d/alacritty_0_12.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/alacritty_0_12.toml".text = ''
       # Alacritty's default color scheme pre-0.13 (based on tomorrow-night)
       # https://github.com/alacritty/alacritty/blob/v0.12.3/alacritty/src/config/color.rs
 
@@ -411,7 +411,7 @@
       matches = { foreground = "#000000", background = "#ffffff" }
       focused_match = { foreground = "#ffffff", background = "#000000" }
     '';
-    ".config/alacritty/colorschemes.d/blood-moon.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/blood-moon.toml".text = ''
       # Colors (Blood Moon)
 
       # Default colors
@@ -470,7 +470,7 @@
             white:   '#FFFAFA'
       colors:  *bloodmoon
     '';
-    ".config/alacritty/colorschemes.d/bluish.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/bluish.toml".text = ''
       # Default colors
       [colors.primary]
       background = '#2c3640'
@@ -498,7 +498,7 @@
       cyan    = '#658795'
       white   = '#4d676b'
     '';
-    ".config/alacritty/colorschemes.d/argonaut.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/argonaut.toml".text = ''
       # Default colors
       [colors.primary]
       background = '#292C3E'
@@ -531,7 +531,7 @@
       cyan    = '#73FBF1'
       white   = '#FEFEF8'
     '';
-    ".config/alacritty/colorschemes.d/argonaut.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/argonaut.yml".text = ''
     schemes:
       argonaut:  &argonaut
         # Default colors
@@ -765,7 +765,7 @@
           white: '#FFFFFF'
     colors:  *ayu_mirage
     '';
-    ".config/alacritty/colorschemes.d/baitong.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/baitong.toml".text = ''
       # Colors (Baitong)
 
       [colors.primary]
@@ -889,7 +889,7 @@
           white:   '#f8f8f8'
     colors:  *base16_default_dark
     '';
-    ".config/alacritty/colorschemes.d/breeze.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/breeze.toml".text = ''
       # KDE Breeze (Ported from Konsole)
 
       # Default colors
@@ -933,7 +933,7 @@
       cyan = '#186c60'
       white = '#63686d'
     '';
-    ".config/alacritty/colorschemes.d/breeze.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/breeze.yml".text = ''
     schemes:
       breeze:  &breeze
         # Default colors
@@ -976,7 +976,7 @@
           white: '#63686d'
     colors:  *breeze
     '';
-    ".config/alacritty/colorschemes.d/campbell.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/campbell.toml".text = ''
       # Campbell (Windows 10 default)
 
       # Default colors
@@ -1006,7 +1006,7 @@
       cyan       = '#61d6d6'
       white      = '#f2f2f2'
     '';
-    ".config/alacritty/colorschemes.d/campbell.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/campbell.yml".text = ''
     schemes:
       campbell:  &campbell
         # Default colors
@@ -1035,7 +1035,7 @@
           white:      '#f2f2f2'
     colors:  *campbell
     '';
-    ".config/alacritty/colorschemes.d/carbonfox.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/carbonfox.toml".text = ''
       # Default colors
       [colors.primary]
       background = '#161616'
@@ -1371,7 +1371,7 @@
       cyan = '#94E2D5' # teal
       white = '#BAC2DE' # subtext1
     '';
-    ".config/alacritty/colorschemes.d/catppuccin.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/catppuccin.toml".text = ''
       # Catppuccino theme scheme for Alacritty
 
       [colors.primary]
@@ -1446,7 +1446,7 @@
       cyan    = '#aaffe4'
       white   = '#cbe3e7'
     '';
-    ".config/alacritty/colorschemes.d/citylights.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/citylights.toml".text = ''
       # Default colors
       [colors.primary]
       background = '#171d23'
@@ -1478,7 +1478,7 @@
       cyan    = '#70e1e8'
       white   = '#ffffff'
     '';
-    ".config/alacritty/colorschemes.d/Cobalt2.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/Cobalt2.toml".text = ''
       # From the famous Cobalt2 sublime theme
       # Source  https//github.com/wesbos/cobalt2/tree/master/Cobalt2
 
@@ -1513,7 +1513,7 @@
       cyan    = '#6ae3f9'
       white   = '#ffffff'
     '';
-    ".config/alacritty/colorschemes.d/cobalt2.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/cobalt2.yml".text = ''
     schemes:
       cobalt2:  &cobalt2
         cursor:
@@ -1583,7 +1583,7 @@
       cyan    = '#0abdc6'
       white   = '#d7d7d5'
     '';
-    ".config/alacritty/colorschemes.d/darcula.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/darcula.toml".text = ''
       # Colors (Darcula)
 
       # Default colors
@@ -1643,7 +1643,7 @@
       cyan    = '#93E0E3'
       white   = '#FFFFFF'
     '';
-    ".config/alacritty/colorschemes.d/darkside.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/darkside.yml".text = ''
     schemes:
       darkside:  &darkside
         # Default colors
@@ -1672,7 +1672,7 @@
           white:    '#BABABA'
     colors:  *darkside
     '';
-    ".config/alacritty/colorschemes.d/darktooth.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/darktooth.yml".text = ''
     schemes:
       darktooth:  &darktooth
         # Default colors
@@ -1765,7 +1765,7 @@
       cyan    = '#46d9ff'
       white   = '#bbc2cf'
     '';
-    ".config/alacritty/colorschemes.d/dracula.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/dracula.toml".text = ''
       # Colors (Dracula)
 
       # Default colors
@@ -1795,7 +1795,7 @@
       cyan    = '#8be9fd'
       white   = '#ffffff'
     '';
-    ".config/alacritty/colorschemes.d/dracula.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/dracula.yml".text = ''
     schemes:
       dracula:  &dracula
         # Default colors
@@ -1884,7 +1884,7 @@
       cyan    = '#35a77c'
       white   = '#e0dcc7'
     '';
-    ".config/alacritty/colorschemes.d/falcon.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/falcon.toml".text = ''
       # falcon colorscheme for alacritty
       # by fenetikm, https//github.com/fenetikm/falcon
 
@@ -1944,7 +1944,7 @@
       cyan    = '#49AEE6'
       white   = '#FFFFFF'
     '';
-    ".config/alacritty/colorschemes.d/flexoki.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/flexoki.toml".text = ''
       # based on https//stephango.com/flexoki and https//github.com/kepano/flexoki/tree/main/alacritty
 
       # Default colors
@@ -2488,7 +2488,7 @@
           white:   '#ffffff'
     colors: *gnome_light
     '';
-    ".config/alacritty/colorschemes.d/gotham.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/gotham.toml".text = ''
       # Colors (Gotham)
 
       # Default colors
@@ -2763,7 +2763,7 @@
       cyan    = '#89b482'
       white   = '#dfbf8e'
     '';
-    ".config/alacritty/colorschemes.d/hardhacker.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/hardhacker.toml".text = ''
       # hardhacker colorscheme for alacritty
       # by xin wu, https//github.com/hardhackerlabs/theme-alacritty
 
@@ -2863,7 +2863,7 @@
       cyan = '#6be4e6'
       white = '#d5d8da'
     '';
-    ".config/alacritty/colorschemes.d/hybrid.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/hybrid.yml".text = ''
     schemes:
       hybrid:  &hybrid
         # Default colors
@@ -2892,7 +2892,7 @@
           white:   '#fcf7e2'
     colors:  *hybrid
     '';
-    ".config/alacritty/colorschemes.d/hyper.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/hyper.toml".text = ''
       # Colors (Hyper)
 
       # Default colors
@@ -2926,7 +2926,7 @@
       cyan    = '#00ffff'
       white   = '#FFFFFF'
     '';
-    ".config/alacritty/colorschemes.d/hyper.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/hyper.yml".text = ''
     schemes:
       hyper:  &hyper
         # Default colors
@@ -3048,7 +3048,7 @@
           white:   '#ffffff'
     colors:  *ir_black
     '';
-    ".config/alacritty/colorschemes.d/inferno.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/inferno.toml".text = ''
       # Inferno theme
       # Source https//github.com/hafiz-muhammad/inferno-alacritty-theme/blob/main/inferno.yml
 
@@ -3079,7 +3079,7 @@
       cyan    = '#ffcc99'
       white   = '#d9d9d9'
     '';
-    ".config/alacritty/colorschemes.d/iris.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/iris.toml".text = ''
       # Colors (Iris)
 
       # Default colors
@@ -3109,7 +3109,7 @@
       cyan    = '#6ab6bd'
       white   = '#e8e6e9'
     '';
-    ".config/alacritty/colorschemes.d/iterm.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/iterm.toml".text = ''
       # Colors (iTerm 2 default theme)
 
       # Default colors
@@ -3168,7 +3168,7 @@
           white:   '#ffffff'
     colors:  *iterm_default
     '';
-    ".config/alacritty/colorschemes.d/jellybeans.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/jellybeans.yml".text = ''
     schemes:
       jellybeans:  &jellybeans
         # Default colors
@@ -3205,7 +3205,7 @@
           background: '#f6f6f6'
     colors:  *jellybeans
     '';
-    ".config/alacritty/colorschemes.d/kali.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/kali.toml".text = ''
       [colors.bright]
       black = "#198388"
       blue = "#277FFF"
@@ -3230,7 +3230,7 @@
       background = "#171421"
       foreground = "#FFFFFF"
     '';
-    ".config/alacritty/colorschemes.d/kali.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/kali.yml".text = ''
       schemes:
         kali:  &kali
           # Default colors
@@ -3339,7 +3339,7 @@
       index = 17
       color = '#ff5d62'
     '';
-    ".config/alacritty/colorschemes.d/kitty.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/kitty.yml".text = ''
     schemes:
       kitty:  &kitty
         # Default colors
@@ -3448,7 +3448,7 @@
       cyan    = '#00bbbb'
       white   = '#bbbbbb'
     '';
-    ".config/alacritty/colorschemes.d/Mariana.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/Mariana.toml".text = ''
       # Mariana (ported from Sublime Text 4)
       # Source https//github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/Mariana.yml
 
@@ -3580,7 +3580,7 @@
       cyan    = '#35434d'
       white   = '#ffffff'
     '';
-    ".config/alacritty/colorschemes.d/material.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/material.yml".text = ''
     schemes:
       material:  &material
         # Default colors
@@ -3609,7 +3609,7 @@
           white:   '#ffffff'  # Arbitrary
     colors:  *material
     '';
-    ".config/alacritty/colorschemes.d/meliora.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/meliora.toml".text = ''
       [colors.primary]
       background = '#1c1917'
       foreground = '#d6d0cd'
@@ -3686,7 +3686,7 @@
       index = 17
       color = '#ddd9d6'
     '';
-    ".config/alacritty/colorschemes.d/molokai.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/molokai.yml".text = ''
     schemes:
       molokai:  &molokai
         # Default colors
@@ -3862,7 +3862,7 @@
           white:   '#f6f6ef'
     colors:  *monokai_soda
     '';
-    ".config/alacritty/colorschemes.d/monokai.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/monokai.yml".text = ''
     schemes:
       monokai:  &monokai
         # Default colors
@@ -3920,7 +3920,7 @@
       cyan    = '#b4f9f8'
       white   = '#5f8787'
     '';
-    ".config/alacritty/colorschemes.d/msx.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/msx.toml".text = ''
       # Colors (MSX-like)
       # Notice that MSX used blue as background so [bright] blue and [bright] black
       # are reversed in this theme. Also MSX had only 15 colors (color 0 was
@@ -3992,7 +3992,7 @@
           white: '#FFFFFF'
     colors:  *new_moon
     '';
-    ".config/alacritty/colorschemes.d/nightfly.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/nightfly.yml".text = ''
     schemes:
       nightfly:  &nightfly
          # Default colors
@@ -4027,7 +4027,7 @@
           white:   '#d6deeb'
     colors:  *nightfly
     '';
-    ".config/alacritty/colorschemes.d/nightfox.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/nightfox.toml".text = ''
       # Colors (NightFox)
 
       # Default colors
@@ -4156,7 +4156,7 @@
       cyan = '#00cbe6'
       white = '#bbc3c4'
     '';
-    ".config/alacritty/colorschemes.d/nordic.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/nordic.toml".text = ''
       # Colors (Nordic)
 
       [colors.primary]
@@ -4217,7 +4217,7 @@
       cyan    = '#8FBCBB'
       white   = '#D8DEE9'
     '';
-    ".config/alacritty/colorschemes.d/nord.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/nord.toml".text = ''
       # Colors (Nord)
 
       # Default colors
@@ -4247,7 +4247,7 @@
       cyan    = '#8FBCBB'
       white   = '#ECEFF4'
     '';
-    ".config/alacritty/colorschemes.d/nord.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/nord.yml".text = ''
     schemes:
       nord:  &nord
          # Default colors
@@ -4276,7 +4276,7 @@
            white:   '#ECEFF4'
     colors:  *nord
     '';
-    ".config/alacritty/colorschemes.d/nova.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/nova.yml".text = ''
     schemes:
       nova:  &nova
         # Default colors
@@ -4371,7 +4371,7 @@
           white:   '#d8dee9'
     colors:  *oceanic_next
     '';
-    ".config/alacritty/colorschemes.d/omni.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/omni.toml".text = ''
       [colors.primary]
       background = '#191622'
       foreground = '#e1e1e6'
@@ -4410,7 +4410,7 @@
       cyan = '#433364'
       white = '#5f5f5f'
     '';
-    ".config/alacritty/colorschemes.d/onedark.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/onedark.toml".text = ''
       # Colors (One Dark)
 
       # Default colors
@@ -4496,7 +4496,7 @@
           white:      '#a0a1a7' # mono-3
     colors:  *one_light
     '';
-    ".config/alacritty/colorschemes.d/oxide.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/oxide.yml".text = ''
     schemes:
       oxide:  &oxide
         # Default colors
@@ -4529,7 +4529,7 @@
           white:   '#f3f4f5'
     colors:  *oxide
     '';
-    ".config/alacritty/colorschemes.d/panda.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/panda.yml".text = ''
     schemes:
       panda:  &panda
         primary:
@@ -4556,7 +4556,7 @@
           white:   '#ffffff'
     colors:  *panda
     '';
-    ".config/alacritty/colorschemes.d/palenight.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/palenight.toml".text = ''
       # iTerm2 Material Design - Palenight theme for Alacritty
       # Source  https//github.com/JonathanSpeek/palenight-iterm2
 
@@ -4655,7 +4655,7 @@
       cyan    = '#005faf'
       white   = '#005f87'
     '';
-    ".config/alacritty/colorschemes.d/papertheme.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/papertheme.toml".text = ''
       # Colors (Paper Theme)
 
       # Default colors
@@ -4910,7 +4910,7 @@
             white:   '#EEEEEC'
       colors:  *pop_os
     '';
-    ".config/alacritty/colorschemes.d/rainbow.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/rainbow.toml".text = ''
       # Default colors
       [colors.primary]
       background = '#192835'
@@ -5091,7 +5091,7 @@
       start = {foreground = '#908caa', background = '#1f1d2e' }
       end = { foreground = '#6e6a86', background = '#1f1d2e' }
     '';
-    ".config/alacritty/colorschemes.d/seabird.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/seabird.yml".text = ''
     schemes:
       seabird:  &seabird
         # Default colors
@@ -5120,7 +5120,7 @@
           white:   '#ffffff'
     colors:  *seabird
     '';
-    ".config/alacritty/colorschemes.d/seoul256.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/seoul256.yml".text = ''
     schemes:
       seoul256:  &seoul256
         # Default colors
@@ -5149,7 +5149,7 @@
           white:   '#e4e4e4'
     colors:  *seoul256
     '';
-    ".config/alacritty/colorschemes.d/seashells.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/seashells.toml".text = ''
       # Colors (SeaShells)
       # Source  https//raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/SeaShells.itermcolors
 
@@ -5188,7 +5188,7 @@
       cyan = '#97b9c0'
       white = '#ffe9d7'
     '';
-    ".config/alacritty/colorschemes.d/snazzy.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/snazzy.toml".text = ''
       # Colors (Snazzy)
 
       # Default colors
@@ -5218,7 +5218,7 @@
       cyan    = '#9aedfe'
       white   = '#f1f1f0'
     '';
-    ".config/alacritty/colorschemes.d/snazzy.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/snazzy.yml".text = ''
     schemes:
       snazzy:  &snazzy
         # Default colors
@@ -5373,7 +5373,7 @@
           white:   '#fdf6e3' # base3
     colors:  *solarized_light
     '';
-    ".config/alacritty/colorschemes.d/smoooooth.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/smoooooth.toml".text = ''
       # Color theme ported from iTerm 2 Smoooooth
 
       [colors.primary]
@@ -5408,7 +5408,7 @@
       cyan    = '#5ffdff'
       white   = '#feffff'
     '';
-    ".config/alacritty/colorschemes.d/sourcerer.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/sourcerer.yml".text = ''
     schemes:
       sourcerer:  &sourcerer
         primary:
@@ -5466,7 +5466,7 @@
           white:      '#64526F'
     colors:  *spacemacs_light
     '';
-    ".config/alacritty/colorschemes.d/substrata.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/substrata.yml".text = ''
     schemes:
       substrata:  &substrata
         primary:
@@ -5492,7 +5492,7 @@
           white:   '#f0ecfe'
     colors:  *substrata
     '';
-    ".config/alacritty/colorschemes.d/taerminal.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/taerminal.toml".text = ''
       # Colors (Taerminal)
 
       # Default colors
@@ -5526,7 +5526,7 @@
       cyan    = '#c0e9f8'
       white   = '#ffffff'
     '';
-    ".config/alacritty/colorschemes.d/taerminal.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/taerminal.yml".text = ''
     schemes:
       taerminal:  &taerminal
         # Default colors
@@ -5558,7 +5558,7 @@
           white:   '#ffffff'
     colors:  *taerminal
     '';
-    ".config/alacritty/colorschemes.d/tangoish.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/tangoish.yml".text = ''
     schemes:
       tangoish:  &tangoish
         primary:
@@ -5586,7 +5586,7 @@
            white:   '#eeeeec'
     colors:  *tangoish
     '';
-    ".config/alacritty/colorschemes.d/tango.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/tango.yml".text = ''
     schemes:
       tango:  &tango
         primary:
@@ -5641,7 +5641,7 @@
       cyan = '#34e2e2'
       white = '#eeeeec'
     '';
-    ".config/alacritty/colorschemes.d/tender.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/tender.toml".text = ''
       # Default colors
       [colors.primary]
       background = '#282828'
@@ -5669,7 +5669,7 @@
       cyan    = '#73cef4'
       white   = '#feffff'
     '';
-    ".config/alacritty/colorschemes.d/tender.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/tender.yml".text = ''
     schemes:
       tender:  &tender
         # Default colors
@@ -5783,7 +5783,7 @@
           white:   '#e5e5e5'
     colors:  *terminal_app
     '';
-    ".config/alacritty/colorschemes.d/thelovelace.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/thelovelace.toml".text = ''
       # Default colors
       [colors.primary]
       background = '#1D1F28'
@@ -5999,7 +5999,7 @@
           white:   '#282a2e'
     colors:  *tomorrow_night
     '';
-    ".config/alacritty/colorschemes.d/ubuntu.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/ubuntu.toml".text = ''
       # 0x From the Ubuntu terminal color palette
 
       # 0x Default colors
@@ -6034,7 +6034,7 @@
       cyan    = '#34e2e2'
       white   = '#eeeeec'
     '';
-    ".config/alacritty/colorschemes.d/ubuntu.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/ubuntu.yml".text = ''
     schemes:
       ubuntu:  &ubuntu
         # Default colors
@@ -6091,7 +6091,7 @@
           white:   '#e5e5e5'
     colors:  *vscode_terminal
     '';
-    ".config/alacritty/colorschemes.d/wombat.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/wombat.toml".text = ''
       # Colors (Wombat)
 
       # Default colors
@@ -6121,7 +6121,7 @@
       cyan    = '#c2fefa'
       white   = '#ffffff'
     '';
-    ".config/alacritty/colorschemes.d/wombat.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/wombat.yml".text = ''
     schemes:
       wombat:  &wombat
         # Default colors
@@ -6150,7 +6150,7 @@
           white:   '#ffffff'
     colors:  *wombat
     '';
-    ".config/alacritty/colorschemes.d/xterm.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/xterm.toml".text = ''
       # XTerm's default colors
 
       # Default colors
@@ -6180,7 +6180,7 @@
       cyan    = '#00ffff'
       white   = '#ffffff'
     '';
-    ".config/alacritty/colorschemes.d/xterm.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/xterm.yml".text = ''
     schemes:
       xterm:  &xterm
          # Default colors
@@ -6209,7 +6209,7 @@
            white:   '#ffffff'
     colors:  *xterm
     '';
-    ".config/alacritty/colorschemes.d/zenburn.toml".text = ''
+    ".config/alacritty/colorschemes.d/toml/zenburn.toml".text = ''
       # Colors (Zenburn)
       # Orginally designed by jnurmine for vim.
 
@@ -6240,7 +6240,7 @@
       cyan    = '#93E0E3'
       white   = '#FFFFFF'
     '';
-    ".config/alacritty/colorschemes.d/zenburn.yml".text = ''
+    ".config/alacritty/colorschemes.d/yml/zenburn.yml".text = ''
     schemes:
       zenburn:  &zenburn
         primary:
