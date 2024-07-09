@@ -211,6 +211,10 @@
           #default_border none
           #default_border normal
           default_border pixel 2
+
+          # establish gaps between windows and from the screen edge
+          gaps inner 5
+          gaps outer 1
       #
       # Resizing containers:
       #
