@@ -138,6 +138,7 @@
     pkgs.lm_sensors
     pkgs.lynx
     pkgs.mailutils
+    pkgs.parted
     pkgs.pinentry-curses
     pkgs.python3
     pkgs.sysstat
