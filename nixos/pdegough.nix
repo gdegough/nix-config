@@ -15,7 +15,7 @@ in
     isNormalUser = true;
     uid = 1003;
     description = "Peggy DeGough";
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     hashedPasswordFile = "/persist/passwords/pdegough";
     extraGroups = [ 
     ] ++ ifTheyExist [
