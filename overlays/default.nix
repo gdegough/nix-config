@@ -28,5 +28,5 @@
   #    system = final.system;
   #    config.allowUnfree = true;
   #  };
-  #};
+  };
 }
