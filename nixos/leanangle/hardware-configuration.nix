@@ -32,7 +32,7 @@
   };
 
   fileSystems."/nixos" = { 
-    device = "UUID=3d8bf45a-143c-45c4-bf3d-77aa9a752d4e";
+    device = "UUID=20812fe0-ab45-4611-a79b-d0217b2c4a39";
     fsType = "ext4";
     neededForBoot = true;
   };
@@ -47,6 +47,20 @@
   fileSystems."/home" = { 
     device = "UUID=eaefec33-d912-4ef9-83e0-e9d0e54dc77d";
     fsType = "ext4";
+    neededForBoot = true;
+  };
+
+  fileSystems."/home/gmdegoug" = { 
+    device = "/home/gmdegoug-nixos";
+    fsType = "none";
+    options = [ "bind" ];
+    neededForBoot = true;
+  };
+
+  fileSystems."/home/pdegough" = { 
+    device = "/home/pdegough-nixos";
+    fsType = "none";
+    options = [ "bind" ];
     neededForBoot = true;
   };
 
