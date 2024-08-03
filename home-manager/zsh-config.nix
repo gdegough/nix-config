@@ -156,8 +156,8 @@
           PATH="$HOME/.local/bin:$PATH"
       fi
       export PATH
-      export MAIL="$HOME/.maildir"
-      export MAILPATH="$HOME/.maildir"
+      export MAIL="$HOME/Maildir"
+      export MAILPATH="$HOME/Maildir"
       # Firefox wayland:
       if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
           export MOZ_ENABLE_WAYLAND=1

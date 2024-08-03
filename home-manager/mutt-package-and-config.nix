@@ -21,7 +21,7 @@
       ### Local settings
       ###----------------------------------------------------------------------------
       unset suspend
-      set spoolfile="$HOME/.maildir/"
+      set spoolfile="$HOME/Maildir/"
 
       # local mailboxes go here
       source "$HOME/.mutt/mailboxes-local"
@@ -33,7 +33,7 @@
       set imap_keepalive="120"
       macro pager , "<sync-mailbox><change-folder>?<toggle-mailboxes>"
       macro index , "<sync-mailbox><change-folder>?<toggle-mailboxes>"
-      '';
+    '';
     ".mutt/accounts_account_hooks".text = ''
       ###----------------------------------------------------------------------------
       ### Account Settings :: Account Hooks
@@ -55,16 +55,16 @@
       #    imap_pass="my_pass_at_account-server-01.org"'
           
       #account-hook account-server-02 'set \
-      #    tunnel="ssh -q -C -l my_login account-server-02 /usr/bin/imapd 2>/dev/null .maildir/"'
+      #    tunnel="ssh -q -C -l my_login account-server-02 /usr/bin/imapd 2>/dev/null Maildir/"'
 
       #account-hook imap://account-server-03 'set \
-      #    tunnel="ssh -q -C -l my_login account-server-03 /home/externo/my_login/imapd 2>/dev/null .maildir/"'
+      #    tunnel="ssh -q -C -l my_login account-server-03 /home/externo/my_login/imapd 2>/dev/null Maildir/"'
 
       #account-hook imap://account-server-04 'set \
-      #    tunnel="ssh -q -C -l my_login account-server-04 /usr/bin/imapd 2>/dev/null .maildir/"'
+      #    tunnel="ssh -q -C -l my_login account-server-04 /usr/bin/imapd 2>/dev/null Maildir/"'
 
       #account-hook imap://account-server-06 'set \
-      #    tunnel="ssh -p16123 -q -C -l my_login account-server-06 /usr/local/courier-imap/bin/imapd 2>/dev/null .maildir/"'
+      #    tunnel="ssh -p16123 -q -C -l my_login account-server-06 /usr/local/courier-imap/bin/imapd 2>/dev/null Maildir/"'
 
 
       # Account no. 5
@@ -74,7 +74,7 @@
       #account-hook imaps://localhost:15143 ' set \
       #    preconnect="ssh -f -q -L 15143:imap.account-server-05:993 -L 15145:smtp.account-server-05:25 login.account-server-05 sleep 25"\
       #    imap_user="my_login"'
-      '';
+    '';
     ".mutt/accounts_folder_hooks".text = ''
       ###----------------------------------------------------------------------------
       ### Account settings :: Folder Hooks
@@ -123,7 +123,7 @@
       #folder-hook account-server-04/.* 'set \
       #    from="my_login@account-server-04"\
       #    sendmail="/usr/bin/ssh my_login@account-server-04 /usr/sbin/sendmail -oem -oi"'
-      '';
+    '';
     ".mutt/muttrc".text = ''
       ###----------------------------------------------------------------------------
       ### Global Settings
@@ -134,9 +134,9 @@
       set check_new="yes"
       set use_from="yes"
       set mail_check = 15
-      set spoolfile="$HOME/.maildir/"
-      set folder="$HOME/.maildir/"
-      set mbox="=/.maildir/"
+      set spoolfile="$HOME/Maildir/"
+      set folder="$HOME/Maildir/"
+      set mbox="=/Maildir/"
       set record="=sent/"
       set postponed="=drafts/"
       set editor="vim -f -c 'set tw=72 et ft=mail fo=tr'"
@@ -170,20 +170,20 @@
       source $HOME/.mutt/header_config
       source $HOME/.mutt/keybind
       source $HOME/.mutt/color
-      '';
+    '';
     ".mutt/mailboxes-local".text = ''
       ###----------------------------------------------------------------------------
       ### Local Mailboxes
       ###----------------------------------------------------------------------------
       mailboxes ! + `\
-      for file in $HOME/.maildir/.*; do \
+      for file in $HOME/Maildir/.*; do \
         box=$(basename "$file"); \
         if [ ! "$box" = '.' -a ! "$box" = '..' -a ! "$box" = '.customflags' \
             -a ! "$box" = '.subscriptions' ]; then \
           echo -n "\"+$box\" "; \
         fi; \
       done`
-      '';
+    '';
     ".mutt/aliases".text = ''
       #
       # .mail_aliases - private mail aliases
@@ -258,7 +258,7 @@
       alias wackerly_shaun "Wackerly, Shaun" <swackerl@gmail.com>
       alias watson_rodney "Watson, Rodney" <rodney@cornerstonegroup.net>
       alias family degough_peggy degough_aaron degough_caleb degough_jake degough_celinda degough_tifany rowley_scout rowley_doug
-      '';
+    '';
     ".mutt/header_config".text = ''
       ###----------------------------------------------------------------------------
       ### header config
@@ -275,7 +275,7 @@
       hdr_order	Return-Path: From: Resent-By: Reply-To: X-Organisation: \
               X-Address: To: Cc: Bcc: Date: Subject:
       #my_hdr X-PGP-Key: http://www.burocrata.org/pubkey.asc
-      '';
+    '';
     ".mutt/keybind".text = ''
       ###----------------------------------------------------------------------------
       ### Binding
@@ -316,7 +316,7 @@
       bind  alias   x         exit
       bind  attach  x         exit
       bind  browser x         exit
-      '';
+    '';
     ".mutt/color".text = ''
       ###----------------------------------------------------------------------------
       ### color config
@@ -324,11 +324,13 @@
 
       #source $HOME/.mutt/colors.default
       #source $HOME/.mutt/colors.linux
-      source $HOME/.mutt/mutt-colors-solarized-master/mutt-colors-solarized-dark-16.muttrc
-      #source $HOME/.mutt/mutt-colors-solarized-master/mutt-colors-solarized-light-16.muttrc
-      #source $HOME/.mutt//mutt-colors-solarized-master/mutt-colors-solarized-dark-256.muttrc
-      #source $HOME/.mutt/mutt-colors-solarized-master/mutt-colors-solarized-light-256.muttrc
-      '';
+      #source $HOME/.mutt/solarized/mutt-colors-solarized-dark-16.muttrc
+      #source $HOME/.mutt/solarized/mutt-colors-solarized-light-16.muttrc
+      #source $HOME/.mutt/solarized/mutt-colors-solarized-dark-256.muttrc
+      #source $HOME/.mutt/solarized/mutt-colors-solarized-light-256.muttrc
+      source $HOME/.mutt/gruvbox/colors-gruvbox-shuber.muttrc
+      #source $HOME/.mutt/gruvbox/colors-gruvbox-shuber-extended.muttrc
+    '';
     ".mutt/colors.default".text = ''
       # -*-muttrc-*-
 
@@ -357,7 +359,7 @@
 
       # color body brightwhite black '\*+[^*]+\*+'
       # color body brightwhite black '_+[^_]+_+'
-      '';
+    '';
     ".mutt/colors.linux".text = ''
       # -*-muttrc-*-
 
@@ -381,7 +383,7 @@
 
       # color body brightwhite black '\*+[^*]+\*+'
       # color body brightwhite black '_+[^_]+_+'
-      '';
+    '';
     ".mutt/gpg.rc".text = ''
       # -*-muttrc-*-
       #
@@ -464,7 +466,132 @@
 
       # OK, here's a version which uses gnupg's message catalog:
       set pgp_good_sign="`gettext -d gnupg -s 'Good signature from "' | tr -d '"'`"
-      '';
+    '';
+    ".mutt/gruvbox/colors-gruvbox-shuber-extended.muttrc".text = ''
+      color sidebar_unread     color108 color234
+    '';
+    ".mutt/gruvbox/colors-gruvbox-shuber.muttrc".text = ''
+      # gruvbox dark (contrast dark):
+
+      # bg0    = 234
+      # bg1    = 237
+      # bg2    = 239
+      # bg3    = 241
+      # bg4    = 243
+      # 
+      # gray   = 245
+      # 
+      # fg0    = 229
+      # fg1    = 223
+      # fg2    = 250
+      # fg3    = 248
+      # fg4    = 246
+      # 
+      # red    = 167
+      # green  = 142
+      # yellow = 214
+      # blue   = 109
+      # purple = 175
+      # aqua   = 108
+      # orange = 208
+
+
+      # See http://www.mutt.org/doc/manual/#color
+
+      color attachment  color109 color234
+      color bold        color229 color234
+      color error       color167 color234
+      color hdrdefault  color246 color234
+      color indicator   color223 color237
+      color markers     color243 color234
+      color normal      color223 color234
+      color quoted      color250 color234
+      color quoted1     color108 color234
+      color quoted2     color250 color234
+      color quoted3     color108 color234
+      color quoted4     color250 color234
+      color quoted5     color108 color234
+      color search      color234 color208
+      color signature   color108 color234
+      color status      color234 color250
+      color tilde       color243 color234
+      color tree        color142 color234
+      color underline   color223 color239
+
+      color sidebar_divider    color250 color234
+      color sidebar_new        color142 color234
+
+      color index color142 color234 ~N
+      color index color108 color234 ~O
+      color index color109 color234 ~P
+      color index color214 color234 ~F
+      color index color175 color234 ~Q
+      color index color167 color234 ~=
+      color index color234 color223 ~T
+      color index color234 color167 ~D
+
+      color header color214 color234 "^(To:|From:)"
+      color header color142 color234 "^Subject:"
+      color header color108 color234 "^X-Spam-Status:"
+      color header color108 color234 "^Received:"
+
+      # Regex magic for URLs and hostnames
+      #
+      # Attention: BSD's regex has RE_DUP_MAX set to 255.
+      #
+      # Examples:
+      #   http://some-service.example.com
+      #   example.com
+      #   a.example.com
+      #   some-service.example.com
+      #   example.com/
+      #   example.com/datenschutz
+      #   file:///tmp/foo
+      #
+      # Non-examples:
+      #   1.1.1900
+      #   14.02.2022/24:00
+      #   23.59
+      #   w.l.o.g
+      #   team.its
+      color body color142 color234 "[a-z]{3,255}://[[:graph:]]*"
+      color body color142 color234 "([-[:alnum:]]+\\.)+([0-9]{1,3}|[-[:alpha:]]+)/[[:graph:]]*"
+      color body color142 color234 "([-[:alnum:]]+\\.){2,255}[-[:alpha:]]{2,10}"
+
+      # IPv4 and IPv6 stolen from https://stackoverflow.com/questions/53497/regular-expression-that-matches-valid-ipv6-addresses
+      color body color142 color234 "((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])"
+      color body color142 color234 "(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))"
+
+      # Mail addresses and mailto URLs
+      color body color208 color234 "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+      color body color208 color234 "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+
+      # some simleys and stuff
+      color body color234 color214 "[;:]-*[)>(<lt;|]"
+      color body color229 color234 "\\*[- A-Za-z]+\\*"
+
+      color body color214 color234 "^-.*PGP.*-*"
+      color body color142 color234 "^gpg: Good signature from"
+      color body color167 color234 "^gpg: Can't.*$"
+      color body color214 color234 "^gpg: WARNING:.*$"
+      color body color167 color234 "^gpg: BAD signature from"
+      color body color167 color234 "^gpg: Note: This key has expired!"
+      color body color214 color234 "^gpg: There is no indication that the signature belongs to the owner."
+      color body color214 color234 "^gpg: can't handle these multiple signatures"
+      color body color214 color234 "^gpg: signature verification suppressed"
+      color body color214 color234 "^gpg: invalid node with packet of type"
+
+      color body color142 color234 "^Good signature from:"
+      color body color167 color234 "^.?BAD.? signature from:"
+      color body color142 color234 "^Verification successful"
+      color body color167 color234 "^Verification [^s][^[:space:]]*$"
+
+      color compose header            color223 color234
+      color compose security_encrypt  color175 color234
+      color compose security_sign     color109 color234
+      color compose security_both     color142 color234
+      color compose security_none     color208 color234
+    '';
     ".mutt/lists_hooks".text = ''
       send-hook . 'unmy_hdr From:'
       send-hook '~t gdegough@gmail.com' 'my_hdr From: "DeGough, Gregory M." <gdegough@gmail.com>'
@@ -476,7 +603,7 @@
       #send-hook '~t decentralization@no.spam.egroups.com' 'my_hdr From: Tiago Macambira <my_login-decentralization@no.spam.account-server-02>'
       #send-hook '~t peleja@no.spam.yahoogrupos.com.br' 'my_hdr From: Tiago Macambira <my_login-peleja@account-server-02>'
       #send-hook '~t linphone-users@no.spam.nongnu.org' 'my_hdr From: Tiago Macambira <my_login-linphone@account-server-02>'
-      '';
+    '';
     ".mutt/mailboxes-imap".text = ''
       ###----------------------------------------------------------------------------
       ### Global Mailboxes
@@ -496,7 +623,7 @@
       mailboxes "imaps://imap.gmail.com:993/[Gmail]/Starred"
       mailboxes "imaps://imap.gmail.com:993/[Gmail]/Spam"
       mailboxes "imaps://imap.gmail.com:993/[Gmail]/Trash"
-      '';
+    '';
     ".mutt/personal".text = ''
       ## Receive Options
       set imap_user = 'gdegough@gmail.com'
@@ -529,12 +656,12 @@
       macro index,pager gd "=[GMAIL]/Drafts" "Go to drafts"
       macro index,pager gp "=[GMAIL]/Spam" "Go to spam"
       macro index,pager gt "=[GMAIL]/Trash" "Go to trash"
-      '';
+    '';
     ".mutt/signature".text = ''
       --
       Greg
-      '';
-    ".mutt/mutt-colors-solarized-master/mutt-colors-solarized-dark-16.muttrc".text = ''
+    '';
+    ".mutt/solarized/mutt-colors-solarized-dark-16.muttrc".text = ''
       # vim: filetype=muttrc
 
       #
@@ -685,8 +812,8 @@
       #folder-hook .                  "color status        J_black         J_status        "
       #folder-hook gmail/inbox        "color status        J_black         yellow          "
       #folder-hook gmail/important    "color status        J_black         yellow          "
-      '';
-    ".mutt/mutt-colors-solarized-master/mutt-colors-solarized-dark-256.muttrc".text = ''
+    '';
+    ".mutt/solarized/mutt-colors-solarized-dark-256.muttrc".text = ''
       # vim: filetype=muttrc
 
       #
@@ -837,8 +964,8 @@
       #folder-hook .                  "color status        J_black         J_status        "
       #folder-hook gmail/inbox        "color status        J_black         color136        "
       #folder-hook gmail/important    "color status        J_black         color136        "
-      '';
-    ".mutt/mutt-colors-solarized-master/mutt-colors-solarized-light-16.muttrc".text = ''
+    '';
+    ".mutt/solarized/mutt-colors-solarized-light-16.muttrc".text = ''
       # vim: filetype=muttrc
 
       #
@@ -989,8 +1116,8 @@
       #folder-hook .                  "color status        J_black         J_status        "
       #folder-hook gmail/inbox        "color status        J_black         yellow          "
       #folder-hook gmail/important    "color status        J_black         yellow          "
-      '';
-    ".mutt/mutt-colors-solarized-master/mutt-colors-solarized-light-256.muttrc".text = ''
+    '';
+    ".mutt/solarized/mutt-colors-solarized-light-256.muttrc".text = ''
       # vim: filetype=muttrc
 
       #
@@ -1141,8 +1268,8 @@
       #folder-hook .                  "color status        J_black         J_status        "
       #folder-hook gmail/inbox        "color status        J_black         color136        "
       #folder-hook gmail/important    "color status        J_black         color136        "
-      '';
-    ".mutt/mutt-colors-solarized-master/mutt-colors-solarized-template.muttrc".text = ''
+    '';
+    ".mutt/solarized/mutt-colors-solarized-template.muttrc".text = ''
       # vim: filetype=muttrc
 
       #
@@ -1293,8 +1420,8 @@
       #folder-hook .                  "color status        J_black         J_status        "
       #folder-hook gmail/inbox        "color status        J_black         J_yellow        "
       #folder-hook gmail/important    "color status        J_black         J_yellow        "
-      '';
-    ".mutt/mutt-colors-solarized-master/mutt-compile-colors.sh".text = ''
+    '';
+    ".mutt/solarized/mutt-compile-colors.sh".text = ''
       #!/usr/bin/env sh
       # ---------------------------------------------------------------------
       # SOLARIZED color values
@@ -1384,8 +1511,8 @@
 
       rm palette_light.tmp
       rm palette_dark.tmp
-      '';
-    ".mutt/mutt-colors-solarized-master/README.md".text = ''
+    '';
+    ".mutt/solarized/README.md".text = ''
       Solarized Colorscheme for Mutt
       ==============================
 
@@ -1487,6 +1614,6 @@
       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
       THE SOFTWARE.
-      '';
+    '';
   };
 }

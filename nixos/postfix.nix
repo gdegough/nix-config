@@ -26,7 +26,7 @@ in
     destination = [ "localhost" "${config.networking.hostName}" "${config.networking.hostName}.${config.networking.domain}" ];
     rootAlias = "${systemOwner}";
     config = {
-      home_mailbox = ".maildir/";
+      home_mailbox = "Maildir/";
       inet_interfaces = "loopback-only";
       inet_protocols = "all";
     };

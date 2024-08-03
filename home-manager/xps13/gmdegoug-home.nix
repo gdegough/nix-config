@@ -124,8 +124,8 @@
 
   home.sessionVariables = {
     COUNTRY = "US";
-    MAIL = "$HOME/.maildir";
-    MAILPATH = "$HOME/.maildir";
+    MAIL = "$HOME/Maildir";
+    MAILPATH = "$HOME/Maildir";
     MOZ_USE_XINPUT2 = "1";
     PAGER = "less";
     PROMPT_DIRTRIM = 3;

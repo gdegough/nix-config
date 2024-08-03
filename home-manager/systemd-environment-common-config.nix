@@ -12,8 +12,8 @@
       COUNTRY="US"
     '';
     ".config/environment.d/20-mail.conf".text = ''
-      MAIL="$HOME/.maildir"
-      MAILPATH="$HOME/.maildir"
+      MAIL="$HOME/Maildir"
+      MAILPATH="$HOME/Maildir"
     '';
     ".config/environment.d/40-pager.conf".text = ''
       PAGER=less
