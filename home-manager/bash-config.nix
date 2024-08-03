@@ -43,21 +43,10 @@
               ;;
       esac
 
-      # enable color support of ls, less and man, and also add handy aliases
+      # enable color support of ls, less and man
       if [ ! $(eval "$(dircolors -b)") ]; then
           test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
           export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
-
-          alias ls='ls --color=auto'
-          #alias dir='dir --color=auto'
-          #alias vdir='vdir --color=auto'
-
-          alias grep='grep --color=auto'
-          alias fgrep='grep -F --color=auto'
-          alias egrep='grep -E --color=auto'
-          alias diff='diff --color=auto'
-          alias ip='ip --color=auto'
-
           export LESS_TERMCAP_mb="$(tput sgr0; tput blink)"           # begin blink
           export LESS_TERMCAP_md="$(tput sgr0; tput bold; tput setaf 6)"  # begin bold
           export LESS_TERMCAP_me="$(tput sgr0)"               # reset bold/blink
@@ -118,27 +107,40 @@
       fi
       '';
     shellAliases = {
-      lsblk = "lsblk -o NAME,MAJ:MIN,RM,SIZE,RO,TYPE,FSTYPE,MOUNTPOINTS";
-      colors = "(x=\$(tput op) y=\$(printf %76s);for i in {0..255};do o=00\$i;echo -e \${o:\${#o}-3:3} \$(tput setaf \$i;tput setab \$i)\${y// /=}\$x;done)";
       check-cpu-vulnerabilities = "grep . /sys/devices/system/cpu/vulnerabilities/*";
+      colors = "(x=\$(tput op) y=\$(printf %76s);for i in {0..255};do o=00\$i;echo -e \${o:\${#o}-3:3} \$(tput setaf \$i;tput setab \$i)\${y// /=}\$x;done)";
+      create-input-file = "sed ':a;N;$!ba;s/\\n/ /g'";
       dfd = "df -h --output=\"source,fstype,size,used,avail,pcent,target\" -x devtmpfs -x tmpfs";
-      ls = "ls --color=auto";
+      diff = "diff --color=auto";
+      dir = "dir --color=auto";
+      dmesg = "journalctl --dmesg -o short-monotonic --no-hostname --no-pager";
+      drop-caches = "echo 1 | sudo tee /proc/sys/vm/drop_caches";
+      egrep = "grep -E --color=auto";
+      fgrep = "grep -F --color=auto";
+      grep = "grep --color=auto";
+      history = "history 0";
+      ip = "ip --color=auto";
       "l." = "ls -hdl --group-directories-first .*";
       l = "ls -a1 --group-directories-first";
-      ll = "ls -halF --group-directories-first";
+      la = "ls -A";
       less = "less --RAW-CONTROL-CHARS --chop-long-lines";
+      ll = "ls -halF --group-directories-first";
+      lo = "gnome-session-quit --no-prompt";
+      ls = "ls --color=auto";
+      lsblk = "lsblk -o NAME,MAJ:MIN,RM,SIZE,RO,TYPE,FSTYPE,MOUNTPOINTS";
+      lscolor-256dark = "ln -sf \${HOME}/.config/dircolors/256dark.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
+      lscolor-bwgruvbox = "ln -sf \${HOME}/.config/dircolors/badwolf-gruvbox.dircolors \${HOME}/.dircolors; eval $(dircolors -b \${HOME}/.dircolors)";
+      lscolor-dark = "ln -sf \${HOME}/.config/dircolors/ansi-dark.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
+      lscolor-gruvbox = "ln -sf \${HOME}/.config/dircolors/gruvbox.dircolors \${HOME}/.dircolors; eval $(dircolors -b \${HOME}/.dircolors)";
+      lscolor-light = "ln -sf \${HOME}/.config/dircolors/ansi-light.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
+      lscolor-manjaro = "ln -sf \${HOME}/.config/dircolors/manjaro.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
       lscolor-normal = "ln -sf \${HOME}/.config/dircolors/normal.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
       lscolor-normallight = "ln -sf \${HOME}/.config/dircolors/normal-lightbg.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
-      lscolor-256dark = "ln -sf \${HOME}/.config/dircolors/256dark.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
-      lscolor-dark = "ln -sf \${HOME}/.config/dircolors/ansi-dark.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
-      lscolor-light = "ln -sf \${HOME}/.config/dircolors/ansi-light.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
       lscolor-universal = "ln -sf \${HOME}/.config/dircolors/ansi-universal.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
-      lscolor-manjaro = "ln -sf \${HOME}/.config/dircolors/manjaro.dircolors \${HOME}/.dircolors; eval \$(dircolors -b \${HOME}/.dircolors)";
       psa = "ps -eo user,group,ppid,pid,%cpu,%mem,vsz,rss,stat,start,time,comm,args";
-      drop-caches = "echo 1 | sudo tee /proc/sys/vm/drop_caches";
-      dmesg = "journalctl --dmesg -o short-monotonic --no-hostname --no-pager";
-      create-input-file = "sed ':a;N;$!ba;s/\\n/ /g'";
+      rgrep = "grep -r --color=auto";
       sudo = "sudo ";
+      vdir = "vdir --color=auto";
       vim = "vim ";
     };
   };
