@@ -55,6 +55,7 @@
     pkgs.adwaita-qt6
     pkgs.adw-gtk3
     pkgs.gnome.networkmanager-l2tp
+    pkgs.gparted
     pkgs.gruvbox-gtk-theme
     pkgs.pinentry-gnome3
     pkgs.qgnomeplatform
