@@ -50,20 +50,6 @@
     neededForBoot = true;
   };
 
-  fileSystems."/home/gmdegoug" = { 
-    device = "/home/gmdegoug-nixos";
-    fsType = "none";
-    options = [ "bind" ];
-    neededForBoot = true;
-  };
-
-  fileSystems."/home/pdegough" = { 
-    device = "/home/pdegough-nixos";
-    fsType = "none";
-    options = [ "bind" ];
-    neededForBoot = true;
-  };
-
   fileSystems."/persist" = { 
     device = "/nixos/persist";
     fsType = "none";
