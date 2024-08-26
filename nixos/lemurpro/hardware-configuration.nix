@@ -26,13 +26,13 @@
   };
 
   fileSystems."/boot" = { 
-    device = "UUID=D43E-18A2";
+    device = "PARTUUID=d154dd1d-8443-4eed-9e48-3bf5267beec7";
     fsType = "vfat";
     options = [ "umask=0077" ];
   };
 
   fileSystems."/nixos" = { 
-    device = "UUID=12b124a3-c743-44cc-989c-8a14de099ae1";
+    device = "UUID=ac3424bb-f051-455e-bcd4-8d3c8e0a6fd9";
     fsType = "ext4";
     neededForBoot = true;
   };
@@ -45,7 +45,7 @@
   };
 
   fileSystems."/home" = { 
-    device = "UUID=b5588a24-412c-47de-a6f6-f6205a5b5051";
+    device = "UUID=5b2a4234-941d-46dd-8484-7c365da705e4";
     fsType = "ext4";
     neededForBoot = true;
   };
