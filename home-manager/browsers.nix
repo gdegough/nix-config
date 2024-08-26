@@ -10,8 +10,8 @@
   home.packages = [
     pkgs.firefox
     pkgs.google-chrome
-    pkgs.vivaldi
-    pkgs.vivaldi-ffmpeg-codecs
+    # pkgs.vivaldi
+    # pkgs.vivaldi-ffmpeg-codecs
   ];
   # Make Firefox use the default portal file picker.
   # Preferences source: https://wiki.archlinux.org/title/firefox#KDE_integration
