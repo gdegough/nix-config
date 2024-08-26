@@ -28,7 +28,7 @@
       include=~/.config/foot/colorscheme
 
       [colors]
-      alpha=0.9
+      alpha=0.8
 
       [scrollback]
       lines=10000

@@ -53,7 +53,7 @@
       decorations = "full"
       dynamic_padding = true
       dynamic_title = true
-      opacity = 0.9
+      opacity = 0.8
 
       [window.dimensions]
       columns = 132
@@ -119,7 +119,7 @@
         dynamic_padding: true
         dynamic_title: true
         decorations: full
-        opacity: 0.9
+        opacity: 0.8
       scrolling:
         history: 10000
       # Scrolling distance multiplier.
