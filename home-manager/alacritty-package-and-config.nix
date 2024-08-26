@@ -26,7 +26,7 @@
       TERM = "xterm-256color"
 
       [font]
-      size = 11
+      size = 10
 
       [font.bold]
       family = "IBM Plex Mono"
@@ -74,7 +74,7 @@
       TERM = "xterm-256color"
 
       [font]
-      size = 11
+      size = 10
 
       [font.bold]
       family = "IBM Plex Mono"
@@ -146,7 +146,7 @@
           family: IBM Plex Mono
           style: Bold Italic
         # Point size
-        size: 11
+        size: 10
       mouse:
         hide_when_typing: false
       colors:
@@ -196,7 +196,7 @@
           family: IBM Plex Mono
           style: Bold Italic
         # Point size
-        size: 11
+        size: 10
       mouse:
         hide_when_typing: false
       colors:
