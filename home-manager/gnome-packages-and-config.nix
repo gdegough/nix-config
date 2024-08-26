@@ -48,13 +48,13 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       color-scheme = "prefer-dark";
-      document-font-name = "IBM Plex Sans 11";
+      document-font-name = "IBM Plex Sans 10";
       enable-hot-corners = false;
       font-antialiasing = "grayscale";
       font-hinting = "slight";
-      font-name = "IBM Plex Sans 11";
+      font-name = "IBM Plex Sans 10";
       gtk-enable-primary-paste = false;
-      monospace-font-name = "IBM Plex Mono 11";
+      monospace-font-name = "IBM Plex Mono 10";
     };
 
     "org/gnome/desktop/media-handling" = {
@@ -107,7 +107,7 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,close";
-      titlebar-font = "IBM Plex Sans Semi-Bold 11";
+      titlebar-font = "IBM Plex Sans Semi-Bold 10";
     };
 
     "org/gnome/mutter" = {

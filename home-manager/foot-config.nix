@@ -22,7 +22,7 @@
     ".config/foot/foot-transparent.ini".text = ''
       [main]
       term=xterm-256color
-      font=IBM Plex Mono:size=11
+      font=IBM Plex Mono:size=10
       dpi-aware=no
       initial-window-size-chars=132x43
       include=~/.config/foot/colorscheme
@@ -39,7 +39,7 @@
     ".config/foot/foot-opaque.ini".text = ''
       [main]
       term=xterm-256color
-      font=IBM Plex Mono:size=11
+      font=IBM Plex Mono:size=10
       dpi-aware=no
       initial-window-size-chars=132x43
       include=~/.config/foot/colorscheme

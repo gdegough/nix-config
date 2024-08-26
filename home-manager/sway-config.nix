@@ -19,7 +19,7 @@
       set $up l
       set $right semicolon
       # Preferred font
-      font pango:IBM Plex Mono 11
+      font pango:IBM Plex Mono 10
       # Your preferred terminal emulator
       # Recommends: foot
       # exec ${pkgs.foot}/bin/foot --server

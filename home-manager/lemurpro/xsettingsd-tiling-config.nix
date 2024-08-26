@@ -13,7 +13,7 @@
         Gtk/CursorThemeSize 24
         Gtk/DecorationLayout "menu:minimize,close"
         Gtk/EnableAnimations 1
-        Gtk/FontName "IBM Plex Sans 11"
+        Gtk/FontName "IBM Plex Sans 10"
         Gtk/MenuImages 1
         Net/IconThemeName "Adwaita"
         Net/SoundThemeName ""
