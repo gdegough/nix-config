@@ -26,13 +26,13 @@
   };
 
   fileSystems."/boot" = { 
-    device = "UUID=3B78-F514";
+    device = "PARTUUID=0194752a-6d74-40fb-b576-e15b1706062d";
     fsType = "vfat";
     options = [ "umask=0077" ];
   };
 
   fileSystems."/nixos" = { 
-    device = "UUID=20812fe0-ab45-4611-a79b-d0217b2c4a39";
+    device = "UUID=ccac6652-141e-45a6-a237-40a521c9e53d";
     fsType = "ext4";
     neededForBoot = true;
   };
@@ -45,7 +45,7 @@
   };
 
   fileSystems."/home" = { 
-    device = "UUID=eaefec33-d912-4ef9-83e0-e9d0e54dc77d";
+    device = "UUID=58b9f1d7-0b4d-457b-89ed-8f4bf99e6520";
     fsType = "ext4";
     neededForBoot = true;
   };
@@ -65,13 +65,13 @@
   };
 
   fileSystems."/mnt/backup/128Gext" = { 
-    device = "/dev/disk/by-uuid/82a75835-a541-4976-bc10-d643a69169b6";
+    device = "UUID=82a75835-a541-4976-bc10-d643a69169b6";
     fsType = "btrfs";
     options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
   };
 
   fileSystems."/mnt/backup/256Gext" = { 
-    device = "/dev/disk/by-uuid/7dcad2e8-e127-4a55-9a41-f73c46239e9b";
+    device = "UUID=7dcad2e8-e127-4a55-9a41-f73c46239e9b";
     fsType = "btrfs";
     options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
   };
