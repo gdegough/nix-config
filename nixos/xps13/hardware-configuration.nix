@@ -26,12 +26,12 @@
   };
 
   fileSystems."/boot" = { 
-    device = "/dev/disk/by-partuuid/47daf2ae-8836-46aa-9021-776c5bd8a2c6";
+    device = "PARTUUID=0cf24e89-97e9-4f70-a487-a9957562fa2f";
     fsType = "vfat";
   };
 
   fileSystems."/nixos" = { 
-    device = "UUID=<UUID partition # here>";
+    device = "UUID=7ce31b41-cf94-4431-b5cc-3cda34c03325";
     fsType = "ext4";
     neededForBoot = true;
   };
@@ -44,7 +44,7 @@
   };
 
   fileSystems."/home" = { 
-    device = "UUID=<UUID partition # here>";
+    device = "UUID=a1bdf7aa-c797-4525-8911-bf4f2bbff0ce";
     fsType = "ext4";
     neededForBoot = true;
   };
