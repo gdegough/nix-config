@@ -45,7 +45,7 @@ in
     shares = {
       public = {
         comment = "Public Stuff";
-        path = "/srv/public";
+        path = "/media/public";
         public = "yes";
         "read only" = "yes";
         "write list" = "@users @media";
