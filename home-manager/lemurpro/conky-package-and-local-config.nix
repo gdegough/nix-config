@@ -32,7 +32,7 @@
       Type=Application
       X-DBUS-ServiceName=
       X-DBUS-StartupType=
-      NotShowIn=i3;sway;hyprland;
+      NotShowIn=i3;sway;hyprland;cosmic;
     '';
     ".config/conky/conky.conf".text = ''
       --[[

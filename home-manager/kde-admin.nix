@@ -21,7 +21,7 @@
       Name[en_GB]=KGpg
       X-KDE-autostart-condition=kgpgrc:User Interface:AutoStart:false
       Categories=Qt;KDE;Utility;X-KDE-Utilities-PIM;
-      NotShowIn=sway;hyprland;GNOME;
+      NotShowIn=sway;hyprland;GNOME;cosmic;
     '';
     ".config/autostart/org.kde.kclockd-autostart.desktop".text = ''
       [Desktop Entry]
@@ -30,7 +30,7 @@
       Name=org.kde.kclockd-autostart
       Type=Application
       X-Flatpak=org.kde.kclockd-autostart
-      NotShowIn=sway;hyprland;GNOME;
+      NotShowIn=sway;hyprland;GNOME;cosmic;
     '';
   };
   home.packages = [

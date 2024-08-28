@@ -22,7 +22,7 @@
       X-DBUS-ServiceName=org.kde.yakuake
       X-DBUS-StartupType=Unique
       X-KDE-StartupNotify=false
-      NotShowIn=GNOME;hyprland;sway;
+      NotShowIn=GNOME;hyprland;sway;cosmic;
     '';
   };
 }

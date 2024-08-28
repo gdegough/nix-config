@@ -17,7 +17,7 @@
       Type=Application
       Categories=AudioVideo;Audio;
       Keywords=pulseaudio;tray;system tray;applet;volume;
-      NotShowIn=GNOME;KDE;
+      NotShowIn=GNOME;KDE;cosmic;
       ShowIn=sway;hyprland;
     '';
   };
