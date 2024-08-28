@@ -23,5 +23,10 @@
     #     wayland.enable = true;
     #   };
     # };
+    # displayManager = { # for COSMIC-greeter
+    #   cosmic-greeter = {
+    #     enable = true;
+    #   };
+    # };
   };
 }
