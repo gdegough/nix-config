@@ -36,6 +36,7 @@
     ../zsh.nix ## ZSH
 
     ## window managers and DEs
+    ../cosmic.nix # System76 COSMIC desktop environment
     ../tiling-wm-support.nix ## common tiling WM support
     # ../hyprland.nix ## Hyprland WM
     ../sway.nix ## Sway WM
