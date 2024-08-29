@@ -19,8 +19,10 @@
           enable = true;
           ## add these schemas for dconf and gsettings
           sessionPath = [
-            pkgs.gnome.nautilus
-            pkgs.gnome.gnome-tweaks
+            # pkgs.gnome.nautilus # stable 24.05
+            pkgs.nautilus # unstable
+            # pkgs.gnome.gnome-tweaksa # stable 24.05
+            pkgs.gnome-tweaks # unstable
             pkgs.gnome.gnome-settings-daemon
             pkgs.gnome.mutter ## this is necessary to control fractional scaling
           ];
