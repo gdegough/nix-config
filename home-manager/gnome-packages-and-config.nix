@@ -8,7 +8,8 @@ with lib.hm.gvariant;
 {
   home.pointerCursor = {
     name = "Adwaita";
-    package = pkgs.gnome.adwaita-icon-theme;
+    # package = pkgs.gnome.adwaita-icon-theme; # stable 24.05
+    package = pkgs.adwaita-icon-theme; # unstable
     size = 24;
     x11 = {
       enable = true;
@@ -21,7 +22,8 @@ with lib.hm.gvariant;
   home.packages = [
     pkgs.dconf2nix
     pkgs.gcolor3
-    pkgs.gnome.gnome-tweaks
+    # pkgs.gnome.gnome-tweaks # stable 24.05
+    pkgs.gnome-tweaks # unstable
     pkgs.chrome-gnome-shell
     pkgs.gnome-browser-connector
     pkgs.gnomeExtensions.appindicator
