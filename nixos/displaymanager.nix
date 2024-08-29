@@ -28,8 +28,8 @@
     #     enable = true;
     #   };
     # };
-    displayManager = { ## choose the default session ("gnome", "plasma", "COSMIC")
-      defaultSession = "";
-    };
+    #displayManager = { ## choose the default session ("gnome", "plasma", "sway", "cosmic")
+    #  defaultSession = "gnome";
+    #};
   };
 }
