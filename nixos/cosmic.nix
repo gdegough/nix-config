@@ -18,9 +18,6 @@
         enable = true; # COSMIC
       };
     };
-    # displayManager = {
-    #   defaultSession = "COSMIC"; # Make COSMIC the default session
-    # };
   };
 
   environment.systemPackages = [

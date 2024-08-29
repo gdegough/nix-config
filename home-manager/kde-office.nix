@@ -9,7 +9,7 @@
     pkgs.kdePackages.kcalc
     pkgs.kdePackages.kdepim-runtime
     pkgs.kdePackages.kmail-account-wizard
-    pkgs.kdePackages.knotes
+    # pkgs.kdePackages.knotes # stable 24.05
     pkgs.kdePackages.kongress
     pkgs.kdePackages.kontact
     pkgs.kdePackages.skanpage
