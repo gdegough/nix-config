@@ -6,18 +6,21 @@
   pkgs,
   ...
 }:
+let 
+  ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
+in
 {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
     pkgs.plex
   ];
-  # local groups I use for plex server
-  users.groups.media.gid = 901;
-  users.groups.shared-files.gid = 902;
-
+  users.users.plex = {
+    extraGroups = [] ++ ifTheyExist [ 
+      "media" 
+    ];
+  };
   # Enable plexmediaserver
-  users.users.plex.extraGroups = [ "media" ];
   services.plex = {
     enable = true;
     openFirewall = true;

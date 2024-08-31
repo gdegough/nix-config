@@ -44,6 +44,7 @@
     # ../gnome.nix ## GNOME desktop environment
 
     ## Optional server apps
+    ../jellyfin.nix # jellyfin media server
     ../plex.nix # PLEX multimedia server
     ../static-web-server.nix # static html server
     # ../vm-host.nix # virtual machine hosting
@@ -146,6 +147,10 @@
 
   ## Polkit is used for controlling system-wide privileges
   security.polkit.enable = true;
+
+  # local groups I use for media servers
+  users.groups.media.gid = 901;
+  users.groups.shared-files.gid = 902;
 
   ## List packages installed in system profile:
   environment.systemPackages = [
