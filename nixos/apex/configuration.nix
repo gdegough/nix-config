@@ -44,7 +44,7 @@
     # ../gnome.nix ## GNOME desktop environment
 
     ## Optional server apps
-    ../jellyfin.nix # jellyfin media server
+    # ../jellyfin.nix # jellyfin media server
     ../plex.nix # PLEX multimedia server
     ../static-web-server.nix # static html server
     # ../vm-host.nix # virtual machine hosting
