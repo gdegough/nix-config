@@ -26,64 +26,74 @@
     ../alacritty-package-and-config.nix
     ../autostart-config.nix
     ../bash-config.nix 
+    # ./bash-local-config.nix
     ../bitwarden.nix
     ../browsers.nix
     ../coding-utilities.nix
     ../common-multimedia.nix
     ../common-office.nix
+    ./conky-package-and-local-config.nix
     ../dircolors-config.nix
     ../dunst-config.nix
     ../editors-with_gui.nix
     # ../editors-without_gui.nix
     ../fonts.nix
-    ../foot-config.nix
     ../games.nix
     ../git-config.nix
+    ../graphic-art.nix
+    ../htmltidy-config.nix
+    ../java.nix
+    ../megasync-package-and-config.nix
+    ../music-composition.nix
+    ../mutt-package-and-config.nix
+    ../nushell-config.nix
+    # ./nushell-local-config.nix
+    # ./openrgb-local-config.nix
+    ../package-management-utilities.nix
+    ../qalculate-gtk.nix
+    ../readline-config.nix
+    ../secure-messaging.nix
+    ../starship-user-config.nix
+    ../systemd-environment-common-config.nix
+    ./systemd-environment-local-config.nix
+    ../tmux-package-and-config.nix
+    ../x-config.nix
+    ../zsh-config.nix
+    # ./zsh-local-config.nix
+
+    ## GNOME
     ../gnome-multimedia.nix
     ../gnome-office.nix
     ../gnome-packages-and-config.nix
     ../gnome-systemd-environment-config.nix
     ../gnome-terminal-config.nix
-    ../graphic-art.nix
-    ../htmltidy-config.nix
+
+    ## KDE
+    # ../kde-admin.nix
+    # ../kde-devel.nix
+    # ../kde-games.nix
+    # ../kde-multimedia.nix
+    # ../kde-office.nix
+    # ../kde-utilities.nix
+    # ../yakuake.nix
+
+    ## Tiling WMs
+    ## hyprland
     # ../hyprland-config.nix
-    ../i3blocks-package-and-config.nix
-    ../java.nix
-    ../kde-admin.nix
-    ../kde-devel.nix
-    ../kde-games.nix
-    ../kde-multimedia.nix
-    ../kde-office.nix
-    ../kde-utilities.nix
-    ../megasync-package-and-config.nix
-    ../music-composition.nix
-    ../mutt-package-and-config.nix
-    ../nushell-config.nix
-    ../package-management-utilities.nix
-    ../qalculate-gtk.nix
-    ../readline-config.nix
-    ../rofi-config.nix
-    ../secure-messaging.nix
-    ../starship-user-config.nix
-    ../sway-config.nix
-    ../systemd-environment-common-config.nix
-    ../tmux-package-and-config.nix
-    ../waybar-config.nix
-    ../wofi-config.nix
-    ../x-config.nix
-    ../yakuake.nix
-    ../zsh-config.nix
-    ## host-specific configs
-    # ./bash-local-config.nix
-    ./conky-package-and-local-config.nix
     # ./hyprland-local-config.nix
-    # ./nushell-local-config.nix
-    # ./openrgb-local-config.nix
+
+    ## Sway
+    ../sway-config.nix
     ./sway-local-config.nix
-    ./systemd-environment-local-config.nix
+
+    ## Tiling WM common
+    ../i3blocks-package-and-config.nix
+    ../foot-config.nix
+    ../rofi-config.nix
+    ../waybar-config.nix
     ./waybar-local-config.nix
+    ../wofi-config.nix
     ./xsettingsd-tiling-config.nix
-    # ./zsh-local-config.nix
   ];
 
   nixpkgs = {
@@ -129,8 +139,8 @@
     MOZ_USE_XINPUT2 = "1";
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
-    # XCURSOR_THEME = "Adwaita"; # GNOME
-    XCURSOR_THEME = "Breeze"; # KDE
+    XCURSOR_THEME = "Adwaita"; # GNOME
+    # XCURSOR_THEME = "Breeze"; # KDE
   };
 
   services.gpg-agent = {
