@@ -171,7 +171,8 @@
       $hr
       File systems:''${if_mounted /boot}
         efi ''${fs_used /boot}/''${fs_size /boot} ''${fs_bar 6 /boot}$endif''${if_mounted /nixos}
-        nixos ''${fs_used /nixos}/''${fs_size /nixos} ''${fs_bar 6 /nixos}$endif''${if_mounted /mnt/backup/128Gext}
+        nixos ''${fs_used /nixos}/''${fs_size /nixos} ''${fs_bar 6 /nixos}$endif''${if_mounted /home}
+        home ''${fs_used /home}/''${fs_size /home} ''${fs_bar 6 /home}$endif''${if_mounted /mnt/backup/128Gext}
         128Gext ''${fs_used /mnt/backup/128Gext}/''${fs_size /mnt/backup/128Gext} ''${fs_bar 6 /mnt/backup/128Gext}$endif''${if_mounted /mnt/backup/256Gext}
         256Gext ''${fs_used /mnt/backup/256Gext}/''${fs_size /mnt/backup/256Gext} ''${fs_bar 6 /mnt/backup/256Gext}$endif
       Disk I/O:
