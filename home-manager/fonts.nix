@@ -20,7 +20,6 @@
     pkgs.intel-one-mono
     pkgs.liberation_ttf
     pkgs.noto-fonts
-    # pkgs.textfonts
     pkgs.ttf_bitstream_vera
     # pkgs.typodermic-free-fonts
     pkgs.typodermic-public-domain
