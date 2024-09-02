@@ -48,6 +48,7 @@
     ../mutt-package-and-config.nix
     # ../nushell-config.nix
     # ./nushell-local-config.nix
+    # ./openrgb-local-config.nix
     # ../package-management-utilities.nix
     ../qalculate-gtk.nix
     ../readline-config.nix

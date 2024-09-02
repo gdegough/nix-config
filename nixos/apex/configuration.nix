@@ -123,7 +123,6 @@
     memoryPercent = 25;
   };
 
-  # services.hardware.openrgb.enable = true;
   services.thermald.enable = true;
   services.power-profiles-daemon.enable = true;
   # services.printing.enable = true; ## Enable CUPS to print documents.
