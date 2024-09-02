@@ -35,13 +35,16 @@
     ../nushell.nix ## nushell
     ../zsh.nix ## ZSH
 
-    ## window managers and DEs
-    ../cosmic.nix # System76 COSMIC desktop environment
-    ../tiling-wm-support.nix ## common tiling WM support
-    # ../hyprland.nix ## Hyprland WM
-    ../sway.nix ## Sway WM
-    ../kde.nix ## KDE desktop environment
+    ## DEs
+    # ../cosmic.nix # System76 COSMIC desktop environment
     ../gnome.nix ## GNOME desktop environment
+    # ../hyprland.nix ## Hyprland WM
+    # ../kde.nix ## KDE desktop environment
+    ../sway.nix ## Sway WM
+    ../tiling-wm-support.nix ## common tiling WM support
+
+    ## Optional server apps
+    # ../vm-host.nix # virtual machine hosting
 
     ## users
     ../root.nix
