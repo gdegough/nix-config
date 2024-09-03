@@ -208,6 +208,7 @@
       fgrep = "grep -F --color=auto";
       grep = "grep --color=auto";
       history = "history 0";
+      hm = "home-manager";
       ip = "ip --color=auto";
       "l." = "ls -hdl --group-directories-first .*";
       l = "ls -a1 --group-directories-first";
