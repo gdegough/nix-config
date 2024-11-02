@@ -8,7 +8,6 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
   home.packages = [
-    pkgs.firefox
     pkgs.google-chrome
     # pkgs.vivaldi
     # pkgs.vivaldi-ffmpeg-codecs
