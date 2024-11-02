@@ -15,7 +15,7 @@
       #     wayland = true;
       #     # autoSuspend = false; 
       #   };
-      };
+      # };
     };
     displayManager = { # for SDDM
       sddm = {

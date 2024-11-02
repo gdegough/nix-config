@@ -32,7 +32,7 @@
   };
 
   fileSystems."/nixos" = { 
-    device = "UUID=3e8072b2-c417-4066-a7f5-ea71ffab8e35";
+    device = "UUID=9c4405ce-dd52-49cd-9422-011fcfec26a1";
     fsType = "ext4";
     neededForBoot = true;
   };
@@ -45,7 +45,7 @@
   };
 
   fileSystems."/home" = { 
-    device = "UUID=faa6088f-91ad-486c-b0ac-110a696a79f3";
+    device = "UUID=4ba96531-a66a-487e-9a86-078e7da5abeb";
     fsType = "ext4";
     neededForBoot = true;
   };
