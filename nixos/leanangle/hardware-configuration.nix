@@ -82,7 +82,9 @@
     neededForBoot = true;
   };
 
-  swapDevices = [ ];
+  swapDevices = [ { 
+	label = "SWAP";
+  } ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
