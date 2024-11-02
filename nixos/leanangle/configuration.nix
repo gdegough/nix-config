@@ -22,7 +22,7 @@
 
     ## Host-specific configurations
     ./admin-scripts.nix
-    ./gdm-monitors.nix
+    # ./gdm-monitors.nix
     ./networking.nix
     ./graphics.nix
 
@@ -37,9 +37,9 @@
 
     ## DEs
     # ../cosmic.nix # System76 COSMIC desktop environment
-    ../gnome.nix ## GNOME desktop environment
+    # ../gnome.nix ## GNOME desktop environment
     # ../hyprland.nix ## Hyprland WM
-    # ../kde.nix ## KDE desktop environment
+    ../kde.nix ## KDE desktop environment
     ../sway.nix ## Sway WM
     ../tiling-wm-support.nix ## common tiling WM support
 
@@ -101,7 +101,7 @@
   };
 
   ## bring in latest kernels
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   ## Use the systemd-boot EFI boot loader.
   boot.loader = {

@@ -32,7 +32,7 @@
   };
 
   fileSystems."/nixos" = { 
-    device = "UUID=ccac6652-141e-45a6-a237-40a521c9e53d";
+    device = "UUID=3e8072b2-c417-4066-a7f5-ea71ffab8e35";
     fsType = "ext4";
     neededForBoot = true;
   };
@@ -45,7 +45,7 @@
   };
 
   fileSystems."/home" = { 
-    device = "UUID=58b9f1d7-0b4d-457b-89ed-8f4bf99e6520";
+    device = "UUID=faa6088f-91ad-486c-b0ac-110a696a79f3";
     fsType = "ext4";
     neededForBoot = true;
   };
@@ -65,15 +65,15 @@
   };
 
   fileSystems."/mnt/backup/128Gext" = { 
-    device = "UUID=82a75835-a541-4976-bc10-d643a69169b6";
-    fsType = "btrfs";
-    options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
+    device = "UUID=2d5ce27f-7c30-49e1-90bb-a2012020cb6f";
+    fsType = "ext4";
+    neededForBoot = false;
   };
 
   fileSystems."/mnt/backup/256Gext" = { 
-    device = "UUID=7dcad2e8-e127-4a55-9a41-f73c46239e9b";
-    fsType = "btrfs";
-    options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
+    device = "UUID=905ae989-490f-4a84-956c-6b61ad34715e";
+    fsType = "ext4";
+    neededForBoot = false;
   };
 
   fileSystems."/mnt/backup/internal" = { 

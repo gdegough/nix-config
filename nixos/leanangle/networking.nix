@@ -39,11 +39,11 @@
   };
 
   # for l2tp VPN
-  systemd = {
-    tmpfiles.rules = [
-      ''L /etc/ipsec.secrets - - - - /etc/ipsec.d/ipsec.nm-l2tp.secrets''
-    ];
-  };
+  # systemd = {
+  #   tmpfiles.rules = [
+  #     ''L /etc/ipsec.secrets - - - - /etc/ipsec.d/ipsec.nm-l2tp.secrets''
+  #   ];
+  # };
 
   # mDNS
   services.avahi.enable = true;
@@ -54,7 +54,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     iw
-    networkmanager-l2tp
+    # networkmanager-l2tp # for l2tp VPN
     networkmanagerapplet
+    wireguard-tools
   ];
 }
