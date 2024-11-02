@@ -64,22 +64,23 @@
     neededForBoot = true;
   };
 
+  fileSystems."/mnt/backup/internal" = { 
+    device = "UUID=174c69f3-e1cd-4c29-98f1-a18dfd0c6d34";
+    fsType = "ext4";
+    options = [ "defaults" ];
+    neededForBoot = true;
+  };
+
   fileSystems."/mnt/backup/128Gext" = { 
     device = "UUID=2d5ce27f-7c30-49e1-90bb-a2012020cb6f";
     fsType = "ext4";
-    neededForBoot = false;
+    options = [ "defaults,noauto" ];
   };
 
   fileSystems."/mnt/backup/256Gext" = { 
     device = "UUID=905ae989-490f-4a84-956c-6b61ad34715e";
     fsType = "ext4";
-    neededForBoot = false;
-  };
-
-  fileSystems."/mnt/backup/internal" = { 
-    device = "UUID=174c69f3-e1cd-4c29-98f1-a18dfd0c6d34";
-    fsType = "ext4";
-    neededForBoot = true;
+    options = [ "defaults,noauto" ];
   };
 
   swapDevices = [ { 
