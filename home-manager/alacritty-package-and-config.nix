@@ -12,7 +12,7 @@
   ];
   home.file = {
     ".config/alacritty/alacritty-transparent.toml".text = ''
-      import = ["~/.config/alacritty/colorscheme.toml"]
+      general.import = ["~/.config/alacritty/colorscheme.toml"]
 
       [colors]
       transparent_background_colors = true
@@ -60,7 +60,7 @@
       lines = 43
     '';
     ".config/alacritty/alacritty-opaque.toml".text = ''
-      import = ["~/.config/alacritty/colorscheme.toml"]
+      general.import = ["~/.config/alacritty/colorscheme.toml"]
 
       [colors]
       transparent_background_colors = true
