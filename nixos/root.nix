@@ -12,7 +12,7 @@ in
 {
   users.mutableUsers = false;
   users.users.root = {
-    shell = pkgs.zsh;
+    shell = pkgs.bash;
     hashedPasswordFile = "/persist/passwords/root";
   };
 }
