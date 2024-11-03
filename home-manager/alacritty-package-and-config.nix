@@ -26,7 +26,7 @@
       TERM = "xterm-256color"
 
       [font]
-      size = 10
+      size = 11
 
       [font.bold]
       family = "IBM Plex Mono"
@@ -74,7 +74,7 @@
       TERM = "xterm-256color"
 
       [font]
-      size = 10
+      size = 11
 
       [font.bold]
       family = "IBM Plex Mono"
