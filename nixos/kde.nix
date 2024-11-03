@@ -22,7 +22,7 @@
 
   qt = {
     enable = true;
-    platformTheme = "kde"; # use QT settings from Plasma
+    # platformTheme = "kde"; # use QT settings from Plasma
   };
 
   # Prefer seahorse's ssh-askpass. Resolves conflct with ksshaskpass if KDE is also installed 
