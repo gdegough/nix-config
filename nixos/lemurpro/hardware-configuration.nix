@@ -15,7 +15,7 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-intel" "coretemp" ];
   boot.supportedFilesystems = [ "btrfs" ];
   boot.extraModulePackages = [ ];
 
@@ -65,18 +65,20 @@
   };
 
   fileSystems."/mnt/backup/128Gext" = { 
-    device = "UUID=82a75835-a541-4976-bc10-d643a69169b6";
-    fsType = "btrfs";
-    options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
+    device = "UUID=2d5ce27f-7c30-49e1-90bb-a2012020cb6f";
+    fsType = "ext4";
+    options = [ "defaults,noauto" ];
   };
 
   fileSystems."/mnt/backup/256Gext" = { 
-    device = "UUID=7dcad2e8-e127-4a55-9a41-f73c46239e9b";
-    fsType = "btrfs";
-    options = [ "subvol=@backup" "relatime" "discard=async" "compress=zstd" "noauto" ];
+    device = "UUID=905ae989-490f-4a84-956c-6b61ad34715e";
+    fsType = "ext4";
+    options = [ "defaults,noauto" ];
   };
 
-  swapDevices = [ ];
+  swapDevices = [ { 
+	label = "SWAP";
+  } ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
   powerManagement.cpuFreqGovernor = "powersave";

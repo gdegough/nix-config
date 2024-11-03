@@ -22,7 +22,7 @@
 
     ## Host-specific configurations
     ./admin-scripts.nix
-    ./gdm-monitors.nix
+    # ./gdm-monitors.nix
     ./networking.nix
     ./graphics.nix
 
@@ -37,9 +37,9 @@
 
     ## DEs
     # ../cosmic.nix # System76 COSMIC desktop environment
-    ../gnome.nix ## GNOME desktop environment
+    # ../gnome.nix ## GNOME desktop environment
     # ../hyprland.nix ## Hyprland WM
-    # ../kde.nix ## KDE desktop environment
+    ../kde.nix ## KDE desktop environment
     ../sway.nix ## Sway WM
     ../tiling-wm-support.nix ## common tiling WM support
 
@@ -101,7 +101,7 @@
   };
 
   ## bring in latest kernels
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   ## Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -122,6 +122,16 @@
   services.thermald.enable = true;
   services.power-profiles-daemon.enable = false; ## conflicts with system76-power service
   services.printing.enable = true; ## Enable CUPS to print documents.
+
+  ## Bcachefs workaround
+  # systemd.services.mnt-srv = {
+  #   wantedBy = [ "local-fs.target" ];
+  #   description = "Mount srv partition";
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = ''${pkgs.bcachefs-tools}/bin/mount.bcachefs UUID=5c46fec0-dd3b-409c-95fb-cff9ec5302dc -o compression=zstd:10 /srv'';
+  #   };
+  # };
 
   ## Polkit is used for controlling system-wide privileges
   security.polkit.enable = true;
