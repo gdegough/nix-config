@@ -45,7 +45,7 @@
   };
 
   fileSystems."/home" = { 
-    device = "UUID=5b2a4234-941d-46dd-8484-7c365da705e4";
+    device = "UUID=c31d7491-8ffe-468b-9d6f-7be16d61fc7f";
     fsType = "ext4";
     neededForBoot = true;
   };
