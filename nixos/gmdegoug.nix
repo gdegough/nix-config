@@ -22,6 +22,7 @@ in
       "wheel" 
     ] ++ ifTheyExist [
       "audio"
+      "libvirtd"
       "media" 
       "networkmanager" 
       "pipewire" 
