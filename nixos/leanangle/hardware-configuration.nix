@@ -47,6 +47,7 @@
   fileSystems."/home" = { 
     device = "UUID=4ba96531-a66a-487e-9a86-078e7da5abeb";
     fsType = "ext4";
+    options = [ "defaults" ];
     neededForBoot = true;
   };
 
@@ -69,6 +70,13 @@
     fsType = "ext4";
     options = [ "defaults" ];
     neededForBoot = true;
+  };
+
+  fileSystems."/var/lib/libvirt/images" = { 
+    device = "UUID=f9c2f70c-5193-4130-a03e-a28e00031ecc";
+    fsType = "ext4";
+    options = [ "defaults" ];
+    neededForBoot = false;
   };
 
   fileSystems."/mnt/backup/128Gext" = { 
@@ -104,7 +112,6 @@
       "/var/lib/libvirt"
       "/var/db/sudo/lectured"
       "/etc/NetworkManager/system-connections"
-      { directory = "/var/lib/libvirt/images"; user = "root"; group = "root"; device = "UUID=f9c2f70c-5193-4130-a03e-a28e00031ecc"; }
     ];
     files = [
       "/etc/machine-id"
