@@ -101,14 +101,13 @@
       "/var/lib/cups"
       "/var/lib/fprint"
       "/var/lib/nixos"
-      # "/var/lib/samba"
+      "/var/lib/libvirt"
       "/var/db/sudo/lectured"
       "/etc/NetworkManager/system-connections"
-      { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
+      { directory = "/var/lib/libvirt/images"; user = "root"; group = "root"; device = "UUID=f9c2f70c-5193-4130-a03e-a28e00031ecc"; }
     ];
     files = [
       "/etc/machine-id"
-      # "/var/lib/logrotate.status"
     ];
   };
 }
