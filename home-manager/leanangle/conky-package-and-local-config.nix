@@ -184,7 +184,8 @@
         efi ''${fs_used /boot}/''${fs_size /boot} ''${fs_bar 6 /boot}$endif''${if_mounted /nixos}
         nixos ''${fs_used /nixos}/''${fs_size /nixos} ''${fs_bar 6 /nixos}$endif''${if_mounted /home}
         home ''${fs_used /home}/''${fs_size /home} ''${fs_bar 6 /home}$endif''${if_mounted /mnt/backup/internal}
-        internal ''${fs_used /mnt/backup/internal}/''${fs_size /mnt/backup/internal} ''${fs_bar 6 /mnt/backup/internal}$endif''${if_mounted /mnt/backup/128Gext}
+        internal ''${fs_used /mnt/backup/internal}/''${fs_size /mnt/backup/internal} ''${fs_bar 6 /mnt/backup/internal}$endif''${if_mounted /var/lib/libvirt/images}
+        vm-storage ''${fs_used /var/lib/libvirt/images}/''${fs_size /var/lib/libvirt/images} ''${fs_bar 6 /var/lib/libvirt/images}$endif''${if_mounted /mnt/backup/128Gext}
         128Gext ''${fs_used /mnt/backup/128Gext}/''${fs_size /mnt/backup/128Gext} ''${fs_bar 6 /mnt/backup/128Gext}$endif''${if_mounted /mnt/backup/256Gext}
         256Gext ''${fs_used /mnt/backup/256Gext}/''${fs_size /mnt/backup/256Gext} ''${fs_bar 6 /mnt/backup/256Gext}$endif
       Disk I/O:
