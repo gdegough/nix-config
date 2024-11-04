@@ -126,6 +126,10 @@
   ## Polkit is used for controlling system-wide privileges
   security.polkit.enable = true;
 
+  # local groups I use for media servers
+  users.groups.media.gid = 901;
+  users.groups.shared-files.gid = 902;
+
   ## List packages installed in system profile:
   environment.systemPackages = [
     pkgs.bc
