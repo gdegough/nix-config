@@ -145,6 +145,7 @@
     pkgs.btop
     pkgs.brightnessctl
     pkgs.btrfs-progs
+    pkgs.cifs-utils
     pkgs.efibootmgr
     pkgs.exfatprogs
     pkgs.git
