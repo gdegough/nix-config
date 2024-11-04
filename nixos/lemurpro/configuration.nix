@@ -139,6 +139,10 @@
   ## System76
   hardware.system76.enableAll = true;
 
+  # local groups I use for media servers
+  users.groups.media.gid = 901;
+  users.groups.shared-files.gid = 902;
+
   ## List packages installed in system profile:
   environment.systemPackages = [
     pkgs.bc
