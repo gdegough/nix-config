@@ -10,6 +10,10 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    # build with asm not Open Watcom
+    _7zz = prev._7zz.override { 
+      useUasm = true; 
+    };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
@@ -28,9 +32,5 @@
       system = final.system;
       config.allowUnfree = true;
     };
-  };
-
-  replace-7zz = final: _prev: {
-    _7zz = _prev._7zz.override { useUasm = true; };
   };
 }
