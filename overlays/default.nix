@@ -29,9 +29,8 @@
       config.allowUnfree = true;
     };
   };
-  config.nixpkgs.overlays = [
-    (final: prev: {
-      _7zz = prev._7zz.override { useUasm = true; };
-    })
-  ];
+
+  replace-7zz = final: _prev: {
+    _7zz = _prev._7zz.override { useUasm = true; };
+  };
 }
