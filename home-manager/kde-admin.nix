@@ -32,6 +32,21 @@
       X-Flatpak=org.kde.kclockd-autostart
       NotShowIn=sway;hyprland;GNOME;cosmic;
     '';
+    ".config/autostart/org.kde.xwaylandvideobridge.desktop".text = ''
+      [Desktop Entry]
+      X-KDE-StartupNotify=false
+      X-KDE-autostart-phase=2
+      X-GNOME-Autostart-enabled=true
+      NoDisplay=true
+      Type=Application
+      Name=Xwayland Video Bridge
+      GenericName=Share screens and windows to XWayland applications
+      Icon=xwaylandvideobridge
+      Exec=xwaylandvideobridge
+      StartupNotify=false
+      Categories=Qt;KDE;Utility;X-KDE-Utilities-Desktop;
+      NotShowIn=KDE;sway;
+    '';
   };
   home.packages = [
     pkgs.kdePackages.isoimagewriter
