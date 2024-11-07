@@ -10,7 +10,7 @@
   environment.systemPackages = [
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
-      font  = "IBM Plex Sans";
+      font  = "Noto Sans";
       fontSize = "9";
       # background = "${./gruvbox_neighborhood.jpg}";
       loginBackground = true;
