@@ -21,7 +21,6 @@
     displayManager = { # for SDDM
       sddm = {
         enable = true;
-        theme = "catppuccin-mocha";
         wayland.enable = true;
       };
     };

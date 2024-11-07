@@ -42,12 +42,6 @@
     pkgs.qgnomeplatform
     pkgs.qgnomeplatform-qt6
     pkgs.wev
-    (pkgs.catppuccin-sddm.override {
-      flavor = "mocha";
-      font  = "Noto Sans";
-      fontSize = "9";
-      loginBackground = true;
-    })
   ];
   environment.plasma6.excludePackages = [
     pkgs.kdePackages.plasma-browser-integration
