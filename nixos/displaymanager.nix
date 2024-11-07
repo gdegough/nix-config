@@ -22,7 +22,7 @@
       sddm = {
         enable = true;
         # theme = "catppuccin-mocha";
-        theme = "chili";
+        theme = "chili-sddm";
         wayland.enable = true;
       };
     };
