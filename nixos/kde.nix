@@ -42,7 +42,6 @@
     pkgs.qgnomeplatform
     pkgs.qgnomeplatform-qt6
     pkgs.wev
-    pkgs.sddm-chili-theme
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
       font  = "Noto Sans";
