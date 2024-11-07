@@ -12,7 +12,7 @@
       flavor = "mocha";
       font  = "IBM Plex Sans";
       fontSize = "9";
-      background = "${./gruvbox_neighborhood.jpg}";
+      # background = "${./gruvbox_neighborhood.jpg}";
       loginBackground = true;
     })
   ];
@@ -30,8 +30,9 @@
     displayManager = { # for SDDM
       sddm = {
         enable = true;
-        theme = "catpuccin-mocha";
+        theme = "catppuccin-mocha";
         wayland.enable = true;
+        package = pkgs.kdePackages.sddm;
       };
     };
     # displayManager = { # for COSMIC-greeter
