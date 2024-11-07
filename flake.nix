@@ -114,84 +114,84 @@
     ## Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       "gmdegoug@leanangle" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/leanangle/gmdegoug-home.nix
         ];
       };
       "pdegough@leanangle" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/leanangle/pdegough-home.nix
         ];
       };
       "root@leanangle" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/leanangle/root-home.nix
         ];
       };
       "gmdegoug@lemurpro" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/lemurpro/gmdegoug-home.nix
         ];
       };
       "pdegough@lemurpro" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/lemurpro/pdegough-home.nix
         ];
       };
       "root@lemurpro" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/lemurpro/root-home.nix
         ];
       };
       "gmdegoug@xps13" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/xps13/gmdegoug-home.nix
         ];
       };
       "pdegough@xps13" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/xps13/pdegough-home.nix
         ];
       };
       "root@xps13" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/xps13/root-home.nix
         ];
       };
       "gmdegoug@apex" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/apex/gmdegoug-home.nix
         ];
       };
       "pdegough@apex" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/apex/pdegough-home.nix
         ];
       };
       "root@apex" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
+        pkgs = import ./pkgs nixpkgs.legacyPackages.${system}; ## Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./home-manager/apex/root-home.nix
