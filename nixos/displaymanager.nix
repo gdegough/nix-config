@@ -12,7 +12,7 @@
       flavor = "mocha";
       font  = "IBM Plex Sans";
       fontSize = "9";
-      background = "${./gruvbox_neighborhood.png}";
+      background = "${./gruvbox_neighborhood.jpg}";
       loginBackground = true;
     })
   ];
