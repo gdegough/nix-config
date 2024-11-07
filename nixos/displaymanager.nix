@@ -7,15 +7,6 @@
   ...
 }: {
   ## for SDDM
-  environment.systemPackages = [
-    (pkgs.catppuccin-sddm.override {
-      flavor = "mocha";
-      font  = "Noto Sans";
-      fontSize = "9";
-      # background = "${./gruvbox_neighborhood.jpg}";
-      loginBackground = true;
-    })
-  ];
   services = {
     xserver = {
       enable = true;
@@ -30,7 +21,8 @@
     displayManager = { # for SDDM
       sddm = {
         enable = true;
-        theme = "catppuccin-mocha";
+        # theme = "catppuccin-mocha";
+        theme = "chili";
         wayland.enable = true;
       };
     };
