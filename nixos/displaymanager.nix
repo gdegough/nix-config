@@ -32,7 +32,6 @@
         enable = true;
         theme = "catpuccin-mocha";
         wayland.enable = true;
-        package = pkgs.kdePackages.sddm;
       };
     };
     # displayManager = { # for COSMIC-greeter
