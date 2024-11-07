@@ -6,6 +6,16 @@
   pkgs,
   ...
 }: {
+  ## for SDDM
+  environment.systemPackages = [
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      font  = "IBM Plex Sans";
+      fontSize = "9";
+      background = "${./gruvbox_neighborhood.png}";
+      loginBackground = true;
+    })
+  ];
   services = {
     xserver = {
       enable = true;
@@ -20,7 +30,9 @@
     displayManager = { # for SDDM
       sddm = {
         enable = true;
+        theme = "catpuccin-mocha";
         wayland.enable = true;
+        package = pkgs.kdePackages.sddm;
       };
     };
     # displayManager = { # for COSMIC-greeter
