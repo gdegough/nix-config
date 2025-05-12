@@ -24,6 +24,7 @@
     ./admin-scripts.nix
     # ./gdm-monitors.nix
     ./networking.nix
+    ./multimedia-firewall.nix
     ./graphics.nix
 
     ## Global configurations
