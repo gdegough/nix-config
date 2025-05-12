@@ -20,7 +20,7 @@
     enableCompletion = true;
     enableVteIntegration = true;
     syntaxHighlighting.enable = true;
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       setopt interactivecomments # allow comments in interactive mode
       setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
       setopt nonomatch           # hide error message if there is no match for the pattern
@@ -41,7 +41,7 @@
       bindkey '^[[F' end-of-line                        # end
       bindkey '^[[Z' undo                               # shift + tab undo last action
     '';
-    initExtra = ''
+    initContent = ''
       source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
       # enable completion features
       zstyle ':completion:*:*:*:*:*' menu select
