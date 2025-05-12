@@ -8,7 +8,7 @@
     ./easyeffects-package-and-config.nix
   ];
   home.packages = [
-    pkgs.audacious
+    # pkgs.audacious
     pkgs.easytag
     pkgs.fluidsynth
     pkgs.helvum
@@ -16,10 +16,10 @@
     pkgs.mpv
     pkgs.plexamp
     pkgs.qsynth
-    pkgs.quodlibet-full
+    # pkgs.quodlibet-full
     pkgs.soundfont-fluid
-    pkgs.tidal-hifi
+    pkgs.spotify
     pkgs.vlc
-    pkgs.vmpk
+    # pkgs.vmpk
   ];
 }

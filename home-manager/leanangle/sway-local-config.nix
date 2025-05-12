@@ -7,7 +7,7 @@
   home.file = {
     ".config/sway/monitor.conf".text = ''
       # Monitor definition
-      output HDMI-A-1 resolution 3840x2160@59.997Hz scale 1.5 position 0,0
+      output HDMI-A-3 resolution 3840x2160@59.997Hz scale 1.5 position 0,0
     '';
     ".config/sway/config.d/27-gtk-scratchpad.conf".text = ''
       # SwayWM scratchpad configuration. For detailed information type "man sway"
