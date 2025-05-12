@@ -12,7 +12,7 @@
   home.packages = [
     pkgs.ardour
     pkgs.audacity
-    pkgs.ccextractor
+    pkgs.stable.ccextractor
     pkgs.dvdbackup
     pkgs.fdk-aac-encoder
     pkgs.lame
