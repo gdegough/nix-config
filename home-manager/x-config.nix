@@ -225,7 +225,7 @@
       XTerm*termName:           xterm-256color
       XTerm*VT100.geometry:     132x43
       XTerm*faceName:           IBM Plex Mono Text
-      XTerm*faceSize:           10
+      XTerm*faceSize:           11
       XTerm*dynamicColors:      true
       XTerm*utf8:               2
       XTerm*eightBitInput:      true
@@ -247,7 +247,7 @@
       UXTerm*termName:           xterm-256color
       UXTerm*VT100.geometry:     132x43
       UXTerm*faceName:           IBM Plex Mono Text
-      UXTerm*faceSize:           10
+      UXTerm*faceSize:           11
       UXTerm*dynamicColors:      true
       UXTerm*utf8:               2
       UXTerm*eightBitInput:      true
@@ -270,7 +270,7 @@
       Zutty.autoCopy:            false
       Zutty.boldColors:          false
       Zutty.font:                IBMPlexMonoText
-      Zutty.fontsize:            10
+      Zutty.fontsize:            11
       Zutty.geometry:            132x43
       Zutty.login:               false
       Zutty.rv:                  false

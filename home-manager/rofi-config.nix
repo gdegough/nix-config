@@ -7,7 +7,7 @@
   home.file = {
     ".config/rofi/config.rasi".text = ''
       configuration {
-          font: "IBM Plex Mono 10";
+          font: "IBM Plex Mono 11";
           modi: "combi,window,ssh,drun,run";
           combi-modi: "window,ssh,drun,run";
           show-icons: true;
