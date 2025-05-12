@@ -5,7 +5,7 @@
 }:
 {
   home.file = {
-    ".config/waybar/hyprland_config".text = ''
+    ".config/waybar/hyprland_config.jsonc".text = ''
       {
           "layer": "top", // Waybar at top layer
           "position": "top", // Waybar position (top|bottom|left|right)
@@ -229,7 +229,7 @@
           }
       }
     '';
-    ".config/waybar/sway_config".text = ''
+    ".config/waybar/sway_config.jsonc".text = ''
       {
           "layer": "top", // Waybar at top layer
           "position": "top", // Waybar position (top|bottom|left|right)

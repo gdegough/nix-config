@@ -388,7 +388,7 @@
     ".config/sway/barschemes.d/waybar_barscheme.conf".text = ''
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
 
-      exec waybar -c $HOME/.config/waybar/sway_config
+      exec waybar -c $HOME/.config/waybar/sway_config.jsonc
     '';
     ".config/sway/colorschemes.d/client_window_colorscheme-gruvbox-dark.conf".text = ''
       # gruvbox-dark colors
