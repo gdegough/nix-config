@@ -62,11 +62,11 @@
     # ./zsh-local-config.nix
 
     ## GNOME
-    # ../gnome-multimedia.nix
-    # ../gnome-office.nix
-    # ../gnome-packages-and-config.nix
-    # ../gnome-systemd-environment-config.nix
-    # ../gnome-terminal-config.nix
+    ../gnome-multimedia.nix
+    ../gnome-office.nix
+    ../gnome-packages-and-config.nix
+    ../gnome-systemd-environment-config.nix
+    ../gnome-terminal-config.nix
 
     ## KDE
     ../kde-admin.nix
