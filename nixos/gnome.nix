@@ -19,12 +19,10 @@
           enable = true;
           ## add these schemas for dconf and gsettings
           sessionPath = [
-            # pkgs.gnome.nautilus # stable 24.05
-            pkgs.nautilus # unstable
-            # pkgs.gnome.gnome-tweaksa # stable 24.05
-            pkgs.gnome-tweaks # unstable
-            pkgs.gnome.gnome-settings-daemon
-            pkgs.gnome.mutter ## this is necessary to control fractional scaling
+            pkgs.nautilus
+            pkgs.gnome-tweaks
+            pkgs.gnome-settings-daemon
+            pkgs.mutter ## this is necessary to control fractional scaling
           ];
         };
       };
@@ -53,7 +51,7 @@
     pkgs.adwaita-qt
     pkgs.adwaita-qt6
     pkgs.adw-gtk3
-    pkgs.gnome.networkmanager-l2tp
+    # pkgs.gnome.networkmanager-l2tp
     pkgs.gparted
     pkgs.gruvbox-gtk-theme
     pkgs.pinentry-gnome3

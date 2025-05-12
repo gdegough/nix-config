@@ -13,87 +13,88 @@
     inputs.impermanence.nixosModules.impermanence
   ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "sg" "coretemp" "nct6775" ];
   boot.supportedFilesystems = [ "btrfs" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = { 
-    device = "tmpfs";
-    fsType = "tmpfs";
-    neededForBoot = true;
-  };
+  fileSystems."/" =
+    { device = "tmpfs";
+      fsType = "tmpfs";
+      neededForBoot = true;
+    };
 
-  fileSystems."/boot" = { 
-    device = "PARTUUID=0194752a-6d74-40fb-b576-e15b1706062d";
-    fsType = "vfat";
-    options = [ "umask=0077" ];
-  };
+  fileSystems."/boot" =
+    { device = "PARTUUID=0194752a-6d74-40fb-b576-e15b1706062d";
+      fsType = "vfat";
+      options = [ "umask=0077" ];
+    };
 
-  fileSystems."/nixos" = { 
-    device = "UUID=9c4405ce-dd52-49cd-9422-011fcfec26a1";
-    fsType = "ext4";
-    neededForBoot = true;
-  };
+  fileSystems."/home" =
+    { device = "UUID=3c32a6a4-25a0-4e3c-b6ee-59f1b5c3776e";
+      fsType = "btrfs";
+      options = [ "relatime" "compress=zstd:6" "discard=async" "subvol=@home" ];
+      neededForBoot = true;
+    };
 
-  fileSystems."/root" = { 
-    device = "/nixos/root";
-    fsType = "none";
-    options = [ "bind" ];
-    neededForBoot = true;
-  };
+  fileSystems."/nixos" =
+    { device = "UUID=8acf659f-8e2b-4aad-8bca-0f3f615dcbcd";
+      fsType = "btrfs";
+      options = [ "relatime" "compress=zstd:3" "discard=async" "subvol=@nix" ];
+      neededForBoot = true;
+    };
 
-  fileSystems."/home" = { 
-    device = "UUID=4ba96531-a66a-487e-9a86-078e7da5abeb";
-    fsType = "ext4";
-    options = [ "defaults" ];
-    neededForBoot = true;
-  };
+  fileSystems."/root" =
+    { device = "/nixos/root";
+      fsType = "none";
+      options = [ "bind" ];
+      neededForBoot = true;
+    };
 
-  fileSystems."/persist" = { 
-    device = "/nixos/persist";
-    fsType = "none";
-    options = [ "bind" ];
-    neededForBoot = true;
-  };
+  fileSystems."/persist" =
+    { device = "/nixos/persist";
+      fsType = "none";
+      options = [ "bind" ];
+      neededForBoot = true;
+    };
 
-  fileSystems."/nix" = { 
-    device = "/nixos/nix";
-    fsType = "none";
-    options = [ "bind" ];
-    neededForBoot = true;
-  };
+  fileSystems."/nix" =
+    { device = "/nixos/nix";
+      fsType = "none";
+      options = [ "bind" ];
+      neededForBoot = true;
+    };
 
-  fileSystems."/mnt/backup/internal" = { 
-    device = "UUID=174c69f3-e1cd-4c29-98f1-a18dfd0c6d34";
-    fsType = "ext4";
-    options = [ "defaults" ];
-    neededForBoot = true;
-  };
+  fileSystems."/mnt/backup/internal" = 
+    { device = "UUID=f578e5a8-bcc2-43bf-b8bb-e30aceab1b48";
+      fsType = "btrfs";
+      options = [ "relatime" "compress=zstd:10" "discard=async" "subvol=@backup" ];
+      neededForBoot = true;
+    };
 
-  fileSystems."/var/lib/libvirt/images" = { 
-    device = "UUID=f9c2f70c-5193-4130-a03e-a28e00031ecc";
-    fsType = "ext4";
-    options = [ "defaults" ];
-    neededForBoot = false;
-  };
+  fileSystems."/var/lib/libvirt/images" = 
+    { device = "UUID=b6b0fcee-d2b0-456f-a544-de5da204b32c";
+      fsType = "btrfs";
+      options = [ "relatime" "compress=zstd:3" "discard=async" "subvol=@vm-images" ];
+      neededForBoot = true;
+    };
 
-  fileSystems."/mnt/backup/128Gext" = { 
-    device = "UUID=2d5ce27f-7c30-49e1-90bb-a2012020cb6f";
-    fsType = "ext4";
-    options = [ "defaults,noauto" ];
-  };
+  fileSystems."/mnt/backup/128Gext" = 
+    { device = "UUID=2701a71a-e25d-4730-a420-dd9678a952c6";
+      fsType = "btrfs";
+      options = [ "relatime" "compress=zstd:10" "discard=async" "subvol=@backup" "noauto" ];
+    };
 
-  fileSystems."/mnt/backup/256Gext" = { 
-    device = "UUID=905ae989-490f-4a84-956c-6b61ad34715e";
-    fsType = "ext4";
-    options = [ "defaults,noauto" ];
-  };
+  fileSystems."/mnt/backup/256Gext" = 
+    { device = "UUID=431847a2-75b2-4cd9-bd2a-26d296d417b8";
+      fsType = "btrfs";
+      options = [ "relatime" "compress=zstd:10" "discard=async" "subvol=@backup" "noauto" ];
+    };
 
-  swapDevices = [ { 
-	label = "SWAP";
-  } ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/0e844e47-9c6b-4df2-b14e-c056fcf12e2c"; }
+    ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;

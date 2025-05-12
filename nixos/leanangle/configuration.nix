@@ -37,7 +37,7 @@
 
     ## DEs
     # ../cosmic.nix # System76 COSMIC desktop environment
-    # ../gnome.nix ## GNOME desktop environment
+    ../gnome.nix ## GNOME desktop environment
     # ../hyprland.nix ## Hyprland WM
     ../kde.nix ## KDE desktop environment
     ../sway.nix ## Sway WM
@@ -101,7 +101,7 @@
   };
 
   ## bring in latest kernels
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   ## Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -206,5 +206,5 @@
   };
 
   ## https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }

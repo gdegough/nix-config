@@ -14,8 +14,8 @@
     # still possible to use this option, but it's recommended to use it in conjunction
     # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
     useDHCP = lib.mkForce true;
-    # interfaces.enp5s0.useDHCP = true;
-    # interfaces.wlo1.useDHCP = true;
+    # interfaces.eno1.useDHCP = lib.mkDefault true;
+    # interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
     hostName = "leanangle";
     domain = "natcky.rr.com";
     networkmanager.enable = true;

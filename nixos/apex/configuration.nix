@@ -45,7 +45,6 @@
     # ../tiling-wm-support.nix ## common tiling WM support
 
     ## Optional server apps
-    # ../jellyfin.nix # jellyfin media server
     ../plex.nix # PLEX multimedia server
     ../static-web-server.nix # static html server
     # ../vm-host.nix # virtual machine hosting

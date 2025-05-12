@@ -7,20 +7,20 @@
   ...
 }: 
 {
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
-  hardware.opengl = { # stable 24.05
-  # hardware.graphics = { # unstable
+  #nixpkgs.config.packageOverrides = pkgs: {
+  #  vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+  #};
+  hardware.graphics = { # stable 24.11
     enable = true;
     extraPackages = [
+      pkgs.vpl-gpu-rt         # for newer GPUs on NixOS >24.05
       pkgs.intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      pkgs.vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      pkgs.vaapiVdpau
+      pkgs.intel-compute-runtime
       pkgs.libvdpau-va-gl
     ];
   };
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
+    NIXOS_OZONE_WL = "1";
   };
 }
