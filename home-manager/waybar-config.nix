@@ -558,7 +558,7 @@
 
       exit 0
     '';
-    ".config/waybar/kali-dark.css".text = ''
+    ".config/waybar/styles/kali-dark.css".text = ''
       * {
           border:                 none;
           border-radius:          0;
@@ -641,13 +641,14 @@
           color:                  #859900;
       }
 
+      #submap,
       #mode {
           margin:                 0px 5px 3px 5px;
           color:                  #fdf6e3;
           background-color:       #dc322f;
       }
     '';
-    ".config/waybar/pop-os.css".text = ''
+    ".config/waybar/styles/pop-os.css".text = ''
       * {
           border:                 none;
           border-radius:          0;
@@ -698,6 +699,7 @@
           color:                  rgba(220, 50, 47, 1);
       }
 
+      #submap,
       #mode, 
       #battery, 
       #cpu, 
@@ -736,7 +738,7 @@
           background-color:       #dc322f;
       }
     '';
-    ".config/waybar/solarized-dark.css".text = ''
+    ".config/waybar/styles/solarized-dark.css".text = ''
       * {
           /* `otf-font-awesome` is required to be installed for icons */
           font-family: IBM Plex Mono, Hack, Fira Mono, Monospace, monospace;
@@ -818,6 +820,7 @@
           color: #dc322f;
       }
 
+      #submap,
       #mode {
           margin:                 0px 5px 3px 5px;
           color:                  #fdf6e3;
@@ -1041,7 +1044,7 @@
           background-color: transparent;
       }
     '';
-    ".config/waybar/gruvbox-dark.css".text = ''
+    ".config/waybar/styles/gruvbox-dark.css".text = ''
       * {
           /* `otf-font-awesome` is required to be installed for icons */
           font-family: IBM Plex Mono, Hack, Fira Mono, Monospace, monospace;
@@ -1050,9 +1053,13 @@
       }
 
       tooltip {
-          color: #ebdbb2;
           background-color: #282828;
+          border: none;
           text-shadow: none;
+      }
+
+      tooltip label {
+          color: #ebdbb2;
       }
 
       window#waybar {
@@ -1074,10 +1081,10 @@
           /* background-color: transparent; */
       }
       window#waybar.solo {
-          color: #ffffff;
+          color: #ebdbb2;
           /* color: #657b83; */
           /* background-color: #FFFFFF; */
-          background-color: #000000;
+          background-color: #282828;
       }
 
       window#waybar.termite {
@@ -1085,7 +1092,7 @@
       }
 
       window#waybar.chromium {
-          background-color: #000000;
+          background-color: #282828;
           border: none;
       }
 
@@ -1123,6 +1130,7 @@
           color: #cc241d;
       }
 
+      #submap,
       #mode {
           margin:                 0px 5px 3px 5px;
           color:                  #ebdbb2;
@@ -1146,7 +1154,7 @@
       #scratchpad,
       #mpd {
           padding: 0 10px;
-          color: #ffffff;
+          color: #ebdbb2;
       }
 
       #window,
@@ -1173,24 +1181,24 @@
       #battery {
           /* background-color: #ffffff; */
           /* color: #000000; */
-          color: #ffffff;
+          color: #ebdbb2;
       }
 
       #battery.charging, #battery.plugged {
-          color: #ffffff;
+          color: #ebdbb2;
           /* background-color: #26A65B; */
       }
 
       @keyframes blink {
           to {
-              background-color: #ffffff;
+              background-color: #282828;
               color: #000000;
           }
       }
 
       #battery.critical:not(.charging) {
           /* background-color: #f53c3c; */
-          color: #ffffff;
+          color: #ebdbb2;
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -1204,7 +1212,7 @@
 
       #cpu {
           /* background-color: #2ecc71; */
-          color: #FFFFFF;
+          color: #ebdbb2;
       }
 
       #memory {
@@ -1230,19 +1238,19 @@
       #pulseaudio {
           /* background-color: #f1c40f; */
           /* color: #000000; */
-          color: #FFFFFF;
+          color: #ebdbb2;
       }
 
       #pulseaudio.muted {
           /* background-color: #90b1b1; */
           /* color: #2a5c45; */
-          color: #FFFFFF;
+          color: #ebdbb2;
       }
 
       #wireplumber {
           /* background-color: #fff0f5; */
           /* color: #000000; */
-          color: #FFFFFF;
+          color: #ebdbb2;
       }
 
       #wireplumber.muted {
@@ -1252,7 +1260,7 @@
       #custom-media {
           /* background-color: #66cc99; */
           /* color: #2a5c45; */
-          color: #FFFFFF;
+          color: #ebdbb2;
           min-width: 100px;
       }
 
@@ -1292,13 +1300,13 @@
       #idle_inhibitor.activated {
           /* background-color: #ecf0f1; */
           /* color: #2d3436; */
-          color: #FFFFFF;
+          color: #ebdbb2;
       }
 
       #mpd {
           /* background-color: #66cc99; */
           /* color: #2a5c45; */
-          color: #FFFFFF;
+          color: #ebdbb2;
       }
 
       #mpd.disconnected {
@@ -1316,7 +1324,7 @@
       #language {
           /* background: #00b093; */
           /* color: #740864; */
-          color: #FFFFFF;
+          color: #ebdbb2;
           padding: 0 5px;
           margin: 0 5px;
           min-width: 16px;
@@ -1325,7 +1333,7 @@
       #keyboard-state {
           /* background: #97e1ad; */
           /* color: #000000; */
-          color: #FFFFFF;
+          color: #ebdbb2;
           padding: 0 0px;
           margin: 0 5px;
           min-width: 16px;
@@ -1349,7 +1357,7 @@
           background-color: transparent;
       }
     '';
-    ".config/waybar/original-style.css".text = ''
+    ".config/waybar/styles/original-style.css".text = ''
       * {
           /* `otf-font-awesome` is required to be installed for icons */
           font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -1419,6 +1427,7 @@
           background-color: #eb4d4b;
       }
 
+      #submap,
       #mode {
           background-color: #64727D;
           border-bottom: 3px solid #ffffff;
