@@ -147,9 +147,9 @@
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentry.package = pkgs.pinentry-curses; # curses
-    # pinentry.package = pkgs.pinentry-gnome3; # GNOME
-    # pinentry.package = pkgs.pinentry-qt; # KDE
+    pinentryPackage = pkgs.pinentry-curses; # curses
+    # pinentryPackage = pkgs.pinentry-gnome3; # GNOME
+    # pinentryPackage = pkgs.pinentry-qt; # KDE
   };
 
   targets.genericLinux.enable = true;
