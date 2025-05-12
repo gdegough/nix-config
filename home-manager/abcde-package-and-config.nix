@@ -100,26 +100,26 @@
       CDDISCID=cd-discid            
                                      
       # Give the base location here for the encoded music files.
-      OUTPUTDIR="/home/public/Music/new-music"
+      OUTPUTDIR="$HOME/Music/new-music"
 
       # The default actions that abcde will take.
       ACTIONS=cddb,playlist,read,encode,tag,move,clean
                     
       # Decide here how you want the tracks labelled for a standard 'single-artist',
       # multi-track encode and also for a multi-track, 'various-artist' encode:
-      OUTPUTFORMAT='$${OUTPUT}/$${ARTISTFILE}/$${ALBUMFILE}/$${TRACKNUM} $${TRACKFILE}'
-      VAOUTPUTFORMAT='$${OUTPUT}/Various Artists/$${ALBUMFILE}/$${TRACKNUM} $${TRACKFILE}'
+      OUTPUTFORMAT="''${OUTPUT}/''${ARTISTFILE}/''${ALBUMFILE}/''${TRACKNUM} ''${TRACKFILE}"
+      VAOUTPUTFORMAT="''${OUTPUT}/Various Artists/''${ALBUMFILE}/''${TRACKNUM} ''${TRACKFILE}"
 
       # Decide here how you want the tracks labelled for a standard 'single-artist',
       # single-track encode and also for a single-track 'various-artist' encode.
       # (Create a single-track encode with 'abcde -1' from the commandline.)
-      ONETRACKOUTPUTFORMAT='$${OUTPUT}/$${ARTISTFILE}/$${TRACKFILE}'
-      VAONETRACKOUTPUTFORMAT='$${OUTPUT}/Various Artists/$${ALBUMFILE}/$${TRACKFILE}'
+      ONETRACKOUTPUTFORMAT="''${OUTPUT}/''${ARTISTFILE}/''${TRACKFILE}"
+      VAONETRACKOUTPUTFORMAT="''${OUTPUT}/Various Artists/''${ALBUMFILE}/''${TRACKFILE}"
 
       # Create playlists for single and various-artist encodes. I would suggest
       # commenting these out for single-track encoding.
-      #PLAYLISTFORMAT='$${OUTPUT}/$${ARTISTFILE}-$${ALBUMFILE}/$${ALBUMFILE}.m3u'
-      #VAPLAYLISTFORMAT='$${OUTPUT}/Various-$${ALBUMFILE}/$${ALBUMFILE}.m3u'
+      #PLAYLISTFORMAT="''${OUTPUT}/''${ARTISTFILE}-''${ALBUMFILE}/''${ALBUMFILE}.m3u"
+      #VAPLAYLISTFORMAT="''${OUTPUT}/Various-''${ALBUMFILE}/''${ALBUMFILE}.m3u"
 
       # This function takes out dots preceding the album name, and removes a grab
       # bag of illegal characters. It allows spaces, if you do not wish spaces add
