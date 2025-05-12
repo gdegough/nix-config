@@ -6,7 +6,7 @@
 {
   home.packages = [
     pkgs.starship
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     pkgs.fira-code
     pkgs.droid-sans-mono
   ];
