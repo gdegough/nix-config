@@ -143,7 +143,7 @@
           "custom/quit": {
               "tooltip": false,
               "format": "<span font='icon'>⏻</span>",
-              "on-click": "/usr/local/libexec/hyprland/exit-prompt-hyprland"
+              "on-click": "exit-prompt-hyprland"
           }
       }
     '';
@@ -508,7 +508,7 @@
           "custom/quit": {
               "tooltip": false,
               "format": "<span font='icon'>⏻</span>",
-              "on-click": "/usr/local/libexec/sway/exit-prompt-sway"
+              "on-click": "exit-prompt-sway"
           }
       }
     '';
