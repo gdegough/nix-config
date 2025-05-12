@@ -22,8 +22,8 @@ with lib.hm.gvariant;
   home.packages = [
     pkgs.dconf2nix
     pkgs.gcolor3
-    # pkgs.gnome.gnome-tweaks # stable 24.05
-    pkgs.gnome-tweaks # unstable
+    pkgs.ptyxis
+    pkgs.gnome-tweaks # 24.11
     pkgs.chrome-gnome-shell
     pkgs.gnome-browser-connector
     pkgs.gnomeExtensions.appindicator
@@ -143,6 +143,7 @@ with lib.hm.gvariant;
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" 
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/" 
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/" 
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/" 
       ];
       email = [ "<Super>e" ];
       help = [];
@@ -152,7 +153,7 @@ with lib.hm.gvariant;
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>t";
-      command = "gnome-terminal";
+      command = "ptyxis";
       name = "Launch terminal";
     };
 
@@ -163,9 +164,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-      binding = "<Super>p";
+      binding = "<Super>o";
       command = "plexamp";
-      name = "Launch mediaplayer";
+      name = "Launch plexamp";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
@@ -178,6 +179,12 @@ with lib.hm.gvariant;
       binding = "<Super>z";
       command = "bitwarden";
       name = "Launch bitwarden";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
+      binding = "<Super>p";
+      command = "spotify";
+      name = "Launch mediaplayer";
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
