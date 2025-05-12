@@ -18,22 +18,23 @@
       # You can send windows there and get them back later.
 
       # Password manager
-      for_window [class="Bitwarden"] move window to scratchpad
-      bindsym $mod+z [class="Bitwarden"] scratchpad show, move position center, resize set 900 600
+      for_window [app_id="Bitwarden"] move window to scratchpad
+      bindsym $mod+z [app_id="Bitwarden"] scratchpad show, move position center, resize set 900 600
       #exec "flatpak run --branch=stable --arch=x86_64 --command=bitwarden --file-forwarding com.bitwarden.desktop"
-      exec "GDK_DPI_SCALE=0.6 bitwarden"
+      #exec "GDK_DPI_SCALE=0.6 bitwarden"
+      exec bitwarden
 
-      # tidal-hifi
-      #for_window [class="tidal-hifi"] move window to scratchpad
-      #bindsym $mod+p [class="tidal-hifi"] scratchpad show, move position center, resize set 1280 800
-      #exec "flatpak run --branch=stable --arch=x86_64 --command=com.mastermindzh.tidal-hifi com.mastermindzh.tidal-hifi"
-      #exec "GDK_DPI_SCALE=0.6 tidal-hifi"
+      # spotify
+      for_window [app_id="spotify"] move window to scratchpad
+      bindsym $mod+p [app_id="spotify"] scratchpad show, move position center, resize set 1280 800
+      exec spotify
 
       # Plexamp
-      for_window [class="Plexamp"] move window to scratchpad
-      bindsym $mod+p [class="Plexamp"] scratchpad show, move position center, resize set 250 500
+      for_window [app_id="Plexamp"] move window to scratchpad
+      bindsym $mod+o [app_id="Plexamp"] scratchpad show, move position center, resize set 250 500
       #exec "flatpak run --branch=stable --arch=x86_64 --command=startplexamp com.plexamp.Plexamp"
-      exec "GDK_DPI_SCALE=0.6 plexamp"
+      #exec "GDK_DPI_SCALE=0.6 plexamp"
+      exec plexamp
     '';
   };
 }
