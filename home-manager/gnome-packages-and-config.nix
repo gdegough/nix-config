@@ -29,8 +29,10 @@ with lib.hm.gvariant;
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.caffeine
     pkgs.gnomeExtensions.dash-to-dock
-    pkgs.gnomeExtensions.internet-radio
+    pkgs.gnomeExtensions.dash-to-panel
     pkgs.gnomeExtensions.lock-keys
+    pkgs.gnomeExtensions.mpris-label
+    pkgs.gnomeExtensions.vitals
   ];
   home.file = {
     ".config/gtk-3.0/settings.ini".text = ''
