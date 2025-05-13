@@ -50,6 +50,21 @@
       ping=$(ping -c 1 www.google.com | tail -1| awk '{print $4}' | cut -d '/' -f 2 | cut -d '.' -f 1)
       echo "($ping ms)"
     '';
+    ".config/waybar/scripts/mediaplayer.sh".executable = true;
+    ".config/waybar/scripts/mediaplayer.sh".text = ''
+      #!/usr/bin/env sh
+
+      spotify_player_status=$(playerctl --player spotify status 2> /dev/null)
+      plexamp_player_status=$(playerctl --player Plexamp status 2> /dev/null)
+
+      if [ "$spotify_player_status" = "Playing" ]; then
+          playerctl metadata --player spotify --format "{\"text\": \"{{artist}} - {{markup_escape(title)}} ({{markup_escape(duration(position))}}/{{markup_escape(duration(mpris:length))}})\", \"alt\": \"{{playerName}}\", \"tooltip\": \"{{markup_escape(title)}}\", \"class\": \"custom-{{playerName}}\"}"
+      elif [ "$plexamp_player_status" = "Playing" ]; then
+          playerctl metadata --player Plexamp --format "{\"text\": \"{{artist}} - {{markup_escape(title)}} ({{markup_escape(duration(position))}}/{{markup_escape(duration(mpris:length))}})\", \"alt\": \"{{playerName}}\", \"tooltip\": \"{{markup_escape(title)}}\", \"class\": \"custom-{{playerName}}\"}"
+      else
+          exit 1
+      fi
+    '';
     ".config/waybar/scripts/mediaplayer.py".executable = true;
     ".config/waybar/scripts/mediaplayer.py".text = ''
       #!/usr/bin/env python3

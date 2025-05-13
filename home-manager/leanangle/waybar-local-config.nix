@@ -14,11 +14,10 @@
       // Choose the order of the modules
           "modules-left": [
               "hyprland/workspaces", 
-              "hyprland/submap", 
-              "custom/media"
+              "hyprland/submap",
+              "custom/mediaplayer"
           ],
           "modules-center": [
-              "clock"
           ],
           "modules-right": [
               "tray",
@@ -26,6 +25,7 @@
               "cpu",
               "memory",
               "temperature",
+              "clock",
               "custom/quit"
           ],
       // Modules configuration
@@ -77,7 +77,7 @@
           },
           "temperature": {
               "tooltip": false,
-              "thermal-zone": 2,
+              "thermal-zone": 3,
               "critical-threshold": 80,
               "format": "{temperatureC}°C <span font='icon'>{icon}</span>",
               "format-icons": ["", "", ""]
@@ -102,43 +102,12 @@
               "restart-interval": 10,
               "exec": "$HOME/.config/waybar/scripts/pw-volume-monitor"
           },
-          "custom/media": {
-              "format": "{0}",
-              "return-type": "json",
-              "max-length": 64,
-              "format-icons": {
-                  "spotify": "",
-                  "default": "🎜"
-              },
-              "escape": true,
-              "exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null"
-          },
           "custom/mediaplayer": {
-              "tooltip": false,
-              "format": "<span font='icon'>{icon}</span> {0}",
-              "return-type": "json",
-              "max-length": 64,
+              "format": "{text}",
+              "max-length": 128,
               "interval": 1,
-              "format-icons": {
-                  "spotify": "",
-                  "default": "🎜"
-              },
-              "escape": true,
-              "exec": "playerctl metadata -F -a --player spotify --format \"{\"text\": \"{{artist}} - {{markup_escape(title)}} ({{markup_escape(duration(position))}}/{{markup_escape(duration(mpris:length))}})\", \"tooltip\": \"{{markup_escape(title)}}\", \"class\": \"custom-{{playerName}}\", \"alt\": \"{{playerName}}\"}\""
-          },
-          "mpris": {
-              "player": "Plexamp",
-              "interval": 1,
-              "format": "<span font='icon'>{player_icon}</span> <span font='icon'>{status_icon}</span> {dynamic}", 
-              "status-icons": {
-                  "playing": "",
-                  "paused": "",
-                  "stopped": ""
-              },
-              "player-icons": {
-                  "spotify": "",
-                  "default": "🎜"
-              }
+              "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null", 
+              "return-type": "json"
           },
           "custom/quit": {
               "tooltip": false,
@@ -156,11 +125,10 @@
       // Choose the order of the modules
           "modules-left": [
               "sway/workspaces", 
-              "sway/mode", 
+              "sway/mode",
               "custom/mediaplayer"
           ],
           "modules-center": [
-              "clock"
           ],
           "modules-right": [
               "tray",
@@ -168,6 +136,7 @@
               "cpu",
               "memory",
               "temperature",
+              "clock",
               "custom/quit"
           ],
       // Modules configuration
@@ -243,43 +212,12 @@
               "restart-interval": 10,
               "exec": "$HOME/.config/waybar/scripts/pw-volume-monitor"
           },
-          "custom/media": {
-              "format": "{0}",
-              "return-type": "json",
-              "max-length": 64,
-              "format-icons": {
-                  "spotify": "",
-                  "default": "🎜"
-              },
-              "escape": true,
-              "exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null"
-          },
           "custom/mediaplayer": {
-              "exec": "playerctl metadata -F -a --player spotify --format '{"text": "{{artist}} - {{markup_escape(title)}} ({{markup_escape(duration(position))}}/{{markup_escape(duration(mpris:length))}})", "alt": "{{playerName}}", "tooltip": "{{markup_escape(title)}}", "class": "custom-{{playerName}}"}'"
-              "format": "<span font='icon'>{icon}</span> {text}",
-              "return-type": "json",
-              "tooltip": true,
-              "max-length": 64,
+              "format": "{text}",
+              "max-length": 128,
               "interval": 1,
-              "format-icons": {
-                  "spotify": "",
-                  "default": "🎜"
-              },
-              "escape": true
-          },
-          "mpris": {
-              "player": "Plexamp",
-              "interval": 1,
-              "format": "<span font='icon'>{player_icon}</span> <span font='icon'>{status_icon}</span> {dynamic}", 
-              "status-icons": {
-                  "playing": "",
-                  "paused": "",
-                  "stopped": ""
-              },
-              "player-icons": {
-                  "spotify": "",
-                  "default": "🎜"
-              }
+              "exec": "$HOME/.config/waybar/scripts/mediaplayer.sh 2> /dev/null", 
+              "return-type": "json"
           },
           "custom/quit": {
               "tooltip": false,
