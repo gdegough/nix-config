@@ -26,4 +26,7 @@
     pkgs.virt-manager
     pkgs.virt-viewer
   ];
+
+  # To enable UEFI firmware support in Virt-Manager, Libvirt, Gnome-Boxes, etc.
+  systemd.tmpfiles.rules = [ "L+ /var/lib/qemu/firmware - - - - ${pkgs.qemu}/share/qemu/firmware" ];
 }
