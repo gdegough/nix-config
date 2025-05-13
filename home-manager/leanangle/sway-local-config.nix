@@ -20,8 +20,6 @@
       # Password manager
       for_window [app_id="Bitwarden"] move window to scratchpad
       bindsym $mod+z [app_id="Bitwarden"] scratchpad show, move position center, resize set 900 600
-      #exec "flatpak run --branch=stable --arch=x86_64 --command=bitwarden --file-forwarding com.bitwarden.desktop"
-      #exec "GDK_DPI_SCALE=0.6 bitwarden"
       exec bitwarden
 
       # spotify
@@ -32,9 +30,7 @@
       # Plexamp
       for_window [app_id="Plexamp"] move window to scratchpad
       bindsym $mod+o [app_id="Plexamp"] scratchpad show, move position center, resize set 250 500
-      #exec "flatpak run --branch=stable --arch=x86_64 --command=startplexamp com.plexamp.Plexamp"
-      #exec "GDK_DPI_SCALE=0.6 plexamp"
-      exec plexamp
+      #exec plexamp
     '';
   };
 }
