@@ -157,7 +157,7 @@
           "modules-left": [
               "sway/workspaces", 
               "sway/mode", 
-              "custom/media"
+              "custom/mediaplayer"
           ],
           "modules-center": [
               "clock"
