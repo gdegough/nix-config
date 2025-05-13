@@ -46,7 +46,7 @@
     ../megasync-package-and-config.nix
     ../music-composition.nix
     ../mutt-package-and-config.nix
-    # ../nushell-config.nix
+    ../nushell-config.nix
     # ./nushell-local-config.nix
     ./openrgb-local-config.nix
     ../package-management-utilities.nix
