@@ -46,7 +46,7 @@
     ../megasync-package-and-config.nix
     ../music-composition.nix
     ../mutt-package-and-config.nix
-    ../nushell-config.nix
+    # ../nushell-config.nix
     # ./nushell-local-config.nix
     ./openrgb-local-config.nix
     ../package-management-utilities.nix
@@ -139,8 +139,8 @@
     MOZ_USE_XINPUT2 = "1";
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
-    # XCURSOR_THEME = "Adwaita"; # GNOME
-    XCURSOR_THEME = "Breeze"; # KDE
+    XCURSOR_THEME = "Adwaita"; # GNOME
+    # XCURSOR_THEME = "Breeze"; # KDE
   };
 
   services.gpg-agent = {
@@ -172,5 +172,5 @@
   systemd.user.startServices = "sd-switch";
 
   ## https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 }

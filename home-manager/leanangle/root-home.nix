@@ -46,7 +46,7 @@
     # ../megasync-package-and-config.nix
     # ../music-composition.nix
     ../mutt-package-and-config.nix
-    ../nushell-config.nix
+    # ../nushell-config.nix
     # ./nushell-local-config.nix
     # ./openrgb-local-config.nix
     # ../package-management-utilities.nix
@@ -147,7 +147,14 @@
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry-curses; # ncurses
+    # 24.11
+    # pinentryPackage = pkgs.pinentry-curses; # curses
+    # pinentryPackage = pkgs.pinentry-gnome3; # GNOME
+    # pinentryPackage = pkgs.pinentry-qt; # KDE
+    # 25.05
+    pinentry.package = pkgs.pinentry-curses; # curses
+    # pinentry.package = pkgs.pinentry-gnome3; # GNOME
+    # pinentry.package = pkgs.pinentry-qt; # KDE
   };
 
   targets.genericLinux.enable = true;
@@ -165,5 +172,5 @@
   systemd.user.startServices = "sd-switch";
 
   ## https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 }

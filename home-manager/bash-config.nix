@@ -36,7 +36,7 @@
 
       # If this is an xterm set the title to user@host:dir
       case "$TERM" in
-          xterm*|rxvt*|Eterm|aterm|kterm|gnome*|alacritty)
+          alacritty*|aterm|Eterm|foot*|gnome*|kterm|rxvt*|xterm*)
               PS1="\[\e]0;\u@\h: \w\a\]''${PS1}"
               ;;
           *)
