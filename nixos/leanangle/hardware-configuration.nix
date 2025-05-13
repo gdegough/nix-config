@@ -47,6 +47,9 @@
 
   fileSystems."/root" =
     { device = "/nixos/root";
+      depends = [
+        "/nixos" 
+      ];
       fsType = "none";
       options = [ "bind" ];
       neededForBoot = true;
@@ -54,6 +57,9 @@
 
   fileSystems."/persist" =
     { device = "/nixos/persist";
+      depends = [
+        "/nixos" 
+      ];
       fsType = "none";
       options = [ "bind" ];
       neededForBoot = true;
@@ -61,6 +67,9 @@
 
   fileSystems."/nix" =
     { device = "/nixos/nix";
+      depends = [
+        "/nixos" 
+      ];
       fsType = "none";
       options = [ "bind" ];
       neededForBoot = true;
@@ -75,6 +84,9 @@
 
   fileSystems."/var/lib/libvirt/images" = 
     { device = "UUID=b6b0fcee-d2b0-456f-a544-de5da204b32c";
+      depends = [
+        "/var/lib/libvirt" 
+      ];
       fsType = "btrfs";
       options = [ "relatime" "compress=zstd:3" "discard=async" "subvol=@vm-images" ];
       neededForBoot = true;
@@ -101,7 +113,7 @@
 
   # this folder is where the files will be stored (don't put it in tmpfs)
   environment.persistence."/persist" = {
-    hideMounts = true;
+    hideMounts = false;
     directories = [
       "/etc/ssh"
       "/var/log"
