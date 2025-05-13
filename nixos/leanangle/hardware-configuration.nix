@@ -82,6 +82,13 @@
       neededForBoot = true;
     };
 
+  fileSystems."/var/lib/libvirt" = 
+    { device = "UUID=b6b0fcee-d2b0-456f-a544-de5da204b32c";
+      fsType = "btrfs";
+      options = [ "relatime" "compress=zstd:3" "discard=async" "subvol=@virt-data-nixos" ];
+      neededForBoot = true;
+    };
+
   fileSystems."/var/lib/libvirt/images" = 
     { device = "UUID=b6b0fcee-d2b0-456f-a544-de5da204b32c";
       depends = [
@@ -122,7 +129,6 @@
       "/var/lib/cups"
       "/var/lib/fprint"
       "/var/lib/nixos"
-      "/var/lib/libvirt"
       "/var/db/sudo/lectured"
       "/etc/NetworkManager/system-connections"
     ];
