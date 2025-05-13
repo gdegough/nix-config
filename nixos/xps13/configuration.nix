@@ -22,8 +22,9 @@
 
     ## Host-specific configurations
     ./admin-scripts.nix
-    ./gdm-monitors.nix
+    # ./gdm-monitors.nix
     ./networking.nix
+    ./multimedia-firewall.nix
     ./graphics.nix
 
     ## Global configurations
@@ -39,7 +40,7 @@
     # ../cosmic.nix # System76 COSMIC desktop environment
     ../gnome.nix ## GNOME desktop environment
     # ../hyprland.nix ## Hyprland WM
-    # ../kde.nix ## KDE desktop environment
+    ../kde.nix ## KDE desktop environment
     ../sway.nix ## Sway WM
     ../tiling-wm-support.nix ## common tiling WM support
 
@@ -186,5 +187,5 @@
   };
 
   ## https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
