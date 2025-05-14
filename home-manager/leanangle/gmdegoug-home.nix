@@ -148,11 +148,11 @@
     defaultCacheTtl = 1800;
     enableSshSupport = true;
     ## 24.11
-    pinentryPackage = pkgs.pinentry-curses; # curses
+    #pinentryPackage = pkgs.pinentry-curses; # curses
     # pinentryPackage = pkgs.pinentry-gnome3; # GNOME
     # pinentryPackage = pkgs.pinentry-qt; # KDE
     ## 25.05
-    #pinentry.package = pkgs.pinentry-curses; # curses
+    pinentry.package = pkgs.pinentry-curses; # curses
     ## pinentry.package = pkgs.pinentry-gnome3; # GNOME
     ## pinentry.package = pkgs.pinentry-qt; # KDE
   };
