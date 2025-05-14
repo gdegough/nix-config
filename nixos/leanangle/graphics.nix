@@ -10,7 +10,7 @@
   #nixpkgs.config.packageOverrides = pkgs: {
   #  vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   #};
-  hardware.graphics = { # stable 24.11
+  hardware.graphics = {
     enable = true;
     extraPackages = [
       pkgs.vpl-gpu-rt         # for newer GPUs on NixOS >24.05
