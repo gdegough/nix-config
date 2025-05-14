@@ -8,10 +8,7 @@ with lib.hm.gvariant;
 {
   home.pointerCursor = {
     name = "Adwaita";
-    ## 24.05
-    package = pkgs.gnome.adwaita-icon-theme;
-    ## 25.05
-    #package = pkgs.adwaita-icon-theme;
+    package = pkgs.adwaita-icon-theme;
     size = 24;
     x11 = {
       enable = true;
