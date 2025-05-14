@@ -17,7 +17,7 @@
       Comment=System Monitor
       Encoding=UTF-8
       TryExec=conky
-      Exec=conky -p 30 -d -b -c "/home/${config.home.username}/.config/conky/conky.conf"
+      Exec=conky -p 15 -d -b -c "/home/${config.home.username}/.config/conky/conky.conf"
       GenericName[en_US]=
       GenericName=
       Hidden=false

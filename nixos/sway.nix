@@ -200,6 +200,41 @@ let
       esac
     '';
   };
+  # service to call my-notifier to determine which notification app to use
+  usernotify = pkgs.writeTextFile {
+    name = "usernotify.service";
+    destination = "/share/dbus-1/services/usernotify.service";
+    executable = true;
+
+    text = ''
+      [D-BUS Service]
+      Name=org.freedesktop.Notifications
+      Exec=my-notifier
+    '';
+  };
+  # sh script to determine which notificaion app to use
+  my-notifier = pkgs.writeTextFile {
+    name = "my-notifier";
+    destination = "/bin/my-notifier";
+    executable = true;
+
+    text = ''
+      #!/usr/bin/env bash
+
+      set -euo pipefail
+      case $XDG_CURRENT_DESKTOP in
+          KDE)
+              plasma_waitforname org.freedesktop.Notifications
+              ;;
+          COSMIC)
+              cosmic-notifications
+              ;;
+          *)
+              dunst
+              ;;
+      esac
+    '';
+  };
 in
 {
   security = {
@@ -220,6 +255,7 @@ in
     pkgs.grim
     layered-include
     pkgs.mako
+    my-notifier
     pkgs.pasystray
     pkgs.pavucontrol
     pkgs.playerctl
@@ -227,6 +263,7 @@ in
     pkgs.slurp
     pkgs.swayidle
     pkgs.swaylock
+    usernotify
     volume-helper-sway
     pkgs.waybar
     pkgs.wayland
