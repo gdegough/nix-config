@@ -152,6 +152,18 @@
         14: ''${cpu cpu14}% (''${freq_g 14}GHz) ''${goto 140}''${cpugraph cpu14 8,0 104E8B ff0000 -t}
         15: ''${cpu cpu15}% (''${freq_g 15}GHz) ''${goto 140}''${cpugraph cpu15 8,0 104E8B ff0000 -t}
         16: ''${cpu cpu16}% (''${freq_g 16}GHz) ''${goto 140}''${cpugraph cpu16 8,0 104E8B ff0000 -t}
+        17: ''${cpu cpu17}% (''${freq_g 17}GHz) ''${goto 140}''${cpugraph cpu17 8,0 104E8B ff0000 -t}
+        18: ''${cpu cpu18}% (''${freq_g 18}GHz) ''${goto 140}''${cpugraph cpu18 8,0 104E8B ff0000 -t}
+        19: ''${cpu cpu19}% (''${freq_g 19}GHz) ''${goto 140}''${cpugraph cpu19 8,0 104E8B ff0000 -t}
+        20: ''${cpu cpu20}% (''${freq_g 20}GHz) ''${goto 140}''${cpugraph cpu20 8,0 104E8B ff0000 -t}
+        21: ''${cpu cpu21}% (''${freq_g 21}GHz) ''${goto 140}''${cpugraph cpu21 8,0 104E8B ff0000 -t}
+        22: ''${cpu cpu22}% (''${freq_g 22}GHz) ''${goto 140}''${cpugraph cpu22 8,0 104E8B ff0000 -t}
+        23: ''${cpu cpu23}% (''${freq_g 23}GHz) ''${goto 140}''${cpugraph cpu23 8,0 104E8B ff0000 -t}
+        24: ''${cpu cpu24}% (''${freq_g 24}GHz) ''${goto 140}''${cpugraph cpu24 8,0 104E8B ff0000 -t}
+        25: ''${cpu cpu25}% (''${freq_g 25}GHz) ''${goto 140}''${cpugraph cpu25 8,0 104E8B ff0000 -t}
+        26: ''${cpu cpu26}% (''${freq_g 26}GHz) ''${goto 140}''${cpugraph cpu26 8,0 104E8B ff0000 -t}
+        27: ''${cpu cpu27}% (''${freq_g 27}GHz) ''${goto 140}''${cpugraph cpu27 8,0 104E8B ff0000 -t}
+        28: ''${cpu cpu28}% (''${freq_g 28}GHz) ''${goto 140}''${cpugraph cpu28 8,0 104E8B ff0000 -t}
       Load (avg): ''${goto 140}''${loadgraph 8,0 104E8B ff0000 -t}
          1 min: ''${loadavg 1}   5 min: ''${loadavg 2}
         15 min: ''${loadavg 3} 
@@ -170,15 +182,21 @@
       $hr
       Temps (C):
         CPU: ''${hwmon coretemp temp 1}°
-          Core 1: ''${hwmon coretemp temp 2}°   Core 2: ''${hwmon coretemp temp 3}°
-          Core 3: ''${hwmon coretemp temp 4}°   Core 4: ''${hwmon coretemp temp 5}°
-          Core 5: ''${hwmon coretemp temp 6}°   Core 6: ''${hwmon coretemp temp 7}°
-          Core 7: ''${hwmon coretemp temp 8}°   Core 8: ''${hwmon coretemp temp 9}°
+          Core 1: ''${hwmon coretemp temp 2}°   Core 2: ''${hwmon coretemp temp 6}°
+          Core 3: ''${hwmon coretemp temp 10}°   Core 4: ''${hwmon coretemp temp 14}°
+          Core 5: ''${hwmon coretemp temp 18}°   Core 6: ''${hwmon coretemp temp 22}°
+          Core 7: ''${hwmon coretemp temp 26}°   Core 8: ''${hwmon coretemp temp 30}°
+          Core 9: ''${hwmon coretemp temp 34}°  Core 10: ''${hwmon coretemp temp 35}°
+         Core 11: ''${hwmon coretemp temp 36}°  Core 12: ''${hwmon coretemp temp 37}°
+         Core 13: ''${hwmon coretemp temp 38}°  Core 14: ''${hwmon coretemp temp 39}°
+         Core 15: ''${hwmon coretemp temp 40}°  Core 16: ''${hwmon coretemp temp 41}°
+         Core 17: ''${hwmon coretemp temp 42}°  Core 18: ''${hwmon coretemp temp 43}°
+         Core 19: ''${hwmon coretemp temp 44}°  Core 20: ''${hwmon coretemp temp 45}°
       $hr
       Networking:
-        wlo1:
-            Up: ''${upspeed wlo1} ''${goto 140}''${upspeedgraph wlo1 8,0 104E8B ff0000 -t}
-          Down: ''${downspeed wlo1} ''${goto 140}''${downspeedgraph wlo1 8,0 104E8B ff0000 -t}
+        wlp0s20f3:
+            Up: ''${upspeed wlp0s20f3} ''${goto 140}''${upspeedgraph wlp0s20f3 8,0 104E8B ff0000 -t}
+          Down: ''${downspeed wlp0s20f3} ''${goto 140}''${downspeedgraph wlp0s20f3 8,0 104E8B ff0000 -t}
       $hr
       File systems:''${if_mounted /boot}
         efi ''${fs_used /boot}/''${fs_size /boot} ''${fs_bar 6 /boot}$endif''${if_mounted /nixos}
