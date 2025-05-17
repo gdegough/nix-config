@@ -21,9 +21,9 @@
     enableVteIntegration = true;
     syntaxHighlighting.enable = true;
     ## 24.11
-    #initExtra = ''
+    initExtra = ''
     ## 25.05
-    initContent = ''
+    #initContent = ''
       setopt interactivecomments # allow comments in interactive mode
       setopt magicequalsubst     # enable filename expansion for arguments of the form ‘anything=expression’
       setopt nonomatch           # hide error message if there is no match for the pattern
