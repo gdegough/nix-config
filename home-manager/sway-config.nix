@@ -313,6 +313,11 @@
           # status_command while $HOME/.local/bin/status_bar.sh; do sleep 1; done
       }
     '';
+    ".config/sway/barschemes.d/nwg-panel_barscheme.conf".text = ''
+      # SwayWM status bar configuration. For detailed information type "man sway-bar"
+
+      exec nwg-panel
+    '';
     ".config/sway/barschemes.d/pop_OS-dark_barscheme.conf".text = ''
       # SwayWM status bar configuration. For detailed information type "man sway-bar"
 

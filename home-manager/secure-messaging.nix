@@ -10,4 +10,9 @@
   home.packages = [
     pkgs.signal-desktop
   ];
+  home.file = {
+    ".config/environment.d/70-signal.conf".text = ''
+      SIGNAL_PASSWORD_STORE=gnome-libsecret
+    '';
+  };
 }
