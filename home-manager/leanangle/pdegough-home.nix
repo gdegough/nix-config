@@ -69,13 +69,13 @@
     ../gnome-terminal-config.nix
 
     ## KDE
-    ../kde-admin.nix
-    ../kde-devel.nix
-    ../kde-games.nix
-    ../kde-multimedia.nix
-    ../kde-office.nix
-    ../kde-utilities.nix
-    ../yakuake.nix
+    #../kde-admin.nix
+    #../kde-devel.nix
+    #../kde-games.nix
+    #../kde-multimedia.nix
+    #../kde-office.nix
+    #../kde-utilities.nix
+    #../yakuake.nix
 
     ## Tiling WMs
     ## hyprland

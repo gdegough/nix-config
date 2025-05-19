@@ -40,7 +40,7 @@
     # ../cosmic.nix # System76 COSMIC desktop environment
     ../gnome.nix ## GNOME desktop environment
     # ../hyprland.nix ## Hyprland WM
-    ../kde.nix ## KDE desktop environment
+    # ../kde.nix ## KDE desktop environment
     ../sway.nix ## Sway WM
     ../tiling-wm-support.nix ## common tiling WM support
 

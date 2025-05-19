@@ -302,7 +302,7 @@
       # If installed side-by-side with gnome
       exec-once = systemctl --user start polkit-gnome-authentication-agent-1.service
       # If installed side-by-side with plasma desktop
-      exec-once = systemctl --user start plasma-polkit-agent.service
+      #exec-once = systemctl --user start plasma-polkit-agent.service
 
       # bring in graphics settings
       exec-once = configure-gtk
