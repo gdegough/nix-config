@@ -31,6 +31,7 @@ with lib.hm.gvariant;
     pkgs.gnomeExtensions.dash-to-panel
     pkgs.gnomeExtensions.lock-keys
     pkgs.gnomeExtensions.mpris-label
+    pkgs.gnomeExtensions.no-overview
     pkgs.gnomeExtensions.vitals
   ];
   home.file = {
