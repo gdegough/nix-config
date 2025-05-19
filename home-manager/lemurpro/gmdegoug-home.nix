@@ -62,11 +62,11 @@
     ./zsh-local-config.nix
 
     ## GNOME
-    # ../gnome-multimedia.nix
-    # ../gnome-office.nix
-    # ../gnome-packages-and-config.nix
-    # ../gnome-systemd-environment-config.nix
-    # ../gnome-terminal-config.nix
+    ../gnome-multimedia.nix
+    ../gnome-office.nix
+    ../gnome-packages-and-config.nix
+    ../gnome-systemd-environment-config.nix
+    ../gnome-terminal-config.nix
 
     ## KDE
     #../kde-admin.nix
@@ -139,16 +139,22 @@
     MOZ_USE_XINPUT2 = "1";
     PAGER = "less";
     PROMPT_DIRTRIM = 3;
-    # XCURSOR_THEME = "Adwaita"; # GNOME
-    XCURSOR_THEME = "Breeze"; # KDE
+    XCURSOR_THEME = "Adwaita"; # GNOME
+    # XCURSOR_THEME = "Breeze"; # KDE
   };
 
   services.gpg-agent = {
     enable = true;
     defaultCacheTtl = 1800;
     enableSshSupport = true;
+    ## 24.11
+    pinentryPackage = pkgs.pinentry-curses; # curses
     # pinentryPackage = pkgs.pinentry-gnome3; # GNOME
-    pinentryPackage = pkgs.pinentry-qt; # KDE
+    # pinentryPackage = pkgs.pinentry-qt; # KDE
+    ## 25.05
+    #pinentry.package = pkgs.pinentry-curses; # curses
+    ## pinentry.package = pkgs.pinentry-gnome3; # GNOME
+    ## pinentry.package = pkgs.pinentry-qt; # KDE
   };
 
   targets.genericLinux.enable = true;
@@ -166,5 +172,5 @@
   systemd.user.startServices = "sd-switch";
 
   ## https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 }
