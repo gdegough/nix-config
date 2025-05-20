@@ -124,18 +124,20 @@ let
 	do
 		rsync -avRHASL \
 		--delete --delete-excluded \
-		--exclude="- .rustup/" \
-		--exclude="- .cargo/" \
-		--exclude="- .ccache/" \
-		--exclude="- .cache/" \
-		--exclude="- Library/Caches/" \
-		--exclude="- .local/share/flatpak/" \
-		--exclude="- public/" \
-		--exclude="- *.qcow2" \
-		--exclude="- *.iso" \
-		--exclude="- Mega Limited/" \
 		--exclude="- akonadi/" \
 		--exclude="- baloo/" \
+		--exclude="- .cache/" \
+		--exclude="- .cargo/" \
+		--exclude="- .ccache/" \
+		--exclude="- *.iso" \
+		--exclude="- Library/Caches/" \
+		--exclude="- .local/share/flatpak/" \
+		--exclude="- .local/state/" \
+		--exclude="- Mega Limited/" \
+		--exclude="- .nix-profile/" \
+		--exclude="- public/" \
+		--exclude="- *.qcow2" \
+		--exclude="- .rustup/" \
 		$i ''${target_dir}/$(hostname)-''${ID}/
 	done
 	sync
@@ -240,20 +242,22 @@ let
 	do
 	    rsync -avRHASLe ssh \
 		--delete --delete-excluded \
-		--exclude="- MEGA/" \
-		--exclude="- .rustup/" \
-		--exclude="- .cargo/" \
-		--exclude="- .ccache/" \
-		--exclude="- .cache/" \
-		--exclude="- Library/Caches/" \
-		--exclude="- .local/share/flatpak/" \
-		--exclude="- public/" \
-		--exclude="- *.qcow2" \
-		--exclude="- *.iso" \
-		--exclude="- music-library/" \
-		--exclude="- Mega Limited/" \
 		--exclude="- akonadi/" \
 		--exclude="- baloo/" \
+		--exclude="- .cache/" \
+		--exclude="- .cargo/" \
+		--exclude="- .ccache/" \
+		--exclude="- *.iso" \
+		--exclude="- Library/Caches/" \
+		--exclude="- .local/share/flatpak/" \
+		--exclude="- .local/state/" \
+		--exclude="- MEGA/" \
+		--exclude="- Mega Limited/" \
+		--exclude="- music-library/" \
+		--exclude="- .nix-profile/" \
+		--exclude="- public/" \
+		--exclude="- *.qcow2" \
+		--exclude="- .rustup/" \
 		$i ''${remote_host}:''${target_dir}/$(hostname)-''${ID}/
 	done
     '';
