@@ -110,7 +110,7 @@
   boot.loader = {
     systemd-boot = {
       enable = true;
-      consoleMode = "keep";
+      consoleMode = "auto";
     };
     timeout = 10;
     efi.canTouchEfiVariables = true;
