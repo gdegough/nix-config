@@ -32,7 +32,7 @@ let
     executable = true;
 
     text = ''
-      #!/usr/bin/env sh
+      #!/usr/bin/env bash
 
       if ! command -v wpctl >/dev/null; then
           exit 0;

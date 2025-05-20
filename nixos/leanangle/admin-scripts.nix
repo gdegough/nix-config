@@ -38,7 +38,7 @@ let
     destination = "/bin/rsync-backup-local";
     executable = true;
     text = ''
-	#!/usr/bin/env sh
+	#!/usr/bin/env bash
 
 	set -e # exit immediately on command failure
 
@@ -138,7 +138,7 @@ let
 		--exclude="- baloo/" \
 		$i ''${target_dir}/$(hostname)-''${ID}/
 	done
-	/usr/bin/sync
+	sync
     '';
   };
   rsync-backup-remote = pkgs.writeTextFile {
@@ -146,7 +146,7 @@ let
     destination = "/bin/rsync-backup-remote";
     executable = true;
     text = ''
-	#!/usr/bin/env sh
+	#!/usr/bin/env bash
 
 	set -e # exit immediately on command failure
 
@@ -263,7 +263,7 @@ let
     destination = "/bin/rsync-internal-external";
     executable = true;
     text = ''
-	#!/usr/bin/env sh
+	#!/usr/bin/env bash
 
 	set -e # exit immediately on command failure
 
@@ -338,7 +338,7 @@ let
 		--delete --delete-excluded \
 		$i/ ''${target_dir}/
 	done
-	/usr/bin/sync
+	sync
     '';
   };
 in

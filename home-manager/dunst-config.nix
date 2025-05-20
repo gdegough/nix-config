@@ -225,7 +225,7 @@
     	max_icon_size = 128
 
     	# Paths to default icons (only neccesary when not using recursive icon lookup)
-    	icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    	icon_path = ${pkgs.gnome-icon-theme}/share/icons/gnome/16x16/status/:${pkgs.gnome-icon-theme}/share/icons/gnome/16x16/devices/
 
     	### History ###
 
@@ -239,10 +239,10 @@
     	### Misc/Advanced ###
 
     	# dmenu path.
-    	dmenu = /usr/bin/dmenu -p dunst:
+    	dmenu = dmenu -p dunst:
 
     	# Browser for opening urls in context menu.
-    	browser = /usr/bin/xdg-open
+    	browser = xdg-open
 
     	# Always run rule-defined scripts, even if the notification is suppressed
     	always_run_script = true
@@ -689,7 +689,7 @@
           max_icon_size = 128
 
           # Paths to default icons (only neccesary when not using recursive icon lookup)
-          icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+          icon_path = ${pkgs.gnome-icon-theme}/share/icons/gnome/16x16/status/:${pkgs.gnome-icon-theme}/share/icons/gnome/16x16/devices/
 
           ### History ###
 
@@ -703,10 +703,10 @@
           ### Misc/Advanced ###
 
           # dmenu path.
-          dmenu = /usr/bin/dmenu -p dunst:
+          dmenu = dmenu -p dunst:
 
           # Browser for opening urls in context menu.
-          browser = /usr/bin/xdg-open
+          browser = xdg-open
 
           # Always run rule-defined scripts, even if the notification is suppressed
           always_run_script = true

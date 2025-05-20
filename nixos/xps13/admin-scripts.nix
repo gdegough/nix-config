@@ -38,7 +38,7 @@ let
     destination = "/bin/rsync-backup-remote";
     executable = true;
     text = ''
-	#!/usr/bin/env sh
+	#!/usr/bin/env bash
 
 	set -e # exit immediately on command failure
 

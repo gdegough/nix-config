@@ -1432,7 +1432,7 @@
     '';
     ".local/libexec/i3blocks/calendar".executable = true;
     ".local/libexec/i3blocks/calendar".text = ''
-      #!/usr/bin/env sh
+      #!/usr/bin/env bash
 
       WIDTH=''${WIDTH:-200}
       HEIGHT=''${HEIGHT:-200}
@@ -1819,7 +1819,7 @@
     '';
     ".local/libexec/i3blocks/disk".executable = true;
     ".local/libexec/i3blocks/disk".text = ''
-      #!/usr/bin/env sh
+      #!/usr/bin/env bash
       # Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 
       # This program is free software: you can redistribute it and/or modify
@@ -2835,7 +2835,7 @@
     '';
     ".local/libexec/i3blocks/load_average".executable = true;
     ".local/libexec/i3blocks/load_average".text = ''
-      #!/usr/bin/env sh
+      #!/usr/bin/env bash
       # Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 
       # This program is free software: you can redistribute it and/or modify
@@ -3083,7 +3083,7 @@
     '';
     ".local/libexec/i3blocks/memory".executable = true;
     ".local/libexec/i3blocks/memory".text = ''
-      #!/usr/bin/env sh
+      #!/usr/bin/env bash
       # Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 
       # This program is free software: you can redistribute it and/or modify
@@ -4256,7 +4256,7 @@
     '';
     ".local/libexec/i3blocks/nm-vpn".executable = true;
     ".local/libexec/i3blocks/nm-vpn".text = ''
-      #!/usr/bin/env sh
+      #!/usr/bin/env bash
       init_color=''${init_color:-#FFFF00}
       on_color=''${on_color:-#00FF00}
       export init_color on_color
@@ -7275,7 +7275,7 @@
     '';
     ".local/libexec/i3blocks/xkb_layout".executable = true;
     ".local/libexec/i3blocks/xkb_layout".text = ''
-      #!/usr/bin/env sh
+      #!/usr/bin/env bash
       # This script is supposed to be used as an i3blocks persistent blocklet.
       # It outputs current keyboard layout, then waits for it to change in an infinite loop.
       # Requires `xkb-switch` utility. Should work in any *sh.

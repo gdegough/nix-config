@@ -52,7 +52,7 @@
     '';
     ".config/waybar/scripts/mediaplayer.sh".executable = true;
     ".config/waybar/scripts/mediaplayer.sh".text = ''
-      #!/usr/bin/env sh
+      #!/usr/bin/env bash
 
       spotify_player_status=$(playerctl --player spotify status 2> /dev/null)
       plexamp_player_status=$(playerctl --player Plexamp status 2> /dev/null)

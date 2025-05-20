@@ -55,13 +55,13 @@
       #    imap_pass="my_pass_at_account-server-01.org"'
           
       #account-hook account-server-02 'set \
-      #    tunnel="ssh -q -C -l my_login account-server-02 /usr/bin/imapd 2>/dev/null Maildir/"'
+      #    tunnel="ssh -q -C -l my_login account-server-02 imapd 2>/dev/null Maildir/"'
 
       #account-hook imap://account-server-03 'set \
       #    tunnel="ssh -q -C -l my_login account-server-03 /home/externo/my_login/imapd 2>/dev/null Maildir/"'
 
       #account-hook imap://account-server-04 'set \
-      #    tunnel="ssh -q -C -l my_login account-server-04 /usr/bin/imapd 2>/dev/null Maildir/"'
+      #    tunnel="ssh -q -C -l my_login account-server-04 imapd 2>/dev/null Maildir/"'
 
       #account-hook imap://account-server-06 'set \
       #    tunnel="ssh -p16123 -q -C -l my_login account-server-06 /usr/local/courier-imap/bin/imapd 2>/dev/null Maildir/"'
@@ -96,19 +96,19 @@
 
       #folder-hook mail.account-server-01.org/.* 'set \
       #    from="my_login@account-server-01.org"\
-      #    sendmail="/usr/bin/ssh my_login@mail.account-server-01.org /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh my_login@mail.account-server-01.org /usr/sbin/sendmail -oem -oi"'
 
       #folder-hook account-server-06/.* 'set \
       #    from="my_login@account-server-06"\
-      #    sendmail="/usr/bin/ssh -p16123 my_login@account-server-06 /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh -p16123 my_login@account-server-06 /usr/sbin/sendmail -oem -oi"'
           
       #folder-hook account-server-02/.* 'set \
       #    from="my_login@account-server-02"\
-      #    sendmail="/usr/bin/ssh my_login@account-server-02 /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh my_login@account-server-02 /usr/sbin/sendmail -oem -oi"'
           
       #folder-hook account-server-03/.* 'set \
       #    from="my_login@account-server-03"\
-      #    sendmail="/usr/bin/ssh my_login@account-server-03 /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh my_login@account-server-03 /usr/sbin/sendmail -oem -oi"'
           
 
       #Account no. 5
@@ -122,7 +122,7 @@
       # Account-server-04
       #folder-hook account-server-04/.* 'set \
       #    from="my_login@account-server-04"\
-      #    sendmail="/usr/bin/ssh my_login@account-server-04 /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh my_login@account-server-04 /usr/sbin/sendmail -oem -oi"'
     '';
     ".mutt/muttrc".text = ''
       ###----------------------------------------------------------------------------
@@ -418,44 +418,44 @@
       # breaking PGP/MIME.
 
       # decode application/pgp
-      set pgp_decode_command="/usr/bin/gpg   %?p?--passphrase-fd 0? --no-verbose --quiet  --batch  --output - %f"
+      set pgp_decode_command="gpg   %?p?--passphrase-fd 0? --no-verbose --quiet  --batch  --output - %f"
 
       # verify a pgp/mime signature
-      set pgp_verify_command="/usr/bin/gpg   --no-verbose --quiet  --batch  --output - --verify %s %f"
+      set pgp_verify_command="gpg   --no-verbose --quiet  --batch  --output - --verify %s %f"
 
       # decrypt a pgp/mime attachment
-      set pgp_decrypt_command="/usr/bin/gpg   --passphrase-fd 0 --no-verbose --quiet  --batch  --output - %f"
+      set pgp_decrypt_command="gpg   --passphrase-fd 0 --no-verbose --quiet  --batch  --output - %f"
 
       # create a pgp/mime signed attachment
-      # set pgp_sign_command="/usr/bin/gpg-2comp --comment ''' --no-verbose --batch  --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
-      set pgp_sign_command="/usr/bin/gpg    --no-verbose --batch --quiet   --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
+      # set pgp_sign_command="gpg-2comp --comment ''' --no-verbose --batch  --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
+      set pgp_sign_command="gpg    --no-verbose --batch --quiet   --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
 
       # create a application/pgp signed (old-style) message
-      # set pgp_clearsign_command="/usr/bin/gpg-2comp --comment '''  --no-verbose --batch  --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
-      set pgp_clearsign_command="/usr/bin/gpg   --no-verbose --batch --quiet   --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
+      # set pgp_clearsign_command="gpg-2comp --comment '''  --no-verbose --batch  --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
+      set pgp_clearsign_command="gpg   --no-verbose --batch --quiet   --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
 
       # create a pgp/mime encrypted attachment
       # set pgp_encrypt_only_command="pgpewrap gpg-2comp  -v --batch  --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
-      set pgp_encrypt_only_command="pgpewrap /usr/bin/gpg    --batch  --quiet  --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+      set pgp_encrypt_only_command="pgpewrap gpg    --batch  --quiet  --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
 
       # create a pgp/mime encrypted and signed attachment
       # set pgp_encrypt_sign_command="pgpewrap gpg-2comp  --passphrase-fd 0 -v --batch  --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
-      set pgp_encrypt_sign_command="pgpewrap /usr/bin/gpg  --passphrase-fd 0  --batch --quiet  --no-verbose  --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+      set pgp_encrypt_sign_command="pgpewrap gpg  --passphrase-fd 0  --batch --quiet  --no-verbose  --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
 
       # import a key into the public key ring
-      set pgp_import_command="/usr/bin/gpg  --no-verbose --import -v %f"
+      set pgp_import_command="gpg  --no-verbose --import -v %f"
 
       # export a key from the public key ring
-      set pgp_export_command="/usr/bin/gpg   --no-verbose --export --armor %r"
+      set pgp_export_command="gpg   --no-verbose --export --armor %r"
 
       # verify a key
-      set pgp_verify_key_command="/usr/bin/gpg   --verbose --batch  --fingerprint --check-sigs %r"
+      set pgp_verify_key_command="gpg   --verbose --batch  --fingerprint --check-sigs %r"
 
       # read in the public key ring
-      set pgp_list_pubring_command="/usr/bin/gpg   --no-verbose --batch --quiet   --with-colons --list-keys %r" 
+      set pgp_list_pubring_command="gpg   --no-verbose --batch --quiet   --with-colons --list-keys %r" 
 
       # read in the secret key ring
-      set pgp_list_secring_command="/usr/bin/gpg   --no-verbose --batch --quiet   --with-colons --list-secret-keys %r" 
+      set pgp_list_secring_command="gpg   --no-verbose --batch --quiet   --with-colons --list-secret-keys %r" 
 
       # fetch keys
       # set pgp_getkeys_command="pkspxycwrap %r"
@@ -1422,7 +1422,7 @@
       #folder-hook gmail/important    "color status        J_black         J_yellow        "
     '';
     ".mutt/solarized/mutt-compile-colors.sh".text = ''
-      #!/usr/bin/env sh
+      #!/usr/bin/env bash
       # ---------------------------------------------------------------------
       # SOLARIZED color values
       # ---------------------------------------------------------------------

@@ -712,7 +712,7 @@
       #
       # Requires: swayidle
       # Requires: swaylock
-      # Requires: /usr/bin/pkill, /usr/bin/pgrep
+      # Requires: pkill, pgrep
 
       exec LT="$lock_timeout" ST="$screen_timeout" LT=''${LT:-300} ST=''${ST:-60} && \
           swayidle -w \
