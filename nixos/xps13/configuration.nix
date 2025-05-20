@@ -110,7 +110,7 @@
       enable = true;
       consoleMode = "keep";
     };
-    timeout = 3;
+    timeout = 10;
     efi.canTouchEfiVariables = true;
   };
 

@@ -72,13 +72,20 @@
     auto-optimise-store = true;
   };
 
+  ## Use the systemd-boot EFI boot loader.
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+      consoleMode = "keep";
+    };
+    timeout = 10;
+    efi.canTouchEfiVariables = true;
+  };
+
   # FIXME: Add the rest of your current configuration
 
   # TODO: Set your hostname
   networking.hostName = "your-hostname";
-
-  # TODO: This is just an example, be sure to use whatever bootloader you prefer
-  boot.loader.systemd-boot.enable = true;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
