@@ -130,7 +130,7 @@ let
 
 	for i in ''${src_folders}
 	do
-	    rsync -avRHASe ssh \
+	    rsync -avRHASLe ssh \
 		--delete --delete-excluded \
 		--exclude="- MEGA/" \
 		--exclude="- .rustup/" \

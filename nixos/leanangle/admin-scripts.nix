@@ -122,7 +122,7 @@ let
 
 	for i in ''${src_folders}
 	do
-		rsync -avRHAS \
+		rsync -avRHASL \
 		--delete --delete-excluded \
 		--exclude="- .rustup/" \
 		--exclude="- .cargo/" \
@@ -238,7 +238,7 @@ let
 
 	for i in ''${src_folders}
 	do
-	    rsync -avRHASe ssh \
+	    rsync -avRHASLe ssh \
 		--delete --delete-excluded \
 		--exclude="- MEGA/" \
 		--exclude="- .rustup/" \
@@ -334,7 +334,7 @@ let
 
 	for i in ''${src_dir}
 	do
-	    rsync -avHAS \
+	    rsync -avHASL \
 		--delete --delete-excluded \
 		$i/ ''${target_dir}/
 	done
