@@ -12,25 +12,25 @@ let
     destination = "/bin/reboot-menu";
     executable = true;
     text = ''
-	#!/usr/bin/env bash
+    #!/usr/bin/env bash
 
-	shopt -s nullglob
-	bootMenuItems=(`systemctl --boot-loader-entry=help`)
-	shopt -u nullglob
-	if (( ''${#bootMenuItems[@]} == 0 )); then
-		echo "No boot loader menu entries found" >&2
-		exit 1
-	else
-		i=0
-		for menuItem in "''${bootMenuItems[@]}"; do
-			bootMenuItems[i]=$(basename ''${menuItem})
-			((i=i+1))
-		done
-	fi
-	select menuItem in ''${bootMenuItems[@]}; do
-		echo "Rebooting to $menuItem"
-		systemctl reboot --boot-loader-entry=''${menuItem}
-	done
+    shopt -s nullglob
+    bootMenuItems=(`systemctl --boot-loader-entry=help`)
+    shopt -u nullglob
+    if (( ''${#bootMenuItems[@]} == 0 )); then
+        echo "No boot loader menu entries found" >&2
+        exit 1
+    else
+        i=0
+        for menuItem in "''${bootMenuItems[@]}"; do
+            bootMenuItems[i]=$(basename ''${menuItem})
+            ((i=i+1))
+        done
+    fi
+    select menuItem in ''${bootMenuItems[@]}; do
+        echo "Rebooting to $menuItem"
+        systemctl reboot --boot-loader-entry=''${menuItem}
+    done
     '';
   };
   rsync-backup-remote = pkgs.writeTextFile {
@@ -38,118 +38,118 @@ let
     destination = "/bin/rsync-backup-remote";
     executable = true;
     text = ''
-	#!/usr/bin/env bash
+    #!/usr/bin/env bash
 
-	set -e # exit immediately on command failure
+    set -e # exit immediately on command failure
 
-	out() { printf "$1 $2\n" "''${@:3}"; }
-	error() { out "==> ERROR:" "$@"; } >&2
-	warning() { out "==> WARNING:" "$@"; } >&2
-	msg() { out "==>" "$@"; }
-	msg2() { out "  ->" "$@";}
-	die() { error "$@"; exit 1; }
+    out() { printf "$1 $2\n" "''${@:3}"; }
+    error() { out "==> ERROR:" "$@"; } >&2
+    warning() { out "==> WARNING:" "$@"; } >&2
+    msg() { out "==>" "$@"; }
+    msg2() { out "  ->" "$@";}
+    die() { error "$@"; exit 1; }
 
-	_DEBUG="off"
-	DEBUG() {
-	    if [[ "$_DEBUG" == "on" ]]; then
-	       $@
-	    fi
-	}
+    _DEBUG="off"
+    DEBUG() {
+        if [[ "$_DEBUG" == "on" ]]; then
+           $@
+        fi
+    }
 
-	usage() {
-	  cat <<EOF
-	usage: ''${0##*/} [arguments...]
+    usage() {
+      cat <<EOF
+    usage: ''${0##*/} [arguments...]
 
-	    -d                       Verbose output (debug)
-	    -h                       Print this help message and exit
-	    -r <remote_host>         remote host with which to sync
-	    -t <target_directory>    target directory on remote host
+        -d                       Verbose output (debug)
+        -h                       Print this help message and exit
+        -r <remote_host>         remote host with which to sync
+        -t <target_directory>    target directory on remote host
 
-	EOF
-	}
+    EOF
+    }
 
-	remote_host='''
-	target_dir='''
-	src_folders="/root /home /etc"
+    remote_host='''
+    target_dir='''
+    src_folders="/root /home /etc"
 
-	if [ -d /usr/share/keyrings ]; then
-		src_folders="''${src_folders} /usr/share/keyrings"
-	fi
-	if [ -d /var/db/repos/localrepo ]; then
-		src_folders="''${src_folders} /var/db/repos/localrepo"
-	fi
+    if [ -d /usr/share/keyrings ]; then
+        src_folders="''${src_folders} /usr/share/keyrings"
+    fi
+    if [ -d /var/db/repos/localrepo ]; then
+        src_folders="''${src_folders} /var/db/repos/localrepo"
+    fi
 
-	# read cmdline options
-	while getopts dhr:t: flag
-	do
-	    case $flag in
-		d) 
-		    _DEBUG="on" 
-		    ;;
-		h)
-		    usage 
-		    exit 0 
-		    ;;
-		r) 
-		    remote_host=''${OPTARG} 
-		    ;;
-		t) 
-		    target_dir=''${OPTARG} 
-		    ;;
-		?) 
-		    die '%s: invalid option -- %s' "''${0##*/}" "''${OPTARG}" 
-		    ;;
-	    esac
-	done
-	shift "$(( OPTIND - 1 ))"
+    # read cmdline options
+    while getopts dhr:t: flag
+    do
+        case $flag in
+        d) 
+            _DEBUG="on" 
+            ;;
+        h)
+            usage 
+            exit 0 
+            ;;
+        r) 
+            remote_host=''${OPTARG} 
+            ;;
+        t) 
+            target_dir=''${OPTARG} 
+            ;;
+        ?) 
+            die '%s: invalid option -- %s' "''${0##*/}" "''${OPTARG}" 
+            ;;
+        esac
+    done
+    shift "$(( OPTIND - 1 ))"
 
-	# set some personal defaults
-	if [ -z ''${remote_host} ]; then 
-	    remote_host='leanangle'
-	fi
-	if [ -z ''${target_dir} ]; then 
-	    target_dir="/mnt/backup/internal"
-	fi
+    # set some personal defaults
+    if [ -z ''${remote_host} ]; then 
+        remote_host='leanangle'
+    fi
+    if [ -z ''${target_dir} ]; then 
+        target_dir="/mnt/backup/internal"
+    fi
 
-	#
-	# read in OS info
-	#
-	ID='''
-	if [ -r /etc/os-release ]; then
-		. /etc/os-release
-	elif [ -r /usr/lib/os-release ]; then
-		. /usr/lib/os-release
-	fi
-	if [ -z ''${ID} ]; then
-		ID='unknown'
-	fi
+    #
+    # read in OS info
+    #
+    ID='''
+    if [ -r /etc/os-release ]; then
+        . /etc/os-release
+    elif [ -r /usr/lib/os-release ]; then
+        . /usr/lib/os-release
+    fi
+    if [ -z ''${ID} ]; then
+        ID='unknown'
+    fi
 
-	echo
-	echo "syncing ''${src_folders} -> ''${remote_host}:''${target_dir}/$(hostname)-''${ID}"
-	echo
+    echo
+    echo "syncing ''${src_folders} -> ''${remote_host}:''${target_dir}/$(hostname)-''${ID}"
+    echo
 
-	for i in ''${src_folders}
-	do
-	    rsync -avRHASLe ssh \
-		--delete --delete-excluded \
-		--exclude="- akonadi/" \
-		--exclude="- baloo/" \
-		--exclude="- .cache/" \
-		--exclude="- .cargo/" \
-		--exclude="- .ccache/" \
-		--exclude="- *.iso" \
-		--exclude="- Library/Caches/" \
-		--exclude="- .local/share/flatpak/" \
-		--exclude="- .local/state/" \
-		--exclude="- MEGA/" \
-		--exclude="- Mega Limited/" \
-		--exclude="- music-library/" \
-		--exclude="- .nix-profile/" \
-		--exclude="- public/" \
-		--exclude="- *.qcow2" \
-		--exclude="- .rustup/" \
-		$i ''${remote_host}:''${target_dir}/$(hostname)-''${ID}/
-	done
+    for i in ''${src_folders}
+    do
+        rsync -avRHASLe ssh \
+        --delete --delete-excluded \
+        --exclude="- akonadi/" \
+        --exclude="- baloo/" \
+        --exclude="- .cache/" \
+        --exclude="- .cargo/" \
+        --exclude="- .ccache/" \
+        --exclude="- *.iso" \
+        --exclude="- Library/Caches/" \
+        --exclude="- .local/share/flatpak/" \
+        --exclude="- .local/state/" \
+        --exclude="- MEGA/" \
+        --exclude="- Mega Limited/" \
+        --exclude="- music-library/" \
+        --exclude="- .nix-profile/" \
+        --exclude="- public/" \
+        --exclude="- *.qcow2" \
+        --exclude="- .rustup/" \
+        $i ''${remote_host}:''${target_dir}/$(hostname)-''${ID}/
+    done
     '';
   };
 in
