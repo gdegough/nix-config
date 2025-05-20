@@ -134,6 +134,7 @@ let
         --exclude="- .local/share/flatpak/" \
         --exclude="- .local/state/" \
         --exclude="- Mega Limited/" \
+        --exclude="- .nix-defexpr/" \
         --exclude="- .nix-profile/" \
         --exclude="- public/" \
         --exclude="- *.qcow2" \
@@ -254,6 +255,7 @@ let
         --exclude="- MEGA/" \
         --exclude="- Mega Limited/" \
         --exclude="- music-library/" \
+        --exclude="- .nix-defexpr/" \
         --exclude="- .nix-profile/" \
         --exclude="- public/" \
         --exclude="- *.qcow2" \
