@@ -70,7 +70,7 @@ let
 
 	remote_host='''
 	target_dir='''
-	src_folders="/root /home /etc /usr/local"
+	src_folders="/root /home /etc"
 
 	if [ -d /usr/share/keyrings ]; then
 		src_folders="''${src_folders} /usr/share/keyrings"

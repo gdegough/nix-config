@@ -64,7 +64,7 @@
       #    tunnel="ssh -q -C -l my_login account-server-04 imapd 2>/dev/null Maildir/"'
 
       #account-hook imap://account-server-06 'set \
-      #    tunnel="ssh -p16123 -q -C -l my_login account-server-06 /usr/local/courier-imap/bin/imapd 2>/dev/null Maildir/"'
+      #    tunnel="ssh -p16123 -q -C -l my_login account-server-06 imapd 2>/dev/null Maildir/"'
 
 
       # Account no. 5
@@ -82,7 +82,7 @@
 
 
       folder-hook .	'unset from;\
-          set sendmail="/usr/sbin/sendmail -oem -oi";'
+          set sendmail="sendmail -oem -oi";'
       #    set from="my_login@account-server-09.com.br";\    
 
       folder-hook gdegough@gmail.com/.* 'set \
@@ -96,33 +96,33 @@
 
       #folder-hook mail.account-server-01.org/.* 'set \
       #    from="my_login@account-server-01.org"\
-      #    sendmail="ssh my_login@mail.account-server-01.org /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh my_login@mail.account-server-01.org sendmail -oem -oi"'
 
       #folder-hook account-server-06/.* 'set \
       #    from="my_login@account-server-06"\
-      #    sendmail="ssh -p16123 my_login@account-server-06 /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh -p16123 my_login@account-server-06 sendmail -oem -oi"'
           
       #folder-hook account-server-02/.* 'set \
       #    from="my_login@account-server-02"\
-      #    sendmail="ssh my_login@account-server-02 /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh my_login@account-server-02 sendmail -oem -oi"'
           
       #folder-hook account-server-03/.* 'set \
       #    from="my_login@account-server-03"\
-      #    sendmail="ssh my_login@account-server-03 /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh my_login@account-server-03 sendmail -oem -oi"'
           
 
       #Account no. 5
       #folder-hook localhost:15143/.* 'set \
       #    from="my_login@account-server-05"\
-      #    sendmail="/usr/local/bin/esmtp -v -X /tmp/esmtp.log -f my_login@account-server-05"'
+      #    sendmail="esmtp -v -X /tmp/esmtp.log -f my_login@account-server-05"'
       #folder-hook account-server-05/.* 'set \
       #    from="my_login@daccount-server-05"\
-      #    sendmail="/usr/local/bin/esmtp -v -X /tmp/esmtp.log -f my_login@account-server-05"'
+      #    sendmail="esmtp -v -X /tmp/esmtp.log -f my_login@account-server-05"'
 
       # Account-server-04
       #folder-hook account-server-04/.* 'set \
       #    from="my_login@account-server-04"\
-      #    sendmail="ssh my_login@account-server-04 /usr/sbin/sendmail -oem -oi"'
+      #    sendmail="ssh my_login@account-server-04 sendmail -oem -oi"'
     '';
     ".mutt/muttrc".text = ''
       ###----------------------------------------------------------------------------
